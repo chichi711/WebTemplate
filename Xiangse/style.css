@@ -1,0 +1,297 @@
+.title {
+    /* width: 800; */
+    /* background-color: wheat; */
+    position: fixed;
+    left: 50%;
+    z-index: 1;
+    transform: translateX(-50%);
+    top: 0;
+    width: 100%;
+    background-color: white;
+}
+
+h1 {
+    transition: 0.2s;
+}
+
+h4:first-child {
+    font-size: 1rem;
+}
+
+h4:nth-child(2) {
+    color: rgb(84, 80, 58);
+}
+
+.active h1 {
+    font-size: 1.8rem;
+    margin-top: -30px;
+    margin-bottom: -8px;
+}
+
+.active ul {
+    margin-bottom: -8px;
+}
+
+.active img {
+    margin-top: -130px;
+}
+
+.title img {
+    transition: 0.2s;
+}
+
+.row {
+    justify-content: center;
+    align-items: center;
+}
+
+.navBar {
+    list-style-type: none;
+    text-align: center;
+    /* background-color:wheat; */
+    width: 700;
+}
+
+.navBar li {
+    display: inline-block;
+    padding: 10px;
+}
+
+.navBar ul :hover {
+    background-color: #d6ae7a;
+    color: #ffffff;
+}
+
+.navBar ul {
+    padding-left: 0;
+}
+
+.navBar li a {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.4s;
+    /*a元素會改變背景色，對a加上transition即可*/
+}
+
+li {
+    list-style: none;
+}
+
+@font-face {
+    font-family: 'Legacy';
+    src: url('Legacy/LegacySansStdMedium\ \(1\).woff');
+}
+
+.tit {
+    text-align: center;
+}
+
+.pic1 {
+    text-align: center;
+}
+
+.pic2 {
+    padding: 10%;
+}
+
+hr {
+    height: 2px;
+    border: none;
+    border-top: 2px dotted rgb(202, 201, 199);
+}
+
+.product {
+    text-align: center;
+}
+
+.pro {
+    margin: 13px;
+}
+
+.litpic {
+    /* display: block; */
+    text-align: center;
+    width: 30%;
+    height: 500px;
+    padding: 7px;
+}
+
+.litpic_1 {
+    text-align: center;
+    width: 14.5%;
+    height: auto;
+    padding: 7px;
+}
+
+.footerBar {
+    text-align: left;
+    background-color: rgb(240, 236, 236);
+    color: rgb(136, 136, 134);
+    padding: 7px;
+    display: flex;
+    padding: 33px 0;
+}
+
+.cot1 {
+    margin-left: -1%;
+}
+
+.cot1 ul {
+    padding-left: 275px;
+    margin-top: 100px;
+}
+
+.cot1 p {
+    letter-spacing: 3px;
+}
+
+.cot2 {
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.cot3 {
+    margin-top: 80px;
+}
+
+.cot3-1 {
+    width: 70%;
+}
+
+.cot4 img {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    transition: 1.8s;
+}
+
+.cot4 .cot4-1 {
+    position: relative;
+}
+
+.cot4 .cot4-2 {
+    padding: 0 13px;
+}
+
+.cot4 .change {
+    opacity: 1;
+}
+
+.content {
+    margin: 50px auto;
+    margin-top: 240px;
+}
+
+.card-body {
+    margin-left: 400px;
+}
+
+.footerBar ul {
+    flex: 0 0 20%;
+}
+
+.card-columns {
+    margin-top: 40px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+body {
+    font-family: "Legacy", "Helvetica Neue", "Helvetica", "Nimbus Sans L", "Arial", "Liberation Sans", "Noto Sans TC", "Source Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "STHeiti", "SimHei", "WenQuanYi Zen Hei Sharp", "sans-serif", "Apple LiGothic", "微軟正黑體"
+}
+
+.ctr_1 {
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.ctr_1 div {
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.ctr_1:hover div {
+    background-size: 110%;
+}
+
+.ctr_1 div::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+}
+
+.ctr_1:hover div::before {
+    opacity: 0.4;
+}
+
+.ctr_1:hover p {
+    font-size: 20px;
+}
+
+.ctr_1--c1 {
+    background-image: url("image/Xiang se/xiang_02.jpg");
+}
+
+.ctr_1 p {
+    padding: 116% 0 6%;
+    margin-bottom: 0;
+    text-align: center;
+    color: white;
+    transition: 0.5s;
+}
+
+* {
+    position: relative;
+    /* 出問題萬用 */
+}
+
+.ctr_1 span {
+    display: inline-block;
+    height: 40px;
+}
+
+.ctr_1--c2 {
+    background-image: url("image/Xiang se/xiang_03.jpg");
+}
+
+.ctr_1--c3 {
+    background-image: url("image/Xiang se/xiang_soup_01.jpg");
+}
+
+.ctr_1--c4 {
+    background-image: url("image/Xiang se/xiang_wine_01.jpg");
+}
+
+.ctr_1--c5 {
+    background-image: url("image/Xiang se/xiang_drink_02.jpg");
+}
+
+.ctr_1--c6 {
+    background-image: url("image/Xiang se/xiang_dessert_04.jpg");
+}
+
+.ctr {
+    margin-top: 240px;
+}
+
+a {
+    color: #a5a299;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1240px;
+    }
+    .ctr {
+        max-width: 1000px;
+    }
+}
