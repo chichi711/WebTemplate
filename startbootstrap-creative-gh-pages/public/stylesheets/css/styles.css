@@ -608,8 +608,8 @@ pre code {
 }
 .no-gutters > .col,
 .no-gutters > [class*=col-] {
-  padding-right: 0;
-  padding-left: 0;
+  padding-right: 5;
+  padding-left: 5;
 }
 
 .col-xl,
