@@ -4,6 +4,7 @@
 
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
 body {
+    
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
 }
@@ -25,7 +26,9 @@ a:focus {
 }
 
 .navbar {
-    padding: 15px 10px;
+    top: 0;
+    z-index: 1030;
+    padding: 20px 10px;
     background: #fff;
     border: none;
     border-radius: 0;
@@ -47,7 +50,7 @@ a:focus {
 }
 
 /* ---------------------------------------------------
-    SIDEBAR STYLE
+    側邊欄 STYLE
 ----------------------------------------------------- */
 
 .wrapper {
@@ -145,7 +148,7 @@ a.article:hover {
 }
 
 /* ---------------------------------------------------
-    CONTENT STYLE
+   主頁 STYLE
 ----------------------------------------------------- */
 
 #content {
