@@ -5,20 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- Bootstrap CSS CDN -->
+    <!-- Bootstrap CSS  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
         integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <!-- Our Custom CSS -->
+    <!-- CSS -->
     <link href="../public/stylesheets/css/build.css" rel="stylesheet" />
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-    <!-- Font Awesome JS -->
+    <!-- 字型 Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
         integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
         crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
-        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
-        crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/487a1c55c4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -28,30 +26,30 @@
         <nav id="sidebar">
             <div class="sidebar-header">
                 <h3>Web Builder</h3>
+                <strong>WB</strong>
             </div>
             <!-- 側邊內容 -->
             <ul class="list-unstyled components">
-                <p>Dummy Heading</p>
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="fas fa-home dropdown-toggle"> Page</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                            <a href="#">pag 1</a>
+                            <a class="fas fa-file" href="#"> pag 1</a>
                         </li>
                         <li>
-                            <a href="#">pag 2</a>
+                            <a class="fas fa-file" href="#"> pag 2</a>
                         </li>
                         <li>
-                            <a href="#">pag 3</a>
+                            <a class="fas fa-file" href="#"> pag 3</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#">About</a>
+                    <a class="fas fa-file-image" href="#"> clone</a>
                 </li>
                 <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                        class="dropdown-toggle">Pages</a>
+                        class="fas fa-file-alt dropdown-toggle"> Pages</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
                             <a href="#">Page 1</a>
@@ -65,25 +63,26 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Portfolio</a>
+                    <a class="fas fa-file-word" href="#"> Portfolio</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a class="fas fa-sticky-note" href="#"> Contact</a>
                 </li>
             </ul>
         </nav>
 
-        <!-- 導覽列 -->
-        <div id="content">
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light p-1">
+        <div id="content"style="">
+        <!-- 導覽列 -->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light p-1">
                 <div class="container-fluid ">
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                    </button>
+                    
                     <a class="navbar-brand p-0 " href="#">
                         <img src="../public/images/assets/img/logo.png" alt="" loading="lazy">
                     </a>
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                    </button>
                     <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -115,7 +114,9 @@
                     </div>
                 </div>
             </nav>
-            <main class="container">
+
+            <!-- 編輯頁 -->
+            <main class="container" >
                 <h2>Lorem Ipsum Dolor</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
                     et
@@ -183,7 +184,8 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <!-- 網頁code放置區 -->
+                    <div class="modal-body" id="webCode">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
@@ -203,7 +205,8 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Copy</button>
+                        <!-- 複製Btn -->
+                        <button type="button" class="btn btn-primary" id="copyBtn" name="webCode">Copy</button>
                     </div>
                 </div>
             </div>
