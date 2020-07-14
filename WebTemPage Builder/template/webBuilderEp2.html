@@ -16,22 +16,23 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
         integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
         crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/487a1c55c4.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/487a1c55c4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="wrapper">
 
         <!-- 側邊攔 -->
-        <nav id="sidebar">
+        <nav id="sidebar" class="active">
             <div class="sidebar-header">
                 <h3>Web Builder</h3>
-                <strong>WB</strong>
+                <h2>WB</h2>
             </div>
             <!-- 側邊內容 -->
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="fas fa-home dropdown-toggle"> Page</a>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                        class="fas fa-home dropdown-toggle"> Page</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
                             <a class="fas fa-file" href="#"> pag 1</a>
@@ -63,7 +64,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a class="fas fa-file-word" href="#"> Portfolio</a>
+                    <a class="fas fa-file-word" href="#">Portfolio</a>
                 </li>
                 <li>
                     <a class="fas fa-sticky-note" href="#"> Contact</a>
@@ -72,21 +73,36 @@
         </nav>
 
 
-        <div id="content"style="">
-        <!-- 導覽列 -->
-        <nav class="navbar navbar-expand fixed-top navbar-light bg-light p-1">
+        <div id="content" class="active">
+            <!-- 導覽列 -->
+            <nav class="navbar navbar-expand fixed-top navbar-light bg-light p-1">
                 <div class="container-fluid ">
-                     <button type="button" id="sidebarCollapse" class="btn btn-link">
-                        <i class="far fa-file-alt fa-lg"></i>                    </button>
+                    <ul class="navbar-nav mr-auto">
+                        <!-- <li id="sidebarCollapse" class="nav-item dropdown">
+                        <a role="button" class="far fa-file-alt fa-lg" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+                    </li> -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link  far fa-file-alt fa-lg " href="#" id="navbarDropdown"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Action</a>
+                                <a class="dropdown-item" href="#">Another action</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#">Something else here</a>
+                            </div>
+                        </li>
+                    </ul>
                     <a class="navbar-brand p-0 " href="#">
                         <img src="../public/images/assets/img/logo.png" alt="" loading="lazy">
                     </a>
-                   
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+
+                    <!-- <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
-                    </button>
+                    </button> -->
 
 
 
@@ -109,7 +125,7 @@
             </nav>
 
             <!-- 編輯頁 -->
-            <main class="container" >
+            <main class="container">
                 <h2>Lorem Ipsum Dolor</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
                     et
@@ -220,7 +236,7 @@
             crossorigin="anonymous"></script>
         <script
             src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-        <script src="../public/javascripts/js/build.js"></script>
+        <script src="../public/javascripts/js/buildEp2.js"></script>
     </div>
 </body>
 

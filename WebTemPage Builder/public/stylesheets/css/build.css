@@ -21,7 +21,7 @@ a:hover,
 a:focus {
     color: inherit;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: all 1s;
 }
 
 .navbar {
@@ -33,11 +33,11 @@ a:focus {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-btn {
+/* .navbar-btn {
     box-shadow: none;
     outline: none ;
     border: none;
-}
+} */
 
 .line {
     width: 100%;
@@ -56,7 +56,7 @@ a:focus {
 }
 
 #sidebar {
-    padding-top: 70px;
+    padding-top: 75px;
     width: 230px;
     position: fixed;
     top: 0;
@@ -65,16 +65,17 @@ a:focus {
     z-index: 999;
     background: #7386D5;
     color: #fff;
-    transition: all 0.5s;
+    transition: all 1s;
 }
 
 #sidebar.active {
-    min-width: 100px;
-    max-width: 80px;
+    
+    min-width: 130px;
+    max-width: 110px;
     text-align: center;}
 
 #sidebar .sidebar-header {
-    padding: 20px;
+    padding: 30px;
     background: #6d7fcc;
 }
 #sidebar .sidebar-header strong {
@@ -97,7 +98,7 @@ a:focus {
 }
 
 #sidebar ul li a {
-    text-align: left;
+    text-align: center;
     padding: 10px;
     font-size: 1.1em;
     display: block;
@@ -109,16 +110,16 @@ a:focus {
 }
 
 #sidebar.active ul li a {
-    padding: 20px 10px;
+    padding: 30px 30px;
     text-align: center;
-    font-size: 0.85em;
+    font-size: 1.5em;
 }
 
 #sidebar.active ul li a i {
     margin-right:  0;
     display: block;
     font-size: 1.8em;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 #sidebar ul li.active>a,
@@ -146,7 +147,7 @@ ul ul a {
 }
 
 #sidebar.active ul ul a {
-    padding: 10px !important;
+    padding: 15px !important;
 }
 
 ul.CTAs {
@@ -189,7 +190,7 @@ a.article:hover {
     width: calc(100% - 250px);
     padding:10px;
     min-height: 100vh;
-    transition: all 0.5s;
+    transition: all 1s;
     position: absolute;
     top: 0;
     right: 0;
@@ -213,10 +214,10 @@ a.article:hover {
         margin-left: 0;
     }
     #content {
-        width: 100%;
+        width: 90%;
     }
     #content.active {
-        width: calc(100% - 250px);
+        width: calc(100% - 120px);
     }
     #sidebarCollapse span {
         display: none;
