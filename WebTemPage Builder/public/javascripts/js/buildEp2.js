@@ -14,7 +14,6 @@ $(document).ready(function () {
     sel.removeAllRanges();
     sel.addRange(range);
     document.execCommand('copy');
-    alert("複製成功");
     return false;
   });
 

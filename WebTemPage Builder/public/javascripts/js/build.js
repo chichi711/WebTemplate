@@ -25,6 +25,8 @@ $(document).ready(function () {
     document.execCommand('copy');
     alert("複製成功");
     return false;
+
+    
   });
 
 });
