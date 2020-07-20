@@ -2,11 +2,32 @@ body {
     margin-top:20px;
     background-color: 	#FAFAFA;
 }
-/*profile page*/
+
+/* 導覽列 */
+.logo{
+    width: 220px;
+    height: 50px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_links li{
+   display: inline-block;
+   padding: 0 20px;
+}
+
+.nav_links li a{
+    font-size: 18px;
+}
+/* 導覽列 END */
 
 
 
 
+/* 個人資料 */
 
 .left-profile-card .user-profile {
     width: 100px;
@@ -22,31 +43,38 @@ body {
     font-weight: 700;
 }
 
-.left-profile-card p {
-    margin-bottom: 5px;
-}
-
-.left-profile-card .progress-bar {
-    background-color: var(--main-color);
-}
 
 .personal-info {
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .personal-info .personal-list {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding: 0 ;
+}
+
+ .card-body{
+ box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+ border-radius: 15px;
+}
+
+.personal-list li{
+    padding: 15px 0 0 55px;
 }
 
 
 
-.card-body{
-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
-border-radius: 15px;
+.personal-list span{
+    padding: 10px;
 }
 
+/* 個人資料 END */
+
+
+
+
+/* 樣板庫 */
 
 .card-body2{
     box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
@@ -54,10 +82,8 @@ border-radius: 15px;
     margin-bottom: 20px;
     background: #cfd1d4;
 }
-.img_1{
-    margin: 0 25px;
 
-}
+
 .card-body2 img{
     width: 240px;
     height: 180px;
@@ -66,71 +92,21 @@ border-radius: 15px;
 }
 
 
-.personal-list li{
-    padding: 15px 0 0 55px;
-}
-
-.personal-info h3{
-    text-align: center;
-    padding: 10px;
-}
-
-.personal-list span{
-    padding: 10px;
+.row{
+    padding: 25px 0 25px 0;
 }
 
 
+/* 樣板庫 END*/
 
 
 
-.logo{
-    width: 220px;
-    height: 50px;
-}
-nav_links li{
-    text-decoration: none;
-    font-size: 25px;
-    padding: 0 10px;
-    color: black;
-}
-header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.nav_links li{
-   display: inline-block;
-   padding: 0 20px;
-}
-button{
-    padding: 9px 25px;
-    
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    
-}
-.nav_links li a{
-    font-size: 18px;
-}
 
 
 
-.line_02{
-    height: 1px;
-    border-top: 1px solid rgb(180, 178, 178);
-    text-align: center;
-}
-.line_02 span{
-    position: relative;
-    top: -12px;
-    background: #fff;
-    padding: 0 20px;
-}
 
 
-
-/* 照片效果 */
+/* 照片特效 */
 .item-wrap{
     display: block;
     position: relative;
@@ -175,23 +151,14 @@ button{
 
   .item .item-wrap > .work-info h3 {
     font-size: 20px;
-    margin-bottom: 0;
   }
 
 
-  .item .item-wrap > .work-info span {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: .2rem;
-  }
 
-  .item .item-wrap:hover {
-    text-decoration: none;
-  }
+  
 
   .item .item-wrap:hover img {
     -webkit-transform: scale(1.05);
-    transform: scale(1.05);
   }
 
 
@@ -207,40 +174,43 @@ button{
   }
 
 
+/* 照片特效 END*/
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.row{
-    padding: 25px 0 25px 0;
+#img_1{
+   height: 50px;
+    width: 150px;
 }
+.profile{
+    left: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
