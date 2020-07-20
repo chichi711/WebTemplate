@@ -46,9 +46,9 @@ a:focus {
     margin: 40px 0;
 }
 
-/* ---------------------------------------------------
+/*
     側邊攔 STYLE
------------------------------------------------------ */
+*/
 
 .wrapper {
     display: flex;
@@ -84,7 +84,8 @@ a:focus {
     
     min-width: 130px;
     max-width: 100px;
-    text-align: center;}
+    text-align: center;
+}
 #sidebarRight.active {
     
 margin-right: -230px;
@@ -197,17 +198,16 @@ a.article:hover {
     -ms-transform: translateX(50%);
     transform: translateX(50%);
 }
-/* ---------------------------------------------------
+/*
     CONTENT STYLE
------------------------------------------------------ */
+*/
 
 #content {
-    
+    position: absolute;
     width: calc(100% - 230px);
     padding:10px;
     min-height: 100vh;
     transition: all 1s;
-    position: absolute;
     top: 0;
     right: 0;
     padding-top: 20vh;
@@ -218,9 +218,9 @@ a.article:hover {
     width: 90%;
 }
 
-/* ---------------------------------------------------
+/* 
     MEDIAQUERIES
------------------------------------------------------ */
+*/
 
 @media (max-width: 768px) {
     #sidebar {
