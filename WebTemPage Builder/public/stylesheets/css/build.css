@@ -65,6 +65,18 @@ a:focus {
     z-index: 999;
     background: #7386D5;
     color: #fff;
+    transition: all s;
+}
+#sidebarRight {
+    padding-top: 75px;
+    width: 230px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 999;
+    background: #7386D5;
+    color: #fff;
     transition: all 0.5s;
 }
 
@@ -73,11 +85,15 @@ a:focus {
     min-width: 130px;
     max-width: 100px;
     text-align: center;}
+#sidebarRight.active {
+    
+margin-right: -230px;
+}
 
-#sidebar .sidebar-header {
+/* #sidebar .sidebar-header {
     padding: 25px;
     background: #6d7fcc;
-}
+} */
 #sidebar .sidebar-header strong {
     display: none;
 }
@@ -187,7 +203,7 @@ a.article:hover {
 
 #content {
     
-    width: calc(100% - 250px);
+    width: calc(100% - 230px);
     padding:10px;
     min-height: 100vh;
     transition: all 1s;
@@ -195,10 +211,10 @@ a.article:hover {
     top: 0;
     right: 0;
     padding-top: 20vh;
+    
 }
 
-#content.active {
-    
+#content.active {  
     width: 90%;
 }
 
@@ -212,6 +228,12 @@ a.article:hover {
     }
     #sidebar.active {
         margin-left: 0;
+    }
+    #sidebarRight {
+        margin-right: -230px;
+    }
+    #sidebarRight.active {
+        margin-right: 0;
     }
     #content {
         width: 90%;

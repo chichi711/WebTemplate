@@ -16,7 +16,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
         integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
         crossorigin="anonymous"></script>
-        <script src="https://kit.fontawesome.com/487a1c55c4.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/487a1c55c4.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -24,14 +24,16 @@
 
         <!-- 側邊攔 -->
         <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Web Builder</h3>
+            <!-- <div class="sidebar-header">
                 <strong>WB</strong>
-            </div>
+            </div> -->
             <!-- 側邊內容 -->
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="fas fa-home dropdown-toggle"> Page</a>
+                    <!-- <a class="far fa-plus-square" href="#"> new</a> -->
+
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                        class="fas fa-home dropdown-toggle"> Page</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
                             <a class="fas fa-file" href="#"> pag 1</a>
@@ -44,10 +46,8 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a class="fas fa-file-image" href="#"> clone</a>
-                </li>
-                <li>
+
+                <!-- <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
                         class="fas fa-file-alt dropdown-toggle"> Pages</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -61,55 +61,89 @@
                             <a href="#">Page 3</a>
                         </li>
                     </ul>
-                </li>
-                <li>
-                    <a class="fas fa-file-word" href="#"> Portfolio</a>
-                </li>
-                <li>
-                    <a class="fas fa-sticky-note" href="#"> Contact</a>
-                </li>
+                </li> -->
             </ul>
+            <ul class="list-unstyled components">
+                <li>
+                    <a class="fas fa-file-image" href="#"> clone</a>
+                </li>
+                <li>
+
+                    <a class="fas fa-file-word" href="#"> Portfolio</a>
+
+                </li>
+
+                <li>
+
+                    <a class="fas fa-sticky-note" href="#"> Contact</a>
+
+                </li>
+
+                <li>
+                    <a class="fas fa-file-image" href="#"> clone</a>
+                </li>
+
+                <li>
+
+                    <a class="fas fa-file-word" href="#"> Portfolio</a>
+
+                </li>
+
+                <li>
+
+                    <a class="fas fa-sticky-note" href="#"> Contact</a>
+
+                </li>
+
+            </ul>
+
         </nav>
-
-
-        <div id="content"style="">
-        <!-- 導覽列 -->
         <nav class="navbar navbar-expand fixed-top navbar-light bg-light p-1">
-                <div class="container-fluid ">
-                     <button type="button" id="sidebarCollapse" class="btn btn-link">
-                        <i class="far fa-file-alt fa-lg"></i>                    </button>
+            <div class="container-fluid ">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                     <a class="navbar-brand p-0 " href="#">
                         <img src="../public/images/assets/img/logo.png" alt="" loading="lazy">
                     </a>
-                   
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
+                    <button type="button" id="sidebarCollapse" class="btn btn-link">
+                        <i class="fas fa-align-left"></i>
                     </button>
-
-
-
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item ">
-                                <a class="nav-link fas fa-mobile-alt fa-lg" href="#"></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link fas fa-tv fa-lg" href="#"></a>
-                            </li>
-                        </ul>
-                        <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#webCode"
-                            type="submit">
-                            Save Page
-                        </button>
-
-                    </div>
+                    <!-- bootstrap自帶小畫面選單 -->
+                    <!-- <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button"
+                        data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button> -->
                 </div>
-            </nav>
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                    <ul class="nav justify-content-center">
+                        <li class="nav-item ">
+                            <a class="nav-link fas fa-mobile-alt fa-lg" href="#"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fas fa-tv fa-lg" href="#"></a>
+                        </li>
+                    </ul>
+                </div>
+                <button type="button" id="sidebarCollapseRight" class="btn btn-link">
+                    <i class="fas fa-align-right"></i>
+                </button>
+
+                <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#webCode"
+                    type="submit">
+                    Save Page
+                </button>
+            </div>
+        </nav>
+        <div id="content">
+            <!-- 導覽列 -->
+            
 
             <!-- 編輯頁 -->
-            <main class="container" >
+            <main class="container">
                 <h2>Lorem Ipsum Dolor</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
                     et
@@ -167,6 +201,14 @@
             </main>
 
         </div>
+        <!-- 右側欄 -->
+        <nav id="sidebarRight">
+
+
+        </nav>
+
+
+
         <!-- 彈出視窗 -->
         <div class="modal fade" id="webCode" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle"
             aria-hidden="true">
@@ -179,7 +221,7 @@
                         </button>
                     </div>
                     <!-- 網頁code放置區 -->
-                    <div class="modal-body" id="webCode">
+                    <!-- <div class="modal-body" id="webCode">
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
@@ -196,11 +238,15 @@
                         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
                         aliquip
                         ex ea commodo consequat
+                    </div> -->
+                    <div class="form-group" id="newCode">
+                        <textarea class="form-control" rows="10"></textarea>
                     </div>
+
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <!-- 複製Btn -->
-                        <button type="button" class="btn btn-primary" id="copyBtn" name="webCode">Copy</button>
+                        <button type="button" class="btn btn-primary" id="copyBtn" name="newCode">Copy</button>
                     </div>
                 </div>
             </div>
