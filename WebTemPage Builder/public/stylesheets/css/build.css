@@ -65,7 +65,7 @@ a:focus {
     z-index: 999;
     background: #7386D5;
     color: #fff;
-    transition: all s;
+    transition: all 0.5s;
 }
 #sidebarRight {
     padding-top: 75px;
@@ -81,7 +81,8 @@ a:focus {
 }
 
 #sidebar.active {
-    
+    transition: all 0.5s;
+
     min-width: 130px;
     max-width: 100px;
     text-align: center;
@@ -204,18 +205,23 @@ a.article:hover {
 
 #content {
     position: absolute;
-    width: calc(100% - 230px);
+    width: calc(100% - 460px);
     padding:10px;
     min-height: 100vh;
     transition: all 1s;
     top: 0;
-    right: 0;
+    right: 230px;
     padding-top: 20vh;
     
 }
 
-#content.active {  
-    width: 90%;
+#content.active { 
+    left: 130px; 
+    width: calc(100% - 360px);
+}
+#content.activeRight { 
+    right: 0; 
+    width: calc(100% - 230px);
 }
 
 /* 
@@ -236,11 +242,18 @@ a.article:hover {
         margin-right: 0;
     }
     #content {
+        right: 0;
         width: 90%;
     }
     #content.active {
-        width: calc(100% - 120px);
+        left: 0;
+        width: 100%;
     }
+    #content.activeRight {
+        left: 0;
+        width:calc(100%);
+    }
+    
     #sidebarCollapse span {
         display: none;
     }

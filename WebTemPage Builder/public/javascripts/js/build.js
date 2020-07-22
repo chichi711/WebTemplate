@@ -9,17 +9,13 @@ $(document).ready(function () {
        $('#sidebar,#content').toggleClass('active');
        // close dropdowns
        $('.collapse.in').toggleClass('in');
-       // and also adjust aria-expanded attributes we use for the open/closed arrows
-       // in our CSS
+       // adjust aria-expanded attributes use for the open/closed arrows in  CSS
        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
    });
    $('#sidebarCollapseRight').on('click', function () {
-       // open or close navbar
        $('#sidebarRight').toggleClass('active');
-       // close dropdowns
        $('.collapse.in').toggleClass('in');
-       // and also adjust aria-expanded attributes we use for the open/closed arrows
-       // in our CSS
+       $('#content').toggleClass('activeRight');
        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
    });
 
