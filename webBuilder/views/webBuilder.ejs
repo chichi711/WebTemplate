@@ -28,26 +28,36 @@
                 <strong>WB</strong>
             </div> -->
             <!-- 側邊內容 -->
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <!-- <a class="far fa-plus-square" href="#"> new</a> -->
+            <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#home" role="tab"
+                    aria-controls="nav-home" aria-selected="true">Home</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab"
+                    aria-controls="nav-profile" aria-selected="false">Profile</a>
+                <a class="nav-item nav-link" id="nav-contact-tabF" data-toggle="tab" href="#contact" role="tab"
+                    aria-controls="nav-contact" aria-selected="false">Contact</a>
+            </div>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <ul class="list-unstyled components">
+                        <li class="active">
+                            <!-- <a class="far fa-plus-square" href="#"> new</a> -->
 
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                        class="fas fa-home dropdown-toggle"> Page</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a class="fas fa-file" href="#"> 巴拉巴拉巴拉巴拉巴拉巴 拉</a>
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                                class="fas fa-home dropdown-toggle"> Page</a>
+                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li>
+                                    <a class="fas fa-file" href="#"> 巴拉巴拉巴拉巴拉巴拉巴 拉</a>
+                                </li>
+                                <li>
+                                    <a class="fas fa-file" href="#"> pag 2</a>
+                                </li>
+                                <li>
+                                    <a class="fas fa-file" href="#"> pag 3</a>
+                                </li>
+                            </ul>
                         </li>
-                        <li>
-                            <a class="fas fa-file" href="#"> pag 2</a>
-                        </li>
-                        <li>
-                            <a class="fas fa-file" href="#"> pag 3</a>
-                        </li>
-                    </ul>
-                </li>
 
-                <!-- <li>
+                        <!-- <li>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
                         class="fas fa-file-alt dropdown-toggle"> Pages</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -61,53 +71,57 @@
                             <a href="#">Page 3</a>
                         </li>
                     </ul>
-                </li> -->
-            </ul>
-            <ul class="list-unstyled components">
-                <li>
-                    <a class="fas fa-file-image" href="#"> clone</a>
-                </li>
-                <li>
+                 </li> -->
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 
-                    <a class="fas fa-file-word" href="#"> Portfolio</a>
+                    <ul class="list-unstyled components">
+                        <li>
+                            <a class="fas fa-file-image" href="#"> clone</a>
+                        </li>
+                        <li>
 
-                </li>
+                            <a class="fas fa-file-word" href="#"> Portfolio</a>
 
-                <li>
+                        </li>
 
-                    <a class="fas fa-sticky-note" href="#"> Contact</a>
+                        <li>
 
-                </li>
+                            <a class="fas fa-sticky-note" href="#"> Contact</a>
 
-                <li>
-                    <a class="fas fa-file-image " href="#"> </a>
-                </li>
+                        </li>
 
-                <li>
+                        <li>
+                            <a class="fas fa-file-image " href="#"> </a>
+                        </li>
 
-                    <a class="fas fa-file-word" href="#"> Portfolio</a>
+                        <li>
 
-                </li>
+                            <a class="fas fa-file-word" href="#"> Portfolio</a>
 
-                <li>
+                        </li>
 
-                    <a class="fas fa-sticky-note" href="#"> Contact</a>
+                        <li>
 
-                </li>
+                            <a class="fas fa-sticky-note" href="#"> Contact</a>
 
-            </ul>
+                        </li>
 
+                    </ul>
+                </div>
+            </div>
         </nav>
         <nav class="navbar navbar-expand fixed-top navbar-light bg-light p-1">
             <div class="container-fluid ">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                    <a class="navbar-brand p-0 " href="/">
+                    <a class="navbar-brand p-0 " href="/officalTemplat">
                         <img src="/images/assets/img/logo.png" alt="" loading="lazy">
                     </a>
-                    <button type="button" id="sidebarCollapse" class="btn btn-link">
+                    <!-- <button type="button" id="sidebarCollapse" class="btn btn-link">
                         <i class="fas fa-align-left"></i>
-                    </button>
+                    </button> -->
                     <!-- bootstrap自帶小畫面選單 -->
                     <!-- <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button"
                         data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -128,9 +142,9 @@
                         </li>
                     </ul>
                 </div>
-                <button type="button" id="sidebarCollapseRight" class="btn btn-link">
+                <!-- <button type="button" id="sidebarCollapseRight" class="btn btn-link">
                     <i class="fas fa-align-right"></i>
-                </button>
+                </button> -->
 
                 <button class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#webCode"
                     type="submit">
@@ -202,10 +216,10 @@
 
         </div>
         <!-- 右側欄 -->
-        <nav id="sidebarRight">
+        <!-- <nav id="sidebarRight">
 
 
-        </nav>
+        </nav> -->
 
 
 
