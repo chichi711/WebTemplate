@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 router.get('/featuresPage', function(req, res, next) {
-  res.render('testTest');
+  res.render('featuresPage');
 });
 router.get('/officalTemplat', function(req, res, next) {
   res.render('templatePage');
@@ -16,7 +16,7 @@ router.get('/previewPage', function(req, res, next) {
   res.render('previewPage' );
 });
 router.get('/login', function(req, res, next) {
-  res.render('logn');
+  res.render('login');
 });
 router.get('/signup', function(req, res, next) {
   res.render('signup');

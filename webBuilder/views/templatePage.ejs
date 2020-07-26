@@ -9,15 +9,16 @@
     <title>Creative - Start Bootstrap Theme</title>
    
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
-        rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
         rel="stylesheet" />
+        <!-- 導入CSS -->
     <link href="/stylesheets/css/styles.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/487a1c55c4.js" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
+        rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
 
 </head>
 
@@ -31,21 +32,21 @@
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">首頁</a>
+                    <a class="nav-link" href="/">首頁</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">功能介紹</a>
+                    <a class="nav-link" href="/featuresPage">功能介紹</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">樣板一覽</a>
+                <li class="nav-item" >
+                    <a class="nav-link" href="/officalTemplat" >樣板一覽</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="">Link</a>
+                </li> -->
             </ul>
         </div>
         <div class="mx-auto order-0">
-            <a class="navbar-brand p-0" href="/featuresPage">
+            <a class="navbar-brand p-1" href="/">
                 <img src="/images/assets/img/logo.png" alt="" loading="lazy">
             </a>
 
@@ -53,7 +54,7 @@
 
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <form class="form-inline ml-auto">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="button" onclick="location.href='/login'">Log in</button>
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="button" onclick="location.href='/login'">Log in</button>
             </form>
         </div>
     </nav>
@@ -72,13 +73,15 @@
                         from a Lorem Ipsum passage,
                         discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of
                         "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in</p>
-                    <a class="btn btn-primary btn-xl js-scroll-trigger" href="/editPage">Start Build!</a>
+                    <a class="btn btn-primary btn-xl " href="/editPage">Start Build!</a>
                 </div>
             </div>
         </div>
     </header>
+
+    <!-- templateTab -->
     <nav class="p-4">
-        <h3 class="text-center text-warning font-weight-bold" id="notoSans">主題樣板</h3>
+        <h3 class="text-center text-primary font-weight-bold" id="notoSans">主題樣板</h3>
         <p class="text-center text-secondary mb-4" id="notoSans">不知道從何開始嗎?從我們精選的主題中開始建構!</p>
 
         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
@@ -96,9 +99,9 @@
                 <div id="portfolio">
                     <div class="container-fluid p-4">
                         <div class="row no-gutters">
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="../public/images/assets/img/portfolio/fullsize/1.jpg">
-                                    <img class="img-fluid" src="../public/images/assets/img/portfolio/thumbnails/1.jpg"
+                            <div class="col-lg-3 col-sm-6">
+                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/1.jpg">
+                                    <img class="img-fluid" src="/images/assets/img/portfolio/thumbnails/1.jpg"
                                         alt="" />
                                     <div class="portfolio-box-caption">
                                         <div class="project-category text-white-50">Category</div>
@@ -106,9 +109,9 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="../public/images/assets/img/portfolio/fullsize/2.jpg">
-                                    <img class="img-fluid" src="../public/images/assets/img/portfolio/thumbnails/2.jpg"
+                            <div class="col-lg-3 col-sm-6">
+                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/2.jpg">
+                                    <img class="img-fluid" src="/images/assets/img/portfolio/thumbnails/2.jpg"
                                         alt="" />
                                     <div class="portfolio-box-caption">
                                         <div class="project-category text-white-50">Category</div>
@@ -116,9 +119,9 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="../public/images/assets/img/portfolio/fullsize/3.jpg">
-                                    <img class="img-fluid" src="../public/images/assets/img/portfolio/thumbnails/3.jpg"
+                            <div class="col-lg-3 col-sm-6">
+                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/3.jpg">
+                                    <img class="img-fluid" src="/images/assets/img/portfolio/thumbnails/3.jpg"
                                         alt="" />
                                     <div class="portfolio-box-caption">
                                         <div class="project-category text-white-50">Category</div>
@@ -126,31 +129,11 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="../public/images/assets/img/portfolio/fullsize/4.jpg">
-                                    <img class="img-fluid" src="../public/images/assets/img/portfolio/thumbnails/4.jpg"
+                            <div class="col-lg-3 col-sm-6">
+                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/4.jpg">
+                                    <img class="img-fluid" src="/images/assets/img/portfolio/thumbnails/4.jpg"
                                         alt="" />
                                     <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Category</div>
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="../public/images/assets/img/portfolio/fullsize/5.jpg">
-                                    <img class="img-fluid" src="../public/images/assets/img/portfolio/thumbnails/5.jpg"
-                                        alt="" />
-                                    <div class="portfolio-box-caption">
-                                        <div class="project-category text-white-50">Category</div>
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="../public/images/assets/img/portfolio/fullsize/6.jpg">
-                                    <img class="img-fluid" src="../public/images/assets/img/portfolio/thumbnails/6.jpg"
-                                        alt="" />
-                                    <div class="portfolio-box-caption p-3">
                                         <div class="project-category text-white-50">Category</div>
                                         <div class="project-name">Project Name</div>
                                     </div>
@@ -166,8 +149,8 @@
                     <div class="container-fluid p-4">
                         <div class="row no-gutters">
                             <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="../public/images/assets/img/portfolio/fullsize/1.jpg">
-                                    <img class="img-fluid" src="../public/images/assets/img/portfolio/thumbnails/1.jpg"
+                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/1.jpg">
+                                    <img class="img-fluid" src="/images/assets/img/portfolio/thumbnails/1.jpg"
                                         alt="" />
                                     <div class="portfolio-box-caption">
                                         <div class="project-category text-white-50">Category</div>
@@ -176,8 +159,8 @@
                                 </a>
                             </div>
                             <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="../public/images/assets/img/portfolio/fullsize/2.jpg">
-                                    <img class="img-fluid" src="../public/images/assets/img/portfolio/thumbnails/2.jpg"
+                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/2.jpg">
+                                    <img class="img-fluid" src="/images/assets/img/portfolio/thumbnails/2.jpg"
                                         alt="" />
                                     <div class="portfolio-box-caption">
                                         <div class="project-category text-white-50">Category</div>
@@ -186,8 +169,8 @@
                                 </a>
                             </div>
                             <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="../public/images/assets/img/portfolio/fullsize/3.jpg">
-                                    <img class="img-fluid" src="../public/images/assets/img/portfolio/thumbnails/3.jpg"
+                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/3.jpg">
+                                    <img class="img-fluid" src="/images/assets/img/portfolio/thumbnails/3.jpg"
                                         alt="" />
                                     <div class="portfolio-box-caption">
                                         <div class="project-category text-white-50">Category</div>
@@ -196,8 +179,8 @@
                                 </a>
                             </div>
                             <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="../public/images/assets/img/portfolio/fullsize/4.jpg">
-                                    <img class="img-fluid" src="../public/images/assets/img/portfolio/thumbnails/4.jpg"
+                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/4.jpg">
+                                    <img class="img-fluid" src="/images/assets/img/portfolio/thumbnails/4.jpg"
                                         alt="" />
                                     <div class="portfolio-box-caption">
                                         <div class="project-category text-white-50">Category</div>
@@ -206,8 +189,8 @@
                                 </a>
                             </div>
                             <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="../public/images/assets/img/portfolio/fullsize/5.jpg">
-                                    <img class="img-fluid" src="../public/images/assets/img/portfolio/thumbnails/5.jpg"
+                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/5.jpg">
+                                    <img class="img-fluid" src="/images/assets/img/portfolio/thumbnails/5.jpg"
                                         alt="" />
                                     <div class="portfolio-box-caption">
                                         <div class="project-category text-white-50">Category</div>
@@ -216,10 +199,10 @@
                                 </a>
                             </div>
                             <div class="col-lg-4 col-sm-6">
-                                <a class="portfolio-box" href="../public/images/assets/img/portfolio/fullsize/6.jpg">
-                                    <img class="img-fluid" src="../public/images/assets/img/portfolio/thumbnails/6.jpg"
+                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/6.jpg">
+                                    <img class="img-fluid" src="/images/assets/img/portfolio/thumbnails/6.jpg"
                                         alt="" />
-                                    <div class="portfolio-box-caption p-3">
+                                    <div class="portfolio-box-caption">
                                         <div class="project-category text-white-50">Category</div>
                                         <div class="project-name">Project Name</div>
                                     </div>
@@ -408,35 +391,7 @@
             </div>
         </div>
     </section>
-    <!-- <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                aria-selected="true">ZZZ</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                aria-selected="false">XXX</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-                aria-selected="false">CCC</a>
-        </li>
-    </ul> -->
 
-    <!-- About-->
-    <!-- <section class="page-section bg-primary" id="about">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">We've got what you need!</h2>
-                        <hr class="divider light my-4" />
-                        <p class="text-white-50 mb-4">Start Bootstrap has everything you need to get your new website up and running in no time! Choose one of our open source, free to download, and easy to use themes! No strings attached!</p>
-                        <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-    <!-- Footer-->
     <footer class="bg-light py-5">
         <div class="container">
             <div class="small text-center text-muted">made © 2020 - MFEEE08-18</div>
