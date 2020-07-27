@@ -4,7 +4,7 @@ $(function() {
 
         var N = $(this).attr("id").substr(2);
 
-        $("#BIG").attr("src", "image/Xiang se/xiang_duck" + N + ".jpg");
+        $("#BIG").attr("src", "image/antique/litimg" + N + ".jpg");
 
     });
 
@@ -14,7 +14,7 @@ $(function() {
         var scrollVal = $(this).scrollTop(); //捲動
 
 
-        if (scrollVal > 100) {
+        if (scrollVal > 2) {
             /* 滾動的物件捲動 > 100 就觸發。*/
             // $("#logo").slideUp(100);  上滑
             $(".title").addClass("active");
