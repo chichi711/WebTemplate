@@ -205,12 +205,12 @@ a.article:hover {
 
 #content {
     position: absolute;
-    width: calc(100% - 460px);
+    width: calc(100% - 230px);
     padding:10px;
     min-height: 100vh;
     transition: all 1s;
     top: 0;
-    right: 230px;
+    right: 0;
     padding-top: 20vh;
     
 }
@@ -229,9 +229,9 @@ a.article:hover {
 */
 
 @media (max-width: 768px) {
-    #sidebar {
+    /* #sidebar {
         margin-left: -250px;
-    }
+    } */
     #sidebar.active {
         margin-left: 0;
     }
@@ -249,10 +249,10 @@ a.article:hover {
         left: 0;
         width: 100%;
     }
-    #content.activeRight {
+    /* #content.activeRight {
         left: 0;
         width:calc(100%);
-    }
+    } */
     
     #sidebarCollapse span {
         display: none;
