@@ -7,7 +7,7 @@
 
 body{
   font-size: 1rem;
-
+  font-family: "Legacy", "Noto Sans TC", "Helvetica Neue", "Helvetica", "Nimbus Sans L", "Arial", "Liberation Sans", "Source Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "STHeiti", "SimHei", "WenQuanYi Zen Hei Sharp", "sans-serif", "Apple LiGothic", "微軟正黑體"
 }
 
 
@@ -22,7 +22,6 @@ p,a,span,h1, h2, h3, h4, h5,
 .h1, .h2, .h3, .h4, .h5 ,nav{
   font-weight: 300;
   color: #364d59;
-  font-family: 'Noto Sans TC', sans-serif;
 
    }
 
@@ -144,14 +143,14 @@ h2{
   padding: 50px 30px; 
 }
 .service-29193 h3 {
-    font-weight: bold;
-    font-size: 26px; 
+    font-weight: 900;
+    font-size: 28px; 
   }
 .service-29193 h3 ,p{
       color: #000;
      }
 .service-29193 p{
-      font-size: 20px;
+      font-size: 18px;
       }
 .service-29193 .img-wrap {
     margin-bottom: 40px;
@@ -200,10 +199,7 @@ h2{
 
 
 /* 頁尾 */
-.ft p, .footer-copyright{
-  font-size: 15px;
-  }
-
+ 
 
   /* 頁尾 END*/
 
