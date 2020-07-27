@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 router.get('/featuresPage', function(req, res, next) {
   res.render('featuresPage');
-});
+}); 
 router.get('/officalTemplat', function(req, res, next) {
   res.render('templatePage');
 });
