@@ -16,7 +16,6 @@ h1 {
 }
 
 .a1 {
-    
     padding: 10px 15px;
     color: cornsilk;
 }
@@ -168,6 +167,7 @@ hr {
     transform: translateX(100%) rotate(30deg);
     opacity: 0;
 }
+
 .cot2-1 {
     width: 70%;
     margin-bottom: 15px;
@@ -231,7 +231,7 @@ hr {
 }
 
 body {
-    font-family: "Legacy", "Helvetica Neue", "Helvetica", "Nimbus Sans L", "Arial", "Liberation Sans", "Noto Sans TC", "Source Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "STHeiti", "SimHei", "WenQuanYi Zen Hei Sharp", "sans-serif", "Apple LiGothic", "微軟正黑體"
+    font-family: "Legacy", "Noto Sans TC", "Helvetica Neue", "Helvetica", "Nimbus Sans L", "Arial", "Liberation Sans", "Source Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "STHeiti", "SimHei", "WenQuanYi Zen Hei Sharp", "sans-serif", "Apple LiGothic", "微軟正黑體"
 }
 
 .ctr_1 {
@@ -355,7 +355,6 @@ text-right {
 .text-right {
     margin-top: -20px;
 }
-
 
 .hideme {
     opacity: 0;
