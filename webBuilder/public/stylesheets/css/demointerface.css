@@ -7,7 +7,7 @@ html, body { height: 100%; padding: 0px; margin: 0px; overflow: hidden;}
     background-color: white;
     height: 50px;
 }
-.navbar
+/* .navbar
 {
     height: 55px;
     background-color: rgba(254, 254, 254, 0.95);
@@ -26,7 +26,7 @@ html, body { height: 100%; padding: 0px; margin: 0px; overflow: hidden;}
 .navbar-brand > img
 {
     height: 100%;
-}
+} */
 
 a.btn,a.btn:hover.a.btn:active
 {
