@@ -61,7 +61,10 @@ button{
 } */
 
 
-
+.logo{
+    height: 150px;
+    width: 55px;
+}
 
 /* 會員表單 */
 
@@ -76,14 +79,14 @@ button{
     left: 50%;
     transform: translate(-50%,-50%);
     box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
-
+    
 }
 
 .login-form h1{
     text-align: center;
     font-size: 35px;
     font-weight: 800;
-    margin-bottom: 40px;
+    margin-bottom: 46px;
 }
 
 .txtb{
@@ -135,7 +138,7 @@ button{
 
 .logbtn{
     display: block;
-    width: 100%;
+    width: 230px;
     height: 50px;
     border: none;
     background: linear-gradient(120deg,#3498db,#8e44ad,#3498db);
@@ -145,11 +148,15 @@ button{
     cursor: pointer;
     transition: .5s;
     font-size: 25px;
-    border-radius: 10px;
-    
+    border-radius: 20px;
+    margin: auto;
 }
 .logbtn2{
-    margin: 10px;
+    margin-top: 55px;
+}
+.logbtn3{
+    margin-top:1px;
+
 }
 
 .logbtn:hover{
@@ -157,7 +164,7 @@ button{
 }
 
 .bottom-text{
-    margin-top: 35px;
+    margin-top: 24px;
     text-align: center;
     font-size: 25px;
     
@@ -184,3 +191,25 @@ button{
 
 }
 
+@media screen and (max-width: 500px){
+    .login-form {
+        width: 240px;
+        height: 450px;
+    }
+    .login-form h1 {
+        font-size: 30px;
+        margin-bottom: 45px;
+    }
+    .logbtn {
+        width: 120px;
+        font-size: 18px;
+        margin-top: 43px;
+
+    }
+    .bottom-text span {
+        font-size: 15px;
+    }
+    .bottom-text a {
+        font-size: 22px;
+    }
+}

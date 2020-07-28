@@ -24,30 +24,20 @@ p,a,span,h1, h2, h3, h4, h5,
   color: #364d59;
 
    }
-
-
-
-
-.site-section {
-  padding: .1em 0; 
-}
-
-
-  @media (min-width: 768px) {
-.site-section {
-      padding: 5em 0; }
-     }
-.site-section.site-section-sm {
-    padding: 4em 0;
-   }
-.site-section {
+   .site-section {
     padding: 7rem 0; 
+    display: flex;
+    flex-wrap: wrap;
   }
-@media (max-width: 991.98px) {
-      .site-section {
-        padding: 3rem 0; } 
-      }
-  
+
+
+
+
+ 
+
+
+
+
 
 
     /* 導覽列 */
@@ -134,9 +124,11 @@ h2{
   font-weight: bold;
   color: #000;
   margin-bottom: 30px;
-  width: 1100px;
   text-align: center;
-  
+
+ }
+ .col-md-7{
+   margin: auto;
  }
   
  .service-29193 {
@@ -144,7 +136,7 @@ h2{
 }
 .service-29193 h3 {
     font-weight: 900;
-    font-size: 28px; 
+    font-size: 25px; 
   }
 .service-29193 h3 ,p{
       color: #000;
@@ -192,15 +184,47 @@ h2{
 
 /* 文字輪播 */
 .testimonial-1 p {
-    font-size: 1.5rem; }
+    font-size: 1.5rem; 
+    padding: 1px;
+  }
+    
 /* 文字輪播END */
   
   
 
 
 /* 頁尾 */
- 
+.logo img{
+  width: 200px;
+}
 
   /* 頁尾 END*/
 
 
+@media screen and (max-width: 500px){
+  .caption h1{
+    font-size: 33px;
+  }
+  .caption p{
+    font-size: 1.1rem;
+  }
+  .heading-39291 {
+    font-size: 20px;
+  }
+  .logo img{
+    width: 100px;
+  }
+  .testimonial-1 p {
+    font-size: 1.2rem; 
+    padding: 1px;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .list-unstyled p{
+    font-size: 13px;
+  }
+  .logo img{
+    width: 100px;
+  }
+}
