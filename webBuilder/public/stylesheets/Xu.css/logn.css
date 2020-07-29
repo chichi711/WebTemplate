@@ -197,7 +197,7 @@ button{
         height: 450px;
     }
     .login-form h1 {
-        font-size: 30px;
+        font-size: 26px;
         margin-bottom: 45px;
     }
     .logbtn {
@@ -211,5 +211,54 @@ button{
     }
     .bottom-text a {
         font-size: 22px;
+    }
+}
+@media screen and (min-width: 767px) and (max-width: 1000px){
+    .login-form {
+        width: 240px;
+        height: 450px;
+    }
+    .login-form {
+        width: 515px;
+        background: white;
+        height: 500px;
+        position: absolute;
+        padding: 60px 40px;
+        border-radius: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+    }
+    .logbtn {
+        font-size: 18px;
+        margin-top: 75px;
+
+    }
+}
+@media screen and (min-width: 1000px) and (max-width: 1200px){
+   
+    .login-form {
+        width: 600px;
+        background: white;
+        height: 600px;
+        position: absolute;
+        padding: 60px 40px;
+        border-radius: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+    }
+    .logbtn {
+        font-size: 18px;
+        margin-top: 110px;
+
+    }
+    .login-form h1 {
+        text-align: center;
+        font-size: 35px;
+        font-weight: 800;
+        margin-bottom: 88px;
     }
 }
