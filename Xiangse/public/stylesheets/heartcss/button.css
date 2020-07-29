@@ -1,22 +1,23 @@
 
 /* 按鈕一 */
+
 /* 字大小 */
-.fsize1 {
+.btn1-Size1 {
   --fontSize: 1;
 }
-.fsize2 {
+.btn1-Size2 {
   --fontSize: 2;
 }
 
-.fsize3 {
+.btn1-Size3 {
   --fontSize: 3;
 }
 
-.fsize4 {
+.btn1-Size4 {
   --fontSize: 4;
 }
 
-.fsize5 {
+.btn1-Size5 {
   --fontSize: 5;
 }
 /* 顏色 */
@@ -37,7 +38,7 @@
   --buttonColor: #CAAD5F
 }
 
-.btn1 {
+ .btn1 {     /*   有--的是變數 */
     --borderWidth: 5;
     --boxShadowDepth: 5;
     /* --buttonColor: #f00; */
@@ -147,13 +148,30 @@
 
 
 /* 按鈕2 */
+.btn2-Size1{
+  font-size: 15px;
+  line-height: 45px;
+  max-width: 110px;
+}
+.btn2-Size2{
+  font-size: 24px;
+  line-height: 70px;
+  max-width: 200px;
+}
+.btn2-Size3{
+ font-size: 35px;
+ line-height: 90px;
+  max-width: 250px;
+
+}
+
 .btn2 {
     letter-spacing: 0.1em;
     cursor: pointer;
-    font-size: 15px;
+    /* font-size: 15px; */
     font-weight: 550;
-    line-height: 45px;
-    max-width: 110px;
+    /* line-height: 60px;
+    max-width: 200px; */
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
@@ -163,11 +181,13 @@
     text-decoration: none;
   }
   
-  /*btn_background*/
+  /*btn_background 按鈕2 顏色紅*/
+
+
   .effect04 {
     --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
     display: var(--uismLinkDisplay);
-    color: #000;
+    color:#000;
     outline: solid  2px #000;
     position: relative;
     transition-duration: 0.4s;
@@ -184,10 +204,11 @@
   /* 滑過變的顏色*/
   .effect04:hover{
   
-    background-color: #000;
+    background-color: #E83015;
+    outline: solid  3px #E83015;
   }
   
-  /* HOVERしたら文字1を上に */
+  /* HOVER文字1*/
   .effect04:hover span{
     -webkit-transform: translateY(-400%) scale(-0.1,20);
             transform: translateY(-400%) scale(-0.1,20);
@@ -205,12 +226,115 @@
             transform: translateY(500%) scale(-0.1,20);
   }
   
-  /* HOVERしたら文字2を上に */
+  /* HOVER文字2*/
   .effect04:hover::before{
     letter-spacing: 0.05em;
     -webkit-transform: translateY(0) scale(1,1);
             transform: translateY(0) scale(1,1);
   }
+
+/*btn_background 按鈕2 顏色黑*/
+
+.effect05 {
+  --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
+  display: var(--uismLinkDisplay);
+  color:#000;
+  outline: solid  2px #000;
+  position: relative;
+  transition-duration: 0.4s;
+  overflow: hidden;
+}
+
+.effect05::before,
+.effect05 span{
+    margin: 0 auto;
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    transition-duration: 0.4s;
+}
+
+/* 滑過變的顏色*/
+.effect05:hover{
+
+  background-color: black;
+}
+
+/* HOVER文字1*/
+.effect05:hover span{
+  -webkit-transform: translateY(-400%) scale(-0.1,20);
+          transform: translateY(-400%) scale(-0.1,20);
+}
+
+/*文字2*/
+.effect05::before{
+  content: attr(data-sm-link-text);
+    color: #FFF;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform: translateY(500%) scale(-0.1,20);
+          transform: translateY(500%) scale(-0.1,20);
+}
+
+/* HOVER文字2*/
+.effect05:hover::before{
+  letter-spacing: 0.05em;
+  -webkit-transform: translateY(0) scale(1,1);
+          transform: translateY(0) scale(1,1);
+}
+  /*btn_background 按鈕2 顏色灰*/
+
+  .effect06 {
+    --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
+    display: var(--uismLinkDisplay);
+    color:#000;
+    outline: solid  2px #000;
+    position: relative;
+    transition-duration: 0.4s;
+    overflow: hidden;
+  }
+  
+  .effect06::before,
+  .effect06 span{
+      margin: 0 auto;
+      transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+      transition-duration: 0.4s;
+  }
+  
+  /* 滑過變的顏色*/
+  .effect06:hover{
+  
+    background-color:#B4A582;
+    outline: solid  2px #B4A582;
+  }
+  
+  /* HOVER文字1*/
+  .effect06:hover span{
+    -webkit-transform: translateY(-400%) scale(-0.1,20);
+            transform: translateY(-400%) scale(-0.1,20);
+  }
+  
+  /*文字2*/
+  .effect06::before{
+    content: attr(data-sm-link-text);
+      color: #FFF;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    -webkit-transform: translateY(500%) scale(-0.1,20);
+            transform: translateY(500%) scale(-0.1,20);
+  }
+  
+  /* HOVER文字2*/
+  .effect06:hover::before{
+    letter-spacing: 0.05em;
+    -webkit-transform: translateY(0) scale(1,1);
+            transform: translateY(0) scale(1,1);
+  }
+
+
+  
 
   /* 會員按鈕 */
   
@@ -224,16 +348,42 @@
     transition: all 1s;
   }
   
+.btn3-Size1 {
+  font-size: 14px;
+}
+
+.btn3-Size2 {
+  font-size: 16px;
+}
+
+.btn3-Size3 {
+  font-size: 18px;
+}
+
+.btn3-black {
+ color: #000; 
+}
+
+.btn3-gray {
+  color: #8E8E8E; 
+   
+ }
+
+.btn3-blue {
+  color: rgb(72, 93, 133); 
+ }
+
+
   .btn3 span {
     position: absolute;
     top: 15px;
     left: 60px;
-    color: black;
+    /* color: red;   控制字的顏色 */
     opacity: 0.7;
   }
   
-  .btn3 .line {
-    background: black;
+   .btn3 .line {  
+    background: black;   /* 控制框的顏色 */
     position: absolute;
     transition: none;
     transform: scale(0);
@@ -308,7 +458,24 @@
 
   /* 黑白按鈕  */
 
-.btn4 {
+  .btn {
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 45px;
+    max-width: 160px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+/* 失敗 */
+.btn1-1 {
   letter-spacing: 0.1em;
   cursor: pointer;
   font-size: 14px;
@@ -321,7 +488,7 @@
   width: 100%;
 }
 
-.btn4:hover {
+.btn1-1:hover {
   text-decoration: none;
 }
 /*btn_background*/
