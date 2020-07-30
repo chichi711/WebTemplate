@@ -15,12 +15,6 @@ router.get('/officalTemplat', function(req, res, next) {
 router.get('/previewPage', function(req, res, next) {
   res.render('previewPage' );
 });
-router.get('/login', function(req, res, next) {
-  res.render('login');
-});
-router.get('/login/signup', function(req, res, next) {
-  res.render('signup');
-});
 router.get('/editPage', function(req, res, next) {
   res.render('webBuilder');
 });
