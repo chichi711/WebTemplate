@@ -7,6 +7,8 @@ var session = require("express-session");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+// app引入demo.js ,後見93
+var demoRouter = require('./routes/demo');
 
 var app = express();
 var mysql = require("mysql");
@@ -88,6 +90,8 @@ app.use(function(req, res, next) {
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+//catch demo.js路由
+app.use('/demo', demoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

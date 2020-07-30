@@ -13,6 +13,7 @@ conn.connect(function (err) {
         console.log(JSON.stringify(err));
         return;
     }
+    
 });
 
 // app.get("/home/news", function (request, response) {
