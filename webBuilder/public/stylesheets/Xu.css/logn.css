@@ -7,12 +7,9 @@
 
 body{
     background-color: 	#FAFAFA;
-
+    font-family: "Legacy", "Noto Sans TC", "Helvetica Neue", "Helvetica", "Nimbus Sans L", "Arial", "Liberation Sans", "Source Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "STHeiti", "SimHei", "WenQuanYi Zen Hei Sharp", "sans-serif", "Apple LiGothic", "微軟正黑體"
 }
-h1,span,a{
-    font-family: 'Noto Sans TC', sans-serif;
 
-}
 /* 導覽列 */
 /* .logo{
     width: 220px;
@@ -64,14 +61,17 @@ button{
 } */
 
 
-
+.logo{
+    height: 150px;
+    width: 55px;
+}
 
 /* 會員表單 */
 
 .login-form{
-    width: 435px;
+    width: 415px;
     background: white;
-    height: 550px;
+    height: 440px;
     position: absolute;
     padding: 60px 40px;
     border-radius: 10px;
@@ -79,14 +79,14 @@ button{
     left: 50%;
     transform: translate(-50%,-50%);
     box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
-
+    
 }
 
 .login-form h1{
     text-align: center;
     font-size: 35px;
     font-weight: 800;
-    margin-bottom: 60px;
+    margin-bottom: 46px;
 }
 
 .txtb{
@@ -138,7 +138,7 @@ button{
 
 .logbtn{
     display: block;
-    width: 100%;
+    width: 230px;
     height: 50px;
     border: none;
     background: linear-gradient(120deg,#3498db,#8e44ad,#3498db);
@@ -148,11 +148,15 @@ button{
     cursor: pointer;
     transition: .5s;
     font-size: 25px;
-    border-radius: 10px;
-    
+    border-radius: 20px;
+    margin: auto;
 }
 .logbtn2{
-    margin: 10px;
+    margin-top: 55px;
+}
+.logbtn3{
+    margin-top:1px;
+
 }
 
 .logbtn:hover{
@@ -160,7 +164,7 @@ button{
 }
 
 .bottom-text{
-    margin-top: 50px;
+    margin-top: 24px;
     text-align: center;
     font-size: 25px;
     
@@ -185,5 +189,89 @@ button{
 .signup{
     color: #2691d9;
 
+}
+
+
+@media (max-width: 1200px){
+   
+    .login-form {
+        width: 600px;
+        background: white;
+        height: 600px;
+        position: absolute;
+        padding: 60px 40px;
+        border-radius: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+    }
+    .logbtn {
+        font-size: 18px;
+        margin-top: 110px;
+
+    }
+    .login-form h1 {
+        text-align: center;
+        font-size: 35px;
+        font-weight: 800;
+        margin-bottom: 88px;
+    }
+}
+
+
+@media  (max-width: 800px){
+    .login-form {
+        width: 240px;
+        height: 450px;
+    }
+    .login-form {
+        width: 515px;
+        background: white;
+        height: 500px;
+        position: absolute;
+        padding: 60px 40px;
+        border-radius: 10px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
+    }
+    .logbtn {
+        font-size: 18px;
+        margin-top: 75px;
+
+    }
+}
+
+@media (max-width: 500px){
+    .login-form {
+        width: 360px;
+        height: 450px;
+        box-shadow: none;
+        background: none;
+    }
+    .login-form h1 {
+        font-size: 26px;
+        margin-bottom: 45px;
+        padding-bottom: 10px;
+    }
+    .logbtn {
+        width: 120px;
+        font-size: 18px;
+        margin-top: 43px;
+
+    }
+    .bottom-text span {
+        font-size: 19px;
+    }
+    .bottom-text a {
+        font-size: 22px;
+    }
+    .bottom-text {
+        margin-top: 38px;
+        text-align: center;
+        font-size: 25px;
+    }
 }
 

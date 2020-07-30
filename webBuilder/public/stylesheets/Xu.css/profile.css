@@ -1,8 +1,10 @@
 body {
     margin-top:20px;
     background-color: 	#FAFAFA;
-    font-family: 'Noto Sans TC', sans-serif;
-
+    font-family: "Legacy", "Noto Sans TC", "Helvetica Neue", "Helvetica", "Nimbus Sans L", "Arial", "Liberation Sans", "Source Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "STHeiti", "SimHei", "WenQuanYi Zen Hei Sharp", "sans-serif", "Apple LiGothic", "微軟正黑體"
+}
+.navba{
+    width: 100%;
 }
 
 /* 導覽列 */
@@ -35,6 +37,8 @@ header{
 position: -webkit-sticky;
 position: sticky;
 top: 0px;
+border-radius: 11px;
+
 }
 
 .left-profile-card .user-profile {
@@ -54,10 +58,7 @@ top: 0px;
     
 }
 
-.affix {
-    top: 20px;
-    z-index: 9999 !important;
-  }
+
 .personal-info {
     margin-bottom: 40px;
     
@@ -109,13 +110,16 @@ top: 0px;
 
 
 .row{
-    padding: 25px 0 25px 0;
+    padding: 30px 0 10px 0;
 }
 
 .sp{
     font-size: 17px;
 }
 
+.lg{
+    padding-top: 8px;
+}
 /* 樣板庫 END*/
 
 
@@ -206,6 +210,50 @@ top: 0px;
 .profile{
     left: 100px;
 }
+
+@media (max-width: 800px){
+    .left-profile-card{
+        margin-bottom: 15px;
+    }
+    .personal-list{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .personal-list li{
+        margin: 0;
+        padding: 0;
+    }
+    .pro{
+        display: flex;
+        flex-direction: column;
+        margin-left: 19vh;
+    }
+    .pro li{
+        padding: 10px;
+    }
+    .personal-info .personal-list {
+        list-style-type: none;
+        margin-left: 8vh;
+        padding: 0;
+    }
+}
+
+@media  (max-width: 500px){
+    .left-profile-card {
+        margin-bottom: 20px;
+    }
+    .personal-info .personal-list {
+        list-style-type: none;
+        margin-left: 58px;
+        padding: 0;
+    }
+    .left-profile-card{
+        border-radius: 15px;
+    }
+
+}
+
+
 
 
 

@@ -9,7 +9,7 @@ router.get('/', function (req, res, next) {
             console.log(JSON.stringify(err));
             return;
         }
-        res.render("demo", { body: rows[0] });
+        res.render("demo", { body: rows[1] });
     }
     );
 });
