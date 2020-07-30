@@ -192,7 +192,7 @@ button{
 }
 
 
-@media (max-width: 1440px){
+@media (max-width: 1200px){
    
     .login-form {
         width: 600px;
@@ -263,7 +263,7 @@ button{
 
     }
     .bottom-text span {
-        font-size: 15px;
+        font-size: 19px;
     }
     .bottom-text a {
         font-size: 22px;

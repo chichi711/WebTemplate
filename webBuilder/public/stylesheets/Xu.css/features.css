@@ -18,12 +18,7 @@ a {
   a:hover {
     text-decoration: none; }
 
-p,a,span,h1, h2, h3, h4, h5,
-.h1, .h2, .h3, .h4, .h5 ,nav{
-  font-weight: 300;
-  color: #364d59;
 
-   }
    .site-section {
     padding: 7rem 0; 
     display: flex;
@@ -66,13 +61,13 @@ p,a,span,h1, h2, h3, h4, h5,
 
   /* 背景圖 */
   .home-inner{
-    background-image: url(https://images.pexels.com/photos/270669/pexels-photo-270669.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500);
+    background-image: url(https://gratisography.com/wp-content/uploads/2018/05/gratisography-61H-1170x780.jpg);
     /* background: #f5f5f7; */
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
-    opacity: .2;
-    height:79vh;
+    opacity: .5;
+    height:96vh;
     width: 100%;
 }
 
@@ -89,14 +84,9 @@ p,a,span,h1, h2, h3, h4, h5,
   color: black;
   
 }
-.caption h1{
-  font-weight: 700;
-  letter-spacing: .3rem;
-  color: rgb(78, 74, 74);
-  
-}
+
 .caption p{
-  font-size: 1.8rem;
+  font-size: 1.2rem;
   color: rgb(68, 67, 67);
   
 }
@@ -109,21 +99,12 @@ p,a,span,h1, h2, h3, h4, h5,
 /* 圖文介紹 */
 .h2{
  padding-left: 260px;
- 
-}
-h2{
-  font-weight: 700;
-  letter-spacing: .3rem;
-  color: rgb(136, 122, 122);
-  font-size: 40px;
-  padding-bottom: 3px;
+
 }
 
+
 .heading-39291 {
-  font-size: 30px;
-  font-weight: bold;
-  color: #000;
-  margin-bottom: 30px;
+  
   text-align: center;
 
  }
@@ -134,16 +115,8 @@ h2{
  .service-29193 {
   padding: 50px 30px; 
 }
-.service-29193 h3 {
-    font-weight: 900;
-    font-size: 25px; 
-  }
-.service-29193 h3 ,p{
-      color: #000;
-     }
-.service-29193 p{
-      font-size: 18px;
-      }
+
+
 .service-29193 .img-wrap {
     margin-bottom: 40px;
     display: block;
@@ -184,7 +157,7 @@ h2{
 
 /* 文字輪播 */
 .testimonial-1 p {
-    font-size: 1.5rem; 
+    font-size: 1.4rem; 
     padding: 1px;
   }
     
@@ -196,6 +169,12 @@ h2{
 /* 頁尾 */
 .logo img{
   width: 200px;
+}
+.list-unstyled a{
+  color: black;
+}
+.footer-copyright a{
+  color: black;
 }
 
   /* 頁尾 END*/
@@ -218,15 +197,26 @@ h2{
     font-size: 1.1rem;
   }
   .heading-39291 {
-    font-size: 20px;
+    font-size: 25px;
+  }
+  h5{
+    font-size: 1.35rem;
+
   }
   .logo img{
     width: 100px;
   }
   .testimonial-1 p {
-    font-size: 1.2rem; 
+    font-size: 1.3rem; 
     padding: 1px;
   }
+  p{
+    font-size: 1.2rem;
+
+  }
+  .list-unstyled p {
+    font-size: 17px;
+}
 }
 
 

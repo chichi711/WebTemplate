@@ -58,10 +58,7 @@ border-radius: 11px;
     
 }
 
-.affix {
-    top: 20px;
-    z-index: 9999 !important;
-  }
+
 .personal-info {
     margin-bottom: 40px;
     
@@ -214,7 +211,7 @@ border-radius: 11px;
     left: 100px;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1000px){
+@media (max-width: 800px){
     .left-profile-card{
         margin-bottom: 15px;
     }
@@ -241,13 +238,13 @@ border-radius: 11px;
     }
 }
 
-@media screen and (max-width: 500px){
+@media  (max-width: 500px){
     .left-profile-card {
         margin-bottom: 20px;
     }
     .personal-info .personal-list {
         list-style-type: none;
-        margin-left: 48px;
+        margin-left: 58px;
         padding: 0;
     }
     .left-profile-card{
