@@ -53,23 +53,24 @@
 		</div>
 		<div class="tab-content" id="myTabContent">
 			<!-- 側邊攔tabHome -->
-			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-				<ul id="dragitemslistcontainer">
-					<li draggable="true" data-insert-html="<h1>HEADER GOES HERE</h1>"><i class="fa fa-header"></i>
-						<p>標題</p>
+			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" >
+				<ul class=" row list-unstyled components" id="dragitemslistcontainer" >
+					<li draggable="true" data-insert-html="<h1>HEADER GOES HERE</h1>">
+						<i class="fa fa-header"></i>
+						<p>Header</p>
 					</li>
 					<li draggable="true"
 						data-insert-html="<img src='http://blogs-images.forbes.com/anthonykosner/files/2014/06/us-browser-share-adobe-index-2014.jpg'>">
-						<i class="fa fa-bar-chart"></i>
+						<i class=" fa fa-bar-chart"></i>
 						<p>Chart Image</p>
 					</li>
 					<li draggable="true"
 						data-insert-html='<div class="well login-box"> <form action=""> <legend>Login</legend> <div class="form-group"> <label for="username-email">E-mail or Username</label> <input value="" id="username-email" placeholder="E-mail or Username" type="text" class="form-control"/> </div><div class="form-group"> <label for="password">Password</label> <input id="password" value="" placeholder="Password" type="text" class="form-control"/> </div><div class="form-group text-center"> <button class="btn btn-danger btn-cancel-action">Cancel</button> <input type="submit" class="btn btn-success btn-login-submit" value="Login"/> </div></form> </div>'>
-						<i class="fa fa-sign-in"></i>
+						<i class=" fa fa-sign-in"></i>
 						<p>Login Form</p>
 					</li>
 					<li draggable="true" data-insert-html="<ul><li>apple</li><li>bee</li><li>cat</li></ul>"><i
-							class="fa fa-list-ul"></i>
+							class=" fa fa-list-ul"></i>
 						<p>ul</p>
 					</li>
 					<li draggable="true"
@@ -84,19 +85,13 @@
 					</li>
 					<li draggable="true"
 						data-insert-html='<div class=container><h2>Hover Rows</h2><p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:<table class="table table-hover"><thead><tr><th>Firstname<th>Lastname<th>Email<tbody><tr><td>John<td>Doe<td>john@example.com<tr><td>Mary<td>Moe<td>mary@example.com<tr><td>July<td>Dooley<td>july@example.com</table></div>'>
-						<i class="fa fa-table"></i>
+						<i class=" fa fa-table "></i>
 						<p>table</p>
 					</li>
 					<li draggable="true"
 						data-insert-html='<div id=demo class="carousel slide" data-ride=carousel><ul class=carousel-indicators><li data-target=#demo data-slide-to=0 class=active><li data-target=#demo data-slide-to=1><li data-target=#demo data-slide-to=2></ul><div class=carousel-inner><div class="carousel-item active"><img src="image/Xiang se/xiang_01_2.jpg" alt="Los Angeles"></div><div class=carousel-item><img src="image/Xiang se/xiangse_bg.jpg" alt=Chicago></div><div class=carousel-item><img src=ny.jpg alt="New York"></div></div><a class=carousel-control-prev href=#demo data-slide=prev> <span class=carousel-control-prev-icon></span> </a> <a class=carousel-control-next href=#demo data-slide=next> <span class=carousel-control-next-icon></span> </a></div>'>
 						<i class="fa fa-picture-o"></i>
 						<p>Carousel</p>
-					</li>
-					<li draggable="true" data-insert-html=''><i class=""></i>
-						<p>li</p>
-					</li>
-					<li draggable="true" data-insert-html=''><i class=""></i>
-						<p>li</p>
 					</li>
 				</ul>
 			</div>
@@ -132,7 +127,7 @@
 		</div>
 	</nav>
 
-	<nav class="navbar navbar-expand navbar-light bg-light p-1">
+	<nav class="fixed-top navbar navbar-expand navbar-light bg-light p-1">
 		<div class="container-fluid ">
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -257,8 +252,8 @@
 	<script>
 		$(document).ready(function () {
 			// edit.Builder.init('./index copy.html', function () {
-				// edit.Builder.init('../antique/index copy.html', function () {
-				edit.Builder.init('../startbootstrap-stylish-portfolio-gh-pages/index.html', function () {
+			// edit.Builder.init('../antique/index copy.html', function () {
+			edit.Builder.init('../startbootstrap-stylish-portfolio-gh-pages/index.html', function () {
 				// edit.Builder.init('../antique/antique_product2.html', function () {
 				//run code after page/iframe is loaded
 			});

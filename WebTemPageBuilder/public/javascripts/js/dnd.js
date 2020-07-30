@@ -10,9 +10,9 @@ $(function () {
 
 
 
-    // $("#sidebar,#sidebarRight").mCustomScrollbar({
-    //     theme: "minimal"
-    // });
+    $("#sidebar,#sidebarRight").mCustomScrollbar({
+        theme: "minimal"
+    });
 
     $("#copyBtn").click(function () {
         var name = $(this).attr('name');

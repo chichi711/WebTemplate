@@ -52,12 +52,12 @@ body {
   scrollbar-width: thin;
 }
 
-  @media (min-width: 950px) {
+  @media (max-width: 950px) {
     body {
       --builder-left-panel-width: 25vw; } }
   @media (min-width: 1200px) {
     body {
-      --builder-left-panel-width: 18vw; } }
+      --builder-left-panel-width: 20vw; } }
   @media (min-width: 1600px) {
     body {
       --builder-left-panel-width: 15vw; } }

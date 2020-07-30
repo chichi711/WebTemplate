@@ -1,4 +1,4 @@
-html, body { height: 100%; padding: 0px; margin: 0px; overflow: hidden;}
+html, body { height: 100%; padding: 0px; margin: 0px; ;}
 #stackhive-placement
 {
     position: fixed;
@@ -7,13 +7,13 @@ html, body { height: 100%; padding: 0px; margin: 0px; overflow: hidden;}
     background-color: white;
     height: 50px;
 }
-.navbar
+/* .navbar
 {
     height: 55px;
     background-color: rgba(254, 254, 254, 0.95);
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.13);
     border: none;
-}
+} */
 .navbar-brand
 {
     padding-top: 0px;
@@ -40,10 +40,10 @@ a.btn,a.btn:hover.a.btn:active
     font-size: 18px;
 }
 
-.navbar .navbar-nav > li:last-child > a
+/* .navbar .navbar-nav > li:last-child > a
 {
-    /* border-right:solid 1px #d8d8d8; */
-}
+    border-right:solid 1px #d8d8d8;
+} */
 .navbar .navbar-nav > li > a.stackhive-btn
 {
     border:none;
@@ -88,7 +88,7 @@ a.btn,a.btn:hover.a.btn:active
 }
 .navbar .navbar-nav {
     display: inline-block;
-    float: none;
+    /* float: none; */
 }
 .navbar .navbar-collapse {
     text-align: center;
@@ -124,26 +124,57 @@ a.btn,a.btn:hover.a.btn:active
 #dragitemslistcontainer > li
 {
     display:inline-block;
-    margin-right:2px;
+    /* margin-right:2px; */
     padding: 10px 15px;
     cursor: move;
     color: white;
-    border: 1px solid;
-    width: 120px;
+    /* border: 1px solid; */
+    width: 100px;
+    height: 110px;
     color: rgb(255, 255, 255);
     /* background-color: rgb(18, 56, 79); */
     text-shadow: 0px 1px 1px black;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 20px;
+
+    margin: auto;
+    margin-top: 1rem;
+
+
 }
+
+#dragitemslistcontainer > li:hover{
+    box-shadow: 0 0 8px 3px rgba(0,0,0,0.3);
+    transition-timing-function:ease-out;
+    transition-duration: .3s;
+}
+#dragitemslistcontainer > li:active{
+    box-shadow: 0 0 10px inset rgba(0,0,0,0.5);
+    background-color: #5699b6;
+}
+#dragitemslistcontainer p{
+margin: 0;
+line-height: 1.2rem;
+font-size: .95rem;
+
+}
+
 #dragitemslistcontainer > li i
 {
     font-size:40px;
     margin-bottom:10px;
     /* color: rgb(0, 187, 255); */
 }
-#dragitemslistcontainer > li p
+/* #dragitemslistcontainer > li p
 {
-    margin:0px;
-}
+    margin:-10px;
+} */
 #clientframe
 {
     height:100%;
@@ -165,3 +196,5 @@ a.btn,a.btn:hover.a.btn:active
 .modal-body{
     word-wrap:break-word;
 }
+
+
