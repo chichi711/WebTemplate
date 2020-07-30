@@ -546,3 +546,289 @@
   -webkit-transform: rotate(40deg);
   transform: rotate(40deg);
 }
+ 
+ /*  虛線 */
+
+hr.hr-style1 {
+	border-top: 1px dashed #8c8b8b;
+}
+
+hr.hr-style2 {
+	background-color: #fff;
+	border-top: 2px dashed #8c8b8b;
+}
+
+
+hr.hr-style3 {
+	border-top: 1px solid #8c8b8b;
+	border-bottom: 1px solid #fff;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:300,);
+* {
+  box-sizing: border-box;
+}
+
+/* 導覽頁 */
+
+/* * {
+  box-sizing: border-box;
+} */
+/* body {
+  
+  display: table;
+  height: 100%;
+  width: 100%;
+} */
+
+.vertical-align {
+  display: table-cell;
+  vertical-align: middle;
+  /* height: 100vh; */
+  font-family:  Condensed, Helvetica , sans-serif;
+}
+
+.button-link {
+  text-decoration: none;
+}
+
+.btn4 {
+  background-color: #ff9035;
+  background-image: linear-gradient(100deg, #ff5a64 0%, #faa04b 30%, #d2dc69 70%, #0ef49b 100%);
+  z-index: 0;
+  height: 80px;
+  float: none;
+  margin: 0 auto;
+  width: 900px;
+  max-width: 100%;
+  border-radius: 40px;
+  display: block;
+  box-shadow: 0 2px 4px -1px rgba(25, 25, 25, 0.2);
+}
+.btn4 input {
+  display: none;
+}
+.btn4 label {
+  display: table;
+  float: left;
+  padding: 0;
+  width: 20%;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
+}
+.btn4 label:first-child {
+  border-left: none;
+  border-radius: 40px 0 0 40px;
+}
+.btn4 label:last-child {
+  border-radius: 0 40px 40px 0;
+}
+.btn4 .btn4-1 {
+  font-size: 19px;
+  cursor: pointer;
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  font-weight: 300;
+  color: #FFF;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  box-shadow: inset 0 30px 20px -20px rgba(255, 255, 255, 0.15);
+  -webkit-transition: color 250ms cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: color 250ms cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+.btn4 .btn4-1:hover {
+  box-shadow: inset 0 30px 30px -20px rgba(50, 50, 50, 0.02);
+  -webkit-transition: all 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.btn4 .btn4-1:after {
+  content: '\2714';
+  margin-left: -10px;
+  display: inline-block;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms, -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms, -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms, transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: margin 250ms cubic-bezier(0.6, -0.28, 0.735, 0.045) 100ms, transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22), -webkit-transform 250ms cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+.btn4 .first {
+  border-radius: 40px 0 0 40px;
+}
+.btn4 .last {
+  border-radius: 0 40px 40px 0;
+}
+.btn4 input:checked + .btn4-1 {
+  color: #5f6982;
+  text-shadow: none;
+  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(65%, rgba(25, 25, 25, 0)), to(rgba(25, 25, 25, 0.08)));
+  background-image: linear-gradient(to top, rgba(25, 25, 25, 0) 65%, rgba(25, 25, 25, 0.08));
+  box-shadow: inset 0 10px 50px rgba(25, 25, 25, 0.08);
+  -webkit-transition: color 500ms cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 150ms;
+  transition: color 500ms cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 150ms;
+}
+.btn4 input:checked + .btn4-1:after {
+  margin-left: 12px;
+  -webkit-transform: scale(1.25);
+  transform: scale(1.25);
+  -webkit-transition: -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms, margin 500ms;
+  -webkit-transition: margin 500ms, -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+  transition: margin 500ms, -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms, margin 500ms;
+  transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms, margin 500ms, -webkit-transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) 250ms;
+}
+
+
+/* 導覽頁 */
+
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:400,600');
+
+
+.btn5-container {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.btn5 {
+  background: #55d6aa;
+}
+
+.btn5::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.btn5-logo {
+  float: left;
+  padding: 10px 0;
+}
+
+.btn5 nav {
+  float: right;
+}
+
+.btn5 nav ul {
+  margin: 0;
+  padding-right: 25px;
+  padding-bottom: 15px;
+  list-style: none;
+}
+
+.btn5 nav li {
+  display: inline-block;
+  margin-left: 70px;
+  padding-top: 23px;
+
+  position: relative;
+}
+
+.btn5 nav a {
+  color: #444;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.btn5 nav a:hover {
+  color: #000;
+}
+
+.btn5 nav a::before {
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: #444;
+
+  position: absolute;
+  top: 0;
+  width: 0%;
+
+  transition: all ease-in-out 250ms;
+}
+
+.btn5 nav a:hover::before {
+  width: 100%;
+}
+
+
+/* 會員登入 */
+
+.btn6 h1, input::-webkit-input-placeholder, button {
+  font-family: 'roboto', sans-serif;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn6 h1 {
+  height: 100px;
+  width: 100%;
+  font-size: 18px;
+  background: #18aa8d;
+  color: white;
+  line-height: 150%;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.btn6 form {
+  box-sizing: border-box;
+  width: 260px;
+  margin: 100px auto 0;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+  padding-bottom: 40px;
+  border-radius: 3px;
+}
+.btn6 form  h1 {
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.btn6 input {
+  margin: 40px 25px;
+  width: 200px;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #1abc9c;
+  -webkit-transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(96%, rgba(255, 255, 255, 0)), color-stop(4%, #1abc9c));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #1abc9c 4%);
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  color: #0e6252;
+}
+.btn6 input:focus, input:valid {
+  box-shadow: none;
+  outline: none;
+  background-position: 0 0;
+}
+.btn6 input:focus::-webkit-input-placeholder, input:valid::-webkit-input-placeholder {
+  color: #1abc9c;
+  font-size: 11px;
+  -webkit-transform: translateY(-20px);
+          transform: translateY(-20px);
+  visibility: visible !important;
+}
+
+.btn6 button {
+  border: none;
+  background: #1abc9c;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 200px;
+  color: white;
+  margin-left: 25px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+.btn6 button:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
