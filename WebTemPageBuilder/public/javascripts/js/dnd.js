@@ -3,10 +3,72 @@
 //$(event.target).append("<p class='reserved-drop-marker'></p>");
 
 $(function () {
-    var addcode,editcode,currentElement, currentElementChangeFlag, elementRectangle, countdown, dragoverqueue_processtimer;
+    var addcode, editcode, currentElement, currentElementChangeFlag, elementRectangle, countdown, dragoverqueue_processtimer;
     var isDragging = false;
     // clientFrameWindow = interface的client端內容( w、 r)
     var clientFrameWindow = $('#clientframe').get(0).contentWindow;
+
+
+
+    // $("#sidebar,#sidebarRight").mCustomScrollbar({
+    //     theme: "minimal"
+    // });
+
+    $("#copyBtn").click(function () {
+        var name = $(this).attr('name');
+        var el = document.getElementById(name);
+        var range = document.createRange();
+        range.selectNodeContents(el);
+        var sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        document.execCommand('copy');
+        return false;
+    });
+
+    $("#navCopy").click(function () {
+        editcode = $(clientFrameWindow.document).find('body').prop('outerHTML');
+        // 刪除註解
+        let comment = editcode.match(/<!--?((.(?!(-->)))*.)-->/g);
+        for (let a = 0; a < comment.length; a++) {
+            editcode = editcode.replace(comment[a], "");
+        }
+
+        // 刪除script
+        let js = editcode.match(/<script(.|\n)*?<\/script>/g);
+        for (let a = 0; a < js.length; a++) {
+            editcode = editcode.replace(js[a], "");
+        }
+
+
+        // cleanNotes(editcode);
+        $("#newCode").text(editcode);
+    });
+
+    // function cleanNotes(code) {
+    //     let re = /[<][-]{2}/;
+    //     var Notes = code.value.match(/\/\/(\S+)/i)
+    //     if (Notes != null) {
+    //         code.value = code.value.replace(Notes[0], "");
+    //         cleanNotes()
+    //     };
+
+    // }
+
+
+
+    $("#mobile-view").click(function () {
+        $("#canvas").attr("class", "mobile");
+    });
+
+    $("#tablet-view").click(function () {
+        $("#canvas").attr("class", "tablet");
+    });
+
+    $("#desktop-view").click(function () {
+        $("#canvas").attr("class", "desktop");
+    });
+
 
     // 開始拖曳時
     $("#dragitemslistcontainer li").on('dragstart', function (event) {
@@ -33,10 +95,6 @@ $(function () {
         //Add CSS File to iFrame
         var style = $("<style data-reserved-styletag></style>").html(GetInsertionCSS());
         $(clientFrameWindow.document.head).append(style);
-
-        // 將選取的樣板code輸出
-        editcode = $(clientFrameWindow.document).find('body').prop('outerHTML');
-        $("#newCode").text(editcode);
 
         var htmlBody = $(clientFrameWindow.document).find('body,html');
         htmlBody.find('*').andSelf().on('dragenter', function (event) {
@@ -74,7 +132,8 @@ $(function () {
             isDragging = false;
             event.preventDefault();
             event.stopPropagation();
-            // console.log('Drop event');
+            console.log('放下!');
+
             var e;
             if (event.isTrigger)
                 e = triggerEvent.originalEvent;
@@ -82,6 +141,7 @@ $(function () {
                 var e = event.originalEvent;
             try {
                 var textData = e.dataTransfer.getData('text');
+
                 var insertionPoint = $("#clientframe").contents().find(".drop-marker");
                 var checkDiv = $(textData);
                 insertionPoint.after(checkDiv);
@@ -91,101 +151,6 @@ $(function () {
                 console.log(e);
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        let frameDoc = $(clientFrameWindow.document);
-        let aa = $(clientFrameWindow.document).find('html');
-        aa.on("mousemove touchmove", function (event) {
-            console.log("vvv mousemove");
-            if (event.target && event.originalEvent) {
-            // if (event.target && .isElement(event.target) && event.originalEvent) {
-                var highlightEl = target = jQuery(event.target);
-                var offset = target.offset();
-                console.log("target", target.offset());
-                var height = target.outerHeight();
-                var halfHeight = Math.max(height / 2, 50);
-                var width = target.outerWidth();
-                var halfWidth = Math.max(width / 2, 50);
-
-                var x = (event.clientX || event.originalEvent.clientX);
-                var y = (event.clientY || event.originalEvent.clientY);
-                {
-
-                    jQuery("#highlight-box").css(
-                        {
-                            "top": offset.top - frameDoc.scrollTop(),
-                            "left": offset.left - frameDoc.scrollLeft(),
-                            "width": width,
-                            "height": height,
-                            "display": event.target.hasAttribute('contenteditable') ? "none" : "block",
-                            "border": isDragging ? "1px dashed aqua" : "",//when dragging highlight parent with green
-                        });
-
-                    if (height < 50) {
-                        jQuery("#section-actions").addClass("outside");
-                    } else {
-                        jQuery("#section-actions").removeClass("outside");
-                    }
-                    jQuery("#highlight-name").html(_getElementType(event.target));
-                    if (isDragging) jQuery("#highlight-name").hide(); else jQuery("#highlight-name").show();//hide tag name when dragging
-                }
-            }
-        });
-        function _getElementType (el) {
-
-            //search for component attribute
-            componentName = '';
-
-            if (el.attributes)
-            for (var j = 0; j < el.attributes.length; j++){
-
-              if (el.attributes[j].nodeName.indexOf('data-component') > -1)
-              {
-                componentName = el.attributes[j].nodeName.replace('data-component-', '');
-              }
-            }
-
-            if (componentName != '') return componentName;
-
-            return el.tagName;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     });
 
     var DragDropFunctions =
