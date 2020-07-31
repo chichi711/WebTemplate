@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        html {
+            background-color: rgb(211, 212, 212);
+        }
+
+        .text {
+            color: white;
+            font-size: 2rem;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 50rem;
+        }
+
+        @media screen and (max-width: 800px) {
+            html {
+                background-color: black;
+            }
+        }
+    </style>
+</head>
+
+<body onresize="resize()">
+
+
+    <div class="text">
+    </div>
+
+    <script>
+        function resize() {
+            let width = window.innerWidth;
+            let dom = document.querySelector('.text');
+            if (width < 800) {
+                dom.textContent = '已縮放至最小!';
+            } else {
+                dom.textContent = '';
+            }
+        }
+    </script>
+</body>
+
+</html>
