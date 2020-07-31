@@ -10,7 +10,7 @@ $(function () {
 
 
 
-    $("#sidebar,#sidebarRight").mCustomScrollbar({
+    $("#home").mCustomScrollbar({
         theme: "minimal"
     });
 

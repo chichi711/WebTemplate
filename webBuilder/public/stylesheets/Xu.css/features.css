@@ -2,7 +2,10 @@
 
 
 
+*{
+  position: relative;
 
+}
 
 
 body{
@@ -11,12 +14,13 @@ body{
 }
 
 
-a {
-  -webkit-transition: .3s all ease;
-  -o-transition: .3s all ease;
-  transition: .3s all ease; }
+
   a:hover {
-    text-decoration: none; }
+    text-decoration: none; 
+  }
+  a {
+    color: #a5a299;
+}
 
 
    .site-section {
@@ -30,6 +34,34 @@ a {
 
  
 
+  .navBar {
+    list-style-type: none;
+    /* background-color:wheat; */
+    width: 700;
+}
+
+.navBar li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.navBar ul :hover {
+    background-color: #d6ae7a;
+    color: #ffffff;
+}
+
+.navBar ul {
+    padding-left: 0;
+}
+
+.navBar li a {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.4s;
+    /*a元素會改變背景色，對a加上transition即可*/
+}
 
 
 
@@ -61,14 +93,16 @@ a {
 
   /* 背景圖 */
   .home-inner{
-    background-image: url(https://gratisography.com/wp-content/uploads/2018/05/gratisography-61H-1170x780.jpg);
+    background-image: url(/images/features_imgs/img_6.jpg);
     /* background: #f5f5f7; */
     background-size: cover;
     background-attachment: fixed;
     background-position: center center;
     opacity: .5;
-    height:96vh;
+    height:85vh;
     width: 100%;
+    margin-top: 4.5rem;
+
 }
 
 /* 背景圖 END*/
@@ -184,7 +218,7 @@ a {
       font-size: 13px;
     }
     .logo img{
-      width: 100px;
+      width: 200px;
     }
   }
 
@@ -220,8 +254,184 @@ a {
 }
 
 
+/* 1號按鈕 */
+
+.btn1 {
+  --borderWidth: 5;
+  --boxShadowDepth: 5;
+  --buttonColor: #f00;
+  --fontSize: 2;
+  --horizontalPadding: 16;    /*長度 */
+  --verticalPadding: 8;    /* 高度 */
+
+
+  background: transparent;
+  border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+  box-shadow: calc(var(--boxShadowDepth) * 1px) calc(var(--boxShadowDepth) * 1px) 0 #888;
+  color: var(--buttonColor);
+  cursor: pointer;
+  font-size: calc(var(--fontSize) * 1rem);
+  font-weight: bold;
+  outline: transparent;
+  padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+  position: relative;
+  -webkit-transition: box-shadow 0.15s ease;
+  transition: box-shadow 0.15s ease;
+}
+
+.btn1:hover {
+  box-shadow: calc(var(--boxShadowDepth) / 2 * 1px) calc(var(--boxShadowDepth) / 2 * 1px) 0 #888;
+}
+
+.btn1:active {
+  box-shadow: 0 0 0 #888;
+}
+
+.btn1 span {
+  -webkit-clip-path: var(--clip);
+  bottom: calc(var(--borderWidth) * -1px);
+  clip-path: var(--clip);
+  left: calc(var(--borderWidth) * -1px);
+  position: absolute;
+  right: calc(var(--borderWidth) * -1px);
+  top: calc(var(--borderWidth) * -1px);
+  z-index: 1;
+}
+
+.btn1 span:nth-of-type(1):hover,
+.btn1 span:nth-of-type(2):hover,
+.btn1 span:nth-of-type(3):hover,
+.btn1 span:nth-of-type(4):hover {
+  --clip: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 2;
+}
+
+.btn1 span:nth-of-type(1):hover~b:nth-of-type(1),
+.btn1 span:nth-of-type(2):hover~b:nth-of-type(2),
+.btn1 span:nth-of-type(3):hover~b:nth-of-type(3),
+.btn1 span:nth-of-type(4):hover~b:nth-of-type(4) {
+  --clip: inset(0 0 0 0);
+}
+
+.btn1 span:nth-of-type(1) {
+  --clip: polygon(0 0, 100% 0, 50% 50%, 50% 50%);
+}
+
+.btn1 span:nth-of-type(2) {
+  --clip: polygon(100% 0, 100% 100%, 50% 50%);
+}
+
+.btn1 span:nth-of-type(3) {
+  --clip: polygon(0 100%, 100% 100%, 50% 50%);
+}
+
+.btn1 span:nth-of-type(4) {
+  --clip: polygon(0 0, 0 100%, 50% 50%);
+}
+
+.btn1 b {
+  -webkit-clip-path: var(--clip);
+  background: var(--buttonColor);
+  border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+  bottom: calc(var(--borderWidth) * -1px);
+  font-weight: bold;
+  clip-path: var(--clip);
+  color: var(--bg, #fafafa);
+  left: calc(var(--borderWidth) * -1px);
+  padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+  position: absolute;
+  right: calc(var(--borderWidth) * -1px);
+  top: calc(var(--borderWidth) * -1px);
+  -webkit-transition: -webkit-clip-path 0.25s ease;
+  transition: -webkit-clip-path 0.25s ease;
+  transition: clip-path 0.25s ease;
+  transition: clip-path 0.25s ease, -webkit-clip-path 0.25s ease;
+}
+
+.btn1 b:nth-of-type(1) {
+  --clip: inset(0 0 100% 0);
+}
+
+.btn1 b:nth-of-type(2) {
+  --clip: inset(0 0 0 100%);
+}
+
+.btn1 b:nth-of-type(3) {
+  --clip: inset(100% 0 0 0);
+}
+
+.btn1 b:nth-of-type(4) {
+  --clip: inset(0 100% 0 0);
+}
 
 /* 會員按鈕 */
+.button2 {
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 550;
+  line-height: 45px;
+  max-width: 110px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+.button2:hover {
+  text-decoration: none;
+}
+
+/*btn_background*/
+.effect04 {
+  --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
+  display: var(--uismLinkDisplay);
+  color: #6c757dd1;
+  /* outline: solid  2px #000; */
+  position: relative;
+  transition-duration: 0.3s;
+  overflow: hidden;
+}
+
+.effect04::before,
+.effect04 span{
+    margin: 0 auto;
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    transition-duration: 0.4s;
+}
+
+/* 滑過變的顏色*/
+.effect04:hover{
+
+  background-color: #000;
+}
+
+/* HOVERしたら文字1を上に */
+.effect04:hover span{
+  -webkit-transform: translateY(-400%) scale(-0.1,20);
+          transform: translateY(-400%) scale(-0.1,20);
+}
+
+/*文字2*/
+.effect04::before{
+  content: attr(data-sm-link-text);
+    color: #FFF;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform: translateY(500%) scale(-0.1,20);
+          transform: translateY(500%) scale(-0.1,20);
+}
+
+/* HOVERしたら文字2を上に */
+.effect04:hover::before{
+  letter-spacing: 0.05em;
+  -webkit-transform: translateY(0) scale(1,1);
+          transform: translateY(0) scale(1,1);
+}
+
+/* 會員按鈕 */
+
 .btn3 {
   width: 200px;
   height: 50px;
@@ -230,12 +440,14 @@ a {
   background: transparent;
   cursor: pointer;
   transition: all 1s;
+  position: relative;
+
 }
 
 .btn3 span {
   position: absolute;
   top: 15px;
-  right: 60px;
+  left: 60px;
   color: black;
   opacity: 0.7;
 }
@@ -312,3 +524,13 @@ a {
 .btn3:hover {
   background: rgba(255, 255, 255, 0.03);
 }
+
+
+
+
+
+
+
+  
+
+

@@ -37,8 +37,6 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 *,
@@ -46,11 +44,8 @@
 *::after {
   box-sizing: border-box;
 }
-#notoSans{
-  font-family: 'Noto Sans TC', sans-serif;
-}
+
 html {
-  font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -60,24 +55,28 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 body {
-  margin: 0;
-  font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #212529;
-  text-align: left;
-  background-color: #fff;
+  font-family: "Legacy", "Noto Sans TC", "Helvetica Neue", "Helvetica", "Nimbus Sans L", "Arial", "Liberation Sans", "Source Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "STHeiti", "SimHei", "WenQuanYi Zen Hei Sharp", "sans-serif", "Apple LiGothic", "微軟正黑體"
+
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
   outline: 0 !important;
 }
 
+a{
+  color: #a5a299;
+  text-decoration: none;
+}
 hr {
   box-sizing: content-box;
   height: 0;
   overflow: visible;
+}
+h1{
+  font-size: 40px;
+}
+h5{
+  font-size: 20px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -160,32 +159,8 @@ sup {
   top: -0.5em;
 }
 
-a {
-  color: #f4623a;
-  text-decoration: none;
-  background-color: transparent;
-}
-a:hover {
-  color: #d6370c;
-  text-decoration: underline;
-}
 
-a:not([href]) {
-  color: inherit;
-  text-decoration: none;
-}
-a:not([href]):hover {
-  color: inherit;
-  text-decoration: none;
-}
 
-pre,
-code,
-kbd,
-samp {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 1em;
-}
 
 pre {
   margin-top: 0;
@@ -238,16 +213,6 @@ button:focus {
   outline: 5px auto -webkit-focus-ring-color;
 }
 
-input,
-button,
-select,
-optgroup,
-textarea {
-  margin: 0;
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
 
 button,
 input {
@@ -359,42 +324,13 @@ template {
   display: none !important;
 }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 0.5rem;
-  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-weight: 500;
-  line-height: 1.2;
-}
 
-h1, .h1 {
-  font-size: 2.5rem;
-}
 
-h2, .h2 {
-  font-size: 2rem;
-}
 
-h3, .h3 {
-  font-size: 1.75rem;
-}
 
-h4, .h4 {
-  font-size: 1.5rem;
-}
 
-h5, .h5 {
-  font-size: 1.25rem;
-}
 
-h6, .h6 {
-  font-size: 1rem;
-}
 
-.lead {
-  font-size: 1.25rem;
-  font-weight: 300;
-}
 
 .display-1 {
   font-size: 6rem;
@@ -5588,7 +5524,6 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -5690,7 +5625,6 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Merriweather", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.5;
@@ -7603,6 +7537,7 @@ button.bg-dark:focus {
 
 .mr-4,
 .mx-4 {
+  
   margin-right: 1.5rem !important;
 }
 
@@ -9672,9 +9607,6 @@ button.bg-dark:focus {
   background-color: rgba(0, 0, 0, 0);
 }
 
-.text-monospace {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
-}
 
 .text-justify {
   text-align: justify !important;
@@ -9796,6 +9728,8 @@ button.bg-dark:focus {
 
 .text-white {
   color: #fff !important;
+  padding: 6vh;
+
 }
 
 .text-primary {
@@ -10006,19 +9940,11 @@ html {
   height: 100%;
 }
 
-hr.divider {
-  max-width: 3.25rem;
-  border-width: 0.2rem;
-  border-color: #f4623a;
-}
 
 hr.light {
   border-color: #fff;
 }
 
-.btn {
-  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
 
 .btn-xl {
   padding: 1.25rem 2.25rem;
@@ -10039,13 +9965,11 @@ hr.light {
   transition: background-color 0.2s ease;
 }
 #mainNav .navbar-brand {
-  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   color: #212529;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
   color: #6c757d;
-  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   font-size: 0.9rem;
   padding: 0.75rem 0;
@@ -10097,16 +10021,15 @@ hr.light {
 
 header.masthead {
   padding-top: 10rem;
-  padding-bottom: calc(10rem - 4.5rem);
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url("/public/images/assets/img/bg-masthead.jpg");
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url();
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+  margin-top: 8vh;
+  width: 100%;
 }
-header.masthead h1 {
-  font-size: 2.25rem;
-}
+
 @media (min-width: 992px) {
   header.masthead {
     height: 50vh;
@@ -10117,15 +10040,9 @@ header.masthead h1 {
   header.masthead p {
     font-size: 1.15rem;
   }
-  header.masthead h1 {
-    font-size: 3rem;
-  }
+
 }
-@media (min-width: 1200px) {
-  header.masthead h1 {
-    font-size: 3.5rem;
-  }
-}
+
 
 #portfolio .container-fluid, #portfolio .container-sm, #portfolio .container-md, #portfolio .container-lg, #portfolio .container-xl {
   max-width: 1920px;
@@ -10151,9 +10068,6 @@ header.masthead h1 {
   text-align: center;
 }
 #portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-sm .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-md .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-lg .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-xl .portfolio-box .portfolio-box-caption .project-category {
-  font-family: "Merriweather Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 0.85rem;
-  font-weight: 600;
   text-transform: uppercase;
 }
 #portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-sm .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-md .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-lg .portfolio-box .portfolio-box-caption .project-name, #portfolio .container-xl .portfolio-box .portfolio-box-caption .project-name {
@@ -10165,4 +10079,279 @@ header.masthead h1 {
 
 .text-white-75 {
   color: rgba(255, 255, 255, 0.75);
+}
+
+
+
+
+
+/* 1號按鈕 */
+
+.btn1 {
+  --borderWidth: 5;
+  --boxShadowDepth: 5;
+  --buttonColor: #f00;
+  --fontSize: 2;
+  --horizontalPadding: 16;    /*長度 */
+  --verticalPadding: 8;    /* 高度 */
+
+
+  background: transparent;
+  border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+  box-shadow: calc(var(--boxShadowDepth) * 1px) calc(var(--boxShadowDepth) * 1px) 0 #888;
+  color: var(--buttonColor);
+  cursor: pointer;
+  font-size: calc(var(--fontSize) * 1rem);
+  font-weight: bold;
+  outline: transparent;
+  padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+  position: relative;
+  -webkit-transition: box-shadow 0.15s ease;
+  transition: box-shadow 0.15s ease;
+}
+
+.btn1:hover {
+  box-shadow: calc(var(--boxShadowDepth) / 2 * 1px) calc(var(--boxShadowDepth) / 2 * 1px) 0 #888;
+}
+
+.btn1:active {
+  box-shadow: 0 0 0 #888;
+}
+
+.btn1 span {
+  -webkit-clip-path: var(--clip);
+  bottom: calc(var(--borderWidth) * -1px);
+  clip-path: var(--clip);
+  left: calc(var(--borderWidth) * -1px);
+  position: absolute;
+  right: calc(var(--borderWidth) * -1px);
+  top: calc(var(--borderWidth) * -1px);
+  z-index: 1;
+}
+
+.btn1 span:nth-of-type(1):hover,
+.btn1 span:nth-of-type(2):hover,
+.btn1 span:nth-of-type(3):hover,
+.btn1 span:nth-of-type(4):hover {
+  --clip: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  z-index: 2;
+}
+
+.btn1 span:nth-of-type(1):hover~b:nth-of-type(1),
+.btn1 span:nth-of-type(2):hover~b:nth-of-type(2),
+.btn1 span:nth-of-type(3):hover~b:nth-of-type(3),
+.btn1 span:nth-of-type(4):hover~b:nth-of-type(4) {
+  --clip: inset(0 0 0 0);
+}
+
+.btn1 span:nth-of-type(1) {
+  --clip: polygon(0 0, 100% 0, 50% 50%, 50% 50%);
+}
+
+.btn1 span:nth-of-type(2) {
+  --clip: polygon(100% 0, 100% 100%, 50% 50%);
+}
+
+.btn1 span:nth-of-type(3) {
+  --clip: polygon(0 100%, 100% 100%, 50% 50%);
+}
+
+.btn1 span:nth-of-type(4) {
+  --clip: polygon(0 0, 0 100%, 50% 50%);
+}
+
+.btn1 b {
+  -webkit-clip-path: var(--clip);
+  background: var(--buttonColor);
+  border: calc(var(--borderWidth) * 1px) solid var(--buttonColor);
+  bottom: calc(var(--borderWidth) * -1px);
+  font-weight: bold;
+  clip-path: var(--clip);
+  color: var(--bg, #fafafa);
+  left: calc(var(--borderWidth) * -1px);
+  padding: calc(var(--verticalPadding) * 1px) calc(var(--horizontalPadding) * 1px);
+  position: absolute;
+  right: calc(var(--borderWidth) * -1px);
+  top: calc(var(--borderWidth) * -1px);
+  -webkit-transition: -webkit-clip-path 0.25s ease;
+  transition: -webkit-clip-path 0.25s ease;
+  transition: clip-path 0.25s ease;
+  transition: clip-path 0.25s ease, -webkit-clip-path 0.25s ease;
+}
+
+.btn1 b:nth-of-type(1) {
+  --clip: inset(0 0 100% 0);
+}
+
+.btn1 b:nth-of-type(2) {
+  --clip: inset(0 0 0 100%);
+}
+
+.btn1 b:nth-of-type(3) {
+  --clip: inset(100% 0 0 0);
+}
+
+.btn1 b:nth-of-type(4) {
+  --clip: inset(0 100% 0 0);
+}
+
+/* 會員按鈕 */
+.button2 {
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 550;
+  line-height: 45px;
+  max-width: 110px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
+.button2:hover {
+  text-decoration: none;
+}
+
+/*btn_background*/
+.effect04 {
+  --uismLinkDisplay: var(--smLinkDisplay, inline-flex);
+  display: var(--uismLinkDisplay);
+  color: #6c757dd1;
+  /* outline: solid  2px #000; */
+  position: relative;
+  transition-duration: 0.3s;
+  overflow: hidden;
+}
+
+.effect04::before,
+.effect04 span{
+    margin: 0 auto;
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    transition-duration: 0.4s;
+}
+
+/* 滑過變的顏色*/
+.effect04:hover{
+
+  background-color: #000;
+}
+
+/* HOVERしたら文字1を上に */
+.effect04:hover span{
+  -webkit-transform: translateY(-400%) scale(-0.1,20);
+          transform: translateY(-400%) scale(-0.1,20);
+}
+
+/*文字2*/
+.effect04::before{
+  content: attr(data-sm-link-text);
+    color: #FFF;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transform: translateY(500%) scale(-0.1,20);
+          transform: translateY(500%) scale(-0.1,20);
+}
+
+/* HOVERしたら文字2を上に */
+.effect04:hover::before{
+  letter-spacing: 0.05em;
+  -webkit-transform: translateY(0) scale(1,1);
+          transform: translateY(0) scale(1,1);
+}
+
+/* 會員按鈕 */
+
+.btn3 {
+  width: 200px;
+  height: 50px;
+  /* position: absolute; */
+  border: solid rgba(255, 255, 255, 0.3) 1px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 1s;
+  position: relative;
+
+}
+
+.btn3 span {
+  position: absolute;
+  top: 15px;
+  left: 60px;
+  color: black;
+  opacity: 0.7;
+}
+
+.btn3 .line {
+  background: black;
+  position: absolute;
+  transition: none;
+  transform: scale(0);
+  opacity: 1;
+}
+
+.btn3 .line:nth-child(1) {
+  transform-origin: 100% 100%;
+  height: 3px;
+  width: 20%;
+  bottom: 0;
+}
+
+.btn3 .line:nth-child(4) {
+  transform-origin: 0 100%;
+  height: 3px;
+  width: 20%;
+  top: -1px;
+  right: 0;
+}
+
+.btn3 .line:nth-child(2) {
+  transform-origin: 100% 100%;
+  height: 100%;
+  width: 3px;
+  bottom: 0;
+  left: -1px;
+}
+
+.btn3 .line:nth-child(5) {
+  transform-origin: 100% 0;
+  height: 100%;
+  width: 3px;
+  bottom: 0;
+  right: -1px;
+}
+
+.btn3 .line:nth-child(3) {
+  transform-origin: 0 100%;
+  height: 3px;
+  width: 100%;
+  top: -1px;
+  left: -1px;
+}
+
+.btn3 .line:nth-child(6) {
+  transform-origin: 100% 0;
+  height: 3px;
+  width: 100%;
+  bottom: 0;
+  right: -1px;
+}
+
+.btn3:hover > .line {
+  transform: scale(1);
+  opacity: 0;
+  transition: all 1s;
+}
+
+.btn3:hover > .line:nth-child(2), .btn3:hover > .line:nth-child(5) {
+  transition-delay: 0.5s;
+}
+
+.btn3:hover > .line:nth-child(3), .btn3:hover > .line:nth-child(6) {
+  transition-delay: 0.9s;
+}
+
+.btn3:hover {
+  background: rgba(255, 255, 255, 0.03);
 }

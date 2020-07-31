@@ -20,5 +20,8 @@ router.get('/previewPage', function(req, res, next) {
 router.get('/editPage', function(req, res, next) {
   res.render('webBuilder');
 });
+router.get('/officalTemplat/preview', function(req, res, next) {
+  res.render('preview');
+});
 
 module.exports = router;

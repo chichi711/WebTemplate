@@ -22,12 +22,12 @@
 
     <!-- 導覽頁 -->
 
-    <nav class="navbar navbar-expand-md navbar-light bg-light p-1 fixed-top shadow-none" id="notoSans" >
+    <nav class="navbar navbar-expand-md navbar-light bg-light p-1 fixed-top shadow-sm" id="notoSans">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2" >
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
                     <a class="nav-link" href="/">首頁</a>
@@ -38,29 +38,34 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/officalTemplat">樣板一覽</a>
                 </li>
-           
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/login/profile">會員中心</a>
+                </li>
+
             </ul>
         </div>
-        <div class="mx-auto order-0" >
+        <div class="mx-auto order-0">
             <a class="navbar-brand p-0" href="#">
-                <img src="/images/Logo.png" alt="" loading="lazy" width="140px" >
+                <img src="/images/Logo.png" alt="" loading="lazy" width="140px">
             </a>
 
         </div>
 
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2" >
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+
             <form class="form-inline ml-auto">
+
                 <div class='btn3'>
-                    <div class='line'></div> 
+                    <div class='line'></div>
                     <div class='line'></div>
                     <div class='line'></div>
                     <div class='line'></div>
                     <div class='line'></div>
                     <div class='line'></div>
                     <span>
-                        <a  href="/login">登入/註冊</a>                       
+                        <a href="/users/login">登入/註冊</a>
                     </span>
-                  <div>
+                    <div>
             </form>
         </div>
     </nav>
@@ -70,7 +75,10 @@
         <div class="col-md-3 cott1">
             <div class="cott1-1">
                 <h3 class="hideme3">您的想法即是關鍵,<br>建立一個網站</h3><br>
-                <div class="hideme3"><a class="a1"><button class="btn1" tabindex="0" style="--buttonColor: #00AA90">START<span></span><span></span><span></span><span></span><b aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b></button></a></div>
+                <div class="hideme3"><a class="a1"><button class="btn1" onclick="location.href='/officalTemplat'" tabindex="0"
+                            style="--buttonColor: #00AA90">START<span></span><span></span><span></span><span></span><b
+                                aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b><b
+                                aria-hidden="true">GO!</b></button></a></div>
             </div>
 
             <div class="bg1img2 hideme1"><img src="/images/img6.png" alt=""></div>
@@ -94,11 +102,16 @@
                     <h2 class="hideme">每個主題皆處處展現<br>貼心周到的設計風格</h2><br><br>
                     <h5 class="hideme">由頂尖設計人員為您精心創作各式各樣的優美主題，<br>讓您的網站在任何裝置上皆可呈現出專業精美<br>的外觀。所有主題皆立即可用並支援完整自訂。
                     </h5><br>
-                    <div class="hideme"><a class="a1"><button class="btn1" tabindex="0" style="--buttonColor: #0089A7">Try topic<span></span><span></span><span></span><span></span><b aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b></button></a></div>
+                    <div class="hideme"><a class="a1"><button class="btn1" tabindex="0"
+                                style="--buttonColor: #0089A7">Try
+                                topic<span></span><span></span><span></span><span></span><b aria-hidden="true">GO!</b><b
+                                    aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b><b
+                                    aria-hidden="true">GO!</b></button></a></div>
                     <br>
 
                 </div>
-                <div class="col-12 col-md-6 cot1 "><img src="/images/img8.jpg" class="img-fluid cot2 hideme"><img src="/images/img9.jpg" class="img-fluid cot2-1 hideme"></div>
+                <div class="col-12 col-md-6 cot1 "><img src="/images/img8.jpg" class="img-fluid cot2 hideme"><img
+                        src="/images/img9.jpg" class="img-fluid cot2-1 hideme"></div>
 
             </div>
 
@@ -167,87 +180,89 @@
     </div>
 
     <!-- <footer> -->
-        <footer style="  background-color:#f8f9fa;" class="page-footer font-small mdb-color lighten-3 pt-4">
+    <footer style="  background-color:#f8f9fa;" class="page-footer font-small mdb-color lighten-3 pt-4">
 
-            <!-- Footer Links -->
-            <div class="container text-center text-md-left">
-        
-              <!-- Grid row -->
-              <div class="row">
-        
+        <!-- Footer Links -->
+        <div class="container text-center text-md-left">
+
+            <!-- Grid row -->
+            <div class="row">
+
                 <!-- Grid column -->
                 <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
-        
-                  <!-- Content -->
-                  <h5 class="font-weight-bold text-uppercase mb-4">關於</h5>
-                  <p>利用拖曳式工具，依照自己所想風格，調整文字、顏色、背景色、圖片、及簡單的排版來製作心目中的網站!</p>
-        
-        
+
+                    <!-- Content -->
+                    <h5 class="font-weight-bold text-uppercase mb-4">關於</h5>
+                    <p>利用拖曳式工具，依照自己所想風格，調整文字、顏色、背景色、圖片、及簡單的排版來製作心目中的網站!</p>
+
+
                 </div>
                 <!-- Grid column -->
-        
+
                 <hr class="clearfix w-100 d-md-none">
-        
+
                 <!-- Grid column -->
                 <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
-        
-                  <!-- Contact details -->
-                  <div style="right: -17px;"><h5 class="font-weight-bold text-uppercase mb-4">聯絡</h5></div>
-        
-                  <ul class="list-unstyled">
-                    <li>
-                      <p>
-                        <i class="fas fa-home mr-3"></i>台中市南屯區公益路二段51號</p>
-                    </li>
-                    <li>
-                      <p>
-                        <i class="fas fa-envelope mr-3"></i> cathylin@taichung.iii.org.tw</p>
-                    </li>
-                    <li>
-                      <p>
-                        <i class="fas fa-phone mr-3"></i>  04 2326 5860</p>
-                    </li>
-                    <li>
-                      <p>
-                        <i class="fas fa-print mr-3"></i> 04-2327-3572</p>
-                    </li>
-                  </ul>
-        
+
+                    <!-- Contact details -->
+                    <div style="right: -17px;">
+                        <h5 class="font-weight-bold text-uppercase mb-4">聯絡</h5>
+                    </div>
+
+                    <ul class="list-unstyled">
+                        <li>
+                            <p>
+                                <i class="fas fa-home mr-3"></i>台中市南屯區公益路二段51號</p>
+                        </li>
+                        <li>
+                            <p>
+                                <i class="fas fa-envelope mr-3"></i> cathylin@taichung.iii.org.tw</p>
+                        </li>
+                        <li>
+                            <p>
+                                <i class="fas fa-phone mr-3"></i> 04 2326 5860</p>
+                        </li>
+                        <li>
+                            <p>
+                                <i class="fas fa-print mr-3"></i> 04-2327-3572</p>
+                        </li>
+                    </ul>
+
                 </div>
                 <!-- Grid column -->
-        
+
                 <hr class="clearfix w-100 d-md-none">
-        
+
                 <!-- Grid column -->
-                
+
                 <!-- Grid column -->
-        
+
                 <hr class="clearfix w-100 d-md-none">
-        
+
                 <!-- Grid column -->
                 <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
-        
-                  
-        
-                  <div class="logo">
-                    <img  src="/images/Logo.png" style="width: 200px;" alt="">
-                  </div>
+
+
+
+                    <div class="logo">
+                        <img src="/images/Logo.png" style="width: 200px;" alt="">
+                    </div>
                 </div>
                 <!-- Grid column -->
-        
-              </div>
-              <!-- Grid row -->
-        
+
             </div>
-            <!-- Footer Links -->
-        
-            <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">© 2020 Copyright:
-              <a href="https://mdbootstrap.com/"> 123</a>
-            </div>
-            <!-- Copyright -->
-        
-          </footer>
+            <!-- Grid row -->
+
+        </div>
+        <!-- Footer Links -->
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/"> 123</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
 
 </body>
 

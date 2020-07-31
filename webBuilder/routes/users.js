@@ -1,13 +1,18 @@
 var express = require('express');
 var router = express.Router();
+var conn = require('../db');
 
 router.get('/login', function (req, res, next) {
-    res.render('login');
-  });
-  router.get('/login/signup', function (req, res, next) {
-    res.render('signup');
-  });
-  
+  res.render('login');
+});
+router.get('/login/signup', function (req, res, next) {
+  res.render('signup');
+});
+router.get('/login/profile', function (req, res, next) {
+  res.render('profile');
+});
+
+
 // router.post('/signup', function (req, res, next) {
 
 //     var db = req.con;
@@ -48,8 +53,8 @@ router.get('/login', function (req, res, next) {
 
 // });
 /* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
+// router.get('/', function (req, res, next) {
+//   res.send('respond with a resource');
+// });
 
 module.exports = router;
