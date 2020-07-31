@@ -60,4 +60,4 @@
     }
   });
 
-})(jQuery); // End of use stript
+})(jQuery); // End of use strict

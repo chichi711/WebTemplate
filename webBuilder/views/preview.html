@@ -2,75 +2,100 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>樣板預覽</title>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../public/stylesheets/Xu.css/bootstrap.min.css">
-    <link rel="stylesheet" href="../public/stylesheets/Xu.css/preview.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>樣板預覽</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../public/stylesheets/Xu.css/bootstrap.min.css">
+  <link rel="stylesheet" href="../public/stylesheets/Xu.css/preview.css">
 </head>
 
 <body>
-    <!-- 導覽列 -->
-    <nav class="navbar navbar-expand-md navbar-light bg-wight p-1" id="notoSans">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+  <!-- 導覽列 -->
+  <nav class="navbar navbar-expand-md navbar-light bg-light p-1 fixed-top shadow-none" id="notoSans">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">首頁</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">功能介紹</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">樣板一覽</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-            </ul>
-        </div>
-        <div class="mx-auto order-0">
-            <a class="navbar-brand p-0" href="#">
-                <img src="../public/images/preview/Logo.png" alt="" style="width: 150px;height: 55px;" loading="lazy">
-            </a>
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item ">
+          <a class="nav-link" href="/">首頁</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/featuresPage">功能介紹</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/officalTemplat">樣板一覽</a>
+        </li>
 
-        </div>
+      </ul>
+    </div>
+    <div class="mx-auto order-0">
+      <a class="navbar-brand p-0" href="#">
+        <img src="../public/images/Logo.png" alt="" loading="lazy" width="140px">
+      </a>
 
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <form class="form-inline ml-auto">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log in</button>
-            </form>
-        </div>
-    </nav>
-    <!-- 導覽列 END-->
-
-    <!-- 內容 -->
-    <div class="bg bg1">
-        <div class="wrap">
-            <div class="img">
-                <img src="../public/images/preview/18.jpg" alt="">
-            </div>
-            <div class="txt">
-                <h1>Elite Shoppy</h1>
-                <h5>以精緻特色為主題，打造您的電子商務品牌永無止境。</h5>
-                <div class="btnb">
-                    <a href="#">
-                        <div class="button button-4">預覽</div>
-                    </a>
-                    <a href="#">
-                        <div class="button button-4">編輯</div>
-                    </a>
-                </div>
-            </div>
-        </div>
     </div>
 
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <form class="form-inline ml-auto">
+        <div class='btn3'>
+          <div class='line'></div>
+          <div class='line'></div>
+          <div class='line'></div>
+          <div class='line'></div>
+          <div class='line'></div>
+          <div class='line'></div>
+          <span>
+            <a href="/login">登入/註冊</a>
+          </span>
+          <div>
+      </form>
+    </div>
 
-    <!-- 內容 END-->
+  </nav>
+  <!-- 導覽列 END-->
+
+  <!-- 內容 -->
+  <div class="bg bg1">
+    <div class="wrap">
+      <div class="img">
+        <img src="../public/images/preview/18.jpg" alt="">
+      </div>
+      <div class="txt">
+        <h1>Elite Shoppy</h1>
+        <h5>以精緻特色為主題，打造您的電子商務品牌永無止境。</h5>
+        <div class="btnb">
+
+          <div class="hideme3">
+            <a class="a1">
+              <button class="btn1 "  tabindex="0" style="--buttonColor: #00AA90">
+                編輯
+                <span></span><span></span><span></span><span></span><b aria-hidden="true">
+                  GO!</b><b aria-hidden="true">GO!</b>
+                <b aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b>
+              </button>
+            </a>
+          </div>
+
+
+          <div class="hideme3">
+            <a class="a1">
+              <button class="btn1" tabindex="0" style="--buttonColor: #00AA90">
+                預覽<span></span><span></span><span></span><span></span><b aria-hidden="true">GO!</b>
+                <b aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b> <b aria-hidden="true">GO!</b>
+              </button>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 內容 END-->
 
 
 
@@ -78,10 +103,10 @@
 
 
 
-    <script src="../public/javascripts/Xu.js/jquery-3.3.1.min.js"></script>
-    <script src="../public/javascripts/Xu.js/popper.min.js"></script>
-    <script src="../public/javascripts/Xu.js/bootstrap.min.js"></script>
-    <script src="../public/javascripts/Xu.js/bootstrap.min.js"></script>
+  <script src="../public/javascripts/Xu.js/jquery-3.3.1.min.js"></script>
+  <script src="../public/javascripts/Xu.js/popper.min.js"></script>
+  <script src="../public/javascripts/Xu.js/bootstrap.min.js"></script>
+  <script src="../public/javascripts/Xu.js/bootstrap.min.js"></script>
 </body>
 
 </html>
