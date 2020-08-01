@@ -29,6 +29,22 @@ conn.connect(function (err,rows) {
 console.log("isFine")
 });
 
+// app.get("/home/news", function (request, response) {
+
+//   connection.query('select * from news',
+//       '',
+//       function (err, rows) {
+//           if (err) {
+//               console.log(JSON.stringify(err));
+//               return;
+//           }
+
+//           response.send(JSON.stringify(rows));
+//       }
+//   );
+
+// })
+
 
 // conn.query('select * from member','',function (err, rows) {
 //           if (err) {

@@ -44,9 +44,8 @@
 body {
   background: #eee;
   --builder-filemanager-height: 250px;
-  --builder-canvas-margin: 0px;
   --builder-header-top-height: 57px;
-  --builder-bottom-panel-height: 2px;
+  --builder-bottom-panel-height: 1px;
   --drag-items-tabs-height: 90px;
   scrollbar-color: rgba(0, 0, 0, 0.1) #fff;
   scrollbar-width: thin;
@@ -81,7 +80,7 @@ body {
 .desktop {
   left: 0%;
   margin-left: var(--builder-left-panel-width);
-  width: calc( 100vw - (var(--builder-left-panel-width) + var(--builder-canvas-margin)));
+  width: calc( 100vw - (var(--builder-left-panel-width)));
 }
 
 #vvveb-builder #canvas {
