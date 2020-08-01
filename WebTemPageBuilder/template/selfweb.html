@@ -32,12 +32,31 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link href="../public/stylesheets/css/demointerface.css" rel="stylesheet">
 
-
-
+	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 	<link href="editor.css" rel="stylesheet">
-	<link href="../public/stylesheets/css/line-awesome.css" rel="stylesheet">
+	<!-- <link href="../public/stylesheets/css/line-awesome.css" rel="stylesheet"> -->
 </head>
-
+<script>
+	function changePage(index) {
+		switch (index) {
+			case 1:
+				edit.Builder.init('/antique/index copy.html', function () { });
+				break;
+			case 2:
+				edit.Builder.init('/antique/antique_about.html', function () { });
+				break;
+			case 3:
+				edit.Builder.init('/antique/antique_kind.html', function () { });
+				break;
+			case 4:
+				edit.Builder.init('/antique/antique_login.html', function () { });
+				break;
+			case 5:
+				edit.Builder.init('/antique/antique_product2.html', function () { });
+				break;
+		}
+	}
+</script>
 <body>
 
 	<!-- 側邊攔 -->
@@ -46,57 +65,42 @@
 		<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
 			<a class="nav-item nav-link col-lg-4 active" id="nav-home-tab" data-toggle="tab" href="#home" role="tab"
 				aria-controls="nav-home" aria-selected="true">Home</a>
-			<a class="nav-item nav-link col-lg-4" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab"
+			<a style="color: black" class="nav-item nav-link col-lg-4" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab"
 				aria-controls="nav-profile" aria-selected="false">Profile</a>
 			<a class="nav-item nav-link col-lg-4" id="nav-contact-tabF" data-toggle="tab" href="#conte" role="tab"
 				aria-controls="nav-contact" aria-selected="false">Conte</a>
 		</div>
 		<div class="tab-content" id="myTabContent">
 			<!-- 側邊攔tabHome -->
-			<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-				<ul id="dragitemslistcontainer">
-					<li draggable="true" data-insert-html="<h1>HEADER GOES HERE</h1>"><i class="fa fa-header"></i>
-						<p>標題</p>
+			<div class="tab-pane fade show active" id="home" style="height: 90vh;" role="tabpanel" aria-labelledby="home-tab" >
+				<ul class="row list-unstyled components" id="dragitemslistcontainer" >
+					<li class="col-lg-6" draggable="true" data-insert-html='<div class=btn5-1><header class=btn5><div class=btn5-containerr><h1 class=btn5-logo></h1><nav><ul><li><a href=#>Home</a><li><a href=#>About</a><li><a href=#>Pricing</a><li><a href=#>Contact</a></ul></nav></div></header></div>'>
+						<i class="las la-bars"></i>
+						<p>navbar</p>
 					</li>
-					<li draggable="true"
-						data-insert-html="<img src='http://blogs-images.forbes.com/anthonykosner/files/2014/06/us-browser-share-adobe-index-2014.jpg'>">
-						<i class="fa fa-bar-chart"></i>
-						<p>Chart Image</p>
+					<li class="col-lg-6" draggable="true" data-insert-html='<div style=text-align:center><button class="btn1 buttonNavy btn1-Size1" tabindex=0>START<span></span><span></span><span></span><span></span><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b></button></div>'>
+						<i class="las la-hockey-puck"></i>
+						<p>button</p>
 					</li>
-					<li draggable="true"
-						data-insert-html='<div class="well login-box"> <form action=""> <legend>Login</legend> <div class="form-group"> <label for="username-email">E-mail or Username</label> <input value="" id="username-email" placeholder="E-mail or Username" type="text" class="form-control"/> </div><div class="form-group"> <label for="password">Password</label> <input id="password" value="" placeholder="Password" type="text" class="form-control"/> </div><div class="form-group text-center"> <button class="btn btn-danger btn-cancel-action">Cancel</button> <input type="submit" class="btn btn-success btn-login-submit" value="Login"/> </div></form> </div>'>
-						<i class="fa fa-sign-in"></i>
-						<p>Login Form</p>
+					<li class="col-lg-6" draggable="true" data-insert-html='<div class="btn3 btn3-Size1 btn3-black"><div class=line></div><div class=line></div><div class=line></div><div class=line></div><div class=line></div><div class=line></div><span>登入/註冊</span></div>'>
+						<i class="las la-hockey-puck"></i>
+						<p>button</p>
 					</li>
-					<li draggable="true" data-insert-html="<ul><li>apple</li><li>bee</li><li>cat</li></ul>"><i
-							class="fa fa-list-ul"></i>
-						<p>ul</p>
+					<li class="col-lg-6" draggable="true" data-insert-html='<a href="" class="btn effect01" target=_blank><span>前往結帳</span></a>'>
+						<i class="las la-hockey-puck"></i>
+						<p>button</p>
 					</li>
-					<li draggable="true"
-						data-insert-html='<div class=list-group><a href=# class="list-group-item list-group-item-action">First item</a> <a href=# class="list-group-item list-group-item-action">Second item</a> <a href=# class="list-group-item list-group-item-action">Third item</a></div>'>
-						<i class="fa fa-list-alt"></i>
-						<p>List Group</p>
+					<li class="col-lg-6" draggable="true" data-insert-html='<div class=vertical-align><div class=btn4><label> <input checked name=button-group type=radio value=item> <span class="btn4-1 first">1</span>  </label> <label> <input name=button-group type=radio value=other-item> <span class=btn4-1>2</span>  </label> <label> <input name=button-group type=radio value=other-item> <span class=btn4-1>3</span>  </label> <label> <input name=button-group type=radio value=third> <span class=btn4-1>4</span>  </label> <label> <input name=button-group type=radio value=third> <span class="btn4-1 last">5</span></label></div></div>'>
+						<i class="las la-check-circle"></i>
+						<p>checkbox</p>
 					</li>
-					<li draggable="true"
-						data-insert-html='<div class=form-check-inline><label class=form-check-label> <input type=checkbox class=form-check-input>Option 1 </label></div><div class=form-check-inline><label class=form-check-label> <input type=checkbox class=form-check-input>Option 2 </label></div><div class=form-check-inline><label class=form-check-label> <input type=checkbox class=form-check-input>Option 3 </label></div>'>
-						<i class="fa fa-check-square-o"></i>
-						<p>CheckBox</p>
+					<li class="col-lg-6" draggable="true" data-insert-html='<div class=btn6><form><h1>LOGIN</h1><input placeholder=Username type=text required> <input placeholder=Password type=password required> <button>Submit</button></form></div>'>
+						<i class="las la-address-card"></i>
+						<p>login Form</p>
 					</li>
-					<li draggable="true"
-						data-insert-html='<div class=container><h2>Hover Rows</h2><p>The .table-hover class enables a hover state (grey background on mouse over) on table rows:<table class="table table-hover"><thead><tr><th>Firstname<th>Lastname<th>Email<tbody><tr><td>John<td>Doe<td>john@example.com<tr><td>Mary<td>Moe<td>mary@example.com<tr><td>July<td>Dooley<td>july@example.com</table></div>'>
-						<i class="fa fa-table"></i>
-						<p>table</p>
-					</li>
-					<li draggable="true"
-						data-insert-html='<div id=demo class="carousel slide" data-ride=carousel><ul class=carousel-indicators><li data-target=#demo data-slide-to=0 class=active><li data-target=#demo data-slide-to=1><li data-target=#demo data-slide-to=2></ul><div class=carousel-inner><div class="carousel-item active"><img src="image/Xiang se/xiang_01_2.jpg" alt="Los Angeles"></div><div class=carousel-item><img src="image/Xiang se/xiangse_bg.jpg" alt=Chicago></div><div class=carousel-item><img src=ny.jpg alt="New York"></div></div><a class=carousel-control-prev href=#demo data-slide=prev> <span class=carousel-control-prev-icon></span> </a> <a class=carousel-control-next href=#demo data-slide=next> <span class=carousel-control-next-icon></span> </a></div>'>
-						<i class="fa fa-picture-o"></i>
-						<p>Carousel</p>
-					</li>
-					<li draggable="true" data-insert-html=''><i class=""></i>
-						<p>li</p>
-					</li>
-					<li draggable="true" data-insert-html=''><i class=""></i>
-						<p>li</p>
+					<li class="col-lg-6" draggable="true" data-insert-html='<hr class="hr-style2">'>
+						<i class="las la-slash"></i>
+						<p>hr</p>
 					</li>
 				</ul>
 			</div>
@@ -105,28 +109,30 @@
 
 				<ul class="list-unstyled components">
 					<li>
-						<a class="fas fa-file-image" href="#"> clone</a>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(1)"> page1</a>
 					</li>
 					<li>
-						<a class="fas fa-file-word" href="#"> Portfolio</a>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(2)"> page2</a>
 					</li>
 					<li>
-						<a class="fas fa-sticky-note" href="#"> Contact</a>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(3)"> page3</a>
 					</li>
 					<li>
-						<a class="fas fa-file-image " href="#">aa </a>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(4)">page4</a>
 					</li>
 					<li>
-						<a class="fas fa-file-word" href="#"> Portfolio</a>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(5)"> page5</a>
 					</li>
 					<li>
-						<a class="fas fa-sticky-note" href="#"> Contact</a>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(6)"> page6</a>
 					</li>
 				</ul>
 			</div>
 			<!-- 側邊攔tabConte -->
 			<div class="tab-pane fade" id="conte" role="tabpanel" aria-labelledby="profile-tab">
-
+				<li>
+					<a class="fas fa-sticky-note" href="#"> Contact</a>
+				</li>
 			</div>
 
 		</div>
@@ -147,22 +153,22 @@
 				<ul class="nav justify-content-center">
 					<li class="nav-item">
 						<button class="btn" id="mobile-view">
-							<i class="nav-link fas fa-mobile-alt fa-lg" href="#"></i>
+							<i class="las la-mobile-alt"></i>
 						</button>
 					</li>
 					<li class="nav-item">
 						<button class="btn" id="tablet-view">
-							<i class="nav-link fas fa-mobile-alt fa-lg" href="#"></i>
+							<i class="las la-tablet-alt"></i>
 						</button>
 					</li>
 					<li class="nav-item">
 						<button class="btn" id="desktop-view">
-							<i class="nav-link fas fa-tv fa-lg" href="#"></i>
+							<i class="las la-desktop"></i>
 						</button>
 					</li>
 				</ul>
 			</div>
-			<button id="navCopy" class="btn btn-outline-success my-2 my-sm-0" data-toggle="modal" data-target="#webCode"
+			<button id="navCopy" class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#webCode"
 				type="submit">
 				複製程式碼
 			</button>
@@ -194,11 +200,8 @@
 
 						<div id="select-actions">
 							<a id="drag-btn" href="" title="Drag element"><i class="la la-arrows"></i></a>
-							<a id="parent-btn" href="" title="Select parent"><i
-									class="la la-level-down la-rotate-180"></i></a>
 							<a id="up-btn" href="" title="Move element up"><i class="la la-arrow-up"></i></a>
 							<a id="down-btn" href="" title="Move element down"><i class="la la-arrow-down"></i></a>
-							<a id="clone-btn" href="" title="Clone element"><i class="la la-copy"></i></a>
 							<a id="delete-btn" href="" title="Remove element"><i class="la la-trash"></i></a>
 						</div>
 					</div>
@@ -208,6 +211,7 @@
 		</div>
 	</div>
 	<!-- vvveb end -->
+
 
 
 
@@ -242,7 +246,7 @@
 
 
 
-
+	<div id="under_canvas"></div>
 
 
 	<!-- builder code-->
@@ -256,12 +260,21 @@
 	<script>
 		$(document).ready(function () {
 			// edit.Builder.init('./index copy.html', function () {
-			edit.Builder.init('../antique/index copy.html', function () {
+			edit.Builder.init('../antique/antique_about.html', function () {
+			// edit.Builder.init('../Stylish Portfolio/index.html', function () {
+				// edit.Builder.init('../antique/antique_product2.html', function () {
 				//run code after page/iframe is loaded
 			});
 		});
+
+		// html2canvas(document.body, {
+		// 	onrendered: function (canvas) {//得到了canvas物件
+		// 		var imgUrl = canvas.toDataURL("image/png");//這裡通過canvas的toDataURL方法把它轉換成base64編碼。
+		// 		document.getElementById('under_canvas').innerHTML = imgUrl;
+		// 		// document.getElementById('under_canvas').innerHTML = '<img src="'+imgUrl+'"/>';
+		// 	}
+		// });
 	</script>
 </body>
 
 </html>
-

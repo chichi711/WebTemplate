@@ -241,181 +241,181 @@ function isElement(obj){
 
 	 render: function(type) {
 
-		 var component = this._components[type];
+		//  var component = this._components[type];
 
-		 var componentsPanel = jQuery(this.componentPropertiesElement);
-		 var defaultSection = this.componentPropertiesDefaultSection;
-		 var componentsPanelSections = {};
+		//  var componentsPanel = jQuery(this.componentPropertiesElement);
+		//  var defaultSection = this.componentPropertiesDefaultSection;
+		//  var componentsPanelSections = {};
 
-		 jQuery(this.componentPropertiesElement + " .tab-pane").each(function ()
-		 {
-			 var sectionName = this.dataset.section;
-			 componentsPanelSections[sectionName] = $(this);
+		//  jQuery(this.componentPropertiesElement + " .tab-pane").each(function ()
+		//  {
+		// 	 var sectionName = this.dataset.section;
+		// 	 componentsPanelSections[sectionName] = $(this);
 
-		 });
+		//  });
 
-		 var section = componentsPanelSections[defaultSection].find('.section[data-section="default"]');
+		//  var section = componentsPanelSections[defaultSection].find('.section[data-section="default"]');
 
-		 if (!(edit.preservePropertySections && section.length))
-		 {
-			 componentsPanelSections[defaultSection].html('').append(tmpl("vvveb-input-sectioninput", {key:"default", header:component.name}));
-			 section = componentsPanelSections[defaultSection].find(".section");
-		 }
+		//  if (!(edit.preservePropertySections && section.length))
+		//  {
+		// 	 componentsPanelSections[defaultSection].html('').append(tmpl("vvveb-input-sectioninput", {key:"default", header:component.name}));
+		// 	 section = componentsPanelSections[defaultSection].find(".section");
+		//  }
 
-		 componentsPanelSections[defaultSection].find('[data-header="default"] span').html(component.name);
-		 section.html("")
+		//  componentsPanelSections[defaultSection].find('[data-header="default"] span').html(component.name);
+		//  section.html("")
 
-		 if (component.beforeInit) component.beforeInit(edit.Builder.selectedEl.get(0));
+		//  if (component.beforeInit) component.beforeInit(edit.Builder.selectedEl.get(0));
 
-		 var element;
+		//  var element;
 
-		 var fn = function(component, property) {
-			 return property.input.on('propertyChange', function (event, value, input) {
+		//  var fn = function(component, property) {
+		// 	 return property.input.on('propertyChange', function (event, value, input) {
 
-					 var element = edit.Builder.selectedEl;
+		// 			 var element = edit.Builder.selectedEl;
 
-					 if (property.child) element = element.find(property.child);
-					 if (property.parent) element = element.parent(property.parent);
+		// 			 if (property.child) element = element.find(property.child);
+		// 			 if (property.parent) element = element.parent(property.parent);
 
-					 if (property.onChange)
-					 {
-						 element = property.onChange(element, value, input, component);
-					 }/* else */
-					 if (property.htmlAttr)
-					 {
-						 oldValue = element.attr(property.htmlAttr);
+		// 			 if (property.onChange)
+		// 			 {
+		// 				 element = property.onChange(element, value, input, component);
+		// 			 }/* else */
+		// 			 if (property.htmlAttr)
+		// 			 {
+		// 				 oldValue = element.attr(property.htmlAttr);
 
-						 if (property.htmlAttr == "class" && property.validValues)
-						 {
-							 element.removeClass(property.validValues.join(" "));
-							 element = element.addClass(value);
-						 }
-						 else if (property.htmlAttr == "style")
-						 {
-							 element = edit.StyleManager.setStyle(element, property.key, value);
-						 }
-						 else if (property.htmlAttr == "innerHTML")
-						 {
-							 element = edit.ContentManager.setHtml(element, value);
-						 }
-						 else
-						 {
-							 //if value is empty then remove attribute useful for attributes without values like disabled
-							 if (value)
-							 {
-								 element = element.attr(property.htmlAttr, value);
-							 } else
-							 {
-								 element = element.removeAttr(property.htmlAttr);
-							 }
-						 }
+		// 				 if (property.htmlAttr == "class" && property.validValues)
+		// 				 {
+		// 					 element.removeClass(property.validValues.join(" "));
+		// 					 element = element.addClass(value);
+		// 				 }
+		// 				 else if (property.htmlAttr == "style")
+		// 				 {
+		// 					 element = edit.StyleManager.setStyle(element, property.key, value);
+		// 				 }
+		// 				 else if (property.htmlAttr == "innerHTML")
+		// 				 {
+		// 					 element = edit.ContentManager.setHtml(element, value);
+		// 				 }
+		// 				 else
+		// 				 {
+		// 					 //if value is empty then remove attribute useful for attributes without values like disabled
+		// 					 if (value)
+		// 					 {
+		// 						 element = element.attr(property.htmlAttr, value);
+		// 					 } else
+		// 					 {
+		// 						 element = element.removeAttr(property.htmlAttr);
+		// 					 }
+		// 				 }
 
-						 edit.Undo.addMutation({type: 'attributes',
-												 target: element.get(0),
-												 attributeName: property.htmlAttr,
-												 oldValue: oldValue,
-												 newValue: element.attr(property.htmlAttr)});
-					 }
+		// 				 edit.Undo.addMutation({type: 'attributes',
+		// 										 target: element.get(0),
+		// 										 attributeName: property.htmlAttr,
+		// 										 oldValue: oldValue,
+		// 										 newValue: element.attr(property.htmlAttr)});
+		// 			 }
 
-					 if (component.onChange)
-					 {
-						 element = component.onChange(element, property, value, input);
-					 }
+		// 			 if (component.onChange)
+		// 			 {
+		// 				 element = component.onChange(element, property, value, input);
+		// 			 }
 
-					 if (!property.child && !property.parent) edit.Builder.selectNode(element);
+		// 			 if (!property.child && !property.parent) edit.Builder.selectNode(element);
 
-					 return element;
-			 });
-		 };
+		// 			 return element;
+		// 	 });
+		//  };
 
-		 var nodeElement = edit.Builder.selectedEl;
+		//  var nodeElement = edit.Builder.selectedEl;
 
-		 for (var i in component.properties)
-		 {
-			 var property = component.properties[i];
-			 var element = nodeElement;
+		//  for (var i in component.properties)
+		//  {
+		// 	 var property = component.properties[i];
+		// 	 var element = nodeElement;
 
-			 if (property.beforeInit) property.beforeInit(element.get(0))
+		// 	 if (property.beforeInit) property.beforeInit(element.get(0))
 
-			 if (property.child) element = element.find(property.child);
+		// 	 if (property.child) element = element.find(property.child);
 
-			 if (property.data) {
-				 property.data["key"] = property.key;
-			 } else
-			 {
-				 property.data = {"key" : property.key};
-			 }
+		// 	 if (property.data) {
+		// 		 property.data["key"] = property.key;
+		// 	 } else
+		// 	 {
+		// 		 property.data = {"key" : property.key};
+		// 	 }
 
-			 if (typeof property.group  === 'undefined') property.group = null;
+		// 	 if (typeof property.group  === 'undefined') property.group = null;
 
-			 property.input = property.inputtype.init(property.data);
+		// 	 property.input = property.inputtype.init(property.data);
 
-			 if (property.init)
-			 {
-				 property.inputtype.setValue(property.init(element.get(0)));
-			 } else if (property.htmlAttr)
-			 {
-				 if (property.htmlAttr == "style")
-				 {
-					 //value = element.css(property.key);//jquery css returns computed style
-					 var value = edit.StyleManager.getStyle(element, property.key);//getStyle returns declared style
-				 } else
-				 if (property.htmlAttr == "innerHTML")
-				 {
-					 var value = edit.ContentManager.getHtml(element);
-				 } else
-				 {
-					 var value = element.attr(property.htmlAttr);
-				 }
+		// 	 if (property.init)
+		// 	 {
+		// 		 property.inputtype.setValue(property.init(element.get(0)));
+		// 	 } else if (property.htmlAttr)
+		// 	 {
+		// 		 if (property.htmlAttr == "style")
+		// 		 {
+		// 			 //value = element.css(property.key);//jquery css returns computed style
+		// 			 var value = edit.StyleManager.getStyle(element, property.key);//getStyle returns declared style
+		// 		 } else
+		// 		 if (property.htmlAttr == "innerHTML")
+		// 		 {
+		// 			 var value = edit.ContentManager.getHtml(element);
+		// 		 } else
+		// 		 {
+		// 			 var value = element.attr(property.htmlAttr);
+		// 		 }
 
-				 //if attribute is class check if one of valid values is included as class to set the select
-				 if (value && property.htmlAttr == "class" && property.validValues)
-				 {
-					 value = value.split(" ").filter(function(el) {
-						 return property.validValues.indexOf(el) != -1
-					 });
-				 }
+		// 		 //if attribute is class check if one of valid values is included as class to set the select
+		// 		 if (value && property.htmlAttr == "class" && property.validValues)
+		// 		 {
+		// 			 value = value.split(" ").filter(function(el) {
+		// 				 return property.validValues.indexOf(el) != -1
+		// 			 });
+		// 		 }
 
-				 property.inputtype.setValue(value);
-			 }
+		// 		 property.inputtype.setValue(value);
+		// 	 }
 
-			 fn(component, property);
+		// 	 fn(component, property);
 
-			 var propertySection = defaultSection;
-			 if (property.section)
-			 {
-				 propertySection = property.section;
-			 }
+		// 	 var propertySection = defaultSection;
+		// 	 if (property.section)
+		// 	 {
+		// 		 propertySection = property.section;
+		// 	 }
 
 
-			 if (property.inputtype == SectionInput)
-			 {
-				 section = componentsPanelSections[propertySection].find('.section[data-section="' + property.key + '"]');
+		// 	 if (property.inputtype == SectionInput)
+		// 	 {
+		// 		 section = componentsPanelSections[propertySection].find('.section[data-section="' + property.key + '"]');
 
-				 if (edit.preservePropertySections && section.length)
-				 {
-					 section.html("");
-				 } else
-				 {
-					 componentsPanelSections[propertySection].append(property.input);
-					 section = componentsPanelSections[propertySection].find('.section[data-section="' + property.key + '"]');
-				 }
-			 }
-			 else
-			 {
-				 var row = $(tmpl('vvveb-property', property));
-				 row.find('.input').append(property.input);
-				 section.append(row);
-			 }
+		// 		 if (edit.preservePropertySections && section.length)
+		// 		 {
+		// 			 section.html("");
+		// 		 } else
+		// 		 {
+		// 			 componentsPanelSections[propertySection].append(property.input);
+		// 			 section = componentsPanelSections[propertySection].find('.section[data-section="' + property.key + '"]');
+		// 		 }
+		// 	 }
+		// 	 else
+		// 	 {
+		// 		 var row = $(tmpl('vvveb-property', property));
+		// 		 row.find('.input').append(property.input);
+		// 		 section.append(row);
+		// 	 }
 
-			 if (property.inputtype.afterInit)
-			 {
-				 property.inputtype.afterInit(property.input);
-			 }
+		// 	 if (property.inputtype.afterInit)
+		// 	 {
+		// 		 property.inputtype.afterInit(property.input);
+		// 	 }
 
-		 }
+		//  }
 
-		 if (component.init) component.init(edit.Builder.selectedEl.get(0));
+		//  if (component.init) component.init(edit.Builder.selectedEl.get(0));
 	 }
  };
 
@@ -626,7 +626,6 @@ function isElement(obj){
 		 {
 				 window.FrameWindow = self.iframe.contentWindow;
 				 window.FrameDocument = self.iframe.contentWindow.document;
-				 var addSectionBox = jQuery("#add-section-box");
 				 var highlightBox = jQuery("#highlight-box").hide();
 
 
@@ -668,7 +667,6 @@ function isElement(obj){
 								  });
 
 
-							 addSectionBox.hide();
 						 }
 
 				 });
@@ -691,7 +689,7 @@ function isElement(obj){
 		 self.frameHead = $(window.FrameDocument).find("head");
 
 		 //insert editor helpers like non editable areas
-		 self.frameHead.append('<link data-vvveb-helpers href="' + edit.baseUrl + '../../css/vvvebjs-editor-helpers.css" rel="stylesheet">');
+		 self.frameHead.append('<link data-vvveb-helpers href="/public/stylesheets/css/vvvebjs-editor-helpers.css" rel="stylesheet">');
 
 		 self._initHighlight();
 
@@ -924,7 +922,6 @@ function isElement(obj){
 
 
 		 self.frameHtml.on("click", function(event) {
-
 			 if (edit.Builder.isPreview == false)
 			 {
 				 if (event.target)
@@ -1027,35 +1024,6 @@ function isElement(obj){
 			 return false;
 		 });
 
-		 $("#clone-btn").on("click", function(event) {
-
-			 clone = self.selectedEl.clone();
-
-			 self.selectedEl.after(clone);
-
-			 self.selectedEl = clone.click();
-
-			 node = clone.get(0);
-			 edit.Undo.addMutation({type: 'childList',
-									 target: node.parentNode,
-									 addedNodes: [node],
-									 nextSibling: node.nextSibling});
-
-			 event.preventDefault();
-			 return false;
-		 });
-
-		 $("#parent-btn").on("click", function(event) {
-
-			 node = self.selectedEl.parent().get(0);
-
-			 self.selectNode(node);
-			 self.loadNodeComponent(node);
-
-			 event.preventDefault();
-			 return false;
-		 });
-
 		 $("#delete-btn").on("click", function(event) {
 			 jQuery("#select-box").hide();
 
@@ -1072,38 +1040,9 @@ function isElement(obj){
 			 return false;
 		 });
 
-		 var addSectionBox = jQuery("#add-section-box");
 		 var addSectionElement = {};
 
-		 $("#add-section-btn").on("click", function(event) {
 
-			 addSectionElement = self.highlightEl;
-
-			 var offset = jQuery(addSectionElement).offset();
-			 var top = (offset.top - self.frameDoc.scrollTop()) + addSectionElement.outerHeight();
-			 var left = (offset.left - self.frameDoc.scrollLeft()) + (addSectionElement.outerWidth() / 2) - (addSectionBox.outerWidth() / 2);
-			 var outerHeight = $(window.FrameWindow).height() + self.frameDoc.scrollTop();
-
-			 //check if box is out of viewport and move inside
-			 if (left < 0) left = 0;
-			 if (top < 0) top = 0;
-			 if ((left + addSectionBox.outerWidth()) > self.frameDoc.outerWidth()) left = self.frameDoc.outerWidth() - addSectionBox.outerWidth();
-			 if (((top + addSectionBox.outerHeight()) + self.frameDoc.scrollTop()) > outerHeight) top = top - addSectionBox.outerHeight();
-
-
-			 addSectionBox.css(
-				 {"top": top,
-				  "left": left,
-				  "display": "block",
-				  });
-
-			 event.preventDefault();
-			 return false;
-		 });
-
-		 $("#close-section-btn").on("click", function(event) {
-			 addSectionBox.hide();
-		 });
 
 		 function addSectionComponent(html, after = true)
 		 {
@@ -1125,20 +1064,18 @@ function isElement(obj){
 									 nextSibling: node.nextSibling});
 		 }
 
-		 $(".components-list li ol li", addSectionBox).on("click", function(event) {
+		 $(".components-list li ol li").on("click", function(event) {
 			 var html = edit.Components.get(this.dataset.type).html;
 
 			 addSectionComponent(html, (jQuery("[name='add-section-insert-mode']:checked").val() == "after"));
 
-			 addSectionBox.hide();
 		 });
 
-		 $(".blocks-list li ol li", addSectionBox).on("click", function(event) {
+		 $(".blocks-list li ol li").on("click", function(event) {
 			 var html = edit.Blocks.get(this.dataset.type).html;
 
 			 addSectionComponent(html, (jQuery("[name='add-section-insert-mode']:checked").val() == "after"));
 
-			 addSectionBox.hide();
 		 });
 
 	 },
@@ -1149,45 +1086,45 @@ function isElement(obj){
 		 var self = this;
 		 self.isDragging = false;
 
-		 $('.drag-elements-sidepane ul > li > ol > li').on("mousedown touchstart", function(event) {
+		 $('#dragitemslistcontainer > li').on("mousedown touchstart", function(event) {
 
 			 $this = jQuery(this);
+			console.log('aaaa : ',this);
+			//  $("#component-clone").remove();
 
-			 $("#component-clone").remove();
+			//  if ($this.data("drag-type") == "component")
+			// 	 self.component = edit.Components.get($this.data("type"));
+			//  else
+			// 	 self.component = edit.Blocks.get($this.data("type"));
 
-			 if ($this.data("drag-type") == "component")
-				 self.component = edit.Components.get($this.data("type"));
-			 else
-				 self.component = edit.Blocks.get($this.data("type"));
+			//  if (self.component.dragHtml)
+			//  {
+			// 	 html = self.component.dragHtml;
+			//  } else
+			//  {
+			// 	 html = self.component.html;
+			//  }
 
-			 if (self.component.dragHtml)
-			 {
-				 html = self.component.dragHtml;
-			 } else
-			 {
-				 html = self.component.html;
-			 }
+			//  self.dragElement = $(html);
+			//  self.dragElement.css("border", "1px dashed #4285f4");
 
-			 self.dragElement = $(html);
-			 self.dragElement.css("border", "1px dashed #4285f4");
+			//  if (self.component.dragStart) self.dragElement = self.component.dragStart(self.dragElement);
 
-			 if (self.component.dragStart) self.dragElement = self.component.dragStart(self.dragElement);
+			//  self.isDragging = true;
+			//  if (edit.dragIcon == 'html')
+			//  {
+			// 	 self.iconDrag = $(html).attr("id", "dragElement-clone").css('position', 'absolute');
+			//  }
+			//  else if (self.designerMode == false)
+			//  {
+			// 	 self.iconDrag = $('<img src=""/>').attr({"id": "dragElement-clone", 'src': $this.css("background-image").replace(/^url\(['"](.+)['"]\)/, '$1')}).
+			// 	 css({'z-index':100, 'position':'absolute', 'width':'64px', 'height':'64px', 'top': event.originalEvent.y, 'left': event.originalEvent.x});
+			//  }
 
-			 self.isDragging = true;
-			 if (edit.dragIcon == 'html')
-			 {
-				 self.iconDrag = $(html).attr("id", "dragElement-clone").css('position', 'absolute');
-			 }
-			 else if (self.designerMode == false)
-			 {
-				 self.iconDrag = $('<img src=""/>').attr({"id": "dragElement-clone", 'src': $this.css("background-image").replace(/^url\(['"](.+)['"]\)/, '$1')}).
-				 css({'z-index':100, 'position':'absolute', 'width':'64px', 'height':'64px', 'top': event.originalEvent.y, 'left': event.originalEvent.x});
-			 }
+			//  $('body').append(self.iconDrag);
 
-			 $('body').append(self.iconDrag);
-
-			 event.preventDefault();
-			 return false;
+			//  event.preventDefault();
+			//  return false;
 		 });
 
 	 },
