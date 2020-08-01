@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2020-07-30 08:47:05
+-- 產生時間： 2020-07-31 10:21:10
 -- 伺服器版本： 10.4.11-MariaDB
 -- PHP 版本： 7.4.6
 
@@ -24,43 +24,166 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- 資料表結構 `account`
+--
+
+CREATE TABLE `account` (
+  `aID` tinyint(2) UNSIGNED ZEROFILL NOT NULL,
+  `mID` tinyint(2) UNSIGNED ZEROFILL NOT NULL,
+  `tID` tinyint(2) UNSIGNED ZEROFILL NOT NULL,
+  `aName` varchar(20) COLLATE utf8_unicode_ci DEFAULT 'eeWeb template',
+  `explain` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pic` varchar(1000) COLLATE utf8_unicode_ci DEFAULT 'default.jpg',
+  `date` varchar(20) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 傾印資料表的資料 `account`
+--
+
+INSERT INTO `account` (`aID`, `mID`, `tID`, `aName`, `explain`, `pic`, `date`) VALUES
+(01, 01, 01, 'eeWeb template', 'yayayayayaya', 'user.jpg', '07/31');
+
+-- --------------------------------------------------------
+
+--
 -- 資料表結構 `member`
 --
 
 CREATE TABLE `member` (
-  `eeId` int(10) UNSIGNED NOT NULL,
-  `eeAccount` mediumtext NOT NULL,
-  `eePassword` mediumtext NOT NULL,
-  `eeEmail` mediumtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `mID` tinyint(2) UNSIGNED ZEROFILL NOT NULL,
+  `uName` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `Email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `uPwd` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(300) COLLATE utf8_unicode_ci DEFAULT 'user.jpg'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- 傾印資料表的資料 `member`
 --
 
-INSERT INTO `member` (`eeId`, `eeAccount`, `eePassword`, `eeEmail`) VALUES
-(2, '1234', '4321', '1234@gmail.com'),
-(3, '<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <!-- <link rel=\"stylesheet\" href=\"../_css/bootstrap.min.css\"> -->\r\n    <script src=\"../_js/jquery.min.js\"></script>\r\n    <script src=\"../_js/popper.min.js\"></script>\r\n    <script src=\"../_js/bootstrap.min.js\"></script>\r\n    <script src=\"flycan.js\"></script>\r\n\r\n    <title>Document</title>\r\n    <link rel=\"stylesheet\" href=\"style copy.css\">\r\n</head>', '<body id=\"chart3\">\r\n\r\n\r\n    <!-- <div class=\"title\"> -->\r\n    <!-- <div class=\"login1\">\r\n        <a href=\"antique_product2.html\"><img src=\"image/antique/Image 9.jpg\" width=\"30px\">\r\n            <p class=\"login3\">0</p>\r\n        </a>\r\n    </div>\r\n    <div class=\"login2\"><a href=\"\">Login/Join</a></div> -->\r\n\r\n    <!-- <div class=\"tit\"> -->\r\n    <!-- 標題和LOGO -->\r\n\r\n    <!-- <div>\r\n        <a href=\"Xiang se.html\" id=\"logo\"><img src=\"image/antique/log1.jpg\" alt=\"\"></a>\r\n    </div> -->\r\n\r\n    <!-- <h1>delicate antique</h1> -->\r\n    <!-- </div> -->\r\n\r\n\r\n\r\n    <!-- 選單 -->\r\n    <!-- <nav class=\"navBar\">\r\n            <ul>\r\n                <li>\r\n                    <h5><a href=\"Xiang se.html\">ALL</a></h5>\r\n                </li>\r\n                <li>\r\n                    <h5><a href=\"Xiang se_specialty.html\">HOME</a></h5>\r\n                </li>\r\n                <li>\r\n                    <h5><a href=\"Xiang se_menu.html\">SALE</a></h5>\r\n                </li>\r\n\r\n                <li>\r\n                    <h5><a href=\"Xiang se_about.html\">ABOUT</a></h5>\r\n                </li>\r\n\r\n            </ul>\r\n        </nav>\r\n    </div> -->\r\n\r\n    <!-- 導覽頁 -->\r\n    <div class=\"title\">\r\n\r\n        <nav class=\"navBar navbar-expand-md navbar-light bg-wight p-1\" id=\"notoSans\">\r\n\r\n\r\n\r\n            <div class=\"mx-auto order-0\" style=\"margin-top: 18px;\">\r\n                <a class=\"navbar-brand p-0\" href=\"#\">\r\n                    <div class=\"tit\">\r\n                        <img src=\"image/antique/log1.jpg\" alt=\"\">\r\n                    </div>\r\n                </a>\r\n\r\n            </div>\r\n\r\n            <button class=\"navbar-toggler \" type=\"button\" data-toggle=\"collapse\" data-target=\".dual-collapse2\">\r\n                <span class=\"navbar-toggler-icon\"></span>\r\n            </button>\r\n\r\n            <div class=\"navbar-collapse collapse  dual-collapse2\">\r\n                <ul class=\"navbar-nav mr-auto\">\r\n                    <li class=\"nav-item active\">\r\n                        <h5 class=\"nav-link\"><a href=\"Xiang se.html\">ALL</a></h5>\r\n                    </li>\r\n                    <li class=\"nav-item active\">\r\n                        <h5 class=\"nav-link\"><a href=\"Xiang se_specialty.html\">HOME</a></h5>\r\n                    </li>\r\n                    <li class=\"nav-item active\">\r\n                        <h5 class=\"nav-link\"><a href=\"Xiang se_menu.html\">SALE</a></h5>\r\n                    </li>\r\n\r\n                    <li class=\"nav-item active\">\r\n                        <h5 class=\"nav-link\"><a href=\"Xiang se_about.html\">ABOUT</a></h5>\r\n                    </li>\r\n\r\n                </ul>\r\n                <form class=\"form-inline ml-auto\">\r\n                    <div style=\"margin-top: -11px;\">\r\n                        <div class=\"login1\">\r\n                            <a href=\"antique_product2.html\"><img src=\"image/antique/Image 9.jpg\" width=\"30px\">\r\n                                <p class=\"login3\">0</p>\r\n                            </a>\r\n                        </div>\r\n                        <div class=\"login2\"><a href=\"\">Login/Join</a></div>\r\n                    </div>\r\n                </form>\r\n            </div>\r\n\r\n\r\n\r\n\r\n            <!-- LOGO -->\r\n\r\n        </nav>\r\n    </div>\r\n\r\n    <div class=\"container ctr \">\r\n        <div class=\"row\">\r\n            <div class=\"col-12 cot4\">\r\n                <img src=\"image/antique/antique_bg1.jpg\" style=\"width: 100%;\" class=\"cot4-1 change\">\r\n                <img src=\"image/antique/antique_bg4.jpg\" style=\"width: 100%;\" class=\"cot4-2 \">\r\n                <img src=\"image/antique/antique_bg2.jpg\" style=\"width: 100%;\" class=\"cot4-2 \">\r\n                <img src=\"image/antique/antique_bg3.jpg\" style=\"width: 100%;\" class=\"cot4-2 \">\r\n            </div>\r\n            <hr>\r\n\r\n            <div class=\"pro col-12 \">\r\n                <h5 class=\"product\">KIND</h5>\r\n                <!--  品項 -->\r\n            </div>\r\n\r\n            <a class=\"col-6 col-md-4 ctr_1 \" href=\"Xiang se_appetizer.html\">\r\n                <div class=\"ctr_1--c1\">\r\n                    <p><span>CHAIR</span></p>\r\n                </div>\r\n\r\n            </a>\r\n            <a class=\"col-6 col-md-4 ctr_1 \" href=\"Xiang se_maincourse.html\">\r\n                <div class=\"ctr_1--c2\">\r\n                    <p><span>DESK</span></p>\r\n                </div>\r\n            </a>\r\n            <a class=\"col-6 col-md-4 ctr_1 \" href=\"Xiang se_soup.html\">\r\n                <div class=\"ctr_1--c3\">\r\n                    <p><span>SOFA</span></p>\r\n                </div>\r\n            </a>\r\n            <a class=\"col-6 col-md-4 ctr_1 \" href=\"Xiang se_wine.html\">\r\n                <div class=\"ctr_1--c4\">\r\n                    <p><span>TABLE</span></p>\r\n                </div>\r\n            </a>\r\n            <a class=\"col-6 col-md-4 ctr_1 \" href=\"Xiang se_drink.html\">\r\n                <div class=\"ctr_1--c5\">\r\n                    <p><span>CUPBOARD</span></p>\r\n                </div>\r\n            </a>\r\n            <a class=\"col-6 col-md-4 ctr_1  \" href=\"Xiang se_dessert.html\">\r\n                <div class=\"ctr_1--c6\">\r\n                    <p><span>DECORATION</span></p>\r\n                </div>\r\n            </a>\r\n\r\n        </div>\r\n    </div>\r\n\r\n\r\n\r\n\r\n\r\n    <div class=\"pro\">\r\n        <h5 class=\"product\">精選商品</h5>\r\n    </div>\r\n    <div class=\"container\">\r\n        <div class=\"row\">\r\n            <div class=\"pic1\">\r\n                <img src=\"image/antique/Image 16.jpg\" class=\"litpic_1 col-6 col-md-3\">\r\n                <img src=\"image/antique/Image 17.jpg\" class=\"litpic_1 col-6 col-md-3\">\r\n                <img src=\"image/antique/Image 18.jpg\" class=\"litpic_1 col-6 col-md-3\">\r\n                <img src=\"image/antique/Image 19.jpg\" class=\"litpic_1 col-6 col-md-3\">\r\n                <img src=\"image/antique/Image 20.jpg\" class=\"litpic_1 col-6 col-md-3\">\r\n                <img src=\"image/Xiang se/pic_6.jpg\" class=\"litpic_1 col-6 col-md-3\"><br><br>\r\n\r\n            </div>\r\n\r\n        </div>\r\n    </div>\r\n    <footer>\r\n        <div class=\"footerBar\">\r\n            <div class=\"container ctr2\">\r\n\r\n\r\n\r\n                <div class=\"row\">\r\n\r\n                    <ul class=\" col-md-5\">\r\n                        <li>\r\n                            <h5>商品分類</h5>\r\n                        </li>\r\n                        <li>椅凳</li>\r\n                        <li>書桌</li>\r\n                        <li>桌子</li>\r\n                        <li>櫥櫃</li>\r\n                        <li>家飾</li>\r\n                        <li>沙發</li>\r\n\r\n                    </ul><br>\r\n\r\n                    <ul class=\" col-md-5\">\r\n                        <li>\r\n                            <h5>delicate antique</h5>\r\n\r\n                        </li>\r\n                        <li>關於我們</li>\r\n                        <li>聯絡我們</li>\r\n\r\n                    </ul><br>\r\n\r\n                    <ul class=\"col-md-2 footerLogo\">\r\n\r\n                        <li>\r\n                            <a href=\"Xiang se.html\"></a><img src=\"image/antique/log1.jpg\" width=\"300\" c></a>\r\n                        </li>\r\n\r\n\r\n                    </ul><br>\r\n                    <!-- <ul>\r\n                    <h5>Xiang se</h5>\r\n                    <li>聯絡我們</li>\r\n                    <li>關於我們</li>\r\n\r\n                </ul> -->\r\n\r\n                </div>\r\n\r\n            </div>\r\n        </div>\r\n        </div>\r\n\r\n\r\n    </footer>\r\n\r\n\r\n</body>', '</html>');
+INSERT INTO `member` (`mID`, `uName`, `Email`, `uPwd`, `img`) VALUES
+(01, 'chichi', 'chi@gmail.com', 'aaa', 'user.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `pages`
+--
+
+CREATE TABLE `pages` (
+  `pID` tinyint(2) UNSIGNED ZEROFILL NOT NULL,
+  `pName` varchar(20) COLLATE utf8_unicode_ci DEFAULT 'eeWeb template',
+  `aID` tinyint(2) UNSIGNED ZEROFILL NOT NULL,
+  `body` varchar(10000) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 傾印資料表的資料 `pages`
+--
+
+INSERT INTO `pages` (`pID`, `pName`, `aID`, `body`) VALUES
+(01, 'index', 01, '<body><h1>index</h1></body>'),
+(02, 'member', 01, '<body><h1>member</h1></body>'),
+(03, 'car', 01, '<body><h1>car</h1></body>');
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `template`
+--
+
+CREATE TABLE `template` (
+  `tID` tinyint(2) UNSIGNED ZEROFILL NOT NULL,
+  `tName` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `type` tinyint(2) NOT NULL,
+  `pages` tinyint(2) DEFAULT 1,
+  `begin` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  `end` varchar(500) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- 傾印資料表的資料 `template`
+--
+
+INSERT INTO `template` (`tID`, `tName`, `type`, `pages`, `begin`, `end`) VALUES
+(01, 'antique', 1, 6, '<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n    <title>Document</title>\r\n</head>', '</html>');
 
 --
 -- 已傾印資料表的索引
 --
 
 --
+-- 資料表索引 `account`
+--
+ALTER TABLE `account`
+  ADD PRIMARY KEY (`aID`),
+  ADD KEY `mID` (`mID`),
+  ADD KEY `tID` (`tID`);
+
+--
 -- 資料表索引 `member`
 --
 ALTER TABLE `member`
-  ADD PRIMARY KEY (`eeId`);
+  ADD PRIMARY KEY (`mID`);
+
+--
+-- 資料表索引 `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`pID`),
+  ADD KEY `aID` (`aID`);
+
+--
+-- 資料表索引 `template`
+--
+ALTER TABLE `template`
+  ADD PRIMARY KEY (`tID`);
 
 --
 -- 在傾印的資料表使用自動遞增(AUTO_INCREMENT)
 --
 
 --
+-- 使用資料表自動遞增(AUTO_INCREMENT) `account`
+--
+ALTER TABLE `account`
+  MODIFY `aID` tinyint(2) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- 使用資料表自動遞增(AUTO_INCREMENT) `member`
 --
 ALTER TABLE `member`
-  MODIFY `eeId` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `mID` tinyint(2) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `pID` tinyint(2) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- 使用資料表自動遞增(AUTO_INCREMENT) `template`
+--
+ALTER TABLE `template`
+  MODIFY `tID` tinyint(2) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- 已傾印資料表的限制式
+--
+
+--
+-- 資料表的限制式 `account`
+--
+ALTER TABLE `account`
+  ADD CONSTRAINT `account_ibfk_1` FOREIGN KEY (`mID`) REFERENCES `member` (`mID`),
+  ADD CONSTRAINT `account_ibfk_2` FOREIGN KEY (`tID`) REFERENCES `template` (`tID`);
+
+--
+-- 資料表的限制式 `pages`
+--
+ALTER TABLE `pages`
+  ADD CONSTRAINT `pages_ibfk_1` FOREIGN KEY (`aID`) REFERENCES `account` (`aID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

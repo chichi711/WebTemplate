@@ -28,6 +28,8 @@ conn.connect(function (err,rows) {
 	}
 console.log("isFine")
 });
+
+
 // conn.query('select * from member','',function (err, rows) {
 //           if (err) {
 //               console.log(JSON.stringify(err));

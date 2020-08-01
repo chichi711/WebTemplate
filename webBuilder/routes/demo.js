@@ -13,5 +13,15 @@ router.get('/', function (req, res, next) {
     }
     );
 });
+// app.post("/", function (request, response) {
 
+// 	connection.query(
+// 		"insert into news set tName = ?, type = ? begin = ? end = ?", 
+// 			[
+// 				request.body.title, 
+// 				request.body.ymd
+// 			]);
+// 	response.send("row inserted.");
+    
+// })
 module.exports = router;
