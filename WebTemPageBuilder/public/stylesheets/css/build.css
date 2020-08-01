@@ -13,7 +13,6 @@ p {
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
-    color: #999;
 }
 
 a,
@@ -75,7 +74,6 @@ a:focus {
     left: 0;
     height: 100vh;
     background: #0a99b9;
-    /* background: #0089A7; */
     color: #fff;
     transition: all 0.3s;
 
@@ -146,6 +144,10 @@ a:focus {
     display: block;
     font-size: 1.8em;
     margin-bottom: 10px;
+}
+
+#conte div {
+    color: #fff;
 }
 
 /* #sidebar ul li.active>a,
@@ -270,3 +272,151 @@ a.article:hover {
         display: none;
     }
 }
+
+
+  /* 主題內容輸入 */
+
+  .wrap-contact100 input {
+    outline: none;
+    border: none;
+  }
+
+  .wrap-contact100 input[type="number"] {
+      -moz-appearance: textfield;
+      appearance: none;
+      -webkit-appearance: none;
+  }
+
+  .wrap-contact100 input[type="number"]::-webkit-outer-spin-button,
+  .wrap-contact100 input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+  }
+
+  .wrap-contact100 textarea {
+    outline: none;
+    border: none;
+  }
+
+  .wrap-contact100 textarea:focus, input:focus {
+    border-color: transparent !important;
+  }
+
+  .wrap-contact100 input::-webkit-input-placeholder { color: #bdbdd3;}
+  .wrap-contact100 input:-moz-placeholder { color: #bdbdd3;}
+  .wrap-contact100 input::-moz-placeholder { color: #bdbdd3;}
+  .wrap-contact100 input:-ms-input-placeholder { color: #bdbdd3;}
+
+  .wrap-contact100 textarea::-webkit-input-placeholder { color: #bdbdd3;}
+  .wrap-contact100 textarea:-moz-placeholder { color: #bdbdd3;}
+  .wrap-contact100 textarea::-moz-placeholder { color: #bdbdd3;}
+  .wrap-contact100 textarea:-ms-input-placeholder { color: #bdbdd3;}
+
+  /*---------------------------------------------*/
+
+  .container-contact100 {
+    width: 100%;
+    min-height: 46vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #f2f2f2;
+  }
+
+  .wrap-contact100 {
+    width: 550px;
+    background: transparent;
+    padding: 10px 30px 10px 30px;
+  }
+
+
+  /*==================================================================
+  [ Form ]*/
+
+
+
+  /*------------------------------------------------------------------
+  [ Input ]*/
+
+  .wrap-input100 {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 31px;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .input100 {
+    position: relative;
+    display: block;
+    width: 100%;
+    background: #fff;
+    border-radius: 31px;
+    font-size: 18px;
+    color: #8f8fa1;
+    line-height: 1.2;
+  }
+
+
+  /*---------------------------------------------*/
+  input.input100 {
+    height: 62px;
+    padding: 0 35px 0 35px;
+  }
+
+
+  textarea.input100 {
+    min-height: 169px;
+    padding: 19px 35px 0 35px;
+  }
+
+  /*------------------------------------------------------------------
+  [ Focus Input ]*/
+
+  .focus-input100 {
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    border-radius: 31px;
+    background-color: #fff;
+    pointer-events: none;
+
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    transition: all 0.4s;
+  }
+
+  .input100:focus + .focus-input100 {
+    width: calc(100% + 20px);
+  }
+
+  .btn-outline-primary {
+      color: #0a99b9;
+  }
+  .btn-outline-primary:hover {
+      background-color: #0a99b9;
+  }
+
+  .btn-primary {
+      background-color: #0a99b9;
+  }
+  .btn-primary:hover {
+      background-color: #188ea8;
+  }
+
