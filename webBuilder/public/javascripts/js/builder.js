@@ -493,7 +493,7 @@ function isElement(obj){
 	 designerMode : false,
 
 	 init: function(url, callback) {
-
+		 window.isDirty = false;
 		 let self = this;
 
 		 self.loadControlGroups();
@@ -629,14 +629,6 @@ function isElement(obj){
 				 let highlightBox = jQuery("#highlight-box").hide();
 
 
-				 $(window.FrameWindow).on( "beforeunload", function(event) {
-					 if (edit.Undo.undoIndex <= 0)
-					 {
-						 let dialogText = "You have unsaved changes";
-						 event.returnValue = dialogText;
-						 return dialogText;
-					 }
-				 });
 
 				 jQuery(window.FrameWindow).on("scroll resize", function(event) {
 
