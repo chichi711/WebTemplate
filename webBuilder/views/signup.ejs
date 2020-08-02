@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊</title>
+    <link rel="stylesheet" href="/stylesheets/Xu.css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/Xu.css/logn.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/Xu.css/features.css">
+
+
+</head>
+
+<body>
+    <!-- 導覽列 -->
+    <%- include('navbar') %>
+
+    <div class="bg">
+    </div>
+
+
+    <form  action="" accept-charset="utf-8" method="POST" >
+        <h1 class="signup">會員註冊</h1>
+        <div class="txtb">
+            <input type="text" >
+            <span data-placeholder="姓名"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="email"  >
+            <span data-placeholder="電子郵件"></span>
+        </div>
+
+        <div class="txtb">
+            <input type="password">
+            <span data-placeholder="密碼"></span>
+        </div>
+        <div class="txtb">
+            <input type="password"  >
+            <span data-placeholder="確認密碼"></span>
+        </div>
+        <div class="logbtn2">
+            <input type="submit" class="logbtn" value="確認送出">
+        </div>
+
+    </form>
+
+
+    <script src="/javascripts/Xu.js/jquery-3.3.1.min.js"></script>
+    <script src="/javascripts/Xu.js/popper.min.js"></script>
+    <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
+    <script src="/javascripts/Xu.js/logn.js"></script>
+
+</body>
+
+</html>

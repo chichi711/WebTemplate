@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<link rel="icon" href="/icon.png">
+	<title>EEweb</title>
+
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<link href="/public/stylesheets/css/build.css" rel="stylesheet" />
+
+	<link href="/public/stylesheets/css/demointerface.css" rel="stylesheet">
+
+	<!-- <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script> -->
+	<link href="editor.css" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+	<!-- <link href="/public/stylesheets/css/line-awesome.css" rel="stylesheet"> -->
+</head>
+<script>
+	function changePage(index) {
+		switch (index) {
+			case 1:
+				edit.Builder.init('/antique/index copy.html', function () { });
+				break;
+			case 2:
+				edit.Builder.init('/antique/antique_about.html', function () { });
+				break;
+			case 3:
+				edit.Builder.init('/antique/antique_kind.html', function () { });
+				break;
+			case 4:
+				edit.Builder.init('/antique/antique_login.html', function () { });
+				break;
+			case 5:
+				edit.Builder.init('/antique/antique_product.html', function () { });
+				break;
+			case 6:
+				edit.Builder.init('/antique/antique_product2.html', function () { });
+				break;
+		}
+	}
+</script>
+<body>
+
+	<!-- 側邊攔 -->
+	<nav id="sidebar">
+		<!-- 側邊攔tab -->
+		<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+			<a class="nav-item nav-link col-lg-4 active" id="nav-home-tab" data-toggle="tab" href="#home" role="tab"
+				aria-controls="nav-home" aria-selected="true">Home</a>
+			<a style="color: black" class="nav-item nav-link col-lg-4" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab"
+				aria-controls="nav-profile" aria-selected="false">Profile</a>
+			<a class="nav-item nav-link col-lg-4" id="nav-contact-tabF" data-toggle="tab" href="#conte" role="tab"
+				aria-controls="nav-contact" aria-selected="false">Conte</a>
+		</div>
+		<div class="tab-content" id="myTabContent">
+			<!-- 側邊攔tabHome -->
+			<div class="tab-pane fade show active" id="home" style="height: 90vh;" role="tabpanel" aria-labelledby="home-tab" >
+				<ul class="row list-unstyled components" id="dragitemslistcontainer" >
+					<li class="col-lg-6" draggable="true" data-insert-html='<div class=btn5-1><header class=btn5><div class=btn5-containerr><h1 class=btn5-logo></h1><nav><ul><li><a href=#>Home</a><li><a href=#>About</a><li><a href=#>Pricing</a><li><a href=#>Contact</a></ul></nav></div></header></div>'>
+						<i class="las la-bars"></i>
+						<p>navbar</p>
+					</li>
+					<li class="col-lg-6" draggable="true" data-insert-html='<div style=text-align:center><button class="btn1 buttonNavy btn1-Size1" tabindex=0>START<span></span><span></span><span></span><span></span><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b></button></div>'>
+						<i class="las la-hockey-puck"></i>
+						<p>button</p>
+					</li>
+					<li class="col-lg-6" draggable="true" data-insert-html='<div class="btn3 btn3-Size1 btn3-black"><div class=line></div><div class=line></div><div class=line></div><div class=line></div><div class=line></div><div class=line></div><span>登入/註冊</span></div>'>
+						<i class="las la-hockey-puck"></i>
+						<p>button</p>
+					</li>
+					<li class="col-lg-6" draggable="true" data-insert-html='<a href="" class="btn effect01" target=_blank><span>前往結帳</span></a>'>
+						<i class="las la-hockey-puck"></i>
+						<p>button</p>
+					</li>
+					<li class="col-lg-6" draggable="true" data-insert-html='<div class=vertical-align><div class=btn4><label> <input checked name=button-group type=radio value=item> <span class="btn4-1 first">1</span>  </label> <label> <input name=button-group type=radio value=other-item> <span class=btn4-1>2</span>  </label> <label> <input name=button-group type=radio value=other-item> <span class=btn4-1>3</span>  </label> <label> <input name=button-group type=radio value=third> <span class=btn4-1>4</span>  </label> <label> <input name=button-group type=radio value=third> <span class="btn4-1 last">5</span></label></div></div>'>
+						<i class="las la-check-circle"></i>
+						<p>checkbox</p>
+					</li>
+					<li class="col-lg-6" draggable="true" data-insert-html='<div class=btn6><form><h1>LOGIN</h1><input placeholder=Username type=text required> <input placeholder=Password type=password required> <button>Submit</button></form></div>'>
+						<i class="las la-address-card"></i>
+						<p>login Form</p>
+					</li>
+					<li class="col-lg-6" draggable="true" data-insert-html='<hr class="hr-style2">'>
+						<i class="las la-slash"></i>
+						<p>hr</p>
+					</li>
+				</ul>
+			</div>
+			<!-- 側邊攔tabProfile -->
+			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
+				<ul class="list-unstyled components">
+					<li>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(1)">&ensp;home</a>
+					</li>
+					<li>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(2)">&ensp;about</a>
+					</li>
+					<li>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(3)">&ensp;kind</a>
+					</li>
+					<li>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(4)">&ensp;login</a>
+					</li>
+					<li>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(5)">&ensp;product</a>
+					</li>
+					<li>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(6)">&ensp;car</a>
+					</li>
+				</ul>
+			</div>
+			<!-- 側邊攔tabConte -->
+			<div class="tab-pane fade" id="conte" role="tabpanel" aria-labelledby="profile-tab">
+				<li>
+					<a class="fas fa-sticky-note" href="#"> Contact</a>
+				</li>
+			</div>
+
+		</div>
+	</nav>
+
+	<nav class="navbar navbar-expand navbar-light bg-light p-1">
+		<div class="container-fluid ">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+				<a class="navbar-brand p-0 " href="#">
+					<img src="../public/images/assets/img/logo.png" alt="" loading="lazy">
+				</a>
+			</div>
+
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+				<ul class="nav justify-content-center">
+					<li class="nav-item">
+						<button class="btn" id="mobile-view">
+							<i class="las la-mobile-alt"></i>
+						</button>
+					</li>
+					<li class="nav-item">
+						<button class="btn" id="tablet-view">
+							<i class="las la-tablet-alt"></i>
+						</button>
+					</li>
+					<li class="nav-item">
+						<button class="btn" id="desktop-view">
+							<i class="las la-desktop"></i>
+						</button>
+					</li>
+				</ul>
+			</div>
+			<button id="navCopy" class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#webCode"
+				type="submit">
+				複製程式碼
+			</button>
+		</div>
+	</nav>
+
+
+
+
+
+	<!-- vvveb -->
+	<div id="vvveb-builder">
+		<div id="canvas" class="desktop">
+			<div id="iframe-wrapper">
+				<div id="iframe-layer">
+					<div id="highlight-box">
+						<div id="highlight-name"></div>
+					</div>
+
+					<div id="select-box">
+
+						<div id="wysiwyg-editor">
+							<a id="bold-btn" href="" title="Bold"><i><strong>B</strong></i></a>
+							<a id="italic-btn" href="" title="Italic"><i>I</i></a>
+							<a id="underline-btn" href="" title="Underline"><u>u</u></a>
+							<a id="strike-btn" href="" title="Strikeout"><del>S</del></a>
+							<a id="link-btn" href="" title="Create link"><strong>a</strong></a>
+						</div>
+
+						<div id="select-actions">
+							<a id="drag-btn" href="" title="Drag element"><i class="la la-arrows"></i></a>
+							<a id="up-btn" href="" title="Move element up"><i class="la la-arrow-up"></i></a>
+							<a id="down-btn" href="" title="Move element down"><i class="la la-arrow-down"></i></a>
+							<a id="delete-btn" href="" title="Remove element"><i class="la la-trash"></i></a>
+						</div>
+					</div>
+				</div>
+				<iframe src="about:none" id="clientframe"></iframe>
+			</div>
+		</div>
+	</div>
+	<!-- vvveb end -->
+
+
+
+
+
+
+	<!-- 彈出視窗 -->
+	<div class="modal" id="webCode">
+		<div class="modal-dialog modal-dialog-scrollable modal-lg" style="width:800px">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">程式碼</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<p id="newCode" style="white-space: pre-wrap">
+
+					</p>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="copyBtn" name="newCode">複製</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<div id="under_canvas"></div>
+
+
+	<!-- builder code-->
+	<script src="../public/javascripts/js/dnd.js"></script>
+	<script src="builder.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			// edit.Builder.init('./index copy.html', function () {
+			edit.Builder.init('../antique/antique_about.html', function () {
+			// edit.Builder.init('../Stylish Portfolio/index.html', function () {
+				// edit.Builder.init('../antique/antique_product2.html', function () {
+				//run code after page/iframe is loaded
+			});
+		});
+
+		// html2canvas(document.body, {
+		// 	onrendered: function (canvas) {//得到了canvas物件
+		// 		var imgUrl = canvas.toDataURL("image/png");//這裡通過canvas的toDataURL方法把它轉換成base64編碼。
+		// 		document.getElementById('under_canvas').innerHTML = imgUrl;
+		// 		// document.getElementById('under_canvas').innerHTML = '<img src="'+imgUrl+'"/>';
+		// 	}
+		// });
+	</script>
+</body>
+
+</html>

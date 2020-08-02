@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2020-07-31 10:21:10
+-- 產生時間： 2020-08-02 14:17:23
 -- 伺服器版本： 10.4.11-MariaDB
 -- PHP 版本： 7.4.6
 
@@ -32,7 +32,7 @@ CREATE TABLE `account` (
   `mID` tinyint(2) UNSIGNED ZEROFILL NOT NULL,
   `tID` tinyint(2) UNSIGNED ZEROFILL NOT NULL,
   `aName` varchar(20) COLLATE utf8_unicode_ci DEFAULT 'eeWeb template',
-  `explain` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `explanation` varchar(200) COLLATE utf8_unicode_ci DEFAULT NULL,
   `pic` varchar(1000) COLLATE utf8_unicode_ci DEFAULT 'default.jpg',
   `date` varchar(20) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -41,8 +41,8 @@ CREATE TABLE `account` (
 -- 傾印資料表的資料 `account`
 --
 
-INSERT INTO `account` (`aID`, `mID`, `tID`, `aName`, `explain`, `pic`, `date`) VALUES
-(01, 01, 01, 'eeWeb template', 'yayayayayaya', 'user.jpg', '07/31');
+INSERT INTO `account` (`aID`, `mID`, `tID`, `aName`, `explanation`, `pic`, `date`) VALUES
+(01, 01, 01, 'ffff', 'yayayayayaya', 'user.jpg', '07/31');
 
 -- --------------------------------------------------------
 
