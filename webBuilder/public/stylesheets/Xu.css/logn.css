@@ -61,9 +61,9 @@ button{
 } */
 
 
-.logo{
-    height: 150px;
-    width: 55px;
+.img{
+    margin-right: 58vh;
+
 }
 
 /* 會員表單 */
@@ -172,10 +172,11 @@ button{
 }
 .bottom-text a{
     color: #2691d9;
+    font-size: 22px;
 
 }
 .bottom-text span{
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .bottom-text a:hover{

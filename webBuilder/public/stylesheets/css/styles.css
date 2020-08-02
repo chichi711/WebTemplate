@@ -24,7 +24,7 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #f4623a;
+  --primary: #00aa90;
   --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
@@ -78,6 +78,10 @@ h1{
 h5{
   font-size: 20px;
 }
+h3{
+  font-size: 28px;
+}
+
 
 h1, h2, h3, h4, h5, h6 {
 
@@ -413,7 +417,7 @@ mark,
 
 .img-fluid {
   max-width: 100%;
-  height: auto;
+  height: 26vh;
 }
 
 .img-thumbnail {
@@ -5509,11 +5513,7 @@ a.close.disabled {
   }
 }
 @media (min-width: 992px) {
-  .
-  
-  
-  
-  ,
+  .modal-lg,
 .modal-xl {
     max-width: 800px;
   }
@@ -7547,7 +7547,7 @@ button.bg-dark:focus {
 
 .mb-4,
 .my-4 {
-  margin-bottom: 1.5rem !important;
+  margin-bottom: 2.5rem !important;
 }
 
 .ml-4,
@@ -9745,7 +9745,8 @@ a.text-primary:hover, a.text-primary:focus {
 }
 
 .text-secondary {
-  color: #6c757d !important;
+  padding: 17px 0 13px 0;
+
 }
 
 a.text-secondary:hover, a.text-secondary:focus {
@@ -9940,7 +9941,6 @@ h3 {
 }
 body,
 html {
-  width: 100%;
   height: 100%;
 }
 
@@ -10025,10 +10025,10 @@ hr.light {
 
 header.masthead {
   padding-top: 10rem;
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url();
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url(https://images.pexels.com/photos/942872/pexels-photo-942872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-size: cover;
   margin-top: 8vh;
   width: 100%;
@@ -10065,9 +10065,9 @@ header.masthead {
   position: absolute;
   bottom: 0;
   text-align: center;
-  opacity: 0;
+  opacity: 0  ;
   color: #fff;
-  background: rgba(244, 98, 58, 0.9);
+  background: rgba(0, 170, 144, 0.95);
   transition: opacity 0.25s ease;
   text-align: center;
 }

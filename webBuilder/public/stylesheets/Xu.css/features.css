@@ -99,7 +99,7 @@ body{
     background-attachment: fixed;
     background-position: center center;
     opacity: .5;
-    height:85vh;
+    height:80vh;
     width: 100%;
     margin-top: 4.5rem;
 
@@ -525,6 +525,10 @@ body{
   background: rgba(255, 255, 255, 0.03);
 }
 
+
+.hideme{
+  margin: 47px 0 -40px 0;
+}
 
 
 
