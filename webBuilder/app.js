@@ -29,21 +29,7 @@ conn.connect(function (err,rows) {
 console.log("isFine")
 });
 
-// app.get("/home/news", function (request, response) {
 
-//   connection.query('select * from news',
-//       '',
-//       function (err, rows) {
-//           if (err) {
-//               console.log(JSON.stringify(err));
-//               return;
-//           }
-
-//           response.send(JSON.stringify(rows));
-//       }
-//   );
-
-// })
 
 
 // conn.query('select * from member','',function (err, rows) {
@@ -56,26 +42,32 @@ console.log("isFine")
 //   );
 
 // 添加路由並以JSON格式顯示
-app.get("/EEweb/member", function (req, res) {
-  conn.query('select * from member','',function (err, rows) {
+app.get("/home/news", function (request, response) {
+
+  conn.query('select * from account','',function (err, rows) {
           if (err) {
               console.log(JSON.stringify(err));
               return;
           }
-          res.send(JSON.stringify(rows));
+
+          response.send(JSON.stringify(rows));
       }
   );
+
 })
-app.get("/test", function (req, res) {
-  conn.query('select * from member','',function (err, rows) {
-          if (err) {
-              console.log(JSON.stringify(err));
-              return;
-          }
-          res.send(JSON.stringify(rows));
-      }
-  );
+app.post("/home/news", function (request, response) {
+
+	conn.query(
+		"insert into account set aName = ?, explain = ?", 
+			[
+				request.body.title, 
+				request.body.ymd
+			]);
+	response.send("row inserted.");
+    
 })
+
+// })
 // 確認連線
 // conn.connect(function(err) {
 //   if (err) throw err;
