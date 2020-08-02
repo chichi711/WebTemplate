@@ -6,7 +6,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="icon" href="images/icon.png">
 	<title>EEweb</title>
-
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+		integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<!-- CSS -->
+	<link href="../public/stylesheets/css/build.css" rel="stylesheet" />
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
@@ -17,35 +20,37 @@
 	<link href="/stylesheets/css/build.css" rel="stylesheet" />
 	<link href="/stylesheets/css/demointerface.css" rel="stylesheet">
 
-	<!-- <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script> -->
-	<link href="editor.css" rel="stylesheet">
+	<link href="/stylesheets/css/editor.css" rel="stylesheet">
 	<link rel="stylesheet"
-		href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+	href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+	<!-- <link href="/stylesheets/heartcss/style_1.css" rel="stylesheet"> -->
+
 </head>
 <script>
 	function changePage(index) {
 		switch (index) {
 			case 1:
-				edit.Builder.init('/antique/index copy.html', function () { });
+				edit.Builder.init('/templated/antique/index copy.html', function () { });
 				break;
 			case 2:
-				edit.Builder.init('/antique/antique_about.html', function () { });
+				edit.Builder.init('/templated/antique/antique_about.html', function () { });
 				break;
 			case 3:
-				edit.Builder.init('/antique/antique_kind.html', function () { });
+				edit.Builder.init('/templated/antique/antique_kind.html', function () { });
 				break;
 			case 4:
-				edit.Builder.init('/antique/antique_login.html', function () { });
+				edit.Builder.init('/templated/antique/antique_login.html', function () { });
 				break;
 			case 5:
-				edit.Builder.init('/antique/antique_product.html', function () { });
+				edit.Builder.init('/templated/antique/antique_product.html', function () { });
 				break;
 			case 6:
-				edit.Builder.init('/antique/antique_product2.html', function () { });
+				edit.Builder.init('/templated/antique/antique_car.html', function () { });
 				break;
 		}
 	}
 </script>
+
 <body>
 
 	<!-- 側邊攔 -->
@@ -53,37 +58,44 @@
 		<!-- 側邊攔tab -->
 		<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
 			<a class="nav-item nav-link col-lg-4 active" id="nav-home-tab" data-toggle="tab" href="#home" role="tab"
-				aria-controls="nav-home" aria-selected="true">Home</a>
-			<a style="color: black" class="nav-item nav-link col-lg-4" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab"
-				aria-controls="nav-profile" aria-selected="false">Profile</a>
+				aria-controls="nav-home" aria-selected="true">插入</a>
+			<a style="color: black" class="nav-item nav-link col-lg-4" id="nav-profile-tab" data-toggle="tab"
+				href="#profile" role="tab" aria-controls="nav-profile" aria-selected="false">頁面</a>
 			<a class="nav-item nav-link col-lg-4" id="nav-contact-tabF" data-toggle="tab" href="#conte" role="tab"
-				aria-controls="nav-contact" aria-selected="false">Conte</a>
+				aria-controls="nav-contact" aria-selected="false">編輯</a>
 		</div>
 		<div class="tab-content" id="myTabContent">
 			<!-- 側邊攔tabHome -->
-			<div class="tab-pane fade show active" id="home" style="height: 90vh;" role="tabpanel" aria-labelledby="home-tab" >
-				<ul class="row list-unstyled components" id="dragitemslistcontainer" >
-					<li class="col-lg-6" draggable="true" data-insert-html='<div class=btn5-1><header class=btn5><div class=btn5-containerr><h1 class=btn5-logo></h1><nav><ul><li><a href=#>Home</a><li><a href=#>About</a><li><a href=#>Pricing</a><li><a href=#>Contact</a></ul></nav></div></header></div>'>
+			<div class="tab-pane fade show active" id="home" style="height: 90vh;" role="tabpanel"
+				aria-labelledby="home-tab">
+				<ul class="row list-unstyled components" id="dragitemslistcontainer">
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<div class=btn5-1><header class=btn5><div class=btn5-containerr><h1 class=btn5-logo></h1><nav><ul><li><a href=#>Home</a><li><a href=#>About</a><li><a href=#>Pricing</a><li><a href=#>Contact</a></ul></nav></div></header></div>'>
 						<i class="las la-bars"></i>
 						<p>navbar</p>
 					</li>
-					<li class="col-lg-6" draggable="true" data-insert-html='<div style=text-align:center><button class="btn1 buttonNavy btn1-Size1" tabindex=0>START<span></span><span></span><span></span><span></span><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b></button></div>'>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<div style=text-align:center><button class="btn1 buttonNavy btn1-Size1" tabindex=0>START<span></span><span></span><span></span><span></span><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b></button></div>'>
 						<i class="las la-hockey-puck"></i>
 						<p>button</p>
 					</li>
-					<li class="col-lg-6" draggable="true" data-insert-html='<div class="btn3 btn3-Size1 btn3-black"><div class=line></div><div class=line></div><div class=line></div><div class=line></div><div class=line></div><div class=line></div><span>登入/註冊</span></div>'>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<div class="btn3 btn3-Size1 btn3-black"><div class=line></div><div class=line></div><div class=line></div><div class=line></div><div class=line></div><div class=line></div><span>登入/註冊</span></div>'>
 						<i class="las la-hockey-puck"></i>
 						<p>button</p>
 					</li>
-					<li class="col-lg-6" draggable="true" data-insert-html='<a href="" class="btn effect01" target=_blank><span>前往結帳</span></a>'>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<a href="" class="btn effect01" target=_blank><span>前往結帳</span></a>'>
 						<i class="las la-hockey-puck"></i>
 						<p>button</p>
 					</li>
-					<li class="col-lg-6" draggable="true" data-insert-html='<div class=vertical-align><div class=btn4><label> <input checked name=button-group type=radio value=item> <span class="btn4-1 first">1</span>  </label> <label> <input name=button-group type=radio value=other-item> <span class=btn4-1>2</span>  </label> <label> <input name=button-group type=radio value=other-item> <span class=btn4-1>3</span>  </label> <label> <input name=button-group type=radio value=third> <span class=btn4-1>4</span>  </label> <label> <input name=button-group type=radio value=third> <span class="btn4-1 last">5</span></label></div></div>'>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<div class=vertical-align><div class=btn4><label> <input checked name=button-group type=radio value=item> <span class="btn4-1 first">1</span>  </label> <label> <input name=button-group type=radio value=other-item> <span class=btn4-1>2</span>  </label> <label> <input name=button-group type=radio value=other-item> <span class=btn4-1>3</span>  </label> <label> <input name=button-group type=radio value=third> <span class=btn4-1>4</span>  </label> <label> <input name=button-group type=radio value=third> <span class="btn4-1 last">5</span></label></div></div>'>
 						<i class="las la-check-circle"></i>
 						<p>checkbox</p>
 					</li>
-					<li class="col-lg-6" draggable="true" data-insert-html='<div class=btn6><form><h1>LOGIN</h1><input placeholder=Username type=text required> <input placeholder=Password type=password required> <button>Submit</button></form></div>'>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<div class=btn6><form><h1>LOGIN</h1><input placeholder=Username type=text required> <input placeholder=Password type=password required> <button>Submit</button></form></div>'>
 						<i class="las la-address-card"></i>
 						<p>login Form</p>
 					</li>
@@ -130,9 +142,8 @@
 	<nav class="navbar navbar-expand navbar-light bg-light p-1">
 		<div class="container-fluid ">
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-				<a class="navbar-brand p-0 " href="#">
-					<img src="/images/assets/img/logo.png" alt="" loading="lazy">
+				<a class="navbar-brand p-0 " href="/">
+					<img src="/images/Logo.png" alt="" loading="lazy">
 				</a>
 			</div>
 
@@ -157,16 +168,16 @@
 					</li>
 				</ul>
 			</div>
-			<button id="navCopy" class="btn btn-outline-primary my-2 my-sm-0" data-toggle="modal" data-target="#webCode"
+
+			<button id="navCopy" class="btn btn-outline-primary m-2" data-toggle="modal" data-target="#webCode"
 				type="submit">
-				複製程式碼
+				<i class="las la-code"></i>
+			</button>
+			<button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#theme">
+				儲存
 			</button>
 		</div>
 	</nav>
-
-
-
-
 
 	<!-- vvveb -->
 	<div id="vvveb-builder">
@@ -206,7 +217,7 @@
 
 
 
-	<!-- 彈出視窗 -->
+	<!-- 彈出視窗 複製code -->
 	<div class="modal" id="webCode">
 		<div class="modal-dialog modal-dialog-scrollable modal-lg" style="width:800px">
 			<div class="modal-content">
@@ -232,15 +243,45 @@
 			</div>
 		</div>
 	</div>
+	<!-- 彈出視窗 儲存編輯 -->
+	<div class="modal fade" id="theme">
+		<div class="modal-dialog modal-dialog-scrollable ">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">為您的作品輸入標題與概述</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body" style="padding: 0; ">
+					<div class="container-contact100">
+						<div class="wrap-contact100">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<input id="titleTextBox" class="input100" type="text" name="name" placeholder="標題">
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate="Please enter your message">
+								<textarea id="ymdTextBox" class="input100" name="message" placeholder="作品描述"></textarea>
+								<span class="focus-input100"></span>
+							</div>
 
+						</div>
+					</div>
+				</div>
+				<!-- Modal footer -->
+				<div class="modal-footer" style="border-top:0;background: #f2f2f2;">
+					<button type="button" id="okButton" class="btn btn-primary">送出</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	<div id="under_canvas"></div>
 
-
 	<!-- builder code-->
 	<script src="/javascripts/js/dnd.js"></script>
-	<script src="builder.js"></script>
+	<script src="/javascripts/js/builder.js"></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script
@@ -248,13 +289,25 @@
 
 	<script>
 		$(document).ready(function () {
-			// edit.Builder.init('./index copy.html', function () {
-			edit.Builder.init('../antique/antique_about.html', function () {
-			// edit.Builder.init('../Stylish Portfolio/index.html', function () {
-				// edit.Builder.init('../antique/antique_product2.html', function () {
-				//run code after page/iframe is loaded
+			edit.Builder.init('/templated/antique/index copy.html', function () {
 			});
+
 		});
+		$("#okButton").click(function () {
+			var newItem = {
+				title: $("#titleTextBox").val(),
+				ymd: $("#ymdTextBox").val()
+			};
+
+			$.ajax({
+				type: "post",
+				url: "/editPage/data",
+				data: newItem
+			})
+			window.location.href = window.location.origin + '/editPage/demo';
+		})
+
+
 
 		// html2canvas(document.body, {
 		// 	onrendered: function (canvas) {//得到了canvas物件

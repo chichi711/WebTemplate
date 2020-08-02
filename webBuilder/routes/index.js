@@ -44,8 +44,8 @@ router.get('/preview', function(req, res, next) {
   res.render('previewPage' );
 });
 router.get('/edit', function(req, res, next) {
-  res.render('eedit');
-  // res.render('webBuilder');
+  // res.render('eedit');
+  res.render('webBuilder');
 });
 router.get('/officalTemplat/preview', function(req, res, next) {
   res.render('preview');

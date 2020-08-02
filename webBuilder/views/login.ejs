@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+	<link rel="icon" href="images/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登入</title>
     <link rel="stylesheet" href="/stylesheets/Xu.css/bootstrap.min.css">
@@ -13,7 +14,36 @@
 
 <body>
     <!-- 導覽列 -->
-    <%- include('navbar') %>
+    <nav class="navbar navbar-expand-md navbar-light bg-light p-1 fixed-top shadow-sm" id="notoSans">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/">首頁</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/features">功能介紹</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/officalTemplat">樣板一覽</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/users/login/profile">會員中心</a>
+                </li>
+
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand p-0" href="#">
+                <img src="/images/Logo.png" alt="" loading="lazy" width="140px">
+            </a>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        </div>
+    </nav>
 
     <!-- 會員登入表 -->
     <form name="addfrom" action="" accept-charset="utf-8" method="POST" class="login-form">
@@ -29,7 +59,7 @@
             <span data-placeholder="密碼"></span>
         </div>
         <div class="logbtn2">
-            <input type="submit" class="logbtn" value="確認送出">
+            <button type="submit" class="logbtn btn">確認送出</button>
         </div>
 
         <div class="bottom-text">
