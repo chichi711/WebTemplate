@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="icon" href="/images/icon.png">
+	<title>EEweb</title>
+
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<link href="/stylesheets/css/build.css" rel="stylesheet" />
+
+	<link href="/stylesheets/css/demointerface.css" rel="stylesheet">
+
+	<link href="/stylesheets/css/editor.css" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+	<!-- <link href="/stylesheets/css/line-awesome.css" rel="stylesheet"> -->
+</head>
+
+
+<body>
+	<!-- 側邊攔 -->
+	<nav id="sidebar">
+		<!-- 側邊攔tab -->
+		<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+			<a class="nav-item nav-link col-lg-4 active" id="nav-home-tab" data-toggle="tab" href="#home" role="tab"
+				aria-controls="nav-home" aria-selected="true">插入</a>
+			<a style="color: black" class="nav-item nav-link col-lg-4" id="nav-profile-tab" data-toggle="tab"
+				href="#profile" role="tab" aria-controls="nav-profile" aria-selected="false">頁面</a>
+			<a class="nav-item nav-link col-lg-4" id="nav-contact-tabF" data-toggle="tab" href="#conte" role="tab"
+				aria-controls="nav-contact" aria-selected="false">編輯</a>
+		</div>
+		<div class="tab-content" id="myTabContent">
+			<!-- 側邊攔tabHome -->
+			<div class="tab-pane fade show active" id="home" style="height: 90vh;" role="tabpanel"
+				aria-labelledby="home-tab">
+				<ul class="row list-unstyled components" id="dragitemslistcontainer">
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<nav class="navbar navbar-expand-sm bg-dark navbar-dark"> <a class=navbar-brand href=#>Logo</a><ul class="navbar-nav mr-auto"><li class=nav-item><a class=nav-link href=#>Link 1</a><li class=nav-item><a class=nav-link href=#>Link 2</a><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=navbardrop data-toggle=dropdown> Dropdown link </a><div class=dropdown-menu><a class=dropdown-item href=#>Link 1</a> <a class=dropdown-item href=#>Link 2</a> <a class=dropdown-item href=#>Link 3</a></div></ul><form class=form-inline action=/action_page.php><input class="form-control mr-sm-2" type=text placeholder=Search> <button class="btn btn-success" type=submit>Search</button></form></nav>'>
+						<i class="las la-bars"></i>
+						<p>navbar</p>
+					</li>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<div class="well login-box"> <form action=""> <legend>Login</legend> <div class="form-group"> <label for="username-email">E-mail or Username</label> <input value="" id="username-email" placeholder="E-mail or Username" type="text" class="form-control"/> </div><div class="form-group"> <label for="password">Password</label> <input id="password" value="" placeholder="Password" type="text" class="form-control"/> </div><div class="form-group text-center"> <button class="btn btn-danger btn-cancel-action">Cancel</button> <input type="submit" class="btn btn-success btn-login-submit" value="Login"/> </div></form> </div>'>
+						<i class="las la-address-card"></i>
+						<p>Login Form</p>
+					</li>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<button type="button" class="btn btn-info">Info</button>'>
+						<i class="las la-hockey-puck"></i>
+						<p>button</p>
+					</li>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<div class=form-check-inline><label class=form-check-label> <input type=checkbox class=form-check-input>Option 1 </label></div><div class=form-check-inline><label class=form-check-label> <input type=checkbox class=form-check-input>Option 2 </label></div><div class=form-check-inline><label class=form-check-label> <input type=checkbox class=form-check-input>Option 3 </label></div>'>
+						<i class="las la-check-circle"></i>
+						<p>CheckBox</p>
+					</li>
+					<li class="col-lg-6" draggable="true" data-insert-html='<hr/>'>
+						<i class="las la-slash"></i>
+						<p>hr</p>
+					</li>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<div class=list-group><a href=# class="list-group-item list-group-item-action">First item</a> <a href=# class="list-group-item list-group-item-action">Second item</a> <a href=# class="list-group-item list-group-item-action">Third item</a></div>'>
+						<i class="las la-list"></i>
+						<p>List Group</p>
+					</li>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<div class=container><table class="table table-hover"><thead><tr><th>Firstname<th>Lastname<th>Email<tbody><tr><td>John<td>Doe<td>john@example.com<tr><td>Mary<td>Moe<td>mary@example.com<tr><td>July<td>Dooley<td>july@example.com</table></div>'>
+						<i class="las la-table"></i>
+						<p>table</p>
+					</li>
+					<!-- <li class="col-lg-6" draggable="true"
+						data-insert-html='<div id=demo class="carousel slide" data-ride=carousel><ul class=carousel-indicators><li data-target=#demo data-slide-to=0 class=active><li data-target=#demo data-slide-to=1><li data-target=#demo data-slide-to=2></ul><div class=carousel-inner><div class="carousel-item active"><img src="/public/images/Xiang se/xiang_01_2.jpg" alt="Los Angeles"></div><div class=carousel-item><img src="public/images/Xiang se/xiangse_bg.jpg" alt=Chicago></div><div class=carousel-item><img src=ny.jpg alt="New York"></div></div><a class=carousel-control-prev href=#demo data-slide=prev> <span class=carousel-control-prev-icon></span> </a> <a class=carousel-control-next href=#demo data-slide=next> <span class=carousel-control-next-icon></span> </a></div>'>
+						<i class="las la-images"></i>
+						<p>Carousel</p>
+					</li> -->
+					<li class="col-lg-6" draggable="true" data-insert-html="<h1>HEADER GOES HERE</h1>">
+						<i class="las la-heading"></i>
+						<p>Header</p>
+					</li>
+					<!-- <li class="col-lg-6" draggable="true"
+						data-insert-html="">
+						<i class=" fa fa-list-ul"></i>
+						<p>ul</p>
+					</li> -->
+				</ul>
+			</div>
+			<!-- 側邊攔tabProfile -->
+			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+				<ul class="list-unstyled components">
+					<li>
+						<a class="las la-file" href="#">home</a>
+					</li>
+					<li>
+						<a class="las la-file" href="#">product</a>
+					</li>
+				</ul>
+
+			</div>
+			<!-- 側邊攔tabConte -->
+			<div class="tab-pane fade" id="conte" role="tabpanel" aria-labelledby="profile-tab">
+				<div>
+					<li>
+						<p> Contact</p>
+					</li>
+				</div>
+			</div>
+
+		</div>
+	</nav>
+
+	<nav class="navbar navbar-expand navbar-light bg-light p-1">
+		<div class="container-fluid ">
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<a class="navbar-brand p-0 " href="/">
+					<img src="/images/Logo.png" alt="" loading="lazy">
+				</a>
+			</div>
+
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+				<ul class="nav justify-content-center">
+					<li class="nav-item">
+						<button class="btn" id="mobile-view">
+							<i class="las la-mobile-alt"></i>
+						</button>
+					</li>
+					<li class="nav-item">
+						<button class="btn" id="tablet-view">
+							<i class="las la-tablet-alt"></i>
+						</button>
+					</li>
+					<li class="nav-item">
+						<button class="btn" id="desktop-view">
+							<i class="las la-desktop"></i>
+						</button>
+					</li>
+				</ul>
+			</div>
+
+			<button id="navCopy" class="btn btn-outline-primary m-2" data-toggle="modal" data-target="#webCode"
+				type="submit">
+				<i class="las la-code"></i>
+			</button>
+			<button type="button" class="btn btn-primary mr-2" data-toggle="modal" data-target="#theme">
+				儲存
+			</button>
+		</div>
+	</nav>
+
+
+
+
+
+	<!-- vvveb -->
+	<div id="vvveb-builder">
+		<div id="canvas" class="desktop">
+			<div id="iframe-wrapper">
+				<div id="iframe-layer">
+					<div id="highlight-box">
+						<div id="highlight-name"></div>
+					</div>
+
+					<div id="select-box">
+
+						<div id="wysiwyg-editor">
+							<a id="bold-btn" href="" title="Bold"><i><strong>B</strong></i></a>
+							<a id="italic-btn" href="" title="Italic"><i>I</i></a>
+							<a id="underline-btn" href="" title="Underline"><u>u</u></a>
+							<a id="strike-btn" href="" title="Strikeout"><del>S</del></a>
+							<a id="link-btn" href="" title="Create link"><strong>a</strong></a>
+						</div>
+
+						<div id="select-actions">
+							<a id="drag-btn" href="" title="Drag element"><i class="la la-arrows"></i></a>
+							<a id="up-btn" href="" title="Move element up"><i class="la la-arrow-up"></i></a>
+							<a id="down-btn" href="" title="Move element down"><i class="la la-arrow-down"></i></a>
+							<a id="delete-btn" href="" title="Remove element"><i class="la la-trash"></i></a>
+						</div>
+					</div>
+				</div>
+				<iframe src="about:none" id="clientframe"></iframe>
+			</div>
+		</div>
+	</div>
+	<!-- vvveb end -->
+
+
+
+
+
+
+	<!-- 彈出視窗 複製code -->
+	<div class="modal" id="webCode">
+		<div class="modal-dialog modal-dialog-scrollable modal-lg" style="width:800px">
+			<div class="modal-content">
+
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">程式碼</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+
+				<!-- Modal body -->
+				<div class="modal-body">
+					<p id="newCode" style="white-space: pre-wrap"></p>
+				</div>
+
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" id="copyBtn" name="newCode">複製</button>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!-- 彈出視窗 儲存編輯 -->
+	<div class="modal fade" id="theme">
+		<div class="modal-dialog modal-dialog-scrollable ">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">為您的作品輸入標題與概述</h4>
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body" style="padding: 0; ">
+					<div class="container-contact100">
+						<div class="wrap-contact100">
+							<div class="wrap-input100 validate-input" data-validate="">
+								<input id="name" class="input100" type="text" name="name" placeholder="標題">
+								<span class="focus-input100"></span>
+							</div>
+							<div class="wrap-input100 validate-input" data-validate="Please enter your message">
+								<textarea id="explanation" class="input100" name="message"
+									placeholder="作品描述"></textarea>
+								<span class="focus-input100"></span>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<!-- Modal footer -->
+				<div class="modal-footer" style="border-top:0;background: #f2f2f2;">
+					<button type="button" id="okButton" class="btn btn-primary">送出</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="under_canvas"></div>
+
+
+	<!-- builder code-->
+	<script src="/javascripts/js/dnd.js"></script>
+	<script src="/javascripts/js/builder.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
+	<script>
+		$(document).ready(function () {
+			edit.Builder.init('/templated/Stylish Portfolio/index.html', function () {});
+		});
+		$("#okButton").click(function () {
+			let pBody = ['d','<sss>'];
+			let pName = ['home', 'car'];
+			let p = pBody.map((item, index) => {
+				return { body: item, name: pName[index] };
+			})
+			let account = [
+				{ name: $("#name").val() },
+				{ explanation: $("#explanation").val() },
+				p
+			];
+
+			$.ajax({
+				type: "post",
+				url: "/edit/demo",
+				data: JSON.stringify(account),
+				contentType: "application/json; charset=utf-8"
+			})
+			window.location.href = window.location.origin + '/edit/demo';
+		});
+
+
+
+		// html2canvas(document.body, {
+		// 	onrendered: function (canvas) {//得到了canvas物件
+		// 		var imgUrl = canvas.toDataURL("image/png");//這裡通過canvas的toDataURL方法把它轉換成base64編碼。
+		// 		document.getElementById('under_canvas').innerHTML = imgUrl;
+		// 		// document.getElementById('under_canvas').innerHTML = '<img src="'+imgUrl+'"/>';
+		// 	}
+		// });
+	</script>
+</body>
+
+</html>
