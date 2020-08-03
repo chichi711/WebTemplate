@@ -18,7 +18,6 @@
 
 	<link href="/stylesheets/css/demointerface.css" rel="stylesheet">
 
-	<!-- <script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script> -->
 	<link href="/stylesheets/css/editor.css" rel="stylesheet">
 	<link rel="stylesheet"
 		href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
@@ -97,22 +96,10 @@
 			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 				<ul class="list-unstyled components">
 					<li>
-						<a class="las la-file" href="#"> clone</a>
+						<a class="las la-file" href="#">home</a>
 					</li>
 					<li>
-						<a class="las la-file" href="#"> Portfolio</a>
-					</li>
-					<li>
-						<a class="las la-file" href="#"> Contact</a>
-					</li>
-					<li>
-						<a class="las la-file" href="#">aa </a>
-					</li>
-					<li>
-						<a class="las la-file" href="#"> Portfolio</a>
-					</li>
-					<li>
-						<a class="las la-file" href="#"> Contact</a>
+						<a class="las la-file" href="#">product</a>
 					</li>
 				</ul>
 
@@ -224,9 +211,7 @@
 
 				<!-- Modal body -->
 				<div class="modal-body">
-					<p id="newCode" style="white-space: pre-wrap">
-
-					</p>
+					<p id="newCode" style="white-space: pre-wrap"></p>
 				</div>
 
 				<!-- Modal footer -->
@@ -251,11 +236,12 @@
 					<div class="container-contact100">
 						<div class="wrap-contact100">
 							<div class="wrap-input100 validate-input" data-validate="">
-								<input id="titleTextBox" class="input100" type="text" name="name" placeholder="標題">
+								<input id="name" class="input100" type="text" name="name" placeholder="標題">
 								<span class="focus-input100"></span>
 							</div>
 							<div class="wrap-input100 validate-input" data-validate="Please enter your message">
-								<textarea id="ymdTextBox" class="input100" name="message" placeholder="作品描述"></textarea>
+								<textarea id="explanation" class="input100" name="message"
+									placeholder="作品描述"></textarea>
 								<span class="focus-input100"></span>
 							</div>
 
@@ -284,27 +270,28 @@
 
 	<script>
 		$(document).ready(function () {
-			// edit.Builder.init('./index copy.html', function () {
-			// edit.Builder.init('../antique/index copy.html', function () {
-			edit.Builder.init('/templated/Stylish Portfolio/index.html', function () {
-				// edit.Builder.init('../antique/antique_product2.html', function () {
-				//run code after page/iframe is loaded
-			});
-
+			edit.Builder.init('/templated/Stylish Portfolio/index.html', function () {});
 		});
 		$("#okButton").click(function () {
-			var newItem = {
-				title: $("#titleTextBox").val(),
-				ymd: $("#ymdTextBox").val()
-			};
+			let pBody = ['d','<sss>'];
+			let pName = ['home', 'car'];
+			let p = pBody.map((item, index) => {
+				return { body: item, name: pName[index] };
+			})
+			let account = [
+				{ name: $("#name").val() },
+				{ explanation: $("#explanation").val() },
+				p
+			];
 
 			$.ajax({
 				type: "post",
-				url: "/editPage/data",
-				data: newItem
+				url: "/edit/demo",
+				data: JSON.stringify(account),
+				contentType: "application/json; charset=utf-8"
 			})
-			window.location.href = window.location.origin + '/editPage/demo';
-		})
+			window.location.href = window.location.origin + '/edit/demo';
+		});
 
 
 

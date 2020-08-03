@@ -20,12 +20,12 @@ function autoinput (type) {
         });
     }
     if(type == 'sign in') {
-        // let num = 0;
-        // let value = ['yoru', 'yoru123@gmail.com', 'qqq', 'qqq'];
-        // $('form input:not(:last-child)').each( function () {
-        //     $(this).addClass("focus");
-        //     $(this).val(value[num]);
-        //     num++;
-        // });
+        let num = 0;
+        let value = ['yoru123@gmail.com', 'qqq'];
+        $('form input:not(:last-child)').each( function () {
+            $(this).addClass("focus");
+            $(this).val(value[num]);
+            num++;
+        });
     }
 }

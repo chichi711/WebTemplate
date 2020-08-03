@@ -47,7 +47,7 @@
 
     <!-- 會員登入表 -->
     <form name="addfrom" action="" accept-charset="utf-8" method="POST" class="login-form">
-        <h1 class="member_logn">會員登入</h1>
+        <h1 class="member_logn" onclick="autoinput('sign in')">會員登入</h1>
 
         <div class="txtb">
             <input type="email">
@@ -59,7 +59,7 @@
             <span data-placeholder="密碼"></span>
         </div>
         <div class="logbtn2">
-            <button type="submit" class="logbtn btn">確認送出</button>
+            <input type="button" class="logbtn btn" onclick="location.href='/';" value="確認送出">
         </div>
 
         <div class="bottom-text">
