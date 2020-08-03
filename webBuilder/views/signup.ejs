@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-	<link rel="icon" href="images/icon.png">
+    <link rel="icon" href="images/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>註冊</title>
     <link rel="stylesheet" href="/stylesheets/Xu.css/bootstrap.min.css">
@@ -44,38 +44,93 @@
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
         </div>
     </nav>
-
-    <form action="" accept-charset="utf-8" method="POST" class="login-form  login-form1">
+<div class="row login-form  login-form1">
+    <form class="col-lg" action="" accept-charset="utf-8" method="POST" >
         <h1 class="signup" onclick="autoinput('sign up')">會員註冊</h1>
+        <span class="tip" style="color: red;">密碼不一致</span>
+
+
         <div class="txtb">
-            <input type="text">
+            <input id="uNameTextBox" type="text">
             <span data-placeholder="姓名"></span>
         </div>
 
         <div class="txtb">
-            <input type="email">
+            <input id="EmailTextBox" type="email" required />
             <span data-placeholder="電子郵件"></span>
         </div>
 
         <div class="txtb">
-            <input type="password">
+            <input id="uPwdTextBox" onblur="checkpas1();" type="password" required />
             <span data-placeholder="密碼"></span>
         </div>
         <div class="txtb">
-            <input type="password">
+
+            <input id="repassword" onChange="checkpas();" type="password" required />
+
             <span data-placeholder="確認密碼"></span>
+
+
         </div>
+
         <div class="logbtn2">
-            <button type="submit" class="logbtn btn">確認送出</button>
+
+            <button id="okButton" type="submit" class="logbtn btn">確認送出</button>
         </div>
 
     </form>
-
+</div>
 
     <script src="/javascripts/Xu.js/jquery-3.3.1.min.js"></script>
     <script src="/javascripts/Xu.js/popper.min.js"></script>
     <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
     <script src="/javascripts/Xu.js/logn.js"></script>
+    <script>
+        $(".tip").hide();
+        function checkpas1() {//失去焦點
+            var pas1 = document.getElementById("uPwdTextBox").value;
+            var pas2 = document.getElementById("repassword").value;
+            if (pas1 != pas2 && pas2 != "")
+                $(".tip").show();
+            else
+                $(".tip").hide();
+        }
+        function checkpas() {
+            var pas1 = document.getElementById("uPwdTextBox").value;
+            var pas2 = document.getElementById("repassword").value;
+            if (pas1 != pas2) {
+                $(".tip").show();//當兩個密碼不相等時則顯示錯誤資訊
+            } else {
+                $(".tip").hide();
+            }
+        }
+
+        $("#okButton").click(function () {
+            var pas3 = document.getElementById("uPwdTextBox").value;
+            var pas4 = document.getElementById("repassword").value;
+            if (pas3 != pas4) {
+                alert("兩次輸入的密碼不一致！");
+                return false;
+            }
+
+
+            var newItem = {
+                uName: $("#uNameTextBox").val(),
+                Email: $("#EmailTextBox").val(),
+                uPwd: $("#uPwdTextBox").val()
+            };
+
+            $.ajax({
+                type: "post",
+                url: "/users/member",
+                data: newItem
+            })
+            window.location.href = window.location.origin + '/users/member';
+        })
+
+
+
+    </script>
 
 </body>
 

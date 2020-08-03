@@ -6,6 +6,7 @@
 }
 
 body{
+    padding-top: 30vh;
     background-color: 	#FAFAFA;
     font-family: "Legacy", "Noto Sans TC", "Helvetica Neue", "Helvetica", "Nimbus Sans L", "Arial", "Liberation Sans", "Source Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "STHeiti", "SimHei", "WenQuanYi Zen Hei Sharp", "sans-serif", "Apple LiGothic", "微軟正黑體"
 }
@@ -71,13 +72,13 @@ button{
 .login-form{
     width: 415px;
     background: white;
-    height: 440px;
+    /* height: 440px; */
     position: absolute;
-    padding: 60px 40px;
+    padding: 20px;
     border-radius: 10px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-30%);
     box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
     
 }
