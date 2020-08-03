@@ -24,7 +24,7 @@ body{
 
 
    .site-section {
-    padding: 7rem 0; 
+    padding: 6rem 0;
     display: flex;
     flex-wrap: wrap;
   }
@@ -118,6 +118,9 @@ body{
   color: black;
   
 }
+.caption h1{
+  margin: -12px 0 20px 0;
+}
 
 .caption p{
   font-size: 1.2rem;
@@ -158,8 +161,8 @@ body{
 .service-29193 img {
     position: relative;
     z-index: 1;
-     width: 120px;
-     height: 200px;
+    width: 237px;
+    height: 133px;
 }
 #row1{
   margin-bottom: -170px;
