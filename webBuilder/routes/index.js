@@ -19,6 +19,9 @@ router.get('/preview', function (req, res, next) {
 router.get('/officalTemplat/preview', function (req, res, next) {
   res.render('preview');
 });
+router.get('/officalTemplat/preview_b', function (req, res, next) {
+  res.render('preview_b');
+});
 
 
 module.exports = router;

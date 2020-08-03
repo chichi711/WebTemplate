@@ -4,8 +4,10 @@ var router = express.Router();
 var conn = require('../db');
 
 router.get('/', function (req, res, next) {
-    // res.render('eedit');
     res.render('webBuilder');
+});
+router.get('/ee', function (req, res, next) {
+    res.render('eedit');
 });
 
 router.get('/pic', function (request, response) {
