@@ -531,12 +531,12 @@ a>code {
 }
 
 .row {
-    display: -ms-flexbox;
+    /* display: -ms-flexbox; */
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
+    /* margin-right: -15px;
+    margin-left: -15px; */
 }
 
 .no-gutters {
@@ -6016,7 +6016,7 @@ a {
   } */
   
   .vertical-align {
-    display: table-cell;
+    /* display: table-cell; */
     vertical-align: middle;
     /* height: 100vh; */
     font-family:  Condensed, Helvetica , sans-serif;
@@ -6033,7 +6033,7 @@ a {
     height: 80px;
     float: none;
     margin: 0 auto;
-    width: 900px;
+    width: 80vw;
     max-width: 100%;
     border-radius: 40px;
     display: block;
@@ -6153,7 +6153,7 @@ a {
   
   .btn5 nav li {
     display: inline-block;
-    margin-left: 70px;
+    margin-left: 15px;
     padding-top: 23px;
   
     position: relative;

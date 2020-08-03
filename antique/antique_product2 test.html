@@ -9,12 +9,13 @@
     <script src="../_js/popper.min.js"></script>
     <script src="../_js/bootstrap.min.js"></script>
     <script src="flycan.js"></script>
+<link rel="stylesheet" href="style copy.css">
 
     <title>Document</title>
 </head>
-<link rel="stylesheet" href="style copy.css">
-<div class="title">
 
+<div class="title">
+   
     <nav class="navBar navbar-expand-md navbar-light bg-wight p-1" id="notoSans">
 
 
@@ -70,37 +71,88 @@
     </nav>
 </div>
 
+
 <div class="container content">
     <div class="row">
-        <div class="col-12 col-md-7 cot1img ">
-            <img src="image/antique/litimg1.jpg" id="BIG" class="img-fluid cot2 cot3-1">
-            <div id="SMALL" class="smallimg">
-                <img src="image/antique/litimg2.jpg" width="120" height="100" id="SS2">
-                <img src="image/antique/litimg3.jpg" width="120" height="100" id="SS3">
-                <img src="image/antique/litimg1.jpg" width="120" height="100" id="SS1">
-
+        <div class="col-12 col-md-7 cot1 cot3-2 ">
+            <div class='vertical-align'>
+                <div class='btn4'>
+                <label>
+                <input checked='' name='button-group' type='radio' value='item'>
+                <span class='btn4-1 first'>A+</span>
+                </input>
+                </label>
+                </label>
+                <label>
+                <input name='button-group' type='radio' value='other-item'>
+                <span class='btn4-1'>B+</span>
+                </input>
+                </label>
+                <label>
+                    <input name='button-group' type='radio' value='other-item'>
+                    <span class='btn4-1'>C+</span>
+                    </input>
+                </label>    
+                <label>
+                <input name='button-group' type='radio' value='third'>
+                <span class='btn4-1'>D+</span>
+                </input>
+                </label>
+                <label>
+                <input name='button-group' type='radio' value='third'>
+                <span class='btn4-1 last'>E+</span>
+                </input>
+                </label>
+                </div>
+                </div>
+            <h4 class="text-center">檢視購物車</h4><br>
+            
+            <h5 class="text-left" type="ccc">購物車內商品</h5>
+           
+            <hr>
+            <div style="display:flex; flex-wrap: wrap;">
+                <img src="image/antique/litimg2.jpg" width="160" height="140" id="SS2"><br>
+    
+                <h5>丹麥FARSTRUP柚木餐椅</h5>
+                <h5>NT$4900</h5>
+                <h5>X1</h5>
+                <h5>NT$4900</h5>
+           
             </div>
         </div><br>
         <div class="col-12 col-md-4 cot1">
+            <div style="display:flex;">
+                <div>
+                    <h4>小計:</h4>
+                </div>
+                <div class="price1">
+                    <h5>NT$4900</h5>
+                </div><br>
+            </div>
 
-            <h5>丹麥FARSTRUP柚木餐椅</h5>
+          
 
-            <h4>NT$4900</h4><br>
-            <p>此餐椅出自1960時期由丹麥傢俱廠Farstrup所生產。<br> 以柚木為骨架，色澤溫潤，椅背以曲木技術彎成弧面與坐板的曲面相呼應，坐起來相當舒適，椅面繃覆人工皮革，不易沾染污漬，至今仍保持良好的狀態，是一把相當不錯的餐椅。
-            </p>
-            <hr>
-            <br> 數量
+        
+            <p>請選擇運送方式</p>
+            <div><input type="radio" name="sex" value="male">&nbsp;&nbsp;一般寄送</div>
+            <div><input type="radio" name="sex" value="female">&nbsp;&nbsp;快遞宅配</div>
 
-            <input type="button" value="-" id="del" onclick="del()" />
-            <span id="quantity">1</span>
-            <input type="button" value="+" id="add" onclick="add()" />
-            <br>
-            <br>
-            <a href="antique_product2.html" class="btn effect01" target="_blank"><span>加入購物車</span></a>
 
-            <p>
+            <hr><br>
+            <div style="display:flex;">
+                <div>
+                    <h4>合計:</h4>
+                </div>
+                <div class="price1">
+                    <h5>NT$4900</h5>
+                </div>
+            </div>
 
-            </p>
+
+            <a href="antique_product2.html" class="btn effect01" target="_blank"><span>前往結帳</span></a>
+
+            
+            
         </div>
 
 
@@ -151,7 +203,7 @@
                     <ul class="col-md-2 footerLogo">
 
                         <li>
-                            <a href="Xiang se.html"></a><img src="image/antique/log1.jpg" width="250" c></a>
+                            <a href="Xiang se.html"></a><img src="image/antique/log1.jpg" width="300" c></a>
                         </li>
 
 
@@ -171,6 +223,7 @@
 
 
     </footer>
+
 </body>
 <script>
     function del() {

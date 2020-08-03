@@ -63,6 +63,7 @@ $(document).ready(function() {
             /* If the object is completely visible in the window, fade it it */
             if (bottom_of_window > bottom_of_object) {
                 $(this).addClass("change1");
+                $(this).removeClass("hideme1");
             }
         });
         $('.hideme2').each(function(i) {

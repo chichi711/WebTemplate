@@ -363,7 +363,8 @@ text-right {
 }
 
 .hideme1 {
-    display: none;
+    opacity: 0;
+    /* display: none; */
 }
 
 .hideme2 {
