@@ -23,5 +23,8 @@ router.get('/editPage', function(req, res, next) {
 router.get('/officalTemplat/preview', function(req, res, next) {
   res.render('preview');
 });
+router.get('/officalTemplat/preview_2', function(req, res, next) {
+  res.render('preview_2');
+});
 
 module.exports = router;
