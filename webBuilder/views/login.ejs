@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-	<link rel="icon" href="images/icon.png">
+    <link rel="icon" href="images/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登入</title>
     <link rel="stylesheet" href="/stylesheets/Xu.css/bootstrap.min.css">
@@ -50,16 +50,16 @@
         <h1 class="member_logn">會員登入</h1>
 
         <div class="txtb">
-            <input type="email">
+            <input type="email" id="Email">
             <span data-placeholder="電子郵件"></span>
         </div>
 
         <div class="txtb">
-            <input type="password">
+            <input type="password" id="uPwd">
             <span data-placeholder="密碼"></span>
         </div>
         <div class="logbtn2">
-            <button type="submit" class="logbtn btn">確認送出</button>
+            <button id="userLogin" type="submit" class="logbtn btn">確認送出</button>
         </div>
 
         <div class="bottom-text">
@@ -75,7 +75,26 @@
     <script src="/javascripts/Xu.js/popper.min.js"></script>
     <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
     <script src="/javascripts/Xu.js/logn.js"></script>
+    <script>
+        // $("#userLogin").click(function () {
+        //     $.ajax({
+        //         url: "/member",
+        //         type: "GET",
+        //         data: {
+        //             username: $("#Email").val(),
+        //             password: $("#uPwd").val()
+        //         },
+        //         success: function (data) {    //    alert後臺返回的引數
+        //             alert(data);
+        //         },
+        //         error: function () {
+        //             alert(`帳號或密碼錯誤`);
+        //         }
+        //     });
+        //     // window.location.href = window.location.origin + '/';
 
+        // });
+    </script>
 
 </body>
 
