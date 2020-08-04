@@ -1,3 +1,19 @@
-<%- body.eeAccount %>
-<%- body.eePassword %>
-<%- body.eeEmail %>
+<%- body[0].begin %>
+<%- body[0].body %>
+<%- body[0].end %>
+
+<script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+<script>
+    html2canvas(document.body, {
+        onrendered: function (canvas) {//得到了canvas物件
+            let imgUrl = canvas.toDataURL("image/png");//這裡通過canvas的toDataURL方法把它轉換成base64編碼。
+            let pic = { img: imgUrl};
+            $.ajax({
+				type: "post",
+				url: "/edit/pic",
+				data: JSON.stringify(pic),
+				contentType: "application/json; charset=utf-8"
+			})
+        }
+    });
+</script>
