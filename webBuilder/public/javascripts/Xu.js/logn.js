@@ -29,3 +29,34 @@ function autoinput (type) {
         });
     }
 }
+$(".tip").hide();
+function checkpas() {
+    var pas1 = document.getElementById("uPwdTextBox").value;
+    var pas2 = document.getElementById("repassword").value;
+    if (pas1 != pas2 && pas2 != "") {
+        $(".tip").show();//當兩個密碼不相等時則顯示錯誤資訊
+    } else {
+        $(".tip").hide();
+    }
+}
+
+$("#okButton").click(function () {
+    var pas3 = document.getElementById("uPwdTextBox").value;
+    var pas4 = document.getElementById("repassword").value;
+    if (pas3 != pas4) {
+        alert("兩次輸入的密碼不一致！");
+    }else{
+        var newItem = {
+            uName: $("#uNameTextBox").val(),
+            Email: $("#EmailTextBox").val(),
+            uPwd: $("#uPwdTextBox").val()
+        };
+
+        $.ajax({
+            type: "post",
+            url: "/user",
+            data: newItem
+        })
+        window.location.href = window.location.origin + '/user/login';
+    }
+})

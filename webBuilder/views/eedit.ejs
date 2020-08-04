@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
 		integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<!-- CSS -->
-	<link href="../public/stylesheets/css/build.css" rel="stylesheet" />
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
@@ -98,6 +97,11 @@
 						data-insert-html='<div class=btn6><form><h1>LOGIN</h1><input placeholder=Username type=text required> <input placeholder=Password type=password required> <button>Submit</button></form></div>'>
 						<i class="las la-address-card"></i>
 						<p>login Form</p>
+					</li>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<table class=responstable><tr><th>Main candidate<th data-th="Candidate details"><span>First name</span><th>Surname<th>Date of birth<th>Profession<tr><td><input type=radio><td>Steve<td>WANG<td>01/05/1978<td>Tacacher<tr><td><input type=radio><td>Steffie<td>LI<td>02/07/1980<td>Chef<tr><td><input type=radio><td>Stan<td>LIN<td>09/01/1998<td>Student<tr><td><input type=radio><td>Stella<td>HUANG<td>05/05/1970<td>Lawyer</table>'>
+						<i class="las la-table"></i>
+						<p>table</p>
 					</li>
 					<li class="col-lg-6" draggable="true" data-insert-html='<hr class="hr-style2">'>
 						<i class="las la-slash"></i>
@@ -277,8 +281,6 @@
 	</div>
 
 
-	<div id="under_canvas"></div>
-
 	<!-- builder code-->
 	<script src="/javascripts/js/dnd.js"></script>
 	<script src="/javascripts/js/builder.js"></script>
@@ -294,28 +296,26 @@
 
 		});
 		$("#okButton").click(function () {
-			var newItem = {
-				title: $("#titleTextBox").val(),
-				ymd: $("#ymdTextBox").val()
-			};
+			let pBody = ['d'];
+			let pName = ['home'];
+			let p = pBody.map((item, index) => {
+				return { body: item, name: pName[index] };
+			})
+			let account = [
+				{ name: $("#name").val() },
+				{ explanation: $("#explanation").val() },
+				p
+			];
 
 			$.ajax({
 				type: "post",
-				url: "/editPage/data",
-				data: newItem
+				url: "/edit/demo",
+				data: JSON.stringify(account),
+				contentType: "application/json; charset=utf-8"
 			})
-			window.location.href = window.location.origin + '/editPage/demo';
-		})
+			window.location.href = window.location.origin + '/edit/demo';
+		});
 
-
-
-		// html2canvas(document.body, {
-		// 	onrendered: function (canvas) {//得到了canvas物件
-		// 		var imgUrl = canvas.toDataURL("image/png");//這裡通過canvas的toDataURL方法把它轉換成base64編碼。
-		// 		document.getElementById('under_canvas').innerHTML = imgUrl;
-		// 		// document.getElementById('under_canvas').innerHTML = '<img src="'+imgUrl+'"/>';
-		// 	}
-		// });
 	</script>
 </body>
 

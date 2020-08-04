@@ -21,7 +21,6 @@
 	<link href="/stylesheets/css/editor.css" rel="stylesheet">
 	<link rel="stylesheet"
 		href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-	<!-- <link href="/stylesheets/css/line-awesome.css" rel="stylesheet"> -->
 </head>
 
 
@@ -273,8 +272,8 @@
 			edit.Builder.init('/templated/Stylish Portfolio/index.html', function () {});
 		});
 		$("#okButton").click(function () {
-			let pBody = ['d','<sss>'];
-			let pName = ['home', 'car'];
+			let pBody = ['d'];
+			let pName = ['home'];
 			let p = pBody.map((item, index) => {
 				return { body: item, name: pName[index] };
 			})
@@ -293,15 +292,6 @@
 			window.location.href = window.location.origin + '/edit/demo';
 		});
 
-
-
-		// html2canvas(document.body, {
-		// 	onrendered: function (canvas) {//得到了canvas物件
-		// 		var imgUrl = canvas.toDataURL("image/png");//這裡通過canvas的toDataURL方法把它轉換成base64編碼。
-		// 		document.getElementById('under_canvas').innerHTML = imgUrl;
-		// 		// document.getElementById('under_canvas').innerHTML = '<img src="'+imgUrl+'"/>';
-		// 	}
-		// });
 	</script>
 </body>
 
