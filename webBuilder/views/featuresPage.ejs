@@ -4,6 +4,7 @@
 <head>
   <title>功能</title>
   <meta charset="utf-8">
+	<link rel="icon" href="images/icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <!-- <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" /> -->
   <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" /> -->
@@ -28,57 +29,7 @@
 
 
     <!-- 導覽列 -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light p-1 fixed-top shadow-sm" id="notoSans">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item ">
-            <a class="nav-link" href="/">首頁</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/featuresPage">功能介紹</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/officalTemplat">樣板一覽</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/users/login/profile">會員中心</a>
-          </li>
-
-        </ul>
-      </div>
-      <div class="mx-auto order-0">
-        <a class="navbar-brand p-0" href="#">
-          <img src="/images/Logo.png" alt="" loading="lazy" width="140px">
-        </a>
-
-      </div>
-
-      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-
-        <form class="form-inline ml-auto">
-
-          <div class='btn3'>
-            <div class='line'></div>
-            <div class='line'></div>
-            <div class='line'></div>
-            <div class='line'></div>
-            <div class='line'></div>
-            <div class='line'></div>
-            <span>
-              <a href="/users/login">登入/註冊</a>
-            </span>
-            <div>
-        </form>
-      </div>
-    </nav>
-    <!-- 導覽列 END-->
-
-
-    <!-- 文字介紹 -->
+    <%- include('navbar') %>
     <div>
 
       <!-- 背景圖 -->
@@ -115,7 +66,7 @@
       <div class="container">
         <div class="row mb-5 align-items-center">
           <div data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500" class="col-md-7">
-            <h2 class="heading-39291 
+            <h2 class="heading-39291
              mb-3">用手指就能操作的強大設計工具
             </h2>
 
@@ -168,7 +119,7 @@
                 <img src="/images/features_imgs/img_10.png" alt="Image" class="img-fluid img-link">
               </span>
               <h3 class="mb-4">內建的主題編輯器</h3>
-              <h5>編輯您的LOGO，圖標，佈局，背景，顏色，字體</h5>
+              <h5>編輯您的LOGO、圖標、佈局、背景、顏色、字體</h5>
             </div>
           </div>
           <div class="col-md-6 mb-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
@@ -223,100 +174,7 @@
 
 
   <!-- 頁尾 -->
-
-
-  <footer style="  background-color:#f8f9fa;" class="page-footer font-small mdb-color lighten-3 pt-4">
-
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left">
-
-      <!-- Grid row -->
-      <div class="row">
-
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
-
-          <!-- Content -->
-          <h5 class="fp font-weight-bold text-uppercase mb-4">關於</h5>
-          <p>利用拖曳式工具，依照自己所想風格，調整文字、顏色、背景色、圖片、及簡單的排版來製作心目中的網站!</p>
-
-
-        </div>
-        <!-- Grid column -->
-
-        <hr class="clearfix w-100 d-md-none">
-
-        <!-- Grid column -->
-        <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
-
-          <!-- Contact details -->
-          <h5 class="font-weight-bold text-uppercase mb-4">聯絡</h5>
-
-          <ul class="list-unstyled">
-            <li>
-              <a href="#">
-                <p>
-                  <i class="fas fa-home mr-3"></i>台中市南屯區公益路二段51號</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <p>
-                  <i class="fas fa-envelope mr-3"></i> cathylin@taichung.iii.org.tw</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <p>
-                  <i class="fas fa-phone mr-3"></i> 04 2326 5860</p>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <p>
-                  <i class="fas fa-print mr-3"></i> 04-2327-3572</p>
-              </a>
-            </li>
-          </ul>
-
-        </div>
-        <!-- Grid column -->
-
-        <hr class="clearfix w-100 d-md-none">
-
-        <!-- Grid column -->
-
-        <!-- Grid column -->
-
-        <hr class="clearfix w-100 d-md-none">
-
-        <!-- Grid column -->
-        <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
-
-
-
-          <div class="logo">
-            <img src="/images/features_imgs/Logo.png" alt="">
-          </div>
-        </div>
-        <!-- Grid column -->
-
-      </div>
-      <!-- Grid row -->
-
-    </div>
-    <!-- Footer Links -->
-
-    <!-- Copyright -->
-    <div class="footer-copyright text-center py-3">© 2020 Copyright:
-      <a href="https://mdbootstrap.com/"> 123</a>
-    </div>
-    <!-- Copyright -->
-
-  </footer>
-  <!-- Footer -->
-  <!-- Footer -->
-  <!-- 頁尾 END-->
+  <%- include('footer') %>
   </div>
 
   <script src="/javascripts/Xu.js/jquery-3.3.1.min.js"></script>

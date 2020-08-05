@@ -3,7 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/images/icon.png">
+
     <title>會員中心</title>
     <link rel="stylesheet" href="/stylesheets/Xu.css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet">
@@ -19,52 +20,9 @@
     <div class="container">
 
         <!-- 導覽列 -->
-        <nav class="navbar navbar-expand-md navbar-light bg-light p-1 fixed-top shadow-sm" id="notoSans">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-        
-            <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
-                  <a class="nav-link" href="/">首頁</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/featuresPage">功能介紹</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/officalTemplat">樣板一覽</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/users/login/profile">會員中心</a>
-                </li>
-        
-              </ul>
-            </div>
-            <div class="mx-auto order-0">
-              <a class="navbar-brand p-0" href="#">
-                <img src="/images/Logo.png" alt="" loading="lazy" width="140px">
-              </a>
-        
-            </div>
-        
-            <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-              <form class="form-inline ml-auto">
-                <div class='btn3'>
-                  <div class='line'></div>
-                  <div class='line'></div>
-                  <div class='line'></div>
-                  <div class='line'></div>
-                  <div class='line'></div>
-                  <div class='line'></div>
-                  <span>
-                    <a href="/users/login">登入/註冊</a>
-                  </span>
-                  <div>
-              </form>
-            </div>
-        
-          </nav>        <!-- 導覽列 END -->
+        <%- include('navbar') %>
+
+        <!-- 導覽列 END -->
 
 
         <!-- 個人資料 -->
@@ -80,11 +38,24 @@
                                         al t="" class="user-profile">
                                     <h3>John</h3>
                                 </li>
-                                <div class="pro">
+                                <div class=" pro nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                                    aria-orientation="vertical">
                                     <li><i class="fas fa-briefcase "></i><span>網頁設計師</span></li>
-                                    <li><i class="fas fa-map-marker-alt "></i><span> 台中市 </span></li> </span></li>
-                                    <li><i class="far fa-envelope "></i><span>aaaa@gmail.com</span></li>
-                                    <li><i class="fas fa-mobile "></i><span>0966-123-654</span></li>
+                                    <li><i class="fas fa-map-marker-alt "></i><span> 台中市 </span></li>
+                                    </span>
+                                    </li>
+                                    <li><i class="far fa-envelope "></i><span>aaaa@gmail.com</span></li><br>
+                                    <!-- <li><i class="fas fa-mobile "></i><span>0966-123-654</span></li> -->
+                                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill"
+                                        href="#v-pills-home" role="tab" aria-controls="v-pills-home"
+                                        aria-selected="true">
+                                        <i class="fas fa-mobile "></i><span>樣板庫</span>
+                                    </a>
+                                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill"
+                                        href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
+                                        aria-selected="false">
+                                        <i class="fas fa-mobile "></i><span>編輯會員</span>
+                                    </a>
                                 </div>
                             </ul>
                         </div>
@@ -103,131 +74,197 @@
             <div class=" col-lg-9">
 
                 <!-- 樣板庫 -->
+                <div  class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <div class="card-body2 card rigt-profile-card">
+                            <div class="container">
+                                <div class="lg">
+                                    <svg width="2em" height="1.6em" viewBox="0 0 16 16"
+                                        class="bi bi-credit-card-2-front" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z" />
+                                        <path
+                                            d="M2 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z" />
+                                        <path fill-rule="evenodd"
+                                            d="M2 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z" />
+                                    </svg>
 
-                <div class="card-body2 card rigt-profile-card">
-                    <div class="container">
-                        <div class="lg">
-                            <svg width="2em" height="1.6em" viewBox="0 0 16 16" class="bi bi-credit-card-2-front"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z" />
-                                <path
-                                    d="M2 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z" />
-                                <path fill-rule="evenodd"
-                                    d="M2 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z" />
-                            </svg>
+                                    <span class="sp">樣板庫</span>
+                                </div>
 
-                            <span class="sp">樣板庫</span>
+                                <div class=" row text-center">
+
+                                    <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/3.jpg">
+                                        </a>
+                                    </div>
+
+                                    <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/12.jpg">
+                                        </a>
+                                    </div>
+
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/8.jpg">
+                                        </a>
+                                    </div>
+
+
+
+                                    <div class="item design col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/10.jpg">
+                                        </a>
+                                    </div>
+
+                                    <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/9.jpg">
+                                        </a>
+                                    </div>
+
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/11.jpg">
+                                        </a>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
                         </div>
+                        <div class="card-body2 card rigt-profile-card">
 
-                        <div class=" row text-center">
+                            <div class="container">
+                                <div class="lg">
+                                    <svg width="2em" height="1.6em" viewBox="0 0 16 16" class="bi bi-file-richtext"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M4 1h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H4z" />
+                                        <path fill-rule="evenodd"
+                                            d="M4.5 11.5A.5.5 0 0 1 5 11h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 9h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708l1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V7.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V7s1.54-1.274 1.639-1.208zM6.25 5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z" />
+                                    </svg>
+                                    <span class="sp">作品集</span>
+                                </div>
+                                <div class="row text-center">
 
-                            <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-                                <a href="/editPage" class="item-wrap fancybox">
-                                    <div class="work-info">
-                                        <h3>編輯</h3>
+
+
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
+                                        </a>
                                     </div>
-                                    <img class="img-fluid" src="/images/profile_imgs/3.jpg">
-                                </a>
-                            </div>
 
-                            <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
-                                <a href="work-single.html" class="item-wrap fancybox">
-                                    <div class="work-info">
-                                        <h3>編輯</h3>
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
+                                        </a>
                                     </div>
-                                    <img class="img-fluid" src="/images/profile_imgs/12.jpg">
-                                </a>
-                            </div>
 
-                            <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-                                <a href="work-single.html" class="item-wrap fancybox">
-                                    <div class="work-info">
-                                        <h3>編輯</h3>
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
+                                        </a>
                                     </div>
-                                    <img class="img-fluid" src="/images/profile_imgs/8.jpg">
-                                </a>
+
+
+
+
+                                </div>
+
                             </div>
-
-
-
-                            <div class="item design col-sm-6 col-md-4 col-lg-4 mb-4">
-                                <a href="work-single.html" class="item-wrap fancybox">
-                                    <div class="work-info">
-                                        <h3>編輯</h3>
-                                    </div>
-                                    <img class="img-fluid" src="/images/profile_imgs/10.jpg">
-                                </a>
-                            </div>
-
-                            <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
-                                <a href="work-single.html" class="item-wrap fancybox">
-                                    <div class="work-info">
-                                        <h3>編輯</h3>
-                                    </div>
-                                    <img class="img-fluid" src="/images/profile_imgs/9.jpg">
-                                </a>
-                            </div>
-
-                            <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-                                <a href="work-single.html" class="item-wrap fancybox">
-                                    <div class="work-info">
-                                        <h3>編輯</h3>
-                                    </div>
-                                    <img class="img-fluid" src="/images/profile_imgs/11.jpg">
-                                </a>
-                            </div>
-
                         </div>
-
-
-
                     </div>
 
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+                        <div class="card-body2 card rigt-profile-card tab-content">
+                            <div class="container">
+                                <div class="lg">
+                                    <svg width="2em" height="1.6em" viewBox="0 0 16 16"
+                                        class="bi bi-credit-card-2-front" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z" />
+                                        <path
+                                            d="M2 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z" />
+                                        <path fill-rule="evenodd"
+                                            d="M2 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z" />
+                                    </svg>
 
-                </div>
-                <!-- 樣板庫 END-->
+                                    <span class="sp">編輯會員</span>
+                                </div>
+
+                                <div class=" row text-center cot">
+                                    <div class="cot1">
+                                        <form action="/action_page.php">
+                                            <label>大頭貼:</label>
+                                            <label class="btn btn-info">
+                                                <input id="upload_img" style="display:none;" type="file">
+                                                <i class="fa fa-photo"></i> 上傳圖片
+                                            </label><br><br>
+                                            <label>姓名:</label>
+                                            <input type="text" id="uName" name="uName" placeholder="John"><br><br>
+                                            <label>信箱:</label>
+                                            <input type="text" id="eMail" name="eMail"
+                                                placeholder="aaaa@gmail.com"><br><br>
+                                            <label>密碼:</label>
+                                            <input type="text" id="uPwd" name="uPwd"><br><br>
 
 
+                                            <div>
+                                                <a href="" class="btn effect01"
+                                                    target="_blank"><span></span>儲存</span></a>
+                                            </div><br><br>
 
-
-
-                <!-- 作品集 -->
-                <div class="card-body2 card rigt-profile-card">
-
-                    <div class="container">
-                        <div class="lg">
-                            <svg width="2em" height="1.6em" viewBox="0 0 16 16" class="bi bi-file-richtext"
-                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M4 1h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H4z" />
-                                <path fill-rule="evenodd"
-                                    d="M4.5 11.5A.5.5 0 0 1 5 11h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 9h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708l1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V7.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V7s1.54-1.274 1.639-1.208zM6.25 5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z" />
-                            </svg>
-                            <span class="sp">作品集</span>
-                        </div>
-                        <div class="row text-center">
-
-
-
-                            <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-                                <a href="work-single.html" class="item-wrap fancybox">
-                                    <div class="work-info">
-                                        <h3>編輯</h3>
+                                        </form>
                                     </div>
-                                    <img class="img-fluid" src="/images/profile_imgs/5.jpg">
-                                </a>
+
+                                </div>
+
+
+
                             </div>
 
 
                         </div>
-
                     </div>
                 </div>
-
-
-
-                <!-- 作品集 END-->
             </div>
         </div>
 

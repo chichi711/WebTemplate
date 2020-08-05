@@ -540,8 +540,7 @@ pre code {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+
 }
 
 .no-gutters {
@@ -7541,7 +7540,7 @@ button.bg-dark:focus {
 
 .mr-4,
 .mx-4 {
-  
+
   margin-right: 1.5rem !important;
 }
 
@@ -10068,7 +10067,7 @@ header.masthead {
   opacity: 0  ;
   color: #fff;
   background: rgba(0, 170, 144, 0.95);
-  transition: opacity 0.25s ease;
+  transition: opacity 0.75s ease;
   text-align: center;
 }
 #portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-sm .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-md .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-lg .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-xl .portfolio-box .portfolio-box-caption .project-category {

@@ -4,9 +4,11 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="icon" href="/images/icon.png">
+	<link rel="icon" href="images/icon.png">
 	<title>EEweb</title>
-
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+		integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<!-- CSS -->
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
@@ -15,16 +17,41 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<link href="/stylesheets/css/build.css" rel="stylesheet" />
-
 	<link href="/stylesheets/css/demointerface.css" rel="stylesheet">
 
 	<link href="/stylesheets/css/editor.css" rel="stylesheet">
 	<link rel="stylesheet"
-		href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-</head>
+	href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+	<!-- <link href="/stylesheets/heartcss/style_1.css" rel="stylesheet"> -->
 
+</head>
+<script>
+	function changePage(index) {
+		switch (index) {
+			case 1:
+				edit.Builder.init('/templated/antique/index copy.html', function () { });
+				break;
+			case 2:
+				edit.Builder.init('/templated/antique/antique_about.html', function () { });
+				break;
+			case 3:
+				edit.Builder.init('/templated/antique/antique_kind.html', function () { });
+				break;
+			case 4:
+				edit.Builder.init('/templated/antique/antique_login.html', function () { });
+				break;
+			case 5:
+				edit.Builder.init('/templated/antique/antique_product.html', function () { });
+				break;
+			case 6:
+				edit.Builder.init('/templated/antique/antique_car.html', function () { });
+				break;
+		}
+	}
+</script>
 
 <body>
+
 	<!-- 側邊攔 -->
 	<nav id="sidebar">
 		<!-- 側邊攔tab -->
@@ -42,74 +69,75 @@
 				aria-labelledby="home-tab">
 				<ul class="row list-unstyled components" id="dragitemslistcontainer">
 					<li class="col-lg-6" draggable="true"
-						data-insert-html='<nav class="navbar navbar-expand-sm bg-dark navbar-dark"> <a class=navbar-brand href=#>Logo</a><ul class="navbar-nav mr-auto"><li class=nav-item><a class=nav-link href=#>Link 1</a><li class=nav-item><a class=nav-link href=#>Link 2</a><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=navbardrop data-toggle=dropdown> Dropdown link </a><div class=dropdown-menu><a class=dropdown-item href=#>Link 1</a> <a class=dropdown-item href=#>Link 2</a> <a class=dropdown-item href=#>Link 3</a></div></ul><form class=form-inline action=/action_page.php><input class="form-control mr-sm-2" type=text placeholder=Search> <button class="btn btn-success" type=submit>Search</button></form></nav>'>
+						data-insert-html='<div class=btn5-1><header class=btn5><div class=btn5-containerr><h1 class=btn5-logo></h1><nav><ul><li><a href=#>Home</a><li><a href=#>About</a><li><a href=#>Pricing</a><li><a href=#>Contact</a></ul></nav></div></header></div>'>
 						<i class="las la-bars"></i>
 						<p>navbar</p>
 					</li>
 					<li class="col-lg-6" draggable="true"
-						data-insert-html='<div class="well login-box"> <form action=""> <legend>Login</legend> <div class="form-group"> <label for="username-email">E-mail or Username</label> <input value="" id="username-email" placeholder="E-mail or Username" type="text" class="form-control"/> </div><div class="form-group"> <label for="password">Password</label> <input id="password" value="" placeholder="Password" type="text" class="form-control"/> </div><div class="form-group text-center"> <button class="btn btn-danger btn-cancel-action">Cancel</button> <input type="submit" class="btn btn-success btn-login-submit" value="Login"/> </div></form> </div>'>
-						<i class="las la-address-card"></i>
-						<p>Login Form</p>
-					</li>
-					<li class="col-lg-6" draggable="true"
-						data-insert-html='<button type="button" class="btn btn-info">Info</button>'>
+						data-insert-html='<div style=text-align:center><button class="btn1 buttonNavy btn1-Size1" tabindex=0>START<span></span><span></span><span></span><span></span><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b><b aria-hidden=true>GO!</b></button></div>'>
 						<i class="las la-hockey-puck"></i>
 						<p>button</p>
 					</li>
 					<li class="col-lg-6" draggable="true"
-						data-insert-html='<div class=form-check-inline><label class=form-check-label> <input type=checkbox class=form-check-input>Option 1 </label></div><div class=form-check-inline><label class=form-check-label> <input type=checkbox class=form-check-input>Option 2 </label></div><div class=form-check-inline><label class=form-check-label> <input type=checkbox class=form-check-input>Option 3 </label></div>'>
+						data-insert-html='<div class="btn3 btn3-Size1 btn3-black"><div class=line></div><div class=line></div><div class=line></div><div class=line></div><div class=line></div><div class=line></div><span>登入/註冊</span></div>'>
+						<i class="las la-hockey-puck"></i>
+						<p>button</p>
+					</li>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<a href="" class="btn effect01" target=_blank><span>前往結帳</span></a>'>
+						<i class="las la-hockey-puck"></i>
+						<p>button</p>
+					</li>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<div class=vertical-align><div class=btn4><label> <input checked name=button-group type=radio value=item> <span class="btn4-1 first">1</span>  </label> <label> <input name=button-group type=radio value=other-item> <span class=btn4-1>2</span>  </label> <label> <input name=button-group type=radio value=other-item> <span class=btn4-1>3</span>  </label> <label> <input name=button-group type=radio value=third> <span class=btn4-1>4</span>  </label> <label> <input name=button-group type=radio value=third> <span class="btn4-1 last">5</span></label></div></div>'>
 						<i class="las la-check-circle"></i>
-						<p>CheckBox</p>
-					</li>
-					<li class="col-lg-6" draggable="true" data-insert-html='<hr/>'>
-						<i class="las la-slash"></i>
-						<p>hr</p>
+						<p>checkbox</p>
 					</li>
 					<li class="col-lg-6" draggable="true"
-						data-insert-html='<div class=list-group><a href=# class="list-group-item list-group-item-action">First item</a> <a href=# class="list-group-item list-group-item-action">Second item</a> <a href=# class="list-group-item list-group-item-action">Third item</a></div>'>
-						<i class="las la-list"></i>
-						<p>List Group</p>
+						data-insert-html='<div class=btn6><form><h1>LOGIN</h1><input placeholder=Username type=text required> <input placeholder=Password type=password required> <button>Submit</button></form></div>'>
+						<i class="las la-address-card"></i>
+						<p>login Form</p>
 					</li>
 					<li class="col-lg-6" draggable="true"
-						data-insert-html='<div class=container><table class="table table-hover"><thead><tr><th>Firstname<th>Lastname<th>Email<tbody><tr><td>John<td>Doe<td>john@example.com<tr><td>Mary<td>Moe<td>mary@example.com<tr><td>July<td>Dooley<td>july@example.com</table></div>'>
+						data-insert-html='<table class=responstable><tr><th>Main candidate<th data-th="Candidate details"><span>First name</span><th>Surname<th>Date of birth<th>Profession<tr><td><input type=radio><td>Steve<td>WANG<td>01/05/1978<td>Tacacher<tr><td><input type=radio><td>Steffie<td>LI<td>02/07/1980<td>Chef<tr><td><input type=radio><td>Stan<td>LIN<td>09/01/1998<td>Student<tr><td><input type=radio><td>Stella<td>HUANG<td>05/05/1970<td>Lawyer</table>'>
 						<i class="las la-table"></i>
 						<p>table</p>
 					</li>
-					<!-- <li class="col-lg-6" draggable="true"
-						data-insert-html='<div id=demo class="carousel slide" data-ride=carousel><ul class=carousel-indicators><li data-target=#demo data-slide-to=0 class=active><li data-target=#demo data-slide-to=1><li data-target=#demo data-slide-to=2></ul><div class=carousel-inner><div class="carousel-item active"><img src="/public/images/Xiang se/xiang_01_2.jpg" alt="Los Angeles"></div><div class=carousel-item><img src="public/images/Xiang se/xiangse_bg.jpg" alt=Chicago></div><div class=carousel-item><img src=ny.jpg alt="New York"></div></div><a class=carousel-control-prev href=#demo data-slide=prev> <span class=carousel-control-prev-icon></span> </a> <a class=carousel-control-next href=#demo data-slide=next> <span class=carousel-control-next-icon></span> </a></div>'>
-						<i class="las la-images"></i>
-						<p>Carousel</p>
-					</li> -->
-					<li class="col-lg-6" draggable="true" data-insert-html="<h1>HEADER GOES HERE</h1>">
-						<i class="las la-heading"></i>
-						<p>Header</p>
+					<li class="col-lg-6" draggable="true" data-insert-html='<hr class="hr-style2">'>
+						<i class="las la-slash"></i>
+						<p>hr</p>
 					</li>
-					<!-- <li class="col-lg-6" draggable="true"
-						data-insert-html="">
-						<i class=" fa fa-list-ul"></i>
-						<p>ul</p>
-					</li> -->
 				</ul>
 			</div>
 			<!-- 側邊攔tabProfile -->
 			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+
 				<ul class="list-unstyled components">
 					<li>
-						<a class="las la-file" href="#">home</a>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(1)">&ensp;home</a>
 					</li>
 					<li>
-						<a class="las la-file" href="#">product</a>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(2)">&ensp;about</a>
+					</li>
+					<li>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(3)">&ensp;kind</a>
+					</li>
+					<li>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(4)">&ensp;login</a>
+					</li>
+					<li>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(5)">&ensp;product</a>
+					</li>
+					<li>
+						<a class="las la-file" href="javascript:void(0);" onclick="changePage(6)">&ensp;car</a>
 					</li>
 				</ul>
-
 			</div>
 			<!-- 側邊攔tabConte -->
 			<div class="tab-pane fade" id="conte" role="tabpanel" aria-labelledby="profile-tab">
-				<div>
-					<li>
-						<p> Contact</p>
-					</li>
-				</div>
+				<li>
+					<a class="fas fa-sticky-note" href="#"> Contact</a>
+				</li>
 			</div>
 
 		</div>
@@ -154,10 +182,6 @@
 			</button>
 		</div>
 	</nav>
-
-
-
-
 
 	<!-- vvveb -->
 	<div id="vvveb-builder">
@@ -210,7 +234,9 @@
 
 				<!-- Modal body -->
 				<div class="modal-body">
-					<p id="newCode" style="white-space: pre-wrap"></p>
+					<p id="newCode" style="white-space: pre-wrap">
+
+					</p>
 				</div>
 
 				<!-- Modal footer -->
@@ -235,12 +261,11 @@
 					<div class="container-contact100">
 						<div class="wrap-contact100">
 							<div class="wrap-input100 validate-input" data-validate="">
-								<input id="name" class="input100" type="text" name="name" placeholder="標題">
+								<input id="titleTextBox" class="input100" type="text" name="name" placeholder="標題">
 								<span class="focus-input100"></span>
 							</div>
 							<div class="wrap-input100 validate-input" data-validate="Please enter your message">
-								<textarea id="explanation" class="input100" name="message"
-									placeholder="作品描述"></textarea>
+								<textarea id="ymdTextBox" class="input100" name="message" placeholder="作品描述"></textarea>
 								<span class="focus-input100"></span>
 							</div>
 
@@ -256,9 +281,6 @@
 	</div>
 
 
-	<div id="under_canvas"></div>
-
-
 	<!-- builder code-->
 	<script src="/javascripts/js/dnd.js"></script>
 	<script src="/javascripts/js/builder.js"></script>
@@ -269,7 +291,9 @@
 
 	<script>
 		$(document).ready(function () {
-			edit.Builder.init('/templated/Stylish Portfolio/index.html', function () {});
+			edit.Builder.init('/templated/antique/index copy.html', function () {
+			});
+
 		});
 		$("#okButton").click(function () {
 			let pBody = ['d'];

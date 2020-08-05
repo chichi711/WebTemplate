@@ -601,7 +601,7 @@ hr.hr-style3 {
   float: none;
   margin: 0 auto;
   width: 900px;
-  max-width: 100%;
+  max-width: 70%;
   border-radius: 40px;
   display: block;
   box-shadow: 0 2px 4px -1px rgba(25, 25, 25, 0.2);
@@ -688,7 +688,7 @@ hr.hr-style3 {
 
 
 .btn5-container {
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -752,6 +752,12 @@ hr.hr-style3 {
 
 .btn5 nav a:hover::before {
   width: 100%;
+}
+
+@media (max-width:450px){
+  .btn5-1{
+    width: 901px;
+  }
 }
 
 
