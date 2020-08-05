@@ -9,6 +9,16 @@ body {
 }
 
 
+.pro{
+  width: 100%;
+}
+.pro a{
+  padding: 10px 0;
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+  background-color:#17a2b8;
+  ;
+}
 /* 導覽列 */
 
 
@@ -49,13 +59,13 @@ border-radius: 11px; */
   position: fixed;
   border-radius: 11px;
   height: 80vh;
+  width: 15rem;
 }
 
 .left-profile-card .user-profile {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin-left: 18px;
   margin-bottom: 20px;
 }
 
@@ -63,11 +73,11 @@ border-radius: 11px; */
   font-size: 18px;
   margin-bottom: 0;
   font-weight: 600;
-  margin-left: 40px;
 }
 
 .personal-info {
   margin-bottom: 40px;
+  width: 100%;
 }
 
 .personal-info .personal-list {
@@ -78,9 +88,9 @@ border-radius: 11px; */
 
 .card-body {
   border-radius: 15px;
-  width: 33vh;
-  margin-left: 2.8rem;
+  width: 100%;
   padding: 0;
+  text-align: center;
 }
 
 .personal-list li {
@@ -149,7 +159,15 @@ label {
 
 /* 樣板庫 END*/
 
-
+.page_name ul{
+  padding: 0 0 0 4px;
+}
+.page_name {
+  display: flex;
+}
+.cus{
+  margin-left: 10rem;
+}
 /* 照片特效 */
 
 .item-wrap {

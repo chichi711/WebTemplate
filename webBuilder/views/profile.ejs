@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-	<link rel="icon" href="/images/icon.png">
+    <link rel="icon" href="/images/icon.png">
 
     <title>會員中心</title>
     <link rel="stylesheet" href="/stylesheets/Xu.css/bootstrap.min.css">
@@ -32,7 +32,7 @@
                     <div class="card-body">
                         <div class="personal-info ">
                             <ul class=" personal-list">
-                                <li>
+                                <li class="user_img">
                                     <img item-wrap
                                         src="https://crawl.nosdn.127.net/nbotreplaceimg/807fb39cdf0a2cc26bd7c0ec0855255d/08a456acf9a8fb29d8981e2fdd8ef63f.png"
                                         al t="" class="user-profile">
@@ -40,15 +40,20 @@
                                 </li>
                                 <div class=" pro nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                                     aria-orientation="vertical">
-                                    <li><i class="fas fa-briefcase "></i><span>網頁設計師</span></li>
-                                    <li><i class="fas fa-map-marker-alt "></i><span> 台中市 </span></li>
-                                    </span>
-                                    </li>
-                                    <li><i class="far fa-envelope "></i><span>aaaa@gmail.com</span></li><br>
-                                    <!-- <li><i class="fas fa-mobile "></i><span>0966-123-654</span></li> -->
-                                    <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill"
+                                    
+                                    <a class="nav-link"  data-toggle="pill"
+                                        href="#" role="tab" aria-controls="v-pills-home"
+                                        aria-selected="true" style="width: 100%;">
+                                        <i class="fas fa-mobile "></i><span>作品集</span>
+                                    </a>
+                                    <a class="nav-link" data-toggle="pill"
+                                        href="#" role="tab" aria-controls="v-pills-home"
+                                        aria-selected="true" style="width: 100%;">
+                                        <i class="fas fa-mobile "></i><span>樣板庫</span>
+                                    </a>
+                                    <a class="nav-link" id="v-pills-home-tab" data-toggle="pill"
                                         href="#v-pills-home" role="tab" aria-controls="v-pills-home"
-                                        aria-selected="true">
+                                        aria-selected="true" style="width: 100%;">
                                         <i class="fas fa-mobile "></i><span>樣板庫</span>
                                     </a>
                                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill"
@@ -74,7 +79,7 @@
             <div class=" col-lg-9">
 
                 <!-- 樣板庫 -->
-                <div  class="tab-content" id="v-pills-tabContent">
+                <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                         aria-labelledby="v-pills-home-tab">
                         <div class="card-body2 card rigt-profile-card">
@@ -92,6 +97,7 @@
                                     </svg>
 
                                     <span class="sp">樣板庫</span>
+
                                 </div>
 
                                 <div class=" row text-center">
@@ -162,51 +168,47 @@
 
                             <div class="container">
                                 <div class="lg">
-                                    <svg width="2em" height="1.6em" viewBox="0 0 16 16" class="bi bi-file-richtext"
-                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M4 1h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H4z" />
-                                        <path fill-rule="evenodd"
-                                            d="M4.5 11.5A.5.5 0 0 1 5 11h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 9h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708l1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V7.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V7s1.54-1.274 1.639-1.208zM6.25 5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z" />
-                                    </svg>
-                                    <span class="sp">作品集</span>
-                                </div>
-                                <div class="row text-center">
 
 
-
-                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-                                        <a href="/edit" class="item-wrap fancybox">
-                                            <div class="work-info">
-                                                <h3>編輯</h3>
-                                            </div>
-                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
-                                        </a>
-                                    </div>
-
-                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-                                        <a href="/edit" class="item-wrap fancybox">
-                                            <div class="work-info">
-                                                <h3>編輯</h3>
-                                            </div>
-                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
-                                        </a>
-                                    </div>
-
-                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-                                        <a href="/edit" class="item-wrap fancybox">
-                                            <div class="work-info">
-                                                <h3>編輯</h3>
-                                            </div>
-                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
-                                        </a>
-                                    </div>
-
-
-
+                                    <span class="sp">Stylish Portfolio</span>
 
                                 </div>
 
+
+                                <div class="row ">
+
+
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
+                                        </a>
+                                    </div>
+
+
+                                    <div class="page_name">
+                                        <ul>
+                                            <li>home</li>
+                                            <li>about</li>
+                                            <li>kind</li>
+                                            <li>login</li>
+                                            <li>product</li>
+                                            <li>car </li>
+                                        </ul>
+
+                                        <div class="cus">
+                                            <div>
+
+                                                <h4>內容</h4>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

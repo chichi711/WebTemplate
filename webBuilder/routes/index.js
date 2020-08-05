@@ -5,34 +5,11 @@ var conn = require('../db');
 
 
 router.get('/', function (req, res, next) {
-//   if (req.session.uName) {
-//     console.log("user");
-//     res.render("/", { uName:req.session.uName });
-
-//     return;
-    
-// }  else{
-//   console.log("none");
-//   req.session.uName = "none";
-  res.render("index");
-
-// }     
+  req.session.user = "<h1>assdds</h1>";
+  res.render('index', { 
+    title: 'Express', 
+    aa: req.session.user });
 });
-
-router.post("/", function (request, response) {
-  conn.query('SELECT * FROM member where email = ?',
-  '',[request.body.Email],
-
-  function (err, rows) {
-      if (err || request.body.uPwd != rows[0].uPwd) {
-          console.log(JSON.stringify(err));
-          return;
-      }
-      req.session.uName = rows[0].uName;
-  }
-); 
-			
-})
 
 router.get('/features', function (req, res, next) {
   res.render('featuresPage');
