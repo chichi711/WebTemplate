@@ -76,24 +76,30 @@
     <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
     <script src="/javascripts/Xu.js/logn.js"></script>
     <script>
-        // $("#userLogin").click(function () {
-        //     $.ajax({
-        //         url: "/member",
-        //         type: "GET",
-        //         data: {
-        //             username: $("#Email").val(),
-        //             password: $("#uPwd").val()
-        //         },
-        //         success: function (data) {    //    alert後臺返回的引數
-        //             alert(data);
-        //         },
-        //         error: function () {
-        //             alert(`帳號或密碼錯誤`);
-        //         }
-        //     });
-        //     // window.location.href = window.location.origin + '/';
+        $("#userLogin").click(function () {
+            $.ajax({
+                url: "/users/login",
+                type: "GET",
+                data: {
+                    Email: $("#Email").val(),
+                    uPwd: $("#uPwd").val()
+                },
+                success: function (res) {
+                    var res = JSON.parse(res)
+                    if (res.errno === 1) {
+                        alert("登入成功!")
+                        location.href = '/'
+                    } else if (res.errno === 0) {
+                        alert("登入失敗!")
+                    }
+                },
+                error: function () {
+                    alert("系統錯誤!")
+                }
+            });
+            window.location.href = window.location.origin + '/';
 
-        // });
+        });
     </script>
 
 </body>

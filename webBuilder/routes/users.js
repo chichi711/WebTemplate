@@ -24,13 +24,13 @@ emitter.on("false", function () {
 });
 router.get("/member", function (request, response) {
 
-  conn.query('select * from member','',function (err, rows) {
-      if (err) {
-        console.log(JSON.stringify(err));
-        return;
-      }
-      response.send(JSON.stringify(rows));
+  conn.query('select * from member', '', function (err, rows) {
+    if (err) {
+      console.log(JSON.stringify(err));
+      return;
     }
+    response.send(JSON.stringify(rows));
+  }
   );
 
 })
@@ -49,16 +49,18 @@ router.post("/member", function (request, response) {
 })
 
 // 登入驗證
-// router.get("/member", function (req, res) {
+// router.get("/login", function (req, res) {
 
-//   var sql = "select * from member where Email=`" + req.query.username + "` and ePwd =`" + reqt.query.password + "`";
-//   connection.query(sql, function (err, res) {
 
-//     if (result.length == 0) {
-//       res.end("使用者名稱密碼不正確");    //資料庫裡面沒找到配對的內容返回引數
-//     } else {
-//       res.end("登陸成功");    //返回登入成功
-//     }
-//   })
+//   conn.query("select * from member where Email = ? and ePwd = ? ",
+//     [
+//       req.body.Email,
+//       req.body.ePwd
+//     ],
+//     function (err, res) {
+
+
+//     })
 // });
+
 module.exports = router;

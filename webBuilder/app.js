@@ -5,20 +5,29 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require("express-session");
 var cookieParser = require('cookie-parser');
-var indexRouter = require('./routes/index');
+var index = require('./routes/index');
 var usersRouter = require('./routes/users');
 // app引入demo.js ,後見93
 var demoRouter = require('./routes/demo');
-
 var app = express();
 var mysql = require("mysql");
+var bodyParser = require('body-parser');
 
-app.use(cookieParser());
+
+//session設定
 app.use(session({
   secret: "xxcalfdlsajfdksaj",
   saveUninitialized: false,
-  resave: true
-}));
+  resave: true,
+
+  cookie: {
+    path: '/',
+    httpOnly: true,
+    secure: false,
+    maxAge: 10 * 60 * 1000
+  }
+}))
+
 app.use(function (req, res, next) {
   if (!req.session.userName) {
     req.session.userName = "Guest";
@@ -38,7 +47,7 @@ conn.connect(function (err, rows) {
     console.log(JSON.stringify(err));
     return;
   }
-  console.log("isFine")
+  console.log("olaolaola")
 });
 
 // app.get("/home/news", function (request, response) {
@@ -66,6 +75,14 @@ conn.connect(function (err, rows) {
 //           console.log(JSON.stringify(rows));
 //       }
 //   );
+
+// 解析JSON資料
+app.use(bodyParser.json());
+
+app.use(function(req, res, next){
+    res.locals.session = req.session;
+    next();
+});
 
 // 添加路由並以JSON格式顯示
 app.get("/EEweb/member", function (req, res) {
@@ -114,7 +131,7 @@ app.use(function (req, res, next) {
   next();
 });
 
-app.use('/', indexRouter);
+app.use('/', index);
 app.use('/users', usersRouter);
 //catch demo.js路由
 app.use('/demo', demoRouter);
