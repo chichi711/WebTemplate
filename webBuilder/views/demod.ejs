@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+    <img src="/images/Logo.png" alt="">
+</body>
+</html>
+
+<script src="https://cdn.bootcss.com/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+<script>
+     window.onload = () => {
+
+// // OK.
+
+html2canvas(document.body, {
+    height: window.innerHeight,
+    // windowWidth
+}).then(
+    function (canvas) {//得到了canvas物件
+        let imgUrl = canvas.toDataURL("image/jpg");//這裡通過canvas的toDataURL方法把它轉換成base64編碼。
+        // console.log(document.body);
+        // let pic = { img: '11234' };
+        let pic = { img: imgUrl };
+        document.body.innerHTML = `<img src=${imgUrl} />`;
+        console.log(imgUrl.length);
+        $.ajax({
+            type: "post",
+            url: "/edit/pic",
+            data: JSON.stringify(pic),
+            contentType: "application/json; charset=utf-8"
+        });
+    });
+
+// html2canvas(document.body,{  type: "view"}).then(
+//     function (canvas) {//得到了canvas物件
+//         let imgUrl = canvas.toDataURL("image/jpg");//這裡通過canvas的toDataURL方法把它轉換成base64編碼。
+//         // let pic = { img: '/images/Logo.png'};
+//         let pic = { img: imgUrl };
+//         $.ajax({
+// 			type: "post",
+//             url: "/edit/pic",
+//             dataType: 'image/jpg',
+// 			data: pic,
+// 			contentType: "application/json; charset=utf-8"
+//         });
+// });
+
+// OK. v2
+// html2canvas(document.getElementById('sidebar-wrapper'), {
+// html2canvas(document.getElementById('page-top'), {
+// html2canvas(document.body, {
+//     type: "view"
+// }).then(function (canvas) {//得到了canvas物件
+//     let imgUrl = canvas.toDataURL("image/jpg");//這裡通過canvas的toDataURL方法把它轉換成base64編碼。
+//     // let pic = { img: '/images/Logo.png'};
+//     let pic = { img: imgUrl };
+//     $.ajax({
+//         type: "post",
+//         url: "/edit/pic",
+//         data: JSON.stringify(pic),
+//         contentType: "application/json; charset=utf-8"
+//     })
+// });
+
+// // OKKKKKK
+// html2canvas(document.body).then(canvas => {
+//     saveAs(canvas.toDataURL("image/jpg"), 'canvas.jpg');
+// });
+// function saveAs(uri, filename) {
+//     var link = document.createElement('a');
+//     if (typeof link.download === 'string') {
+//         link.href = uri;
+//         link.download = filename;
+
+//         document.body.appendChild(link);
+
+//         link.click();
+
+//         document.body.removeChild(link);
+//         console.log(uri);
+//     } else {
+//         window.open(uri);
+//     }
+// }
+
+}
+</script>

@@ -46,7 +46,7 @@
     </nav>
 
 
-    <form action="" accept-charset="utf-8" method="POST" class="login-form  login-form1">
+    <form action="" accept-charset="utf-8" method="POST" class="login-form  " id="login-form1">
         <h1 class="signup" onclick="autoinput('sign up')">會員註冊</h1>
 
         <div class="txtb">
@@ -58,10 +58,11 @@
             <input id="EmailTextBox" type="email">
             <span data-placeholder="電子郵件"></span>
         </div>
+        <span class="tip">密碼不一致</span>
 
         <div class="txtb">
             <input id="uPwdTextBox" onchange="checkpas()" type="password" required />
-            <span data-placeholder="密碼"><span class="tip" style="color: red;">密碼不一致</span></span>
+            <span data-placeholder="密碼">
         </div>
         <div class="txtb">
             <input id="repassword" onchange="checkpas()" type="password" required />

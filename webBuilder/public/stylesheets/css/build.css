@@ -112,12 +112,12 @@ a:focus {
 }
 
 #sidebar>div>a {
-    color: #000;
+    /* color: #000; */
 }
 
 #sidebar>div>a:hover {
-    background-color: #18a7c7;
-    color: #000;
+    /* background-color: #76cde0; */
+    /* color: #000; */
 }
 #sidebar ul li a {
     text-align: left;

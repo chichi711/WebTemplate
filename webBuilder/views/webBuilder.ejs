@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -31,8 +32,8 @@
 		<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
 			<a class="nav-item nav-link col-lg-4 active" id="nav-home-tab" data-toggle="tab" href="#home" role="tab"
 				aria-controls="nav-home" aria-selected="true">插入</a>
-			<a style="color: black" class="nav-item nav-link col-lg-4" id="nav-profile-tab" data-toggle="tab"
-				href="#profile" role="tab" aria-controls="nav-profile" aria-selected="false">頁面</a>
+			<a class="nav-item nav-link col-lg-4" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab"
+				aria-controls="nav-profile" aria-selected="false">頁面</a>
 			<a class="nav-item nav-link col-lg-4" id="nav-contact-tabF" data-toggle="tab" href="#conte" role="tab"
 				aria-controls="nav-contact" aria-selected="false">編輯</a>
 		</div>
@@ -269,10 +270,12 @@
 
 	<script>
 		$(document).ready(function () {
-			edit.Builder.init('/templated/Stylish Portfolio/index.html', function () {});
+			edit.Builder.init('/templated/Stylish Portfolio/index.html', function () { });
 		});
 		$("#okButton").click(function () {
-			let pBody = ['d'];
+			let pBody = [];
+			let data = document.getElementById('newCode').innerText();
+			pBody.push(data);
 			let pName = ['home'];
 			let p = pBody.map((item, index) => {
 				return { body: item, name: pName[index] };

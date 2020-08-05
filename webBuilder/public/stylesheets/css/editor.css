@@ -42,6 +42,7 @@
 
 
 body {
+  font-family: "Legacy", "Noto Sans TC", "Helvetica Neue", "Helvetica", "Nimbus Sans L", "Arial", "Liberation Sans", "Source Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "STHeiti", "SimHei", "WenQuanYi Zen Hei Sharp", "sans-serif", "Apple LiGothic", "微軟正黑體";
   background: #eee;
   --builder-filemanager-height: 250px;
   --builder-header-top-height: 57px;
@@ -71,9 +72,9 @@ body {
 }
 
 .tablet {
-  margin-left: -384px;
+  margin-left: -260px;
   left: 50%;
-  width: 1024px;
+  width: 850px;
 }
 
 

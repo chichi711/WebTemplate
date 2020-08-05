@@ -15,9 +15,9 @@ router.get("/", function (request, response) {
       function (err, rows) {
           if (err) {
               console.log(JSON.stringify(err));
-              return;
+              response.render('profile');
           }
-          response.render('profile', { member: rows});
+          response.render('profile', { member: rows });
       }
   );
 
