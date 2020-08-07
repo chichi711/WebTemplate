@@ -1,4 +1,36 @@
-<!DOCTYPE html>
+會員 : 會員編號 名稱 信箱 密碼 照片 Primary key foreign key
+樣板 : 樣板編號 樣板名稱 類型(bootstrap or heart) 頁數 開頭 結尾
+作品 : 作品編號 會員編號 樣板編號 名稱 描述 照片 時間
+詳細 : 頁面排序 作品編號 頁面名稱 code
+
+create database eeweb;
+use eeweb;
+
+CREATE TABLE `member` (
+  `mID` tinyint(2) UNSIGNED ZEROFILL NOT NULL auto_increment Primary key,
+  `uName` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `Email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `uPwd` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(300) COLLATE utf8_unicode_ci DEFAULT 'user.jpg'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `member` (`uName`, `Email`, `uPwd`, `img`) VALUES
+('chichi', 'chi@gmail.com', 'aaa', 'user.jpg');
+
+
+
+CREATE TABLE `template` (
+  `tID` tinyint(2) UNSIGNED ZEROFILL NOT NULL Primary key auto_increment,
+  `tName` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `type` tinyint(2) NOT NULL,
+  `pages` tinyint(2) default '1',
+  `begin` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  `end` varchar(500) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `template` (`tName`, `type`, `pages`, `begin`, `end`) VALUES
+('antique', '1', '1',
+'<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,11 +47,55 @@
   <link href="/templated/Stylish Portfolio/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
   <link href="/templated/Stylish Portfolio/css/stylish-portfolio.css" rel="stylesheet">
 
-</head>
+</head>',
+ '</html>');
+INSERT INTO `template` (`tName`, `type`, `pages`, `begin`, `end`) VALUES
+('antique', '2', '6',
+'<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="/templated/antique/_js/jquery.min.js"></script>
+    <script src="/templated/antique/_js/popper.min.js"></script>
+    <script src="/templated/antique/_js/bootstrap.min.js"></script>
+    <script src="/templated/antique/flycan.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="/templated/antique/style copy.css">
+</head>',
+ '</html>');
 
-<body id="page-top">
 
-  <!-- Navigation -->
+
+CREATE TABLE `account` (
+  `aID` tinyint(2) UNSIGNED ZEROFILL NOT NULL Primary key auto_increment,
+  `mID` tinyint(2) UNSIGNED ZEROFILL NOT NULL ,
+  `tID` tinyint(2) UNSIGNED ZEROFILL NOT NULL ,
+  `aName` varchar(20) COLLATE utf8_unicode_ci default 'eeWeb template',
+  `explain` varchar(200) COLLATE utf8_unicode_ci,
+  `pic` MEDIUMBLOB() COLLATE utf8_unicode_ci default 'default.jpg',
+  `date` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  FOREIGN KEY (mID) REFERENCES member(mID),
+  FOREIGN KEY (tID) REFERENCES template(tID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `account` (`mID`, `tID`, `explain`, `pic`, `date`) VALUES
+('1', '1', 'yayayayayaya', 'user.jpg', '07/31');
+
+
+
+CREATE TABLE `pages` (
+  `pID` tinyint(2) UNSIGNED ZEROFILL NOT NULL Primary key auto_increment,
+  `pName` varchar(20) COLLATE utf8_unicode_ci default 'eeWeb template',
+  `aID` tinyint(2) UNSIGNED ZEROFILL NOT NULL,
+  `body` varchar(10000) COLLATE utf8_unicode_ci NOT NULL,
+  FOREIGN KEY (aID) REFERENCES account(aID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `pages` (`pName`, `aID`, `body`) VALUES
+('index', '1', '<body id="page-top">
+
+
   <a class="menu-toggle rounded" href="#">
     <i class="fas fa-bars"></i>
   </a>
@@ -46,19 +122,17 @@
     </ul>
   </nav>
 
-  <!-- Header -->
   <header class="masthead d-flex">
-    <div class="container text-center my-auto">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark"> <a class="navbar-brand" href="#">Logo</a><ul class="navbar-nav mr-auto"><li class="nav-item"><a class="nav-link" href="#">Link 1</a></li><li class="nav-item"><a class="nav-link" href="#">Link 2</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown"> Dropdown link </a><div class="dropdown-menu"><a class="dropdown-item" href="#">Link 1</a> <a class="dropdown-item" href="#">Link 2</a> <a class="dropdown-item" href="#">Link 3</a></div></li></ul><form class="form-inline" action="/action_page.php"><input class="form-control mr-sm-2" type="text" placeholder="Search"> <button class="btn btn-success" type="submit">Search</button></form></nav><div class="container text-center my-auto">
       <h1 class="mb-1">Stylish Portfolio</h1>
       <h3 class="mb-5">
         <em>A Free Bootstrap Theme by Start Bootstrap</em>
-      </h3>
+      </h3><div class="well login-box"> <form action=""> <legend>Login</legend> <div class="form-group"> <label for="username-email">E-mail or Username</label> <input value="" id="username-email" placeholder="E-mail or Username" type="text" class="form-control"> </div><div class="form-group"> <label for="password">Password</label> <input id="password" value="" placeholder="Password" type="text" class="form-control"> </div><div class="form-group text-center"> <button class="btn btn-danger btn-cancel-action">Cancel</button> <input type="submit" class="btn btn-success btn-login-submit" value="Login"> </div></form> </div>
       <a class="btn btn-secondary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
     </div>
     <div class="overlay"></div>
   </header>
 
-  <!-- About -->
   <section class="content-section bg-light" id="about">
     <div class="container text-center">
       <div class="row">
@@ -72,7 +146,6 @@
     </div>
   </section>
 
-  <!-- Services -->
   <section class="content-section bg-secondary text-white text-center" id="services">
     <div class="container">
       <div class="content-section-heading">
@@ -122,7 +195,7 @@
     </div>
   </section>
 
-  <!-- Callout -->
+
   <section class="callout">
     <div class="container text-center">
       <h2 class="mx-auto mb-5">Welcome to
@@ -132,7 +205,6 @@
     </div>
   </section>
 
-  <!-- Portfolio -->
   <section class="content-section" id="portfolio">
     <div class="container">
       <div class="content-section-heading text-center">
@@ -188,7 +260,6 @@
     </div>
   </section>
 
-  <!-- Call to Action -->
   <section class="content-section bg-secondary text-white">
     <div class="container text-center">
       <h2 class="mb-4">The buttons below are impossible to resist...</h2>
@@ -197,16 +268,14 @@
     </div>
   </section>
 
-  <!-- Map -->
   <div id="contact" class="map">
     <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
-    <br />
+    <br>
     <small>
       <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
     </small>
   </div>
 
-  <!-- Footer -->
   <footer class="footer text-center">
     <div class="container">
       <ul class="list-inline mb-5">
@@ -226,25 +295,15 @@
           </a>
         </li>
       </ul>
-      <p class="text-muted small mb-0">Copyright &copy; Your Website 2020</p>
+      <p class="text-muted small mb-0">Copyright © Your Website 2020</p>
     </div>
   </footer>
 
-  <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="/templated/Stylish Portfolio/js/jquery.min.js"></script>
-  <script src="/templated/Stylish Portfolio/js/bootstrap.bundle.min.js"></script>
+</body>'),
+('member', '1', '<body><h1>member</h1></body>'),
+('car', '1', '<body><h1>car</h1></body>');
 
-  <!-- Plugin JavaScript -->
-  <script src="/templated/Stylish Portfolio/js/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="/templated/Stylish Portfolio/js/stylish-portfolio.min.js"></script>
-
-</body>
-
-</html>

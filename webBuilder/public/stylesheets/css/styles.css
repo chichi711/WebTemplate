@@ -85,7 +85,7 @@ h3{
 
 h1, h2, h3, h4, h5, h6 {
 
-  margin-top: 0;
+  margin-top: 15px;
   margin-bottom: 0.5rem;
 }
 
@@ -540,8 +540,7 @@ pre code {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+
 }
 
 .no-gutters {
@@ -7541,7 +7540,7 @@ button.bg-dark:focus {
 
 .mr-4,
 .mx-4 {
-  
+
   margin-right: 1.5rem !important;
 }
 
@@ -10025,7 +10024,7 @@ hr.light {
 
 header.masthead {
   padding-top: 10rem;
-  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.8) 0%, rgba(92, 77, 66, 0.8) 100%), url(https://images.pexels.com/photos/942872/pexels-photo-942872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  background: linear-gradient(to bottom, rgba(92, 77, 66, 0.4) 0%, rgba(92, 77, 66, 0.3) 100%), url(https://images.pexels.com/photos/942872/pexels-photo-942872.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -10037,7 +10036,7 @@ header.masthead {
 @media (min-width: 992px) {
   header.masthead {
     height: 50vh;
-    min-height: 30rem;
+    min-height: 26rem;
     padding-top: 4.5rem;
     padding-bottom: 0;
   }
@@ -10068,7 +10067,7 @@ header.masthead {
   opacity: 0  ;
   color: #fff;
   background: rgba(0, 170, 144, 0.95);
-  transition: opacity 0.25s ease;
+  transition: opacity 0.75s ease;
   text-align: center;
 }
 #portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-sm .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-md .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-lg .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-xl .portfolio-box .portfolio-box-caption .project-category {

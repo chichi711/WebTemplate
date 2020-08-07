@@ -3,69 +3,20 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title></title>
+    <link rel="icon" href="images/icon.png">
+    <title>EEweb</title>
 
-    <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
         rel="stylesheet" />
     <!-- 導入CSS -->
     <link href="/stylesheets/css/styles.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/487a1c55c4.js" crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-
 
 </head>
 
-<body id="page-top">
+<body class="m-0">
     <!-- Nav-->
-    <nav class="navbar navbar-expand-md navbar-light bg-light p-1 fixed-top shadow-none" id="notoSans">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <%- include('navbar') %>
 
-        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" href="/">首頁</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/featuresPage">功能介紹</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/officalTemplat">樣板一覽</a>
-                </li>
-
-            </ul>
-        </div>
-        <div class="mx-auto order-0">
-            <a class="navbar-brand p-0" href="#">
-                <img src="/images/features_imgs/logo.png" alt="" loading="lazy" width="140px">
-            </a>
-
-        </div>
-
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <form class="form-inline ml-auto">
-                <div class='btn3'>
-                    <div class='line'></div>
-                    <div class='line'></div>
-                    <div class='line'></div>
-                    <div class='line'></div>
-                    <div class='line'></div>
-                    <div class='line'></div>
-                    <span>
-                        <a href="/login">登入/註冊</a>
-                    </span>
-                    <div>
-            </form>
-        </div>
-
-    </nav>
     <!-- Masthead-->
     <header class="masthead">
         <div class="container ">
@@ -79,10 +30,7 @@
 
                     </h5>
 
-                    <div class="hideme3"><a href="/editPage" class="a1"><button class="btn1" tabindex="0"
-                                style="--buttonColor: #00AA90">START<span></span><span></span><span></span><span></span><b
-                                    aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b><b
-                                    aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b></button></a></div>
+
 
                 </div>
             </div>
@@ -111,25 +59,24 @@
                     <div class="container-fluid p-4">
                         <div class="row no-gutters">
                             <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
-                                <a class="portfolio-box" href="/officalTemplat/preview">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/18.jpg" alt="" />
                                     <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
+                                        <div class="project-name">Stylish Portfolio</div>
                                     </div>
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6 ">
-                                <a class="portfolio-box" href="#">
+                                <a class="portfolio-box" href="/officalTemplat/preview">
                                     <img class="img-fluid" src="/images/preview/19.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
-                                        <div class="project-name">Project Name</div>
+                                        <div class="project-name">antique</div>
                                     </div>
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="#">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/20.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -138,7 +85,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="#">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/21.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -147,8 +94,8 @@
                                 </a>
                             </div><br><br><br><br>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="#">
-                                    <img class="img-fluid" src="/images/preview/22.jpg" alt="" />
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
+                                    <img class="img-fluid" src="/images/preview/27.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
                                         <div class="project-name">Project Name</div>
@@ -156,7 +103,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="#">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/26.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -165,7 +112,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="#">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/31.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -174,7 +121,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="#">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/28.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -192,7 +139,7 @@
                     <div class="container-fluid p-4">
                         <div class="row no-gutters">
                             <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/1.jpg">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/23.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -201,8 +148,8 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6 ">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/2.jpg">
-                                    <img class="img-fluid" src="/images/preview/27.jpg" alt="" />
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
+                                    <img class="img-fluid" src="/images/preview/24.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
                                         <div class="project-name">Project Name</div>
@@ -210,7 +157,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/3.jpg">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/25.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -219,7 +166,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/3.jpg">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/39.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -228,7 +175,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/3.jpg">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/40.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -237,7 +184,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/3.jpg">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/41.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -246,7 +193,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/3.jpg">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/42.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -255,7 +202,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/4.jpg">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/29.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -263,7 +210,7 @@
                                     </div>
                                 </a>
                             </div><br><br><br><br>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -274,7 +221,7 @@
                     <div class="container-fluid p-4">
                         <div class="row no-gutters">
                             <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/1.jpg">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/30.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -283,8 +230,8 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6 ">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/2.jpg">
-                                    <img class="img-fluid" src="/images/preview/24.jpg" alt="" />
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
+                                    <img class="img-fluid" src="/images/preview/35.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
                                         <div class="project-name">Project Name</div>
@@ -292,7 +239,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/3.jpg">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/32.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -301,15 +248,15 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/4.jpg">
-                                    <img class="img-fluid" src="/images/preview/33.jpg" alt="" />
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
+                                    <img class="img-fluid" src="/images/preview/22.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
                                         <div class="project-name">Project Name</div>
                                     </div>
                                 </a>
                             </div><br><br><br><br>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -320,7 +267,7 @@
                     <div class="container-fluid p-4">
                         <div class="row no-gutters">
                             <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/1.jpg">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/34.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -329,8 +276,8 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6 ">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/2.jpg">
-                                    <img class="img-fluid" src="/images/preview/35.jpg" alt="" />
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
+                                    <img class="img-fluid" src="/images/preview/33.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
                                         <div class="project-name">Project Name</div>
@@ -338,7 +285,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/3.jpg">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/36.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -347,7 +294,7 @@
                                 </a>
                             </div>
                             <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/images/assets/img/portfolio/fullsize/4.jpg">
+                                <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/37.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
@@ -355,7 +302,7 @@
                                     </div>
                                 </a>
                             </div><br><br><br><br>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -375,85 +322,20 @@
                     <hr class="divider dark my-4" />
                     <h5 class="text-dark-50 mb-4">只要簡單幾分鐘，就可以使用 EEweb 打造出一個漂亮的網站!
                     </h5>
-                    <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">choose!</a>
+
+
+                    <div class="hideme3"><a href="/edit" class="a1"><button class="btn1" tabindex="0"
+                                style="--buttonColor: #00AA90">START<span></span><span></span><span></span><span></span><b
+                                    aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b><b
+                                    aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b></button></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section><br><br>
 
-    <footer class="page-footer font-small mdb-color lighten-3 pt-4 bg-light">
+    <%- include('footer') %>
 
-        <!-- Footer Links -->
-        <div class="container text-center text-md-left">
-
-            <!-- Grid row -->
-            <div class="row">
-
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 mr-auto my-md-4 my-0 mt-4 mb-1">
-
-                    <!-- Content -->
-                    <h5 class="font-weight-bold text-uppercase mb-4">關於</h5>
-                    <p>利用拖曳式工具，依照自己所想風格，調整文字、顏色、背景色、圖片、及簡單的排版來製作心目中的網站!</p>
-
-
-                </div>
-                <!-- Grid column -->
-
-                <hr class="clearfix w-100 d-md-none">
-
-                <!-- Grid column -->
-                <div class="col-md-4 col-lg-3 mx-auto my-md-4 my-0 mt-4 mb-1">
-
-                    <!-- Contact details -->
-                    <h5 class="font-weight-bold text-uppercase mb-4">聯絡</h5>
-
-                    <ul class="list-unstyled">
-                        <li>
-                            <p>
-                                <i class="fas fa-home mr-3"></i>台中市南屯區公益路二段51號</p>
-                        </li>
-                        <li>
-                            <p>
-                                <i class="fas fa-envelope mr-3"></i> cathylin@taichung.iii.org.tw</p>
-                        </li>
-                        <li>
-                            <p>
-                                <i class="fas fa-phone mr-3"></i> 04 2326 5860</p>
-                        </li>
-                        <li>
-                            <p>
-                                <i class="fas fa-print mr-3"></i> 04-2327-3572</p>
-                        </li>
-                    </ul>
-
-                </div>
-                <!-- Grid column -->
-
-                <hr class="clearfix w-100 d-md-none">
-
-                <hr class="clearfix w-100 d-md-none">
-
-                <div class="col-md-2 col-lg-2 text-center mx-auto my-4">
-
-
-
-                    <div class="logo">
-                        <img src="/images/features_imgs/Logo.png" style="width: 200px;" alt="">
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-        <!-- Footer Links -->
-
-        <!-- Copyright -->
-        <div class="footer-copyright text-center py-3">© 2020 MFEEE08:
-        </div>
-        <!-- Copyright -->
-
-    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>

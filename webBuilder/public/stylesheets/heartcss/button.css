@@ -459,15 +459,10 @@
   /* 黑白按鈕  */
 
   .btn {
-    letter-spacing: 0.1em;
-    cursor: pointer;
     font-size: 14px;
     font-weight: 400;
-    line-height: 45px;
-    max-width: 160px;
     position: relative;
     text-decoration: none;
-    text-transform: uppercase;
     width: 100%;
 }
 
@@ -601,7 +596,7 @@ hr.hr-style3 {
   float: none;
   margin: 0 auto;
   width: 900px;
-  max-width: 100%;
+  max-width: 70%;
   border-radius: 40px;
   display: block;
   box-shadow: 0 2px 4px -1px rgba(25, 25, 25, 0.2);
@@ -688,7 +683,7 @@ hr.hr-style3 {
 
 
 .btn5-container {
-	width: 80%;
+	width: 100%;
 	margin: 0 auto;
 }
 
@@ -752,6 +747,12 @@ hr.hr-style3 {
 
 .btn5 nav a:hover::before {
   width: 100%;
+}
+
+@media (max-width:450px){
+  .btn5-1{
+    width: 901px;
+  }
 }
 
 
@@ -831,4 +832,74 @@ hr.hr-style3 {
   -webkit-transform: translateY(-3px);
           transform: translateY(-3px);
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+}
+.responstable {
+  margin: 1em 0;
+  width: 100%;
+  overflow: hidden;
+  background: #FFF;
+  color: #024457;
+  border-radius: 10px;
+  border: 1px solid #167F92;
+
+  
+}
+.responstable tr {
+  border: 1px solid #D9E4E6;
+}
+.responstable tr:nth-child(odd) {
+  background-color: #EAF3F3;
+}
+.responstable th {
+  display: none;
+  border: 1px solid #FFF;
+  background-color: #167F92;
+  color: #FFF;
+  padding: 1em;
+}
+.responstable th:first-child {
+  display: table-cell;
+  text-align: center;
+}
+.responstable th:nth-child(2) {
+  display: table-cell;
+}
+.responstable th:nth-child(2) span {
+  display: none;
+}
+.responstable th:nth-child(2):after {
+  content: attr(data-th);
+}
+@media (min-width: 480px) {
+  .responstable th:nth-child(2) span {
+    display: block;
+  }
+  .responstable th:nth-child(2):after {
+    display: none;
+  }
+}
+.responstable td {
+  display: block;
+  word-wrap: break-word;
+  max-width: 7em;
+}
+.responstable td:first-child {
+  display: table-cell;
+  text-align: center;
+  border-right: 1px solid #D9E4E6;
+}
+@media (min-width: 480px) {
+  .responstable td {
+    border: 1px solid #D9E4E6;
+  }
+}
+.responstable th, .responstable td {
+  text-align: left;
+  margin: .5em 1em;
+}
+@media (min-width: 480px) {
+  .responstable th, .responstable td {
+    display: table-cell;
+    padding: 1em;
+  }
 }
