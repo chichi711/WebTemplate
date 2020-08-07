@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+</head>
+
+<body>
+
+
+
+    <script>
+ html2canvas(document.querySelector('#capture')).then(canvas => {
+    saveAs(canvas.toDataURL("./images"), 'canvas.png');
+});
+
+function saveAs(uri, filename) {
+    var link = document.createElement('a');
+    if (typeof link.download === 'string') {
+        link.href = uri;
+        link.download = filename;
+
+        document.body.appendChild(link);
+
+        // link.click();
+
+        document.body.removeChild(link);
+        console.log(uri);
+        // window.open(uri);
+    } else {
+    }
+}
+    </script>
+</body>
+
+</html>

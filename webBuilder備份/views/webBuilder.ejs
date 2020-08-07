@@ -4,7 +4,6 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-
 	<link rel="icon" href="/images/icon.png">
 	<title>EEweb</title>
 
@@ -28,7 +27,6 @@
 
 
 <body>
-
 	<!-- 側邊攔 -->
 	<nav id="sidebar">
 		<!-- 側邊攔tab -->
@@ -134,7 +132,7 @@
 	<nav class="navbar navbar-expand navbar-light bg-light p-1">
 		<div class="container-fluid ">
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
-				<a class="navbar-brand p-0 " href="#">
+				<a class="navbar-brand p-0 " href="/">
 					<img src="/images/Logo.png" alt="" loading="lazy">
 				</a>
 			</div>
@@ -294,21 +292,20 @@
 			});
 
 		});
-		
+
+		// click事件,資料上傳
 		$("#okButton").click(function () {
 			var newItem = {
 				title: $("#titleTextBox").val(),
 				ymd: $("#ymdTextBox").val()
 			};
-			refreshNewsUI();
 
 			$.ajax({
-				type: "put",
-				url: "/editPage",
-				data: newsList
+				type: "post",
+				url: "/editPage/data",
+				data: newItem
 			})
-
-
+			window.location.href = window.location.origin + '/editPage/demo';
 		})
 
 

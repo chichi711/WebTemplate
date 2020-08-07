@@ -27,33 +27,34 @@ $(function () {
     });
 
     $("#navCopy").click(function () {
-        editcode = $(clientFrameWindow.document).find('body').prop('outerHTML');
-        // 刪除註解
-        let comment = editcode.match(/<!--?((.(?!(-->)))*.)-->/g);
-        for (let a = 0; a < comment.length; a++) {
-            editcode = editcode.replace(comment[a], "");
-        }
-
-        // 刪除script
-        let js = editcode.match(/<script(.|\n)*?<\/script>/g);
-        for (let a = 0; a < js.length; a++) {
-            editcode = editcode.replace(js[a], "");
-        }
-
+        editcode = DragDropFunctions.CopyDom();
 
         // cleanNotes(editcode);
         $("#newCode").text(editcode);
     });
 
-    // function cleanNotes(code) {
-    //     let re = /[<][-]{2}/;
-    //     let Notes = code.value.match(/\/\/(\S+)/i)
-    //     if (Notes != null) {
-    //         code.value = code.value.replace(Notes[0], "");
-    //         cleanNotes()
-    //     };
+    $("#okButton").click(function () {
+        let pBody = [];
+        editcode = DragDropFunctions.CopyDom();
+        pBody.push(editcode);
+        let pName = ['home'];
+        let p = pBody.map((item, index) => {
+            return { body: item, name: pName[index] };
+        })
+        let account = [
+            { name: $("#name").val() },
+            { explanation: $("#explanation").val() },
+            p
+        ];
 
-    // }
+        $.ajax({
+            type: "post",
+            url: "/edit/demo",
+            data: JSON.stringify(account),
+            contentType: "application/json; charset=utf-8"
+        })
+            // window.location.href = window.location.origin + '/edit/demo';
+    });
 
 
 
@@ -80,7 +81,6 @@ $(function () {
         }, 100);
         let insertingHTML = $(this).attr('data-insert-html');
         addcode = insertingHTML;
-        console.log(addcode);
         // 設定將data-insert-html(預設樣板)加入至拖移操作
         event.originalEvent.dataTransfer.setData("Text", insertingHTML);
     });
@@ -98,7 +98,6 @@ $(function () {
 
         let htmlBody = $(clientFrameWindow.document).find('body,html');
         htmlBody.find('*').andSelf().on('dragenter', function (event) {
-            // console.log("eeeee : ", event.target);
             // 停止冒泡
             event.stopPropagation();
             // currentElement設定成當前位置標籤
@@ -132,7 +131,6 @@ $(function () {
             isDragging = false;
             event.preventDefault();
             event.stopPropagation();
-            console.log('放下!');
 
             let e;
             if (event.isTrigger)
@@ -156,6 +154,21 @@ $(function () {
     let DragDropFunctions =
     {
         dragoverqueue: [], // 定義為array
+        CopyDom: function () {
+            editcode = $(clientFrameWindow.document).find('body').prop('outerHTML');
+            // 刪除註解
+            let comment = editcode.match(/<!--?((.(?!(-->)))*.)-->/g);
+            for (let a = 0; a < comment.length; a++) {
+                editcode = editcode.replace(comment[a], "");
+            }
+
+            // 刪除script
+            let js = editcode.match(/<script(.|\n)*?<\/script>/g);
+            for (let a = 0; a < js.length; a++) {
+                editcode = editcode.replace(js[a], "");
+            }
+            return editcode;
+        },
         GetMouseBearingsPercentage: function ($element, elementRect, mousePos) {
             if (!elementRect) // 如果elementRect是空的，放入element的DOMRect
                 elementRect = $element.get(0).getBoundingClientRect();
@@ -376,7 +389,6 @@ $(function () {
         PlaceInside: function ($element) {  // 將li加上class和寬度
             let placeholder = this.getPlaceHolder();
             placeholder.addClass('horizontal').css('width', $element.width() + "px");
-            console.log('$element:', $element);
             // addPlaceHolder( 所在位置標籤, "inside-append", li標籤)
             this.addPlaceHolder($element, "inside-append", placeholder);
         },
@@ -540,7 +552,7 @@ $(function () {
                     this.PositionContextMarker($contextMarker, $element);
                     if ($element.hasClass('stackhive-nodrop-zone'))
                         $contextMarker.addClass('invalid');
-                        name = this.getElementName($element);
+                    name = this.getElementName($element);
                     $contextMarker.find('[data-dragcontext-marker-text]').html(name);
                     if ($("#clientframe").contents().find("body [data-sh-parent-marker]").length != 0)
                         $("#clientframe").contents().find("body [data-sh-parent-marker]").first().before($contextMarker);
@@ -551,7 +563,7 @@ $(function () {
                     this.PositionContextMarker($contextMarker, $element.parent());
                     if ($element.parent().hasClass('stackhive-nodrop-zone'))
                         $contextMarker.addClass('invalid');
-                        name = this.getElementName($element.parent());
+                    name = this.getElementName($element.parent());
                     $contextMarker.find('[data-dragcontext-marker-text]').html(name);
                     $contextMarker.attr("data-dragcontext-marker", name.toLowerCase());
                     if ($("#clientframe").contents().find("body [data-sh-parent-marker]").length != 0)

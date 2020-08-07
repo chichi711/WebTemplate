@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
+var events = require(`events`);
+var emitter = new events.EventEmitter();
 var conn = require('../db');
+const { request } = require('http');
 
 router.get('/login', function (req, res, next) {
   res.render('login');
@@ -12,49 +15,52 @@ router.get('/login/profile', function (req, res, next) {
   res.render('profile');
 });
 
+//    監聽資料庫寫入返回的引數
+emitter.on("ok", function () {
+  return res.end("註冊成功");    //    向前臺返回資料
+});
+emitter.on("false", function () {
+  return res.end("使用者名稱已存在");    //    向前臺返回資料
+});
+router.get("/member", function (request, response) {
 
-// router.post('/signup', function (req, res, next) {
+  conn.query('select * from member', '', function (err, rows) {
+    if (err) {
+      console.log(JSON.stringify(err));
+      return;
+    }
+    response.send(JSON.stringify(rows));
+  }
+  );
 
-//     var db = req.con;
+})
+// 註冊
+router.post("/member", function (request, response) {
 
-//     // check userid 重複
-//     var eeAccount = req.body.eeAccount;
-//     var qur = db.query('SELECT eeAccount FROM member WHERE eeAccount = ?', eeAccount, function (err, rows) {
-//         if (err) {
-//             console.log(err);
-//         }
+  conn.query(
+    "insert into member set uName = ?,Email = ?, uPwd = ?",
+    [
+      request.body.uName,
+      request.body.Email,
+      request.body.uPwd
+    ]);
+  response.send("row inserted.");
 
-//         var count = rows.length;
-//         if (count > 0) {
+})
 
-//             var msg = 'eeAccount already exists.';
-//             res.render('userAdd', { title: 'Add User', msg: msg });
-
-//         } else {
-
-//             var sql = {
-//                 eeAccount: req.body.eeAccount,
-//                 eePassword: req.body.eePassword,
-//                 eeEmail: req.body.eeEmail
-//             };
-
-
-//             //console.log(sql);
-//             var qur = db.query('INSERT INTO member SET ?', sql, function (err, rows) {
-//                 if (err) {
-//                     console.log(err);
-//                 }
-//                 res.setHeader('Content-Type', 'application/json');
-//                 res.redirect('/');
-//             });
-//         }
-//     });
+// 登入驗證
+// router.get("/login", function (req, res) {
 
 
-// });
-/* GET users listing. */
-// router.get('/', function (req, res, next) {
-//   res.send('respond with a resource');
+//   conn.query("select * from member where Email = ? and ePwd = ? ",
+//     [
+//       req.body.Email,
+//       req.body.ePwd
+//     ],
+//     function (err, res) {
+
+
+//     })
 // });
 
 module.exports = router;

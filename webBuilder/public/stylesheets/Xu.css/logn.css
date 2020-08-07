@@ -6,14 +6,9 @@
 }
 
 body{
-    padding-top: 30vh;
     background-color: 	#FAFAFA;
     font-family: "Legacy", "Noto Sans TC", "Helvetica Neue", "Helvetica", "Nimbus Sans L", "Arial", "Liberation Sans", "Source Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "STHeiti", "SimHei", "WenQuanYi Zen Hei Sharp", "sans-serif", "Apple LiGothic", "微軟正黑體"
 }
-/* .aaa{
-padding-top: 20px;
-margin-bottom: 2px;
-} */
 
 /* 導覽列 */
 /* .logo{
@@ -37,11 +32,11 @@ header{
 }
 button{
     padding: 9px 25px;
-    
+
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    
+
 }
 .nav_links li a{
     font-size: 18px;
@@ -64,7 +59,17 @@ button{
     opacity: .5;
     width: 100%;
 } */
+#login-form1{
+    height: 448px;
+    padding: 5px 40px;
 
+}
+#login-form1 h1 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 800;
+    margin: 14px 0 -22px 0;
+}
 
 .logo{
     height: 150px;
@@ -76,15 +81,15 @@ button{
 .login-form{
     width: 415px;
     background: white;
-    /* height: 440px; */
+    height: 440px;
     position: absolute;
-    padding: 20px;
+    padding: 60px 40px;
     border-radius: 10px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-30%);
+    transform: translate(-50%,-50%);
     box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
-    
+
 }
 
 .login-form h1{
@@ -172,7 +177,7 @@ button{
     margin-top: 24px;
     text-align: center;
     font-size: 25px;
-    
+
 }
 .bottom-text a{
     color: #2691d9;
@@ -196,9 +201,16 @@ button{
 
 }
 
+.tip{
+    color: red;
+    position: fixed;
+    width: 20rem;
+    margin-left: 4rem;
+    margin-top: -1.1rem;
+}
 
 @media (max-width: 1200px){
-   
+
     .login-form {
         width: 600px;
         background: white;

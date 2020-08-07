@@ -4,32 +4,67 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require("express-session");
-
-var indexRouter = require('./routes/index');
+var cookieParser = require('cookie-parser');
+var index = require('./routes/index');
 var usersRouter = require('./routes/users');
 // app引入demo.js ,後見93
 var demoRouter = require('./routes/demo');
-
 var app = express();
 var mysql = require("mysql");
+var bodyParser = require('body-parser');
 
+
+//session設定
+app.use(session({
+  secret: "xxcalfdlsajfdksaj",
+  saveUninitialized: false,
+  resave: true,
+
+  cookie: {
+    path: '/',
+    httpOnly: true,
+    secure: false,
+    maxAge: 10 * 60 * 1000
+  }
+}))
+
+app.use(function (req, res, next) {
+  if (!req.session.userName) {
+    req.session.userName = "Guest";
+  }
+  next();
+});
 // 登入sql
 var conn = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: '',
-	database: 'eeweb'
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'eeweb'
 });
 
-conn.connect(function (err,rows) {
-	if (err) {
-		console.log(JSON.stringify(err));
-		return;
-	}
-console.log("isFine")
+conn.connect(function (err, rows) {
+  if (err) {
+    console.log(JSON.stringify(err));
+    return;
+  }
+  console.log("olaolaola")
 });
 
+// app.get("/home/news", function (request, response) {
 
+//   connection.query('select * from news',
+//       '',
+//       function (err, rows) {
+//           if (err) {
+//               console.log(JSON.stringify(err));
+//               return;
+//           }
+
+//           response.send(JSON.stringify(rows));
+//       }
+//   );
+
+// })
 
 
 // conn.query('select * from member','',function (err, rows) {
@@ -41,33 +76,35 @@ console.log("isFine")
 //       }
 //   );
 
+// 解析JSON資料
+app.use(bodyParser.json());
+
+app.use(function(req, res, next){
+    res.locals.session = req.session;
+    next();
+});
+
 // 添加路由並以JSON格式顯示
-app.get("/home/news", function (request, response) {
-
-  conn.query('select * from account','',function (err, rows) {
-          if (err) {
-              console.log(JSON.stringify(err));
-              return;
-          }
-
-          response.send(JSON.stringify(rows));
-      }
+app.get("/EEweb/member", function (req, res) {
+  conn.query('select * from member', '', function (err, rows) {
+    if (err) {
+      console.log(JSON.stringify(err));
+      return;
+    }
+    res.send(JSON.stringify(rows));
+  }
   );
-
 })
-app.post("/home/news", function (request, response) {
-
-	conn.query(
-		"insert into account set aName = ?, explain = ?", 
-			[
-				request.body.title, 
-				request.body.ymd
-			]);
-	response.send("row inserted.");
-    
+app.get("/test", function (req, res) {
+  conn.query('select * from member', '', function (err, rows) {
+    if (err) {
+      console.log(JSON.stringify(err));
+      return;
+    }
+    res.send(JSON.stringify(rows));
+  }
+  );
 })
-
-// })
 // 確認連線
 // conn.connect(function(err) {
 //   if (err) throw err;
@@ -77,10 +114,6 @@ app.post("/home/news", function (request, response) {
 //     console.log("result:"+result)
 //   })
 // });
-
-
-
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -93,23 +126,23 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // db state
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   req.conn = conn;
   next();
 });
 
-app.use('/', indexRouter);
+app.use('/', index);
 app.use('/users', usersRouter);
 //catch demo.js路由
 app.use('/demo', demoRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

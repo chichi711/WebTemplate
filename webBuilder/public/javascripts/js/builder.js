@@ -611,7 +611,6 @@ function isElement(obj){
 		 jQuery("#select-box").hide();
 
 		 self.initCallback = callback;
-		 // console.log('!!!!!!!!!! : ', edit.Builder.iframe.src);
 		 if (edit.Builder.iframe.src != url) edit.Builder.iframe.src = url;
 	 },
 
@@ -681,7 +680,7 @@ function isElement(obj){
 		 self.frameHead = $(window.FrameDocument).find("head");
 
 		 //insert editor helpers like non editable areas
-		 self.frameHead.append('<link data-vvveb-helpers href="/public/stylesheets/css/vvvebjs-editor-helpers.css" rel="stylesheet">');
+		 self.frameHead.append('<link data-vvveb-helpers href="/stylesheets/css/vvvebjs-editor-helpers.css" rel="stylesheet">');
 
 		 self._initHighlight();
 
@@ -1081,7 +1080,6 @@ function isElement(obj){
 		 $('#dragitemslistcontainer > li').on("mousedown touchstart", function(event) {
 
 			 $this = jQuery(this);
-			console.log('aaaa : ',this);
 			//  $("#component-clone").remove();
 
 			//  if ($this.data("drag-type") == "component")

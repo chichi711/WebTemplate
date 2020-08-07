@@ -31,7 +31,7 @@
                     <a class="nav-link" href="/officalTemplat">樣板一覽</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/users/login/profile">會員中心</a>
+                    <a class="nav-link" href="/user">會員中心</a>
                 </li>
 
             </ul>
@@ -46,25 +46,26 @@
     </nav>
 
     <!-- 會員登入表 -->
-    <form name="addfrom" action="" accept-charset="utf-8" method="POST" class="login-form">
-        <h1 class="member_logn">會員登入</h1>
+    <form id="form" name="addfrom" action="" accept-charset="utf-8" method="POST" class="login-form">
+        <h1 class="member_logn" onclick="autoinput('sign in')">會員登入</h1>
 
         <div class="txtb">
-            <input type="email" id="Email">
+            <input type="email" id="email">
             <span data-placeholder="電子郵件"></span>
         </div>
 
         <div class="txtb">
-            <input type="password" id="uPwd">
+            <input type="password" id="pwd">
             <span data-placeholder="密碼"></span>
         </div>
         <div class="logbtn2">
-            <button id="userLogin" type="submit" class="logbtn btn">確認送出</button>
+            <input type="button" class="logbtn btn" onclick="location.href='/'" value="確認送出">
+            <!-- <input type="button" class="logbtn btn" onclick="checkuser()" value="確認送出"> -->
         </div>
 
         <div class="bottom-text">
             <span>還不是會員嗎?</span>
-            <a href="/users/login/signup">註冊</a>
+            <a href="/user/signup">註冊</a>
         </div>
     </form>
     <!-- 會員登入表END -->
@@ -76,30 +77,49 @@
     <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
     <script src="/javascripts/Xu.js/logn.js"></script>
     <script>
-        $("#userLogin").click(function () {
+        // function checkuser() {
+        //     var newItem = {
+        //         Email: $("#email").val(),
+        //         uPwd: $("#pwd").val()
+        //     };
+        //     $.ajax({
+        //         type: "post",
+        //         url: "/",
+        //         data: JSON.stringify(newItem)
+        //     });
+        // }
+        $('#submit').on('click', function() {
+            var data = $('#form').serializeArray()
+            JSONData = serializeToJSON(data)
+                     
             $.ajax({
-                url: "/users/login",
-                type: "GET",
-                data: {
-                    Email: $("#Email").val(),
-                    uPwd: $("#uPwd").val()
-                },
-                success: function (res) {
+                url: "/login",
+                type: "POST",
+                contentType: "application/json; charset=utf-8",
+                data: JSONData,
+                success: function(res) {
                     var res = JSON.parse(res)
-                    if (res.errno === 1) {
+                    if(res.errno === 1) {
                         alert("登入成功!")
                         location.href = '/'
-                    } else if (res.errno === 0) {
+                    } else if(res.errno === 0) {
                         alert("登入失敗!")
                     }
                 },
-                error: function () {
+                error: function() {
                     alert("系統錯誤!")
                 }
-            });
-            window.location.href = window.location.origin + '/';
+            })
+        })
 
-        });
+        function serializeToJSON(data) {
+            var values = {};
+            for(index in data){
+                values[data[index].name] = data[index].value;
+            }
+            return JSON.stringify(values)
+        }
+    </script>
     </script>
 
 </body>

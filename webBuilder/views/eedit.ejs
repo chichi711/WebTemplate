@@ -9,7 +9,6 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
 		integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<!-- CSS -->
-	<link href="../public/stylesheets/css/build.css" rel="stylesheet" />
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
 
@@ -22,7 +21,7 @@
 
 	<link href="/stylesheets/css/editor.css" rel="stylesheet">
 	<link rel="stylesheet"
-	href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+		href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 	<!-- <link href="/stylesheets/heartcss/style_1.css" rel="stylesheet"> -->
 
 </head>
@@ -59,8 +58,8 @@
 		<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
 			<a class="nav-item nav-link col-lg-4 active" id="nav-home-tab" data-toggle="tab" href="#home" role="tab"
 				aria-controls="nav-home" aria-selected="true">插入</a>
-			<a style="color: black" class="nav-item nav-link col-lg-4" id="nav-profile-tab" data-toggle="tab"
-				href="#profile" role="tab" aria-controls="nav-profile" aria-selected="false">頁面</a>
+			<a class="nav-item nav-link col-lg-4" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab"
+				aria-controls="nav-profile" aria-selected="false">頁面</a>
 			<a class="nav-item nav-link col-lg-4" id="nav-contact-tabF" data-toggle="tab" href="#conte" role="tab"
 				aria-controls="nav-contact" aria-selected="false">編輯</a>
 		</div>
@@ -82,12 +81,7 @@
 					<li class="col-lg-6" draggable="true"
 						data-insert-html='<div class="btn3 btn3-Size1 btn3-black"><div class=line></div><div class=line></div><div class=line></div><div class=line></div><div class=line></div><div class=line></div><span>登入/註冊</span></div>'>
 						<i class="las la-hockey-puck"></i>
-						<p>button</p>
-					</li>
-					<li class="col-lg-6" draggable="true"
-						data-insert-html='<a href="" class="btn effect01" target=_blank><span>前往結帳</span></a>'>
-						<i class="las la-hockey-puck"></i>
-						<p>button</p>
+						<p>login button</p>
 					</li>
 					<li class="col-lg-6" draggable="true"
 						data-insert-html='<div class=vertical-align><div class=btn4><label> <input checked name=button-group type=radio value=item> <span class="btn4-1 first">1</span>  </label> <label> <input name=button-group type=radio value=other-item> <span class=btn4-1>2</span>  </label> <label> <input name=button-group type=radio value=other-item> <span class=btn4-1>3</span>  </label> <label> <input name=button-group type=radio value=third> <span class=btn4-1>4</span>  </label> <label> <input name=button-group type=radio value=third> <span class="btn4-1 last">5</span></label></div></div>'>
@@ -98,6 +92,16 @@
 						data-insert-html='<div class=btn6><form><h1>LOGIN</h1><input placeholder=Username type=text required> <input placeholder=Password type=password required> <button>Submit</button></form></div>'>
 						<i class="las la-address-card"></i>
 						<p>login Form</p>
+					</li>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<table class=responstable><tr><th>Main candidate<th data-th="Candidate details"><span>First name</span><th>Surname<th>Date of birth<th>Profession<tr><td><input type=radio><td>Steve<td>WANG<td>01/05/1978<td>Tacacher<tr><td><input type=radio><td>Steffie<td>LI<td>02/07/1980<td>Chef<tr><td><input type=radio><td>Stan<td>LIN<td>09/01/1998<td>Student<tr><td><input type=radio><td>Stella<td>HUANG<td>05/05/1970<td>Lawyer</table>'>
+						<i class="las la-table"></i>
+						<p>table</p>
+					</li>
+					<li class="col-lg-6" draggable="true"
+						data-insert-html='<a href="" class="btn effect01" target=_blank><span>前往結帳</span></a>'>
+						<i class="las la-coins"></i>
+						<p>checkout</p>
 					</li>
 					<li class="col-lg-6" draggable="true" data-insert-html='<hr class="hr-style2">'>
 						<i class="las la-slash"></i>
@@ -277,8 +281,6 @@
 	</div>
 
 
-	<div id="under_canvas"></div>
-
 	<!-- builder code-->
 	<script src="/javascripts/js/dnd.js"></script>
 	<script src="/javascripts/js/builder.js"></script>
@@ -294,28 +296,28 @@
 
 		});
 		$("#okButton").click(function () {
-			var newItem = {
-				title: $("#titleTextBox").val(),
-				ymd: $("#ymdTextBox").val()
-			};
+			let pBody = [];
+			let data = document.getElementById('newCode').innerText();
+			pBody.push(data);
+			let pName = ['home'];
+			let p = pBody.map((item, index) => {
+				return { body: item, name: pName[index] };
+			})
+			let account = [
+				{ name: $("#name").val() },
+				{ explanation: $("#explanation").val() },
+				p
+			];
 
 			$.ajax({
 				type: "post",
-				url: "/editPage/data",
-				data: newItem
+				url: "/edit/demo",
+				data: JSON.stringify(account),
+				contentType: "application/json; charset=utf-8"
 			})
-			window.location.href = window.location.origin + '/editPage/demo';
-		})
+			window.location.href = window.location.origin + '/edit/demo';
+		});
 
-
-
-		// html2canvas(document.body, {
-		// 	onrendered: function (canvas) {//得到了canvas物件
-		// 		var imgUrl = canvas.toDataURL("image/png");//這裡通過canvas的toDataURL方法把它轉換成base64編碼。
-		// 		document.getElementById('under_canvas').innerHTML = imgUrl;
-		// 		// document.getElementById('under_canvas').innerHTML = '<img src="'+imgUrl+'"/>';
-		// 	}
-		// });
 	</script>
 </body>
 
