@@ -77,19 +77,17 @@
     <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
     <script src="/javascripts/Xu.js/logn.js"></script>
     <script>
-        // function checkuser() {
-        //     var newItem = {
-        //         Email: $("#email").val(),
-        //         uPwd: $("#pwd").val()
-        //     };
-        //     $.ajax({
-        //         type: "post",
-        //         url: "/",
-        //         data: JSON.stringify(newItem)
-        //     })
-        // }
-
-
+        function checkuser() {
+            var newItem = {
+                Email: $("#email").val(),
+                uPwd: $("#pwd").val()
+            };
+            $.ajax({
+                type: "post",
+                url: "/",
+                data: JSON.stringify(newItem)
+            });
+        }
     </script>
 
 </body>

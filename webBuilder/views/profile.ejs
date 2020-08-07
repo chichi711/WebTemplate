@@ -10,7 +10,8 @@
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="/stylesheets/Xu.css/profile.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
 
 
@@ -47,20 +48,20 @@
                                         aria-selected="false">
                                         <i class="las la-user-circle"></i><span>編輯會員</span>
                                     </a>
-                                    <a class="nav-link" id="v-pills-home-tab" data-toggle="pill"
-                                        href="#v-pills-home" role="tab" aria-controls="v-pills-home"
-                                        aria-selected="true" style="width: 100%;">
+                                    <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                                        role="tab" aria-controls="v-pills-home" aria-selected="true" onclick="move(0)"
+                                        style="width: 100%;">
                                         <i class="las la-play-circle"></i><span>樣板庫</span>
                                     </a>
-                                    <a class="nav-link"  data-toggle="pill" href="#v-pills-home"
-                                        href="#" role="tab" aria-controls="v-pills-home"
-                                        aria-selected="true" style="width: 100%;">
-                                        <i class="las la-edit"></i><span>作品集</span>
+                                    <a class="nav-link" data-toggle="pill" href="#v-pills-home" href="#" role="tab"
+                                        onclick="move(1)" aria-controls="v-pills-home" aria-selected="true"
+                                        style="width: 100%;">
+                                        <i class="las la-edit"></i><span>作品1</span>
                                     </a>
-                                    <a class="nav-link" data-toggle="pill" href="#v-pills-home"
-                                        href="#" role="tab" aria-controls="v-pills-home"
-                                        aria-selected="true" style="width: 100%;">
-                                        <i class="las la-edit"></i><span>樣板庫</span>
+                                    <a class="nav-link" data-toggle="pill" href="#v-pills-home" href="#" role="tab"
+                                        onclick="move(2)" aria-controls="v-pills-home" aria-selected="true"
+                                        style="width: 100%;">
+                                        <i class="las la-edit"></i><span>作品2</span>
                                     </a>
                                 </div>
                             </ul>
@@ -83,7 +84,7 @@
                 <div class="tab-content" id="v-pills-tabContent">
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                         aria-labelledby="v-pills-home-tab">
-                        <div class="card-body2 card rigt-profile-card">
+                        <div class="card-body2 card rigt-profile-card" id="0">
                             <div class="container">
                                 <div class="lg">
                                     <svg width="2em" height="1.6em" viewBox="0 0 16 16"
@@ -96,9 +97,7 @@
                                         <path fill-rule="evenodd"
                                             d="M2 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z" />
                                     </svg>
-
                                     <span class="sp">樣板庫</span>
-
                                 </div>
 
                                 <div class=" row text-center">
@@ -160,25 +159,54 @@
                                     </div>
 
                                 </div>
-
-
-
                             </div>
                         </div>
-                        <div class="card-body2 card rigt-profile-card">
 
+
+                        <div class="card-body2 card rigt-profile-card" id="1">
                             <div class="container">
                                 <div class="lg">
-
-
                                     <span class="sp">Stylish Portfolio</span>
-
                                 </div>
-
-
                                 <div class="row ">
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
+                                        </a>
+                                    </div>
 
 
+                                    <div class="page_name">
+                                        <ul>
+                                            <li>home</li>
+                                            <li>about</li>
+                                            <li>kind</li>
+                                            <li>login</li>
+                                            <li>product</li>
+                                            <li>car </li>
+                                        </ul>
+
+                                        <div class="cus">
+                                            <div>
+
+                                                <h4>內容</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card-body2 card rigt-profile-card" id="2">
+                            <div class="container">
+                                <div class="lg">
+                                    <span class="sp">Stylish Portfolio</span>
+                                </div>
+                                <div class="row ">
                                     <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
                                         <a href="/edit" class="item-wrap fancybox">
                                             <div class="work-info">
@@ -246,35 +274,31 @@
                                             <label>密碼:</label>
                                             <input type="text" id="uPwd" name="uPwd"><br><br>
 
-
                                             <div>
                                                 <a href="" class="btn effect01"
                                                     target="_blank"><span></span>儲存</span></a>
                                             </div><br><br>
-
                                         </form>
                                     </div>
-
                                 </div>
-
-
-
                             </div>
-
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-
     </div>
-
 
     <script src="/javascripts/Xu.js/jquery-3.3.1.min.js"></script>
     <script src="/javascripts/Xu.js/popper.min.js"></script>
     <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
+    <script>
+        function move(position) {
+            // event.preventDefault();
+            // $(this).tab('show');
+            $('html,body').animate({ scrollTop: $(`#${position}`).offset().top }, 500);
+        }
+    </script>
 </body>
 
 </html>

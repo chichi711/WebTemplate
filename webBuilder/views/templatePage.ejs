@@ -47,7 +47,7 @@
             <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#home" role="tab"
                 aria-controls="nav-home" aria-selected="true">精選</a>
             <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab"
-                aria-controls="nav-profile" aria-selected="false">線上商店</a>
+                aria-controls="nav-profile" aria-selected="false">電商</a>
             <a class="nav-item nav-link" id="nav-contact-tabF" data-toggle="tab" href="#contact" role="tab"
                 aria-controls="nav-contact" aria-selected="false">個人</a>
             <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#navAbout" role="tab"
@@ -58,17 +58,19 @@
                 <div id="portfolio">
                     <div class="container-fluid p-4">
                         <div class="row no-gutters">
-                            <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/18.jpg" alt="" />
+                            <% for( i = 0 ; i < template.length ; i++) { %>
+                                <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
+                                    <a class="portfolio-box" href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
+                                    <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.jpg" alt="" />
                                     <div class="portfolio-box-caption">
-                                        <div class="project-name">Stylish Portfolio</div>
+                                        <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %></div>
                                     </div>
                                 </a>
                             </div>
+                            <% } %>
                             <div class="col-lg-3 col-sm-6 ">
                                 <a class="portfolio-box" href="/officalTemplat/preview">
-                                    <img class="img-fluid" src="/images/preview/19.jpg" alt="" />
+                                    <img class="img-fluid" src="/images/preview/antique.jpg" alt="" />
                                     <div class="portfolio-box-caption">
 
                                         <div class="project-name">antique</div>
@@ -92,7 +94,7 @@
                                         <div class="project-name">Project Name</div>
                                     </div>
                                 </a>
-                            </div><br><br><br><br>
+                            </div>
                             <div class="col-lg-3 col-sm-6">
                                 <a class="portfolio-box" href="/officalTemplat/preview_b">
                                     <img class="img-fluid" src="/images/preview/27.jpg" alt="" />

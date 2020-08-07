@@ -10,6 +10,7 @@ $(".txtb input").on("blur", function () {
 });
 
 function autoinput (type) {
+    $(".tip").hide();
     if(type == 'sign up') {
         let num = 0;
         let value = ['yoru', 'yoru123@gmail.com', 'qqq', 'qqq'];
@@ -44,7 +45,7 @@ $("#okButton").click(function () {
     var pas3 = document.getElementById("uPwdTextBox").value;
     var pas4 = document.getElementById("repassword").value;
     if (pas3 != pas4) {
-        alert("兩次輸入的密碼不一致！");
+        $(".tip").show();
     }else{
         var newItem = {
             uName: $("#uNameTextBox").val(),

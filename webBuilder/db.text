@@ -19,9 +19,12 @@ INSERT INTO `member` (`uName`, `Email`, `uPwd`, `img`) VALUES
 
 
 
+
+
+
 CREATE TABLE `template` (
   `tID` tinyint(2) UNSIGNED ZEROFILL NOT NULL Primary key auto_increment,
-  `tName` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `tName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   `type` tinyint(2) NOT NULL,
   `pages` tinyint(2) default '1',
   `begin` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
@@ -67,20 +70,52 @@ INSERT INTO `template` (`tName`, `type`, `pages`, `begin`, `end`) VALUES
 
 
 
+
+
+
+
+CREATE TABLE `tpages` (
+  `tpID` tinyint(2) UNSIGNED ZEROFILL NOT NULL Primary key auto_increment,
+  `tID` tinyint(2) UNSIGNED ZEROFILL NOT NULL ,
+  `tpName` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `body` varchar(10000) COLLATE utf8_unicode_ci NOT NULL,
+  FOREIGN KEY (tID) REFERENCES template(tID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `tpages` (`tID`, `tpName`) VALUES
+('1', 'home'),
+('2', 'home'),
+('2', 'about'),
+('2', 'kind'),
+('2', 'login'),
+('2', 'product'),
+('2', 'car');
+
+
+
+
+
+
+
+
 CREATE TABLE `account` (
   `aID` tinyint(2) UNSIGNED ZEROFILL NOT NULL Primary key auto_increment,
   `mID` tinyint(2) UNSIGNED ZEROFILL NOT NULL ,
   `tID` tinyint(2) UNSIGNED ZEROFILL NOT NULL ,
-  `aName` varchar(20) COLLATE utf8_unicode_ci default 'eeWeb template',
-  `explain` varchar(200) COLLATE utf8_unicode_ci,
+  `aName` varchar(50) COLLATE utf8_unicode_ci default 'eeWeb template',
+  `explanation` varchar(200) COLLATE utf8_unicode_ci,
   `pic` MEDIUMBLOB() COLLATE utf8_unicode_ci default 'default.jpg',
   `date` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   FOREIGN KEY (mID) REFERENCES member(mID),
   FOREIGN KEY (tID) REFERENCES template(tID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `account` (`mID`, `tID`, `explain`, `pic`, `date`) VALUES
+INSERT INTO `account` (`mID`, `tID`, `explanation`, `pic`, `date`) VALUES
 ('1', '1', 'yayayayayaya', 'user.jpg', '07/31');
+
+
+
+
 
 
 

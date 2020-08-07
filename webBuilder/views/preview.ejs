@@ -19,15 +19,15 @@
   <div class="bg bg1">
     <div class="wrap">
       <div class="img">
-        <img src="/images/preview/43.jpg" alt="">
+        <img src="/images/preview/<%= name %>.jpg" alt="">
       </div>
       <div class="txt">
-        <h1>Elite Shoppy</h1>
+        <h1><%= name %></h1>
         <h5>以精緻特色為主題，打造您的電子商務品牌永無止境。</h5>
         <div class="btnb">
 
           <div class="hideme3">
-              <button class="btn1" onclick="location.href='/edit/ee'"  tabindex="0" style="--buttonColor: #00AA90">
+              <button class="btn1" onclick="location.href='/edit/<%= type %>/<%= name %>'"  tabindex="0" style="--buttonColor: #00AA90">
                 編輯
                 <span></span><span></span><span></span><span></span><b aria-hidden="true">
                   GO!</b><b aria-hidden="true">GO!</b>
@@ -37,7 +37,7 @@
 
 
           <div class="hideme3">
-              <button class="btn1" onclick="window.open('/templated/antique/index copy.html')" tabindex="0" style="--buttonColor: #00AA90">
+              <button class="btn1" onclick="window.open('/templated/<%= name %>/index.html')" tabindex="0" style="--buttonColor: #00AA90">
                 預覽<span></span><span></span><span></span><span></span><b aria-hidden="true">GO!</b>
                 <b aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b> <b aria-hidden="true">GO!</b>
               </button>
