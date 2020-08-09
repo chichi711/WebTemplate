@@ -11,7 +11,6 @@ conn.connect(function (err,res,fields) {
  if (err) {
   console.log(JSON.stringify(err));
  }
- callback(res,fields);
 })
 // 導出模組
 module.exports = conn

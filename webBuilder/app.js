@@ -26,15 +26,21 @@ app.use(session({
 }));
 
 app.use(function (req, res, next) {
-  if (!req.session.userName) {
-    req.session.uName = 'Guest';
+  // console.log(res.locals.uName);
+  if (!res.locals.uName) {
+    res.locals.uName = 'Guest';
   }
+  // console.log(res.locals.uName);
+
   next();
 });
 
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+
 app.set('view engine', 'ejs');
+
 process.on('uncaughtException', function (err) {
   console.log(err);
 });
