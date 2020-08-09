@@ -55,79 +55,18 @@
                 <div id="portfolio">
                     <div class="container-fluid p-4">
                         <div class="row no-gutters">
-                            <% for( i = 0 ; i < template.length ; i++) { %>
-                                <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
-                                    <a class="portfolio-box" href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
-                                    <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.jpg" alt="" />
+                            <% for( i = 0 ; i < 8 ; i++) { %>
+                            <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
+                                <a class="portfolio-box"
+                                    href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
+                                    <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.png" alt="" />
                                     <div class="portfolio-box-caption">
-                                        <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %></div>
+                                        <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
                             <% } %>
-                            <div class="col-lg-3 col-sm-6 ">
-                                <a class="portfolio-box" href="/officalTemplat/preview">
-                                    <img class="img-fluid" src="/images/preview/antique.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">antique</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/20.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/21.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/27.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/26.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/31.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/28.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -137,79 +76,18 @@
                 <div id="portfolio">
                     <div class="container-fluid p-4">
                         <div class="row no-gutters">
+                            <% for( i = 8 ; i < 16 ; i++) { %>
                             <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/23.jpg" alt="" />
+                                <a class="portfolio-box"
+                                    href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
+                                    <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.png" alt="" />
                                     <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
+                                        <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-3 col-sm-6 ">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/24.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/25.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/39.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/40.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/41.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/42.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/29.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div><br><br><br><br>
-
+                            <% } %>
                         </div>
                     </div>
                 </div>
@@ -219,43 +97,18 @@
                 <div id="portfolio">
                     <div class="container-fluid p-4">
                         <div class="row no-gutters">
+                            <% for( i = 10 ; i < 18 ; i++) { %>
                             <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/30.jpg" alt="" />
+                                <a class="portfolio-box"
+                                    href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
+                                    <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.png" alt="" />
                                     <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
+                                        <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-3 col-sm-6 ">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/35.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/32.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/22.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div><br><br><br><br>
-
+                            <% } %>
                         </div>
                     </div>
                 </div>
@@ -265,43 +118,18 @@
                 <div id="portfolio">
                     <div class="container-fluid p-4">
                         <div class="row no-gutters">
+                            <% for( i = 14 ; i < template.length ; i++) { %>
                             <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/34.jpg" alt="" />
+                                <a class="portfolio-box"
+                                    href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
+                                    <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.png" alt="" />
                                     <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
+                                        <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-lg-3 col-sm-6 ">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/33.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/36.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="col-lg-3 col-sm-6">
-                                <a class="portfolio-box" href="/officalTemplat/preview_b">
-                                    <img class="img-fluid" src="/images/preview/37.jpg" alt="" />
-                                    <div class="portfolio-box-caption">
-
-                                        <div class="project-name">Project Name</div>
-                                    </div>
-                                </a>
-                            </div><br><br><br><br>
-
+                            <% } %>
                         </div>
                     </div>
                 </div>

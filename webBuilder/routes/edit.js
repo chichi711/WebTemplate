@@ -14,26 +14,6 @@ router.get('/:type/:template', function (req, res, next) {
         });
 });
 
-
-// router.get('/ee', function (req, res, next) {
-//     res.render('eedit');
-// });
-
-// router.get('/pic', function (request, response) {
-//     conn.query('select pic from account where aID = ?',
-//         [request.session.aid],
-//         function (err, rows) {
-//             if (err) {
-//                 console.log(JSON.stringify(err));
-//                 return;
-//             }
-//             console.log('get');
-//             var a = { pic: rows };
-//             console.log(a.pic[0].pic);
-//             response.render("pic", { pic: rows });
-//         });
-// });
-
 router.post('/pic', function (request, response) {
     console.log(request.body.img.length);
     conn.query('update account set pic = ? WHERE aID = ( select max(aID) FROM account)',

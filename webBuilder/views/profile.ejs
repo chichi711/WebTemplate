@@ -12,6 +12,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#v-pills-tab").mCustomScrollbar({
+                theme: "minimal"
+            });
+        });
+    </script>
 </head>
 
 
@@ -53,25 +63,23 @@
                                         style="width: 100%;">
                                         <i class="las la-play-circle" style="font-size: large;"></i><span>樣板庫</span>
                                     </a>
-                                    <% let data = -1; %>
-                                    <% for(let i = 0; i < member.length; i++) { %>
-                                        <% if(data == member[i].aID) { %>
-                                            <% continue; %>
+                                        <% let data = -1; %>
+                                        <% for(let i = 0; i < db.length; i++) { %>
+                                        <% if(data == db[i].aID) { %>
+                                        <% continue; %>
                                         <% } else { %>
-                                            <% data = member[i].aID %>
+                                        <% data = db[i].aID %>
                                         <% } %>
-                                    <a class="nav-link" data-toggle="pill" href="#v-pills-home" role="tab"
-                                        onclick="move(`<%= (i+1) %>`)" aria-controls="v-pills-home" aria-selected="true"
-                                        style="width: 100%;">
-                                        <i class="las la-edit"
-                                            style="font-size: large;"></i><span><%= member[i].aName %></span>
-                                    </a>
-                                    <% } %>
+                                        <a class="nav-link" data-toggle="pill" href="#v-pills-home" role="tab"
+                                            onclick="move(`<%= (i+1) %>`)" aria-controls="v-pills-home"
+                                            aria-selected="true" style="width: 100%;">
+                                            <i class="las la-edit"
+                                                style="font-size: large;"></i><span><%= db[i].aName %></span>
+                                        </a>
+                                        <% } %>
                                 </div>
                             </ul>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -166,18 +174,18 @@
                             </div>
                         </div>
                         <% let account = -1; %>
-                        <% for(let i = 0; i < member.length; i++) { %>
-                            <% if(account == member[i].aID) { %>
-                                <% continue; %>
-                            <% } else { %>
-                                <% account = member[i].aID %>
-                            <% } %>
-                            <% console.log(account); %>
+                        <% for(let i = 0; i < db.length; i++) { %>
+                        <% if(account == db[i].aID) { %>
+                        <% continue; %>
+                        <% } else { %>
+                        <% account = db[i].aID %>
+                        <% } %>
+                        <% console.log(account); %>
                         <div class="card-body2 card rigt-profile-card" id="<%= (i+1) %>">
                             <div class="container">
                                 <div class="lg">
                                     <i class="las la-file-alt" style="font-size: x-large;"></i>
-                                    <span class="sp"><%= member[i].aName %></span>
+                                    <span class="sp"><%= db[i].aName %></span>
                                 </div>
                                 <div class="row ">
                                     <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
@@ -185,29 +193,31 @@
                                             <div class="work-info">
                                                 <h3>編輯</h3>
                                             </div>
-                                            <img class="img-fluid" src="<%= member[i].pic %>">
+                                            <img class="img-fluid" src="<%= db[i].pic %>">
                                         </a>
                                     </div>
 
 
-                                    <div class="page_name">
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <!-- <div class="page_name"> -->
                                         <ul>
-                                            <% for(let j = i; j < member.length; j++) { %>
-                                                <% if(account == member[j].aID) { %>
-                                                    <% console.log('page : ',member[j].pName); %>
-                                                    <li><%= member[j].pName %></li>
-                                                <% } else { %>
-                                                    <% break; %>
-                                                <% } %>
+                                            <% for(let j = i; j < db.length; j++) { %>
+                                            <% if(account == db[j].aID) { %>
+                                            <% console.log('page : ',db[j].pName); %>
+                                            <li><%= db[j].pName %></li>
+                                            <% } else { %>
+                                            <% break; %>
+                                            <% } %>
                                             <% } %>
                                         </ul>
+                                    </div>
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <!-- <div class="cus"> -->
+                                        <div>
 
-                                        <div class="cus">
-                                            <div>
-
-                                                <h4>內容</h4>
-                                            </div>
+                                            <pre><%= db[i].explanation %></pre>
                                         </div>
+                                        <!-- </div> -->
                                     </div>
                                 </div>
                             </div>
