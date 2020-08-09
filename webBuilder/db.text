@@ -32,7 +32,7 @@ CREATE TABLE `template` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `template` (`tName`, `type`, `pages`, `begin`, `end`) VALUES
-('antique', '1', '1',
+('Stylish Portfolio', '1', '1',
 '<!DOCTYPE html>
 <html lang="en">
 
@@ -82,14 +82,1003 @@ CREATE TABLE `tpages` (
   FOREIGN KEY (tID) REFERENCES template(tID)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
-INSERT INTO `tpages` (`tID`, `tpName`) VALUES
-('1', 'home'),
-('2', 'home'),
-('2', 'about'),
-('2', 'kind'),
-('2', 'login'),
-('2', 'product'),
-('2', 'car');
+INSERT INTO `tpages` (`tID`, `tpName`, `body`) VALUES
+('1', 'home', '<body id="page-top">
+
+  <!-- Navigation -->
+  <a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+  </a>
+  <nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#page-top">Home</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#about">About</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#services">Services</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a class="js-scroll-trigger" href="#contact">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="masthead d-flex">
+    <div class="container text-center my-auto">
+      <h1 class="mb-1">Stylish Portfolio</h1>
+      <h3 class="mb-5">
+        <em>A Free Bootstrap Theme by Start Bootstrap</em>
+      </h3>
+      <a class="btn btn-secondary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+    </div>
+    <div class="overlay"></div>
+  </header>
+
+  <!-- About -->
+  <section class="content-section bg-light" id="about">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <h2>Stylish Portfolio is the perfect theme for your next project!</h2>
+          <p class="lead mb-5">This theme features a flexible, UX friendly sidebar menu and stock photos from our friends at
+            <a href="https://unsplash.com/">Unsplash</a>!</p>
+          <a class="btn btn-dark btn-xl js-scroll-trigger" href="#services">What We Offer</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="content-section bg-secondary text-white text-center" id="services">
+    <div class="container">
+      <div class="content-section-heading">
+        <h3 class="text-secondary mb-0">Services</h3>
+        <h2 class="mb-5">What We Offer</h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-screen-smartphone"></i>
+          </span>
+          <h4>
+            <strong>Responsive</strong>
+          </h4>
+          <p class="text-faded mb-0">Looks great on any screen size!</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-pencil"></i>
+          </span>
+          <h4>
+            <strong>Redesigned</strong>
+          </h4>
+          <p class="text-faded mb-0">Freshly redesigned for Bootstrap 4.</p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-like"></i>
+          </span>
+          <h4>
+            <strong>Favorited</strong>
+          </h4>
+          <p class="text-faded mb-0">Millions of users
+            <i class="fas fa-heart"></i>
+            Start Bootstrap!</p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <span class="service-icon rounded-circle mx-auto mb-3">
+            <i class="icon-mustache"></i>
+          </span>
+          <h4>
+            <strong>Question</strong>
+          </h4>
+          <p class="text-faded mb-0">I mustache you a question...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Callout -->
+  <section class="callout">
+    <div class="container text-center">
+      <h2 class="mx-auto mb-5">Welcome to
+        <em>your</em>
+        next website!</h2>
+      <a class="btn btn-secondary btn-xl" href="https://startbootstrap.com/themes/stylish-portfolio/">Download Now!</a>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="content-section" id="portfolio">
+    <div class="container">
+      <div class="content-section-heading text-center">
+        <h3 class="text-secondary mb-0">Portfolio</h3>
+        <h2 class="mb-5">Recent Projects</h2>
+      </div>
+      <div class="row no-gutters">
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Stationary</div>
+                <p class="mb-0">A yellow pencil with envelopes on a clean, blue backdrop!</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="/templated/Stylish Portfolio/img/portfolio-1.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Ice Cream</div>
+                <p class="mb-0">A dark blue background with a colored pencil, a clip, and a tiny ice cream cone!</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="/templated/Stylish Portfolio/img/portfolio-2.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Strawberries</div>
+                <p class="mb-0">Strawberries are such a tasty snack, especially with a little sugar on top!</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="/templated/Stylish Portfolio/img/portfolio-3.jpg" alt="">
+          </a>
+        </div>
+        <div class="col-lg-6">
+          <a class="portfolio-item" href="#!">
+            <div class="caption">
+              <div class="caption-content">
+                <div class="h2">Workspace</div>
+                <p class="mb-0">A yellow workspace with some scissors, pencils, and other objects.</p>
+              </div>
+            </div>
+            <img class="img-fluid" src="/templated/Stylish Portfolio/img/portfolio-4.jpg" alt="">
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="content-section bg-secondary text-white">
+    <div class="container text-center">
+      <h2 class="mb-4">The buttons below are impossible to resist...</h2>
+      <a href="#!" class="btn btn-xl btn-light mr-4">Click Me!</a>
+      <a href="#!" class="btn btn-xl btn-dark">Look at Me!</a>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <div id="contact" class="map">
+    <iframe src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A&amp;output=embed"></iframe>
+    <br />
+    <small>
+      <a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;aq=0&amp;oq=twitter&amp;sll=28.659344,-81.187888&amp;sspn=0.128789,0.264187&amp;ie=UTF8&amp;hq=Twitter,+Inc.,+Market+Street,+San+Francisco,+CA&amp;t=m&amp;z=15&amp;iwloc=A"></a>
+    </small>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer text-center">
+    <div class="container">
+      <ul class="list-inline mb-5">
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#!">
+            <i class="icon-social-facebook"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white mr-3" href="#!">
+            <i class="icon-social-twitter"></i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="social-link rounded-circle text-white" href="#!">
+            <i class="icon-social-github"></i>
+          </a>
+        </li>
+      </ul>
+      <p class="text-muted small mb-0">Copyright &copy; Your Website 2020</p>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+</body>'),
+('2', 'home', '<body id="chart3">
+    <!-- 導覽頁 -->
+    <div class="title">
+        <nav class="navBar navbar-expand-md navbar-light bg-wight p-1" id="notoSans">
+            <div class="mx-auto order-0" style="margin-top: 18px;">
+                <a class="navbar-brand p-0" href="#">
+                    <div class="tit">
+                        <img src="/templated/antique/image/antique/log1.jpg" alt="">
+                    </div>
+                </a>
+
+            </div>
+
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse  dual-collapse2">
+
+                <ul class="navbar-nav mr-auto" style="margin: auto;">
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/kind.html">ALL</a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/index.html">HOME</a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/product.html">SALE</a></h5>
+                    </li>
+
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/about.html">ABOUT</a></h5>
+                    </li>
+
+                </ul>
+                <form class="form-inline ml-auto login0">
+                    <div class="d-flex">
+                        <div class="login1 ">
+                            <a href="/templated/antique/antique_car.html" class="d-flex login3"><img
+                                    src="/templated/antique/image/antique/Image 9.jpg" width="30px">
+                                <p class="login4">0</p>
+                            </a>
+                        </div>
+                        <div class="login2 "><a href="" style="color: #a5a299">Login/Join</a></div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container ctr ">
+        <div class="row">
+            <div class="col-12 cot4">
+                <img src="/templated/antique/image/antique/antique_bg1.jpg" style="width: 100%;" class="cot4-1 change">
+                <img src="/templated/antique/image/antique/antique_bg4.jpg" style="width: 100%;" class="cot4-2 ">
+                <img src="/templated/antique/image/antique/antique_bg2.jpg" style="width: 100%;" class="cot4-2 ">
+                <img src="/templated/antique/image/antique/antique_bg3.jpg" style="width: 100%;" class="cot4-2 ">
+            </div>
+            <hr>
+
+            <div class="pro col-12 ">
+                <h5 class="product">KIND</h5>
+                <!--  品項 -->
+            </div>
+
+            <a class="col-6 col-md-4 ctr_1 " href="#">
+                <div class="ctr_1--c1">
+                    <p><span>CHAIR</span></p>
+                </div>
+
+            </a>
+            <a class="col-6 col-md-4 ctr_1 " href="#">
+                <div class="ctr_1--c2">
+                    <p><span>DESK</span></p>
+                </div>
+            </a>
+            <a class="col-6 col-md-4 ctr_1 " href="#">
+                <div class="ctr_1--c3">
+                    <p><span>SOFA</span></p>
+                </div>
+            </a>
+            <a class="col-6 col-md-4 ctr_1 " href="#">
+                <div class="ctr_1--c4">
+                    <p><span>TABLE</span></p>
+                </div>
+            </a>
+            <a class="col-6 col-md-4 ctr_1 " href="#">
+                <div class="ctr_1--c5">
+                    <p><span>CUPBOARD</span></p>
+                </div>
+            </a>
+            <a class="col-6 col-md-4 ctr_1  " href="#">
+                <div class="ctr_1--c6">
+                    <p><span>DECORATION</span></p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <div class="pro">
+        <h5 class="product">精選商品</h5>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="pic1">
+                <img src="/templated/antique/image/antique/Image 16.jpg" class="litpic_1 col-6 col-md-3">
+                <img src="/templated/antique/image/antique/Image 17.jpg" class="litpic_1 col-6 col-md-3">
+                <img src="/templated/antique/image/antique/Image 18.jpg" class="litpic_1 col-6 col-md-3">
+                <img src="/templated/antique/image/antique/Image 19.jpg" class="litpic_1 col-6 col-md-3">
+                <img src="/templated/antique/image/antique/Image 20.jpg" class="litpic_1 col-6 col-md-3">
+                <img src="/templated/antique/image/Xiang se/pic_6.jpg" class="litpic_1 col-6 col-md-3"><br><br>
+
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div class="footerBar">
+            <div class="container ctr2">
+
+
+
+                <div class="row">
+
+                    <ul class=" col-md-5">
+                        <li>
+                            <h5>商品分類</h5>
+                        </li>
+                        <li>椅凳</li>
+                        <li>書桌</li>
+                        <li>桌子</li>
+                        <li>櫥櫃</li>
+                        <li>家飾</li>
+                        <li>沙發</li>
+
+                    </ul><br>
+
+                    <ul class=" col-md-5">
+                        <li>
+                            <h5>delicate antique</h5>
+
+                        </li>
+                        <li>關於我們</li>
+                        <li>聯絡我們</li>
+
+                    </ul><br>
+
+                    <ul class="col-md-2 footerLogo">
+                        <li>
+                            <a href="#"></a><img src="/templated/antique/image/antique/log1.jpg" width="300" c></a>
+                        </li>
+                    </ul><br>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>'),
+('2', 'about', '<body id="chart3">
+    <div class="title">
+        <nav class="navBar navbar-expand-md navbar-light bg-wight p-1" id="notoSans">
+            <div class="mx-auto order-0" style="margin-top: 18px;">
+                <a class="navbar-brand p-0" href="#">
+                    <div class="tit">
+                        <img src="/templated/antique/image/antique/log1.jpg" alt="">
+                    </div>
+                </a>
+
+            </div>
+
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse  dual-collapse2">
+
+                <ul class="navbar-nav mr-auto" style="margin: auto;">
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/kind.html">ALL</a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/index.html">HOME</a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/product.html">SALE</a></h5>
+                    </li>
+
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/about.html">ABOUT</a></h5>
+                    </li>
+
+                </ul>
+                <form class="form-inline ml-auto login0">
+                    <div class="d-flex">
+                        <div class="login1 ">
+                            <a href="/templated/antique/antique_car.html" class="d-flex login3"><img
+                                    src="/templated/antique/image/antique/Image 9.jpg" width="30px">
+                                <p class="login4">0</p>
+                            </a>
+                        </div>
+                        <div class="login2 "><a href="" style="color: #a5a299">Login/Join</a></div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-10 col-md-6 cot1"><img src="/templated/antique/image/antique/Image 24.jpg"
+                    class="img-fluid cot2-1"></div><br>
+            <div class="col-10 col-md-4 cot1">
+                <h5>關於</h5><br>
+                <h4>古董 / 藝術 / 室內設計 /空間配置</h4><br>
+                <p>地址:台北市大安區嘉興街346號</p>
+                <p>電話:02.8732.5321</p>
+                <p>營業時間 business hours Tue - Sun：</p>
+                <p>12：00 - 20：00</p>
+
+                <br>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <footer>
+        <div class="footerBar">
+            <div class="container ctr2">
+                <div class="row">
+
+                    <ul class=" col-md-5">
+                        <li>
+                            <h5>商品分類</h5>
+                        </li>
+                        <li>椅凳</li>
+                        <li>書桌</li>
+                        <li>桌子</li>
+                        <li>櫥櫃</li>
+                        <li>家飾</li>
+                        <li>沙發</li>
+
+                    </ul><br>
+
+                    <ul class=" col-md-5">
+                        <li>
+                            <h5>delicate antique</h5>
+
+                        </li>
+                        <li>關於我們</li>
+                        <li>聯絡我們</li>
+
+                    </ul><br>
+
+                    <ul class="col-md-2 footerLogo">
+
+                        <li>
+                            <a href="#"></a><img src="/templated/antique/image/antique/log1.jpg" width="300" c></a>
+                        </li>
+                    </ul><br>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>'),
+('2', 'kind', '<body id="chart3">
+    <div class="title">
+        <nav class="navBar navbar-expand-md navbar-light bg-wight p-1" id="notoSans">
+            <div class="mx-auto order-0" style="margin-top: 18px;">
+                <a class="navbar-brand p-0" href="#">
+                    <div class="tit">
+                        <img src="/templated/antique/image/antique/log1.jpg" alt="">
+                    </div>
+                </a>
+
+            </div>
+
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse  dual-collapse2">
+
+                <ul class="navbar-nav mr-auto" style="margin: auto;">
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/kind.html">ALL</a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/index.html">HOME</a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/product.html">SALE</a></h5>
+                    </li>
+
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/about.html">ABOUT</a></h5>
+                    </li>
+
+                </ul>
+                <form class="form-inline ml-auto login0">
+                    <div class="d-flex">
+                        <div class="login1 ">
+                            <a href="/templated/antique/antique_car.html" class="d-flex login3"><img
+                                    src="/templated/antique/image/antique/Image 9.jpg" width="30px">
+                                <p class="login4">0</p>
+                            </a>
+                        </div>
+                        <div class="login2 "><a href="" style="color: #a5a299">Login/Join</a></div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <div class="container content">
+        <div class="container-fluid">
+
+            <div class="row cot1img chair1">
+                <div class="col-12">
+                    <h5>椅子</h5>
+                </div>
+                <div class=" col-6 col-md-3 chair2">
+                    <img src="/templated/antique/image/antique/Image 16.jpg" width="160" height="160">
+                    <p>柚木餐椅<br>NT$4900</p>
+                </div>
+                <div class="chair2  col-6 col-md-3"><img src="/templated/antique/image/antique/Image 16.jpg" width="160" height="160">
+                    <p>柚木餐椅<br>NT$4900</p>
+                </div>
+                <div class="chair2  col-6 col-md-3"><img src="/templated/antique/image/antique/Image 17.jpg" width="160" height="160">
+                    <p>柚木餐椅<br>NT$4900</p>
+                </div>
+                <div class="chair2 col-6 col-md-3"><img src="/templated/antique/image/antique/Image 18.jpg" width="160" height="160">
+                    <p>柚木餐椅<br>NT$4900</p>
+                </div><br>
+                <div class="chair2 col-6 col-md-3"><img src="/templated/antique/image/antique/litimg1.jpg" width="160" height="160">
+                    <p>柚木餐椅<br>NT$4900</p>
+                </div>
+
+                <div class="chair2 col-6 col-md-3"><img src="/templated/antique/image/antique/litimg1.jpg" width="160" height="160">
+                    <p>柚木餐椅<br>NT$4900</p>
+                </div>
+
+                <div class="chair2 col-6 col-md-3"><img src="/templated/antique/image/antique/Image 17.jpg" width="160" height="160">
+                    <p>柚木餐椅<br>NT$4900</p>
+                </div>
+
+                <div class="chair2 col-6 col-md-3"><img src="/templated/antique/image/antique/Image 18.jpg" width="160" height="160">
+                    <p>柚木餐椅<br>NT$4900</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footerBar">
+            <div class="container ctr2">
+                <div class="row">
+
+                    <ul class=" col-md-5">
+                        <li>
+                            <h5>商品分類</h5>
+                        </li>
+                        <li>椅凳</li>
+                        <li>書桌</li>
+                        <li>桌子</li>
+                        <li>櫥櫃</li>
+                        <li>家飾</li>
+                        <li>沙發</li>
+
+                    </ul><br>
+
+                    <ul class=" col-md-5">
+                        <li>
+                            <h5>delicate antique</h5>
+
+                        </li>
+                        <li>關於我們</li>
+                        <li>聯絡我們</li>
+
+                    </ul><br>
+
+                    <ul class="col-md-2 footerLogo">
+
+                        <li>
+                            <a href="#"></a><img src="/templated/antique/image/antique/log1.jpg" width="300" c></a>
+                        </li>
+                    </ul><br>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>'),
+('2', 'login', '<body id="chart3">
+
+    <div class="title">
+        <nav class="navBar navbar-expand-md navbar-light bg-wight p-1" id="notoSans">
+            <div class="mx-auto order-0" style="margin-top: 18px;">
+                <a class="navbar-brand p-0" href="#">
+                    <div class="tit">
+                        <img src="/templated/antique/image/antique/log1.jpg" alt="">
+                    </div>
+                </a>
+
+            </div>
+
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse  dual-collapse2">
+
+                <ul class="navbar-nav mr-auto" style="margin: auto;">
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/kind.html">ALL</a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/index.html">HOME</a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/product.html">SALE</a></h5>
+                    </li>
+
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/about.html">ABOUT</a></h5>
+                    </li>
+
+                </ul>
+                <form class="form-inline ml-auto login0">
+                    <div class="d-flex">
+                        <div class="login1 ">
+                            <a href="/templated/antique/antique_car.html" class="d-flex login3"><img
+                                    src="/templated/antique/image/antique/Image 9.jpg" width="30px">
+                                <p class="login4">0</p>
+                            </a>
+                        </div>
+                        <div class="login2 "><a href="" style="color: #a5a299">Login/Join</a></div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+    <div class="container content  center ">
+        <div class="cot1">
+            <div>
+                <h4>登入</h4>
+            </div><br>
+            <form class="login2-1">
+
+                <label>
+                    <h4>信箱:</h4>
+                </label>
+                <input type="text" id="eMail" name="eMail" size="35" style="border-color: #a5a299;"><br><br>
+                <label>
+                    <h4>密碼:</h4>
+                </label>
+                <input type="text" id="uPwd" name="uPwd" size="35"><br><br>
+
+            </form>
+            <div style="display:inline-flex;">
+                <div class="t1">
+                    <a href="" class="btn effect01" target="_blank"><span></span>會員登入</span></a>
+                </div>
+                <div class="t2">
+                    <a href="" class="btn effect01" target="_blank"
+                        style=" background-color: white; color: #000;"><span></span>註冊帳號</span></a>
+                </div>
+            </div>
+            <br>
+
+        </div><br>
+
+    </div>
+    <br><br>
+
+    <footer>
+        <div class="footerBar">
+            <div class="container ctr2">
+
+                <div class="row">
+
+                    <ul class=" col-md-5">
+                        <li>
+                            <h5>商品分類</h5>
+                        </li>
+                        <li>椅凳</li>
+                        <li>書桌</li>
+                        <li>桌子</li>
+                        <li>櫥櫃</li>
+                        <li>家飾</li>
+                        <li>沙發</li>
+
+                    </ul><br>
+
+                    <ul class=" col-md-5">
+                        <li>
+                            <h5>delicate antique</h5>
+
+                        </li>
+                        <li>關於我們</li>
+                        <li>聯絡我們</li>
+
+                    </ul><br>
+
+                    <ul class="col-md-2 footerLogo">
+                        <li>
+                            <a href="Xiang se.html"></a><img src="image/antique/log1.jpg" width="300" c></a>
+                        </li>
+                    </ul><br>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>'),
+('2', 'product', '<body id="chart3">
+    <div class="title">
+        <nav class="navBar navbar-expand-md navbar-light bg-wight p-1" id="notoSans">
+            <div class="mx-auto order-0" style="margin-top: 18px;">
+                <a class="navbar-brand p-0" href="#">
+                    <div class="tit">
+                        <img src="/templated/antique/image/antique/log1.jpg" alt="">
+                    </div>
+                </a>
+
+            </div>
+
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse  dual-collapse2">
+
+                <ul class="navbar-nav mr-auto" style="margin: auto;">
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/kind.html">ALL</a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/index.html">HOME</a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/product.html">SALE</a></h5>
+                    </li>
+
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/about.html">ABOUT</a></h5>
+                    </li>
+
+                </ul>
+                <form class="form-inline ml-auto login0">
+                    <div class="d-flex">
+                        <div class="login1 ">
+                            <a href="/templated/antique/antique_car.html" class="d-flex login3"><img
+                                    src="/templated/antique/image/antique/Image 9.jpg" width="30px">
+                                <p class="login4">0</p>
+                            </a>
+                        </div>
+                        <div class="login2 "><a href="" style="color: #a5a299">Login/Join</a></div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-12 col-md-7 cot1img ">
+                <img src="/templated/antique/image/antique/litimg1.jpg" id="BIG" class="img-fluid cot2 cot3-1">
+                <div id="SMALL" class="smallimg">
+                    <img src="/templated/antique/image/antique/litimg2.jpg" width="120" height="100" id="SS2">
+                    <img src="/templated/antique/image/antique/litimg3.jpg" width="120" height="100" id="SS3">
+                    <img src="/templated/antique/image/antique/litimg1.jpg" width="120" height="100" id="SS1">
+
+                </div>
+            </div><br>
+            <div class="col-12 col-md-4 cot1">
+
+                <h5>丹麥FARSTRUP柚木餐椅</h5>
+
+                <h4>NT$4900</h4><br>
+                <p>此餐椅出自1960時期由丹麥傢俱廠Farstrup所生產。<br>
+                    以柚木為骨架，色澤溫潤，椅背以曲木技術彎成弧面與坐板的曲面相呼應，坐起來相當舒適，椅面繃覆人工皮革，不易沾染污漬，至今仍保持良好的狀態，是一把相當不錯的餐椅。
+                </p>
+                <hr>
+                <br> 數量
+
+                <input type="button" class="butten1" value="-" id="del" onclick="del()" />
+                <span id="quantity">1</span>
+                <input type="button" class="butten1" value="+" id="add" onclick="add()" />
+                <br>
+                <br>
+                <a href="/templated/antique/car.html" class="btn effect01" target="_blank"><span>加入購物車</span></a>
+
+                <p>
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- <footer> -->
+    <footer>
+        <div class="footerBar">
+            <div class="container ctr2">
+                <div class="row">
+                    <ul class=" col-md-5">
+                        <li>
+                            <h5>商品分類</h5>
+                        </li>
+                        <li>椅凳</li>
+                        <li>書桌</li>
+                        <li>桌子</li>
+                        <li>櫥櫃</li>
+                        <li>家飾</li>
+                        <li>沙發</li>
+
+                    </ul><br>
+
+                    <ul class=" col-md-5">
+                        <li>
+                            <h5>delicate antique</h5>
+
+                        </li>
+                        <li>關於我們</li>
+                        <li>聯絡我們</li>
+                    </ul><br>
+
+                    <ul class="col-md-2 footerLogo">
+
+                        <li>
+                            <a href="/templated/antique/index copy.html"></a><img
+                                src="/templated/antique/image/antique/log1.jpg" width="300" c></a>
+                        </li>
+                    </ul><br>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>'),
+('2', 'car', '<body id="chart3">
+    <div class="title">
+        <nav class="navBar navbar-expand-md navbar-light bg-wight p-1" id="notoSans">
+            <div class="mx-auto order-0" style="margin-top: 18px;">
+                <a class="navbar-brand p-0" href="#">
+                    <div class="tit">
+                        <img src="/templated/antique/image/antique/log1.jpg" alt="">
+                    </div>
+                </a>
+
+            </div>
+
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="navbar-collapse collapse  dual-collapse2">
+
+                <ul class="navbar-nav mr-auto" style="margin: auto;">
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/kind.html">ALL</a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/index.html">HOME</a></h5>
+                    </li>
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/product.html">SALE</a></h5>
+                    </li>
+
+                    <li class="nav-item active">
+                        <h5 class="nav-link"><a href="/templated/antique/about.html">ABOUT</a></h5>
+                    </li>
+
+                </ul>
+                <form class="form-inline ml-auto login0">
+                    <div class="d-flex">
+                        <div class="login1 ">
+                            <a href="/templated/antique/antique_car.html" class="d-flex login3"><img
+                                    src="/templated/antique/image/antique/Image 9.jpg" width="30px">
+                                <p class="login4">0</p>
+                            </a>
+                        </div>
+                        <div class="login2 "><a href="" style="color: #a5a299">Login/Join</a></div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container content">
+        <div class="row">
+            <div class="col-12 col-md-7 cot1 cot3-2 ">
+                <h4 class="text-center none">檢視購物車</h4><br>
+                <h5 class="text-left" type="ccc">購物車內商品</h5>
+                <hr>
+                <div style="display:flex; flex-wrap: wrap;">
+                    <img src="image/antique/litimg2.jpg" width="160" height="140" style="margin-right: 94px;"
+                        id="SS2"><br>
+
+                    <h5>丹麥柚木餐椅</h5>
+                    <h5>NT$4900</h5>
+                    <h5>X1</h5>
+                    <!-- <h5 class="none">NT$4900</h5> -->
+
+                </div>
+            </div><br>
+            <div class="col-12 col-md-4 cot1">
+                <div style="display:flex;">
+                    <div>
+                        <h4 class="price">小計:</h4>
+                    </div>
+                    <div class="price1">
+                        <h5>NT$4900</h5>
+                    </div><br>
+                </div>
+                <div class="price3">
+                    <p>請選擇運送方式</p>
+                    <div><input type="radio" name="sex" value="male">&nbsp;&nbsp;一般寄送</div>
+                    <div><input type="radio" name="sex" value="female">&nbsp;&nbsp;快遞宅配</div>
+
+
+                    <hr><br>
+                    <div style="display:flex;">
+                        <div>
+                            <h4>合計:</h4>
+                        </div>
+                        <div class="price2">
+                            <h5>NT$4900</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="price2-1">
+                    <a href="antique_product2.html" class="btn effect01" target="_blank"><span>前往結帳</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <footer> -->
+    <footer>
+        <div class="footerBar">
+            <div class="container ctr2">
+                <div class="row">
+                    <ul class=" col-md-5">
+                        <li>
+                            <h5>商品分類</h5>
+                        </li>
+                        <li>椅凳</li>
+                        <li>書桌</li>
+                        <li>桌子</li>
+                        <li>櫥櫃</li>
+                        <li>家飾</li>
+                        <li>沙發</li>
+
+                    </ul><br>
+
+                    <ul class=" col-md-5">
+                        <li>
+                            <h5>delicate antique</h5>
+
+                        </li>
+                        <li>關於我們</li>
+                        <li>聯絡我們</li>
+
+                    </ul><br>
+
+                    <ul class="col-md-2 footerLogo">
+
+                        <li>
+                            <a href="#"></a><img src="/templated/antique/image/antique/log1.jpg" width="300" c></a>
+                        </li>
+                    </ul><br>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+</body>');
 
 
 
@@ -104,7 +1093,7 @@ CREATE TABLE `account` (
   `tID` tinyint(2) UNSIGNED ZEROFILL NOT NULL ,
   `aName` varchar(50) COLLATE utf8_unicode_ci default 'eeWeb template',
   `explanation` varchar(200) COLLATE utf8_unicode_ci,
-  `pic` MEDIUMBLOB() COLLATE utf8_unicode_ci default 'default.jpg',
+  `pic` MEDIUMBLOB,
   `date` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   FOREIGN KEY (mID) REFERENCES member(mID),
   FOREIGN KEY (tID) REFERENCES template(tID)
@@ -120,7 +1109,7 @@ INSERT INTO `account` (`mID`, `tID`, `explanation`, `pic`, `date`) VALUES
 
 
 CREATE TABLE `pages` (
-  `pID` tinyint(2) UNSIGNED ZEROFILL NOT NULL Primary key auto_increment,
+  `pID` int(2) UNSIGNED ZEROFILL NOT NULL Primary key auto_increment,
   `pName` varchar(20) COLLATE utf8_unicode_ci default 'eeWeb template',
   `aID` tinyint(2) UNSIGNED ZEROFILL NOT NULL,
   `body` varchar(10000) COLLATE utf8_unicode_ci NOT NULL,

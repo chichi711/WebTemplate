@@ -8,7 +8,7 @@ $(function () {
     // clientFrameWindow = interface的client端內容( w、 r)
     let clientFrameWindow = $('#clientframe').get(0).contentWindow;
 
-
+    // console.log(qq);
 
     $("#home").mCustomScrollbar({
         theme: "minimal"
@@ -32,30 +32,6 @@ $(function () {
         // cleanNotes(editcode);
         $("#newCode").text(editcode);
     });
-
-    $("#okButton").click(function () {
-        let pBody = [];
-        editcode = DragDropFunctions.CopyDom();
-        pBody.push(editcode);
-        let pName = ['home'];
-        let p = pBody.map((item, index) => {
-            return { body: item, name: pName[index] };
-        })
-        let account = [
-            { name: $("#name").val() },
-            { explanation: $("#explanation").val() },
-            p
-        ];
-
-        $.ajax({
-            type: "post",
-            url: "/edit/demo",
-            data: JSON.stringify(account),
-            contentType: "application/json; charset=utf-8"
-        })
-            // window.location.href = window.location.origin + '/edit/demo';
-    });
-
 
 
     $("#mobile-view").click(function () {
@@ -157,15 +133,23 @@ $(function () {
         CopyDom: function () {
             editcode = $(clientFrameWindow.document).find('body').prop('outerHTML');
             // 刪除註解
-            let comment = editcode.match(/<!--?((.(?!(-->)))*.)-->/g);
-            for (let a = 0; a < comment.length; a++) {
-                editcode = editcode.replace(comment[a], "");
-            }
+            if(editcode){
+                let comment = editcode.match(/<!--?((.(?!(-->)))*.)-->/g);
+                if(comment){
+                    for (let a = 0; a < comment.length; a++) {
+                        editcode = editcode.replace(comment[a], "");
+                    }
+                }
 
-            // 刪除script
-            let js = editcode.match(/<script(.|\n)*?<\/script>/g);
-            for (let a = 0; a < js.length; a++) {
-                editcode = editcode.replace(js[a], "");
+                // 刪除script
+                let js = editcode.match(/<script(.|\n)*?<\/script>/g);
+                if(js){
+                    for (let a = 0; a < js.length; a++) {
+                        editcode = editcode.replace(js[a], "");
+                    }
+                }
+            } else {
+                editcode = '<body></body>';
             }
             return editcode;
         },

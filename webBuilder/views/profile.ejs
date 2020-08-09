@@ -38,7 +38,7 @@
                                     <img item-wrap
                                         src="https://crawl.nosdn.127.net/nbotreplaceimg/807fb39cdf0a2cc26bd7c0ec0855255d/08a456acf9a8fb29d8981e2fdd8ef63f.png"
                                         al t="" class="user-profile">
-                                    <h3>John</h3>
+                                    <h3><%= member[0].uName %></h3>
                                 </li>
                                 <div class=" pro nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                                     aria-orientation="vertical">
@@ -46,23 +46,27 @@
                                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill"
                                         href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
                                         aria-selected="false">
-                                        <i class="las la-user-circle"></i><span>編輯會員</span>
+                                        <i class="las la-user-circle" style="font-size: larger;"></i><span>編輯會員</span>
                                     </a>
                                     <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
                                         role="tab" aria-controls="v-pills-home" aria-selected="true" onclick="move(0)"
                                         style="width: 100%;">
-                                        <i class="las la-play-circle"></i><span>樣板庫</span>
+                                        <i class="las la-play-circle" style="font-size: large;"></i><span>樣板庫</span>
                                     </a>
-                                    <a class="nav-link" data-toggle="pill" href="#v-pills-home" href="#" role="tab"
-                                        onclick="move(1)" aria-controls="v-pills-home" aria-selected="true"
+                                    <% let data = -1; %>
+                                    <% for(let i = 0; i < member.length; i++) { %>
+                                        <% if(data == member[i].aID) { %>
+                                            <% continue; %>
+                                        <% } else { %>
+                                            <% data = member[i].aID %>
+                                        <% } %>
+                                    <a class="nav-link" data-toggle="pill" href="#v-pills-home" role="tab"
+                                        onclick="move(`<%= (i+1) %>`)" aria-controls="v-pills-home" aria-selected="true"
                                         style="width: 100%;">
-                                        <i class="las la-edit"></i><span>作品1</span>
+                                        <i class="las la-edit"
+                                            style="font-size: large;"></i><span><%= member[i].aName %></span>
                                     </a>
-                                    <a class="nav-link" data-toggle="pill" href="#v-pills-home" href="#" role="tab"
-                                        onclick="move(2)" aria-controls="v-pills-home" aria-selected="true"
-                                        style="width: 100%;">
-                                        <i class="las la-edit"></i><span>作品2</span>
-                                    </a>
+                                    <% } %>
                                 </div>
                             </ul>
                         </div>
@@ -161,12 +165,19 @@
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="card-body2 card rigt-profile-card" id="1">
+                        <% let account = -1; %>
+                        <% for(let i = 0; i < member.length; i++) { %>
+                            <% if(account == member[i].aID) { %>
+                                <% continue; %>
+                            <% } else { %>
+                                <% account = member[i].aID %>
+                            <% } %>
+                            <% console.log(account); %>
+                        <div class="card-body2 card rigt-profile-card" id="<%= (i+1) %>">
                             <div class="container">
                                 <div class="lg">
-                                    <span class="sp">Stylish Portfolio</span>
+                                    <i class="las la-file-alt" style="font-size: x-large;"></i>
+                                    <span class="sp"><%= member[i].aName %></span>
                                 </div>
                                 <div class="row ">
                                     <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
@@ -174,19 +185,21 @@
                                             <div class="work-info">
                                                 <h3>編輯</h3>
                                             </div>
-                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
+                                            <img class="img-fluid" src="<%= member[i].pic %>">
                                         </a>
                                     </div>
 
 
                                     <div class="page_name">
                                         <ul>
-                                            <li>home</li>
-                                            <li>about</li>
-                                            <li>kind</li>
-                                            <li>login</li>
-                                            <li>product</li>
-                                            <li>car </li>
+                                            <% for(let j = i; j < member.length; j++) { %>
+                                                <% if(account == member[j].aID) { %>
+                                                    <% console.log('page : ',member[j].pName); %>
+                                                    <li><%= member[j].pName %></li>
+                                                <% } else { %>
+                                                    <% break; %>
+                                                <% } %>
+                                            <% } %>
                                         </ul>
 
                                         <div class="cus">
@@ -199,44 +212,8 @@
                                 </div>
                             </div>
                         </div>
+                        <% } %>
 
-
-                        <div class="card-body2 card rigt-profile-card" id="2">
-                            <div class="container">
-                                <div class="lg">
-                                    <span class="sp">Stylish Portfolio</span>
-                                </div>
-                                <div class="row ">
-                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-                                        <a href="/edit" class="item-wrap fancybox">
-                                            <div class="work-info">
-                                                <h3>編輯</h3>
-                                            </div>
-                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
-                                        </a>
-                                    </div>
-
-
-                                    <div class="page_name">
-                                        <ul>
-                                            <li>home</li>
-                                            <li>about</li>
-                                            <li>kind</li>
-                                            <li>login</li>
-                                            <li>product</li>
-                                            <li>car </li>
-                                        </ul>
-
-                                        <div class="cus">
-                                            <div>
-
-                                                <h4>內容</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"

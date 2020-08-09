@@ -10,7 +10,7 @@ router.get('/signup', function (req, res, next) {
 });
 
 router.get("/", function (request, response) {
-  conn.query('select * from member',
+  conn.query('select m.mID,uName,Email,uPwd,img,a.aID,aName,explanation,pic,pName,body from (member m join account a on m.mId=a.mID ) join pages p on a.aID = p.aID WHERE m.mid = 1',
       '',
       function (err, rows) {
           if (err) {
