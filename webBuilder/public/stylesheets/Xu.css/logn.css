@@ -201,12 +201,12 @@ button{
 
 }
 
-.tip{
+.tip,.tip2,.tip3{
     color: red;
     position: fixed;
-    width: 20rem;
-    margin-left: 4rem;
-    margin-top: -1.1rem;
+    width: 15rem;
+    margin-left: 20rem;
+    /* margin-top: 1rem; */
 }
 
 @media (max-width: 1200px){

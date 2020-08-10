@@ -16,11 +16,11 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Our Custom CSS -->
-<!-- <link rel="stylesheet" href="style2.css"> -->
-<!-- Scrollbar Custom CSS -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"> -->
+    <!-- <link rel="stylesheet" href="style2.css"> -->
+    <!-- Scrollbar Custom CSS -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"> -->
     <script>
-        $(function(){
+        $(function () {
             $("#v-pills-tab").mCustomScrollbar({
                 theme: "minimal"
             });
@@ -43,7 +43,7 @@
 
         <!-- 個人資料 -->
         <div class="row">
-            <div class=" col-lg-3 ">
+            <div class=" col-lg-2 ">
                 <div class="card-radius card left-profile-card overflow-auto" id="home">
                     <div class="card-body">
                         <div class="personal-info">
@@ -55,11 +55,11 @@
                                     <h3><%= member[0].uName %></h3>
                                 </li>
                                 <div class=" pro nav flex-column nav-pills " id="v-pills-tab" role="tablist"
-                                    aria-orientation="vertical"  >
+                                    aria-orientation="vertical">
 
                                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill"
                                         href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
-                                        aria-selected="false">
+                                        aria-selected="ture">
                                         <i class="las la-user-circle" style="font-size: larger;"></i><span>編輯會員</span>
                                     </a>
                                     <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
@@ -67,20 +67,20 @@
                                         style="width: 100%;">
                                         <i class="las la-play-circle" style="font-size: large;"></i><span>樣板庫</span>
                                     </a>
-                                        <% let data = -1; %>
-                                        <% for(let i = 0; i < db.length; i++) { %>
-                                        <% if(data == db[i].aID) { %>
-                                        <% continue; %>
-                                        <% } else { %>
-                                        <% data = db[i].aID %>
-                                        <% } %>
-                                        <a class="nav-link" data-toggle="pill" href="#v-pills-home" role="tab"
-                                            onclick="move(`<%= (i+1) %>`)" aria-controls="v-pills-home"
-                                            aria-selected="true" style="width: 100%;">
-                                            <i class="las la-edit"
-                                                style="font-size: large;"></i><span><%= db[i].aName %></span>
-                                        </a>
-                                        <% } %>
+                                    <% let data = -1; %>
+                                    <% for(let i = 0; i < db.length; i++) { %>
+                                    <% if(data == db[i].aID) { %>
+                                    <% continue; %>
+                                    <% } else { %>
+                                    <% data = db[i].aID %>
+                                    <% } %>
+                                    <a class="nav-link" data-toggle="pill" href="#v-pills-home" role="tab"
+                                        onclick="move(`<%= (i+1) %>`)" aria-controls="v-pills-home" aria-selected="true"
+                                        style="width: 100%;">
+                                        <i class="las la-edit"
+                                            style="font-size: large;"></i><span><%= db[i].aName %></span>
+                                    </a>
+                                    <% } %>
                                 </div>
                             </ul>
                         </div>
@@ -98,7 +98,7 @@
 
                 <!-- 樣板庫 -->
                 <div class="tab-content" id="v-pills-tabContent">
-                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                    <div class=" tab-pane fade show active" id="v-pills-home" role="tabpanel"
                         aria-labelledby="v-pills-home-tab">
                         <div class="card-body2 card rigt-profile-card" id="0">
                             <div class="container">
@@ -282,15 +282,17 @@
 
     <script src="/javascripts/Xu.js/jquery-3.3.1.min.js"></script>
     <script src="/javascripts/Xu.js/popper.min.js"></script>
-    <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
-     <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <!-- <script src="/javascripts/Xu.js/bootstrap.min.js"></script> -->
+    
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
     <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
     <!-- Popper.JS -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> -->
     <!-- Bootstrap JS -->
     <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script> -->
     <!-- jQuery Custom Scroller CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <script>
         function move(position) {
             // event.preventDefault();
@@ -300,9 +302,9 @@
 
         $(document).ready(function () {
 
-         $("#home").mCustomScrollbar({
-         theme: "minimal"
-         });
+            $("#home").mCustomScrollbar({
+                theme: "minimal-dark"
+            });
         });
     </script>
 </body>
