@@ -55,7 +55,7 @@ $("#okButton").click(function () {
 
         $.ajax({
             type: "post",
-            url: "/user",
+            url: "/user/signup",
             data: newItem
         })
         window.location.href = window.location.origin + '/user/login';

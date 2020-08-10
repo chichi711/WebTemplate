@@ -19,7 +19,38 @@ https://github.com/givanz/VvvebJs
 
 // Simple JavaScript Templating
 // John Resig - https://johnresig.com/ - MIT Licensed
+(function(){
+	var cache = {};
 
+	this.tmpl = function tmpl(str, data){
+	  // Figure out if we're getting a template, or if we need to
+	  // load the template - and be sure to cache the result.
+	  var fn = /^[-a-zA-Z0-9]+$/.test(str) ?
+		cache[str] = cache[str] ||
+		  tmpl(document.getElementById(str).innerHTML) :
+
+		// Generate a reusable function that will serve as a template
+		// generator (and which will be cached).
+		new Function("obj",
+		  "var p=[],print=function(){p.push.apply(p,arguments);};" +
+
+		  // Introduce the data as local variables using with(){}
+		  "with(obj){p.push('" +
+
+		  // Convert the template into pure JavaScript
+		  str
+			.replace(/[\r\t\n]/g, " ")
+			.split("{%").join("\t")
+			.replace(/((^|%})[^\t]*)'/g, "$1\r")
+			.replace(/\t=(.*?)%}/g, "',$1,'")
+			.split("\t").join("');")
+			.split("%}").join("p.push('")
+			.split("\r").join("\\'")
+		+ "');}return p.join('');");
+	  // Provide some basic currying to the user
+	  return data ? fn( data ) : fn;
+	};
+  })();
 
 // 拖曳
 function isElement(obj){
@@ -241,181 +272,181 @@ function isElement(obj){
 
 	 render: function(type) {
 
-		//  let component = this._components[type];
+		 let component = this._components[type];
 
-		//  let componentsPanel = jQuery(this.componentPropertiesElement);
-		//  let defaultSection = this.componentPropertiesDefaultSection;
-		//  let componentsPanelSections = {};
+		 let componentsPanel = jQuery(this.componentPropertiesElement);
+		 let defaultSection = this.componentPropertiesDefaultSection;
+		 let componentsPanelSections = {};
 
-		//  jQuery(this.componentPropertiesElement + " .tab-pane").each(function ()
-		//  {
-		// 	 let sectionName = this.dataset.section;
-		// 	 componentsPanelSections[sectionName] = $(this);
+		 jQuery(this.componentPropertiesElement + " .tab-pane").each(function ()
+		 {
+			 let sectionName = this.dataset.section;
+			 componentsPanelSections[sectionName] = $(this);
 
-		//  });
+		 });
 
-		//  let section = componentsPanelSections[defaultSection].find('.section[data-section="default"]');
+		 let section = componentsPanelSections[defaultSection].find('.section[data-section="default"]');
 
-		//  if (!(edit.preservePropertySections && section.length))
-		//  {
-		// 	 componentsPanelSections[defaultSection].html('').append(tmpl("vvveb-input-sectioninput", {key:"default", header:component.name}));
-		// 	 section = componentsPanelSections[defaultSection].find(".section");
-		//  }
+		 if (!(edit.preservePropertySections && section.length))
+		 {
+			 componentsPanelSections[defaultSection].html('').append(tmpl("vvveb-input-sectioninput", {key:"default", header:component.name}));
+			 section = componentsPanelSections[defaultSection].find(".section");
+		 }
 
-		//  componentsPanelSections[defaultSection].find('[data-header="default"] span').html(component.name);
-		//  section.html("")
+		 componentsPanelSections[defaultSection].find('[data-header="default"] span').html(component.name);
+		 section.html("")
 
-		//  if (component.beforeInit) component.beforeInit(edit.Builder.selectedEl.get(0));
+		 if (component.beforeInit) component.beforeInit(edit.Builder.selectedEl.get(0));
 
-		//  let element;
+		 let element;
 
-		//  let fn = function(component, property) {
-		// 	 return property.input.on('propertyChange', function (event, value, input) {
+		 let fn = function(component, property) {
+			 return property.input.on('propertyChange', function (event, value, input) {
 
-		// 			 let element = edit.Builder.selectedEl;
+					 let element = edit.Builder.selectedEl;
 
-		// 			 if (property.child) element = element.find(property.child);
-		// 			 if (property.parent) element = element.parent(property.parent);
+					 if (property.child) element = element.find(property.child);
+					 if (property.parent) element = element.parent(property.parent);
 
-		// 			 if (property.onChange)
-		// 			 {
-		// 				 element = property.onChange(element, value, input, component);
-		// 			 }/* else */
-		// 			 if (property.htmlAttr)
-		// 			 {
-		// 				 oldValue = element.attr(property.htmlAttr);
+					 if (property.onChange)
+					 {
+						 element = property.onChange(element, value, input, component);
+					 }/* else */
+					 if (property.htmlAttr)
+					 {
+						 oldValue = element.attr(property.htmlAttr);
 
-		// 				 if (property.htmlAttr == "class" && property.validValues)
-		// 				 {
-		// 					 element.removeClass(property.validValues.join(" "));
-		// 					 element = element.addClass(value);
-		// 				 }
-		// 				 else if (property.htmlAttr == "style")
-		// 				 {
-		// 					 element = edit.StyleManager.setStyle(element, property.key, value);
-		// 				 }
-		// 				 else if (property.htmlAttr == "innerHTML")
-		// 				 {
-		// 					 element = edit.ContentManager.setHtml(element, value);
-		// 				 }
-		// 				 else
-		// 				 {
-		// 					 //if value is empty then remove attribute useful for attributes without values like disabled
-		// 					 if (value)
-		// 					 {
-		// 						 element = element.attr(property.htmlAttr, value);
-		// 					 } else
-		// 					 {
-		// 						 element = element.removeAttr(property.htmlAttr);
-		// 					 }
-		// 				 }
+						 if (property.htmlAttr == "class" && property.validValues)
+						 {
+							 element.removeClass(property.validValues.join(" "));
+							 element = element.addClass(value);
+						 }
+						 else if (property.htmlAttr == "style")
+						 {
+							 element = edit.StyleManager.setStyle(element, property.key, value);
+						 }
+						 else if (property.htmlAttr == "innerHTML")
+						 {
+							 element = edit.ContentManager.setHtml(element, value);
+						 }
+						 else
+						 {
+							 //if value is empty then remove attribute useful for attributes without values like disabled
+							 if (value)
+							 {
+								 element = element.attr(property.htmlAttr, value);
+							 } else
+							 {
+								 element = element.removeAttr(property.htmlAttr);
+							 }
+						 }
 
-		// 				 edit.Undo.addMutation({type: 'attributes',
-		// 										 target: element.get(0),
-		// 										 attributeName: property.htmlAttr,
-		// 										 oldValue: oldValue,
-		// 										 newValue: element.attr(property.htmlAttr)});
-		// 			 }
+						 edit.Undo.addMutation({type: 'attributes',
+												 target: element.get(0),
+												 attributeName: property.htmlAttr,
+												 oldValue: oldValue,
+												 newValue: element.attr(property.htmlAttr)});
+					 }
 
-		// 			 if (component.onChange)
-		// 			 {
-		// 				 element = component.onChange(element, property, value, input);
-		// 			 }
+					 if (component.onChange)
+					 {
+						 element = component.onChange(element, property, value, input);
+					 }
 
-		// 			 if (!property.child && !property.parent) edit.Builder.selectNode(element);
+					 if (!property.child && !property.parent) edit.Builder.selectNode(element);
 
-		// 			 return element;
-		// 	 });
-		//  };
+					 return element;
+			 });
+		 };
 
-		//  let nodeElement = edit.Builder.selectedEl;
+		 let nodeElement = edit.Builder.selectedEl;
 
-		//  for (let i in component.properties)
-		//  {
-		// 	 let property = component.properties[i];
-		// 	 let element = nodeElement;
+		 for (let i in component.properties)
+		 {
+			 let property = component.properties[i];
+			 let element = nodeElement;
 
-		// 	 if (property.beforeInit) property.beforeInit(element.get(0))
+			 if (property.beforeInit) property.beforeInit(element.get(0))
 
-		// 	 if (property.child) element = element.find(property.child);
+			 if (property.child) element = element.find(property.child);
 
-		// 	 if (property.data) {
-		// 		 property.data["key"] = property.key;
-		// 	 } else
-		// 	 {
-		// 		 property.data = {"key" : property.key};
-		// 	 }
+			 if (property.data) {
+				 property.data["key"] = property.key;
+			 } else
+			 {
+				 property.data = {"key" : property.key};
+			 }
 
-		// 	 if (typeof property.group  === 'undefined') property.group = null;
+			 if (typeof property.group  === 'undefined') property.group = null;
 
-		// 	 property.input = property.inputtype.init(property.data);
+			 property.input = property.inputtype.init(property.data);
 
-		// 	 if (property.init)
-		// 	 {
-		// 		 property.inputtype.setValue(property.init(element.get(0)));
-		// 	 } else if (property.htmlAttr)
-		// 	 {
-		// 		 if (property.htmlAttr == "style")
-		// 		 {
-		// 			 //value = element.css(property.key);//jquery css returns computed style
-		// 			 let value = edit.StyleManager.getStyle(element, property.key);//getStyle returns declared style
-		// 		 } else
-		// 		 if (property.htmlAttr == "innerHTML")
-		// 		 {
-		// 			 let value = edit.ContentManager.getHtml(element);
-		// 		 } else
-		// 		 {
-		// 			 let value = element.attr(property.htmlAttr);
-		// 		 }
+			 if (property.init)
+			 {
+				 property.inputtype.setValue(property.init(element.get(0)));
+			 } else if (property.htmlAttr)
+			 {
+				 if (property.htmlAttr == "style")
+				 {
+					 //value = element.css(property.key);//jquery css returns computed style
+					 let value = edit.StyleManager.getStyle(element, property.key);//getStyle returns declared style
+				 } else
+				 if (property.htmlAttr == "innerHTML")
+				 {
+					 let value = edit.ContentManager.getHtml(element);
+				 } else
+				 {
+					 let value = element.attr(property.htmlAttr);
+				 }
 
-		// 		 //if attribute is class check if one of valid values is included as class to set the select
-		// 		 if (value && property.htmlAttr == "class" && property.validValues)
-		// 		 {
-		// 			 value = value.split(" ").filter(function(el) {
-		// 				 return property.validValues.indexOf(el) != -1
-		// 			 });
-		// 		 }
+				 //if attribute is class check if one of valid values is included as class to set the select
+				 if (value && property.htmlAttr == "class" && property.validValues)
+				 {
+					 value = value.split(" ").filter(function(el) {
+						 return property.validValues.indexOf(el) != -1
+					 });
+				 }
 
-		// 		 property.inputtype.setValue(value);
-		// 	 }
+				 property.inputtype.setValue(value);
+			 }
 
-		// 	 fn(component, property);
+			 fn(component, property);
 
-		// 	 let propertySection = defaultSection;
-		// 	 if (property.section)
-		// 	 {
-		// 		 propertySection = property.section;
-		// 	 }
+			 let propertySection = defaultSection;
+			 if (property.section)
+			 {
+				 propertySection = property.section;
+			 }
 
 
-		// 	 if (property.inputtype == SectionInput)
-		// 	 {
-		// 		 section = componentsPanelSections[propertySection].find('.section[data-section="' + property.key + '"]');
+			 if (property.inputtype == SectionInput)
+			 {
+				 section = componentsPanelSections[propertySection].find('.section[data-section="' + property.key + '"]');
 
-		// 		 if (edit.preservePropertySections && section.length)
-		// 		 {
-		// 			 section.html("");
-		// 		 } else
-		// 		 {
-		// 			 componentsPanelSections[propertySection].append(property.input);
-		// 			 section = componentsPanelSections[propertySection].find('.section[data-section="' + property.key + '"]');
-		// 		 }
-		// 	 }
-		// 	 else
-		// 	 {
-		// 		 let row = $(tmpl('vvveb-property', property));
-		// 		 row.find('.input').append(property.input);
-		// 		 section.append(row);
-		// 	 }
+				 if (edit.preservePropertySections && section.length)
+				 {
+					 section.html("");
+				 } else
+				 {
+					 componentsPanelSections[propertySection].append(property.input);
+					 section = componentsPanelSections[propertySection].find('.section[data-section="' + property.key + '"]');
+				 }
+			 }
+			 else
+			 {
+				 let row = $(tmpl('vvveb-property', property));
+				 row.find('.input').append(property.input);
+				 section.append(row);
+			 }
 
-		// 	 if (property.inputtype.afterInit)
-		// 	 {
-		// 		 property.inputtype.afterInit(property.input);
-		// 	 }
+			 if (property.inputtype.afterInit)
+			 {
+				 property.inputtype.afterInit(property.input);
+			 }
 
-		//  }
+		 }
 
-		//  if (component.init) component.init(edit.Builder.selectedEl.get(0));
+		 if (component.init) component.init(edit.Builder.selectedEl.get(0));
 	 }
  };
 
@@ -1139,7 +1170,35 @@ function isElement(obj){
 
  };
 
+ Vvveb.StyleManager = {
+	setStyle: function(element, styleProp, value) {
+		return element.css(styleProp, value);
+	},
 
+
+	_getCssStyle: function(element, styleProp){
+		var value = "";
+		var el = element.get(0);
+
+		if (el.style && el.style.length > 0 && el.style[styleProp])//check inline
+			var value = el.style[styleProp];
+		else
+		if (el.currentStyle)	//check defined css
+			var value = el.currentStyle[styleProp];
+		else if (window.getComputedStyle)
+		{
+			var value = document.defaultView.getDefaultComputedStyle ?
+							document.defaultView.getDefaultComputedStyle(el,null).getPropertyValue(styleProp) :
+							window.getComputedStyle(el,null).getPropertyValue(styleProp);
+		}
+
+		return value;
+	},
+
+	getStyle: function(element,styleProp){
+		return this._getCssStyle(element, styleProp);
+	}
+}
 
 edit.Undo = {
 

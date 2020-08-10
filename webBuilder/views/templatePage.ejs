@@ -46,7 +46,7 @@
             <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab"
                 aria-controls="nav-profile" aria-selected="false">電商</a>
             <a class="nav-item nav-link" id="nav-contact-tabF" data-toggle="tab" href="#contact" role="tab"
-                aria-controls="nav-contact" aria-selected="false">個人</a>
+                aria-controls="nav-contact" aria-selected="false">主題</a>
             <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#navAbout" role="tab"
                 aria-controls="nav-about" aria-selected="false">部落格</a>
         </div>
@@ -60,7 +60,7 @@
                                 <a class="portfolio-box"
                                     href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
                                     <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.png" alt="" />
-                                    <div class="portfolio-box-caption">
+                                    <div class="portfolio-box-caption <%= template[i].type == 1? 'box-bootstrap':'box-eeweb' %>">
                                         <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %>
                                         </div>
                                     </div>
@@ -76,12 +76,12 @@
                 <div id="portfolio">
                     <div class="container-fluid p-4">
                         <div class="row no-gutters">
-                            <% for( i = 8 ; i < 16 ; i++) { %>
+                            <% for( i = 4 ; i < 12 ; i++) { %>
                             <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
                                 <a class="portfolio-box"
                                     href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
                                     <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.png" alt="" />
-                                    <div class="portfolio-box-caption">
+                                    <div class="portfolio-box-caption <%= template[i].type == 1? 'box-bootstrap':'box-eeweb' %>">
                                         <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %>
                                         </div>
                                     </div>
@@ -102,7 +102,7 @@
                                 <a class="portfolio-box"
                                     href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
                                     <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.png" alt="" />
-                                    <div class="portfolio-box-caption">
+                                    <div class="portfolio-box-caption <%= template[i].type == 1? 'box-bootstrap':'box-eeweb' %>">
                                         <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %>
                                         </div>
                                     </div>
@@ -123,7 +123,7 @@
                                 <a class="portfolio-box"
                                     href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
                                     <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.png" alt="" />
-                                    <div class="portfolio-box-caption">
+                                    <div class="portfolio-box-caption <%= template[i].type == 1? 'box-bootstrap':'box-eeweb' %>">
                                         <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %>
                                         </div>
                                     </div>
