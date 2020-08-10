@@ -1,0 +1,204 @@
+
+.la, label.header .header-arrow {
+  display: inline-block;
+  font: normal normal normal 16px/1 "LineAwesome";
+  font-size: inherit;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased; }
+
+/* makes the font 33% larger relative to the icon container */
+
+.la-arrow-down:before {
+  content: "\f11f"; }
+
+.la-arrow-up:before {
+  content: "\f122"; }
+
+.la-arrows:before {
+  content: "\f123"; }
+
+.la-plus:before {
+  content: "\f2c2"; }
+
+.la-plus-circle:before {
+  content: "\f2c3"; }
+
+.la-plus-square:before {
+  content: "\f2c4"; }
+
+.la-plus-square-o:before {
+  content: "\f2c5"; }
+
+.la-trash:before {
+  content: "\f34c"; }
+
+.la-trash-o:before {
+  content: "\f34d"; }
+
+
+
+body {
+  font-family: "Legacy", "Noto Sans TC", "Helvetica Neue", "Helvetica", "Nimbus Sans L", "Arial", "Liberation Sans", "Source Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "STHeiti", "SimHei", "WenQuanYi Zen Hei Sharp", "sans-serif", "Apple LiGothic", "微軟正黑體";
+  background: #eee;
+  --builder-filemanager-height: 250px;
+  --builder-header-top-height: 62px;
+  --builder-bottom-panel-height: 1px;
+  --drag-items-tabs-height: 90px;
+  scrollbar-color: rgba(0, 0, 0, 0.1) #fff;
+  scrollbar-width: thin;
+}
+
+  @media (max-width: 950px) {
+    body {
+      --builder-left-panel-width: 25vw; } }
+  @media (min-width: 1200px) {
+    body {
+      --builder-left-panel-width: 20vw; } }
+  @media (min-width: 1600px) {
+    body {
+      --builder-left-panel-width: 15vw; } }
+  @media (min-width: 2000px) {
+    body {
+      --builder-left-panel-width: 12vw; } }
+
+.mobile {
+  margin-left: -100px;
+  left: 50%;
+  width: 414px;
+}
+
+.tablet {
+  margin-left: -260px;
+  left: 50%;
+  width: 850px;
+}
+
+
+.desktop {
+  left: 0%;
+  margin-left: var(--builder-left-panel-width);
+  width: calc( 100vw - (var(--builder-left-panel-width)));
+}
+
+#vvveb-builder #canvas {
+  height: calc( 100vh - (var(--builder-header-top-height) + var(--builder-bottom-panel-height)));
+  top: var(--builder-header-top-height);
+  position: fixed;
+  transition: width 0.35s,  0.35s;
+ }
+#vvveb-builder #canvas #iframe-wrapper, #vvveb-builder #canvas iframe, #vvveb-builder #canvas iframe body {
+    width: 100%;
+    height: 100%;
+    border: none; }
+
+
+#vvveb-builder.preview #canvas {
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px; }
+
+#vvveb-builder #iframe-layer {
+  overflow: hidden;
+  pointer-events: none;
+  white-space: nowrap; }
+
+#vvveb-builder #highlight-box {
+  position: absolute;
+  border: 1px solid #4285f4;
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left: 0px;
+  display: none; }
+
+#vvveb-builder .text-edit#select-box {
+  border-style: dashed;
+  /*border-width:1px;*/
+  background: transparent; }
+
+#vvveb-builder #select-box {
+  position: absolute;
+  border: 1px solid #4285f4;
+  background: rgba(66, 133, 244, 0.1);
+  width: 0px;
+  height: 0px;
+  top: 0px;
+  left: 0px;
+  display: none; }
+
+#vvveb-builder #select-actions, #vvveb-builder #wysiwyg-editor {
+  position: absolute;
+  right: -1px;
+  top: -25px;
+  background: #4285f4;
+  color: #fff;
+  padding: 0px 0px;
+  border-radius: 3px 3px 0px 0px; }
+
+#vvveb-builder #wysiwyg-editor {
+  top: -22px;
+  right: auto;
+  left: -1px;
+  display: none; }
+
+#vvveb-builder #select-actions a, #vvveb-builder #wysiwyg-editor a, #vvveb-builder #section-actions a#add-section-btn {
+  pointer-events: auto;
+  color: #fff;
+  font-size: 16px;
+  padding-right: 2px;
+  padding: 2px 5px; }
+  #vvveb-builder #select-actions a:hover, #vvveb-builder #wysiwyg-editor a:hover, #vvveb-builder #section-actions a#add-section-btn:hover {
+    text-decoration: none;
+    background: #1266f1; }
+
+#vvveb-builder #section-actions {
+  bottom: 0px;
+  position: absolute;
+  border-radius: 3px 3px 0px 0px;
+  bottom: -10px;
+  left: 50%;
+  left: calc(50% - 12px); }
+
+  #vvveb-builder #section-actions a#add-section-btn {
+    position: relative;
+    bottom: 0px;
+    background: #4285f4;
+    color: #fff;
+    font-size: 18x;
+    border-radius: 20px;
+    width: 20px;
+    height: 20px;
+    padding: 4px 5px;
+    cursor: pointer; }
+
+#vvveb-builder #add-section-box {
+  width: 50%;
+  min-height: 300px;
+  max-height: 400px;
+  position: absolute;
+  background: #fff;
+  top: 100px;
+  left: 100px;
+  box-shadow: 0px 0px 2px 0px #ccc;
+  border: 1px solid #ddd;
+  min-width: 500px;
+  max-width: 800px;
+  pointer-events: auto;
+  display: none;
+  background: #fff; }
+
+#vvveb-builder #highlight-name {
+  background: #4285f4;
+  font-size: 12px;
+  color: #fff;
+  position: relative;
+  top: -22px;
+  left: -1px;
+  width: auto;
+  padding: 2px 5px;
+  display: inline-block;
+  border-radius: 3px 3px 0px 0px; }
