@@ -15,43 +15,33 @@ var app = express();
 app.use(session({
   secret: 'i9wcou8ls64klewsfds',
   resave: true,
-  saveUninitialized: true,
-
-  cookie: {
-    path: '/',
-    httpOnly: true,
-    secure: false,
-    maxAge: 10 * 60 * 1000
-  }
+  saveUninitialized: true
 }));
 
-app.use(function (req, res, next) {
-  // console.log(res.locals.uName);
-  if (!res.locals.uName) {
-    res.locals.uName = 'Guest';
-  }
-  // console.log(res.locals.uName);
+// app.use(function (req, res, next) {
+//   // console.log(res.locals.uName);
+//   if (!res.locals.uName) {
+//     res.locals.uName = 'Guest';
+//   }
+//   // console.log(res.locals.uName);
 
-  next();
-});
-
+//   next();
+// });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-
 app.set('view engine', 'ejs');
-
 process.on('uncaughtException', function (err) {
   console.log(err);
 });
 app.use(logger('dev'));
-app.use(express.json({ limit: '10mb' }));
+app.use(express.json({limit: '10mb'}));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // db state
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   req.conn = conn;
   next();
 });
@@ -61,12 +51,12 @@ app.use('/user', userRouter);
 app.use('/edit', editRouter);
 
 // catch 404 and forward to error handler
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function(err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

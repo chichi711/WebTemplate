@@ -1,6 +1,6 @@
-<%- body[0].begin %>
+<%- begin %>
 <%- body[0].body %>
-<%- body[0].end %>
+<%- end %>
 
 <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -21,17 +21,14 @@
                 var ctx = mCanvas.getContext('2d');
                 ctx.drawImage(canvas, 0, 0, 300, 300);
                 let imgUrl = mCanvas.toDataURL("image/jpg");
-                // console.log(document.body);
-                // let pic = { img: '11234' };
                 let pic = { img: imgUrl };
                 // document.body.innerHTML = `<img src=${imgUrl} />`;
-                console.log(imgUrl);
-                // $.ajax({
-                //     type: "post",
-                //     url: "/edit/pic",
-                //     data: JSON.stringify(pic),
-                //     contentType: "application/json; charset=utf-8"
-                // });
+                $.ajax({
+                    type: "post",
+                    url: "/edit/pic",
+                    data: JSON.stringify(pic),
+                    contentType: "application/json; charset=utf-8"
+                });
             });
     }
 </script>

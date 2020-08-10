@@ -23,13 +23,7 @@
 	<link rel="stylesheet"
 		href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 	<script>
-		function changePage(page) {
-			if (page == 'home') {
-				edit.Builder.init(`/templated/<%= template %>/index.html`, function () { });
-			} else {
-				edit.Builder.init(`/templated/<%= template %>/${page}.html`, function () { });
-			}
-		}
+
 	</script>
 </head>
 
@@ -62,7 +56,7 @@
 					<% for(let i = 0; i < rows.length; i++) {%>
 					<li>
 						<a class="las la-file" href="javascript:void(0);"
-							onclick="changePage(`<%= rows[i].tpName %>`)">&ensp;<%= rows[i].tpName %></a>
+							onclick="changePage(`<%= rows[i].tpName %>`, `<%= i %>`)">&ensp;<%= rows[i].tpName %></a>
 					</li>
 					<% } %>
 				</ul>
@@ -221,6 +215,7 @@
 	</div>
 
 
+
 	<div id="under_canvas"></div>
 
 
@@ -229,36 +224,80 @@
 	<script src="/javascripts/js/builder.js"></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
 	<script>
+
 		$(document).ready(function () {
 			edit.Builder.init('/templated/<%= template %>/index.html', function () { });
 		});
 
-		$("#okButton").click(function () {
-			let pBody = [];
-			editcode = DragDropFunctions.CopyDom();
-			pBody.push(editcode);
-			let pName = ['home'];
-			let p = pBody.map((item, index) => {
-				return { body: item, name: pName[index] };
-			})
-			let account = [
-				{ name: $("#name").val() },
-				{ explanation: $("#explanation").val() },
-				p
-			];
+		let CurrentPosition = 0;
+		let pBody = [];
+		let pName = [];
+		<% rows.forEach(row => { %>
+			pBody.push(`<%- row.body %>`);
+			pName.push(`<%- row.tpName %>`);
+		<% }); %>
 
-			$.ajax({
-				type: "post",
-				url: "/edit/demo",
-				data: JSON.stringify(account),
-				contentType: "application/json; charset=utf-8"
-			})
-			// window.location.href = window.location.origin + '/edit/demo';
-		});
+			$("#okButton").click(function () {
+				pBody[CurrentPosition] = CopyDom();
+				let p = pBody.map((item, index) => {
+					return { body: item, name: pName[index] };
+				});
+				let account = [
+					{ name: $("#name").val() },
+					{ explanation: $("#explanation").val() },
+					p,
+				];
+				$.ajax({
+					type: "post",
+					url: "/edit/demo",
+					data: JSON.stringify(account),
+					contentType: "application/json; charset=utf-8",
+					complete() {
+						window.location.href = window.location.origin + '/edit/demo';
+					}
+				});
+			});
+
+
+
+		function CopyDom() {
+			let clientFrameWindow = $('#clientframe').get(0).contentWindow;
+			let editcode = $(clientFrameWindow.document).find('body').prop('outerHTML');
+			// 刪除註解
+			if (editcode) {
+				let comment = editcode.match(/<!--?((.(?!(-->)))*.)-->/g);
+				if (comment) {
+					for (let a = 0; a < comment.length; a++) {
+						editcode = editcode.replace(comment[a], "");
+					}
+				}
+
+				// 刪除script
+				let js = editcode.match(/<script(.|\n)*?<\/script>/g);
+				if (js) {
+					for (let a = 0; a < js.length; a++) {
+						editcode = editcode.replace(js[a], "");
+					}
+				}
+			} else {
+				editcode = '<body></body>';
+			}
+			return editcode;
+		}
+		function changePage(page, index) {
+			if (page == 'home') {
+				pBody[CurrentPosition] = CopyDom();
+				CurrentPosition = index;
+				edit.Builder.init(`/templated/<%= template %>/index.html`, function () { });
+			} else {
+				pBody[CurrentPosition] = CopyDom();
+				CurrentPosition = index;
+				edit.Builder.init(`/templated/<%= template %>/${page}.html`, function () { });
+			}
+		}
 	</script>
 </body>
 

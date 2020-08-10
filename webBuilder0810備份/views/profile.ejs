@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/icon.png">
+
+    <title>會員中心</title>
+    <link rel="stylesheet" href="/stylesheets/Xu.css/bootstrap.min.css">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="/stylesheets/Xu.css/profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+</head>
+
+
+<body>
+
+
+
+    <div class="container">
+
+        <!-- 導覽列 -->
+        <%- include('navbar') %>
+
+        <!-- 導覽列 END -->
+
+
+        <!-- 個人資料 -->
+        <div class="row">
+            <div class=" col-lg-3 ">
+                <div class="card-radius card left-profile-card" id="home">
+                    <div class="card-body">
+                        <div class="personal-info ">
+                            <ul class=" personal-list">
+                                <li class="user_img">
+                                    <img item-wrap
+                                        src="https://crawl.nosdn.127.net/nbotreplaceimg/807fb39cdf0a2cc26bd7c0ec0855255d/08a456acf9a8fb29d8981e2fdd8ef63f.png"
+                                        al t="" class="user-profile">
+                                    <h3>John</h3>
+                                </li>
+                                <div class=" pro nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                                    aria-orientation="vertical">
+
+                                    <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill"
+                                        href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
+                                        aria-selected="false">
+                                        <i class="las la-user-circle"></i><span>編輯會員</span>
+                                    </a>
+                                    <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
+                                        role="tab" aria-controls="v-pills-home" aria-selected="true" onclick="move(0)"
+                                        style="width: 100%;">
+                                        <i class="las la-play-circle"></i><span>樣板庫</span>
+                                    </a>
+                                    <a class="nav-link" data-toggle="pill" href="#v-pills-home" href="#" role="tab"
+                                        onclick="move(1)" aria-controls="v-pills-home" aria-selected="true"
+                                        style="width: 100%;">
+                                        <i class="las la-edit"></i><span>作品1</span>
+                                    </a>
+                                    <a class="nav-link" data-toggle="pill" href="#v-pills-ho me" href="#" role="tab"
+                                        onclick="move(2)" aria-controls="v-pills-home" aria-selected="true"
+                                        style="width: 100%;">
+                                        <i class="las la-edit"></i><span>作品2</span>
+                                    </a>
+                                </div>
+                            </ul>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- 個人資料 END-->
+
+
+
+
+
+            <div class=" col-lg-9">
+
+                <!-- 樣板庫 -->
+                <div class="tab-content" id="v-pills-tabContent">
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                        aria-labelledby="v-pills-home-tab">
+                        <div class="card-body2 card rigt-profile-card" id="0">
+                            <div class="container">
+                                <div class="lg">
+                                    <svg width="2em" height="1.6em" viewBox="0 0 16 16"
+                                        class="bi bi-credit-card-2-front" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z" />
+                                        <path
+                                            d="M2 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z" />
+                                        <path fill-rule="evenodd"
+                                            d="M2 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z" />
+                                    </svg>
+                                    <span class="sp">樣板庫</span>
+                                </div>
+
+                                <div class=" row text-center">
+
+                                    <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/3.jpg">
+                                        </a>
+                                    </div>
+
+                                    <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/12.jpg">
+                                        </a>
+                                    </div>
+
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/8.jpg">
+                                        </a>
+                                    </div>
+
+
+
+                                    <div class="item design col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/10.jpg">
+                                        </a>
+                                    </div>
+
+                                    <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/9.jpg">
+                                        </a>
+                                    </div>
+
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/11.jpg">
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card-body2 card rigt-profile-card" id="1">
+                            <div class="container">
+                                <div class="lg">
+                                    <span class="sp">Stylish Portfolio</span>
+                                </div>
+                                <div class="row ">
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
+                                        </a>
+                                    </div>
+
+
+                                    <div class="page_name">
+                                        <ul>
+                                            <li>home</li>
+                                            <li>about</li>
+                                            <li>kind</li>
+                                            <li>login</li>
+                                            <li>product</li>
+                                            <li>car </li>
+                                        </ul>
+
+                                        <div class="cus">
+                                            <div>
+
+                                                <h4>內容</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="card-body2 card rigt-profile-card" id="2">
+                            <div class="container">
+                                <div class="lg">
+                                    <span class="sp">Stylish Portfolio</span>
+                                </div>
+                                <div class="row ">
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <a href="/edit" class="item-wrap fancybox">
+                                            <div class="work-info">
+                                                <h3>編輯</h3>
+                                            </div>
+                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
+                                        </a>
+                                    </div>
+
+
+                                    <div class="page_name">
+                                        <ul>
+                                            <li>home</li>
+                                            <li>about</li>
+                                            <li>kind</li>
+                                            <li>login</li>
+                                            <li>product</li>
+                                            <li>car </li>
+                                        </ul>
+
+                                        <div class="cus">
+                                            <div>
+
+                                                <h4>內容</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                        aria-labelledby="v-pills-profile-tab">
+                        <div class="card-body2 card rigt-profile-card tab-content">
+                            <div class="container">
+                                <div class="lg">
+                                    <svg width="2em" height="1.6em" viewBox="0 0 16 16"
+                                        class="bi bi-credit-card-2-front" fill="currentColor"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M14 3H2a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2z" />
+                                        <path
+                                            d="M2 5.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1z" />
+                                        <path fill-rule="evenodd"
+                                            d="M2 8.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5z" />
+                                    </svg>
+
+                                    <span class="sp">編輯會員</span>
+                                </div>
+
+                                <div class=" row text-center cot">
+                                    <div class="cot1">
+                                        <form action="/action_page.php">
+                                            <label>大頭貼:</label>
+                                            <label class="btn btn-info">
+                                                <input id="upload_img" style="display:none;" type="file">
+                                                <i class="fa fa-photo"></i> 上傳圖片
+                                            </label><br><br>
+                                            <label>姓名:</label>
+                                            <input type="text" id="uName" name="uName" placeholder="John"><br><br>
+                                            <label>信箱:</label>
+                                            <input type="text" id="eMail" name="eMail"
+                                                placeholder="aaaa@gmail.com"><br><br>
+                                            <label>密碼:</label>
+                                            <input type="text" id="uPwd" name="uPwd"><br><br>
+
+                                            <div>
+                                                <a href="" class="btn effect01"
+                                                    target="_blank"><span></span>儲存</span></a>
+                                            </div><br><br>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/javascripts/Xu.js/jquery-3.3.1.min.js"></script>
+    <script src="/javascripts/Xu.js/popper.min.js"></script>
+    <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
+    <script>
+        $("#home").mCustomScrollbar({
+            theme: "minimal"
+        });
+        function move(position) {
+            // event.preventDefault();
+            // $(this).tab('show');
+            $('html,body').animate({ scrollTop: $(`#${position}`).offset().top }, 500);
+        }
+    </script>
+</body>
+
+</html>

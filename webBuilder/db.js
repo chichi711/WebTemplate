@@ -7,10 +7,11 @@ var conn = mysql.createConnection({
  database: 'eeweb'
 });
 
-conn.connect(function (err,res,fields) {
+conn.connect(function (err,rows) {
  if (err) {
   console.log(JSON.stringify(err));
+  return;
  }
-})
+});
 // 導出模組
 module.exports = conn

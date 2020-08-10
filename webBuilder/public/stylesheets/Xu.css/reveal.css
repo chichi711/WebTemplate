@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+body{
+    margin-top: 8rem; 
+    font-family: "Legacy", "Noto Sans TC", "Helvetica Neue", "Helvetica", "Nimbus Sans L", "Arial", "Liberation Sans", "Source Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "STHeiti", "SimHei", "WenQuanYi Zen Hei Sharp", "sans-serif", "Apple LiGothic", "微軟正黑體"
+
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color:#17a2b8;
+    ;
+  }
+.nav-link{
+    color: #0089a7;
+
+}
+.nav-link:hover {
+    color: #6fc2d6;
+}
+.nav-link {
+    display: block;
+    padding: 1rem 3rem;
+}
+
+.btn_3 {
+   margin: 0 6px;
+
+}
+.btn_2{
+    display: flex;
+    justify-content: center
+}
+.bg{
+}
+.txt{
+    font-size: 18px;
+}
+.btn{
+    background: #fafafa;
+}
+pre{
+    width: 100%; 
+    margin: 35px 0px 0 0;
+}
+.btn_4{
+    margin: 0 20px;
+}
+.btn_5{
+    width: 10rem; margin: auto;
+}

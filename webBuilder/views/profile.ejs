@@ -12,6 +12,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet"
         href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Our Custom CSS -->
+<!-- <link rel="stylesheet" href="style2.css"> -->
+<!-- Scrollbar Custom CSS -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css"> -->
+    <script>
+        $(function(){
+            $("#v-pills-tab").mCustomScrollbar({
+                theme: "minimal"
+            });
+        });
+    </script>
 </head>
 
 
@@ -30,44 +44,46 @@
         <!-- 個人資料 -->
         <div class="row">
             <div class=" col-lg-3 ">
-                <div class="card-radius card left-profile-card">
+                <div class="card-radius card left-profile-card overflow-auto" id="home">
                     <div class="card-body">
-                        <div class="personal-info ">
+                        <div class="personal-info">
                             <ul class=" personal-list">
                                 <li class="user_img">
                                     <img item-wrap
                                         src="https://crawl.nosdn.127.net/nbotreplaceimg/807fb39cdf0a2cc26bd7c0ec0855255d/08a456acf9a8fb29d8981e2fdd8ef63f.png"
                                         al t="" class="user-profile">
-                                    <h3>John</h3>
+                                    <h3><%= member[0].uName %></h3>
                                 </li>
-                                <div class=" pro nav flex-column nav-pills" id="v-pills-tab" role="tablist"
-                                    aria-orientation="vertical">
+                                <div class=" pro nav flex-column nav-pills " id="v-pills-tab" role="tablist"
+                                    aria-orientation="vertical"  >
 
                                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill"
                                         href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
                                         aria-selected="false">
-                                        <i class="las la-user-circle"></i><span>編輯會員</span>
+                                        <i class="las la-user-circle" style="font-size: larger;"></i><span>編輯會員</span>
                                     </a>
                                     <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
                                         role="tab" aria-controls="v-pills-home" aria-selected="true" onclick="move(0)"
                                         style="width: 100%;">
-                                        <i class="las la-play-circle"></i><span>樣板庫</span>
+                                        <i class="las la-play-circle" style="font-size: large;"></i><span>樣板庫</span>
                                     </a>
-                                    <a class="nav-link" data-toggle="pill" href="#v-pills-home" href="#" role="tab"
-                                        onclick="move(1)" aria-controls="v-pills-home" aria-selected="true"
-                                        style="width: 100%;">
-                                        <i class="las la-edit"></i><span>作品1</span>
-                                    </a>
-                                    <a class="nav-link" data-toggle="pill" href="#v-pills-home" href="#" role="tab"
-                                        onclick="move(2)" aria-controls="v-pills-home" aria-selected="true"
-                                        style="width: 100%;">
-                                        <i class="las la-edit"></i><span>作品2</span>
-                                    </a>
+                                        <% let data = -1; %>
+                                        <% for(let i = 0; i < db.length; i++) { %>
+                                        <% if(data == db[i].aID) { %>
+                                        <% continue; %>
+                                        <% } else { %>
+                                        <% data = db[i].aID %>
+                                        <% } %>
+                                        <a class="nav-link" data-toggle="pill" href="#v-pills-home" role="tab"
+                                            onclick="move(`<%= (i+1) %>`)" aria-controls="v-pills-home"
+                                            aria-selected="true" style="width: 100%;">
+                                            <i class="las la-edit"
+                                                style="font-size: large;"></i><span><%= db[i].aName %></span>
+                                        </a>
+                                        <% } %>
                                 </div>
                             </ul>
                         </div>
-
-
                     </div>
                 </div>
             </div>
@@ -161,12 +177,19 @@
                                 </div>
                             </div>
                         </div>
-
-
-                        <div class="card-body2 card rigt-profile-card" id="1">
+                        <% let account = -1; %>
+                        <% for(let i = 0; i < db.length; i++) { %>
+                        <% if(account == db[i].aID) { %>
+                        <% continue; %>
+                        <% } else { %>
+                        <% account = db[i].aID %>
+                        <% } %>
+                        <% console.log(account); %>
+                        <div class="card-body2 card rigt-profile-card" id="<%= (i+1) %>">
                             <div class="container">
                                 <div class="lg">
-                                    <span class="sp">Stylish Portfolio</span>
+                                    <i class="las la-file-alt" style="font-size: x-large;"></i>
+                                    <span class="sp"><%= db[i].aName %></span>
                                 </div>
                                 <div class="row ">
                                     <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
@@ -174,69 +197,37 @@
                                             <div class="work-info">
                                                 <h3>編輯</h3>
                                             </div>
-                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
+                                            <img class="img-fluid" src="<%= db[i].pic %>">
                                         </a>
                                     </div>
 
 
-                                    <div class="page_name">
-                                        <ul>
-                                            <li>home</li>
-                                            <li>about</li>
-                                            <li>kind</li>
-                                            <li>login</li>
-                                            <li>product</li>
-                                            <li>car </li>
-                                        </ul>
-
-                                        <div class="cus">
-                                            <div>
-
-                                                <h4>內容</h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="card-body2 card rigt-profile-card" id="2">
-                            <div class="container">
-                                <div class="lg">
-                                    <span class="sp">Stylish Portfolio</span>
-                                </div>
-                                <div class="row ">
                                     <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-                                        <a href="/edit" class="item-wrap fancybox">
-                                            <div class="work-info">
-                                                <h3>編輯</h3>
-                                            </div>
-                                            <img class="img-fluid" src="/images/profile_imgs/5.jpg">
-                                        </a>
-                                    </div>
-
-
-                                    <div class="page_name">
+                                        <!-- <div class="page_name"> -->
                                         <ul>
-                                            <li>home</li>
-                                            <li>about</li>
-                                            <li>kind</li>
-                                            <li>login</li>
-                                            <li>product</li>
-                                            <li>car </li>
+                                            <% for(let j = i; j < db.length; j++) { %>
+                                            <% if(account == db[j].aID) { %>
+                                            <% console.log('page : ',db[j].pName); %>
+                                            <li><%= db[j].pName %></li>
+                                            <% } else { %>
+                                            <% break; %>
+                                            <% } %>
+                                            <% } %>
                                         </ul>
+                                    </div>
+                                    <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
+                                        <!-- <div class="cus"> -->
+                                        <div>
 
-                                        <div class="cus">
-                                            <div>
-
-                                                <h4>內容</h4>
-                                            </div>
+                                            <pre><%= db[i].explanation %></pre>
                                         </div>
+                                        <!-- </div> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <% } %>
+
                     </div>
 
                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
@@ -292,12 +283,27 @@
     <script src="/javascripts/Xu.js/jquery-3.3.1.min.js"></script>
     <script src="/javascripts/Xu.js/popper.min.js"></script>
     <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
+     <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <!-- Popper.JS -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script> -->
+    <!-- Bootstrap JS -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script> -->
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
     <script>
         function move(position) {
             // event.preventDefault();
             // $(this).tab('show');
             $('html,body').animate({ scrollTop: $(`#${position}`).offset().top }, 500);
         }
+
+        $(document).ready(function () {
+
+         $("#home").mCustomScrollbar({
+         theme: "minimal"
+         });
+        });
     </script>
 </body>
 
