@@ -19,38 +19,38 @@ https://github.com/givanz/VvvebJs
 
 // Simple JavaScript Templating
 // John Resig - https://johnresig.com/ - MIT Licensed
-(function(){
-	var cache = {};
+// (function(){
+// 	var cache = {};
 
-	this.tmpl = function tmpl(str, data){
-	  // Figure out if we're getting a template, or if we need to
-	  // load the template - and be sure to cache the result.
-	  var fn = /^[-a-zA-Z0-9]+$/.test(str) ?
-		cache[str] = cache[str] ||
-		  tmpl(document.getElementById(str).innerHTML) :
+// 	this.tmpl = function tmpl(str, data){
+// 	  // Figure out if we're getting a template, or if we need to
+// 	  // load the template - and be sure to cache the result.
+// 	  var fn = /^[-a-zA-Z0-9]+$/.test(str) ?
+// 		cache[str] = cache[str] ||
+// 		  tmpl(document.getElementById(str).innerHTML) :
 
-		// Generate a reusable function that will serve as a template
-		// generator (and which will be cached).
-		new Function("obj",
-		  "var p=[],print=function(){p.push.apply(p,arguments);};" +
+// 		// Generate a reusable function that will serve as a template
+// 		// generator (and which will be cached).
+// 		new Function("obj",
+// 		  "var p=[],print=function(){p.push.apply(p,arguments);};" +
 
-		  // Introduce the data as local variables using with(){}
-		  "with(obj){p.push('" +
+// 		  // Introduce the data as local variables using with(){}
+// 		  "with(obj){p.push('" +
 
-		  // Convert the template into pure JavaScript
-		  str
-			.replace(/[\r\t\n]/g, " ")
-			.split("{%").join("\t")
-			.replace(/((^|%})[^\t]*)'/g, "$1\r")
-			.replace(/\t=(.*?)%}/g, "',$1,'")
-			.split("\t").join("');")
-			.split("%}").join("p.push('")
-			.split("\r").join("\\'")
-		+ "');}return p.join('');");
-	  // Provide some basic currying to the user
-	  return data ? fn( data ) : fn;
-	};
-  })();
+// 		  // Convert the template into pure JavaScript
+// 		  str
+// 			.replace(/[\r\t\n]/g, " ")
+// 			.split("{%").join("\t")
+// 			.replace(/((^|%})[^\t]*)'/g, "$1\r")
+// 			.replace(/\t=(.*?)%}/g, "',$1,'")
+// 			.split("\t").join("');")
+// 			.split("%}").join("p.push('")
+// 			.split("\r").join("\\'")
+// 		+ "');}return p.join('');");
+// 	  // Provide some basic currying to the user
+// 	  return data ? fn( data ) : fn;
+// 	};
+//   })();
 
 // 拖曳
 function isElement(obj){
@@ -1170,35 +1170,35 @@ function isElement(obj){
 
  };
 
- Vvveb.StyleManager = {
-	setStyle: function(element, styleProp, value) {
-		return element.css(styleProp, value);
-	},
+//  Vvveb.StyleManager = {
+// 	setStyle: function(element, styleProp, value) {
+// 		return element.css(styleProp, value);
+// 	},
 
 
-	_getCssStyle: function(element, styleProp){
-		var value = "";
-		var el = element.get(0);
+// 	_getCssStyle: function(element, styleProp){
+// 		var value = "";
+// 		var el = element.get(0);
 
-		if (el.style && el.style.length > 0 && el.style[styleProp])//check inline
-			var value = el.style[styleProp];
-		else
-		if (el.currentStyle)	//check defined css
-			var value = el.currentStyle[styleProp];
-		else if (window.getComputedStyle)
-		{
-			var value = document.defaultView.getDefaultComputedStyle ?
-							document.defaultView.getDefaultComputedStyle(el,null).getPropertyValue(styleProp) :
-							window.getComputedStyle(el,null).getPropertyValue(styleProp);
-		}
+// 		if (el.style && el.style.length > 0 && el.style[styleProp])//check inline
+// 			var value = el.style[styleProp];
+// 		else
+// 		if (el.currentStyle)	//check defined css
+// 			var value = el.currentStyle[styleProp];
+// 		else if (window.getComputedStyle)
+// 		{
+// 			var value = document.defaultView.getDefaultComputedStyle ?
+// 							document.defaultView.getDefaultComputedStyle(el,null).getPropertyValue(styleProp) :
+// 							window.getComputedStyle(el,null).getPropertyValue(styleProp);
+// 		}
 
-		return value;
-	},
+// 		return value;
+// 	},
 
-	getStyle: function(element,styleProp){
-		return this._getCssStyle(element, styleProp);
-	}
-}
+// 	getStyle: function(element,styleProp){
+// 		return this._getCssStyle(element, styleProp);
+// 	}
+// }
 
 edit.Undo = {
 

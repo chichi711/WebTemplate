@@ -6,9 +6,9 @@ var logger = require('morgan');
 var session = require("express-session");
 var conn = require('./db');
 
-var indexRouter = require('./routes/index');
-var userRouter = require('./routes/user');
-var editRouter = require('./routes/edit');
+var indexRouter = require('./routers/index');
+var userRouter = require('./routers/user');
+var editRouter = require('./routers/edit');
 
 var app = express();
 

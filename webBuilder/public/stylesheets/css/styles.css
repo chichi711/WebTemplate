@@ -10074,7 +10074,8 @@ header.masthead {
   background: rgba(0, 170, 144, 0.95);
 }
 .box-bootstrap{
-  background: rgba(121, 82, 179, 0.95);
+  background: rgba(130, 100, 175, 0.95);
+  /* background: rgba(121, 82, 179, 0.95); */
 }
 
 #portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-sm .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-md .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-lg .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-xl .portfolio-box .portfolio-box-caption .project-category {
