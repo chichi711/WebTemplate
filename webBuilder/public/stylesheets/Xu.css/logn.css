@@ -68,7 +68,7 @@ button{
     text-align: center;
     font-size: 30px;
     font-weight: 800;
-    margin: 14px 0 -22px 0;
+    margin: 15px 0 -20px 0;
 }
 
 .logo{
@@ -204,8 +204,10 @@ button{
 .tip,.tip2,.tip3{
     color: red;
     position: fixed;
-    width: 15rem;
-    margin-left: 20rem;
+    width: 10rem;
+    margin-left:10rem;
+    margin-top: -1rem;
+    text-align: right;
     /* margin-top: 1rem; */
 }
 

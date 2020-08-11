@@ -6,9 +6,9 @@ var logger = require('morgan');
 var session = require("express-session");
 var conn = require('./db');
 
-var indexRouter = require('./routes/index');
-var userRouter = require('./routes/user');
-var editRouter = require('./routes/edit');
+var indexRouter = require('./routers/index');
+var userRouter = require('./routers/user');
+var editRouter = require('./routers/edit');
 
 var app = express();
 
@@ -18,15 +18,15 @@ app.use(session({
   saveUninitialized: true
 }));
 
-// app.use(function (req, res, next) {
-//   // console.log(res.locals.uName);
-//   if (!res.locals.uName) {
-//     res.locals.uName = 'Guest';
-//   }
-//   // console.log(res.locals.uName);
+app.use(function (req, res, next) {
+  // console.log(res.locals.uName);
+  if (!res.locals.uName) {
+    res.locals.uName = 'Guest';
+  }
+  // console.log(res.locals.uName);
 
-//   next();
-// });
+  next();
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
