@@ -21,7 +21,7 @@ $(function() {
     //      $(".title").removeClass("active"); //刪掉
     //   }
     //  });
-    //  var x = 0
+     var x = 0
 
     setInterval(function() {
         if (x == 3) {

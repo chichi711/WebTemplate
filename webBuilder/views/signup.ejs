@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-	<link rel="icon" href="images/icon.png">
+	<link rel="icon" href="/images/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>註冊</title>
     <link rel="stylesheet" href="/stylesheets/Xu.css/bootstrap.min.css">
@@ -31,7 +31,10 @@
                     <a class="nav-link" href="/officalTemplat">樣板一覽</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/user/profile">會員中心</a>
+                    <a class="nav-link" href="/reveal">EE樣式</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user">會員中心</a>
                 </li>
 
             </ul>
@@ -45,28 +48,31 @@
         </div>
     </nav>
 
-    <form action="" accept-charset="utf-8" method="POST" class="login-form  login-form1">
+
+    <form action="" accept-charset="utf-8" method="POST" class="login-form  " id="login-form1">
         <h1 class="signup" onclick="autoinput('sign up')">會員註冊</h1>
+
         <div class="txtb">
-            <input type="text">
+            <input id="uNameTextBox" type="text">
             <span data-placeholder="姓名"></span>
         </div>
 
         <div class="txtb">
-            <input type="email">
+            <input id="EmailTextBox" type="email">
             <span data-placeholder="電子郵件"></span>
         </div>
+        <span class="tip">密碼不一致</span>
 
         <div class="txtb">
-            <input type="password">
-            <span data-placeholder="密碼"></span>
+            <input id="uPwdTextBox" onchange="checkpas()" type="password"  required />
+            <span data-placeholder="密碼">
         </div>
         <div class="txtb">
-            <input type="password">
+            <input id="repassword" onchange="checkpas()" type="password" required />
             <span data-placeholder="確認密碼"></span>
         </div>
         <div class="logbtn2">
-            <input type="button" class="logbtn btn" onclick="location.href='/user/login';" value="確認送出">
+            <input id="okButton" type="button" class="logbtn btn" value="確認送出">
         </div>
 
     </form>

@@ -540,8 +540,7 @@ pre code {
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
+
 }
 
 .no-gutters {
@@ -3861,7 +3860,7 @@ input[type=button].btn-block {
 }
 
 .nav-tabs {
-  border-bottom: 1px solid #dee2e6;
+  border-bottom: 1px solid #9e9d9d;
 }
 .nav-tabs .nav-item {
   margin-bottom: -1px;
@@ -3883,7 +3882,7 @@ input[type=button].btn-block {
 .nav-tabs .nav-item.show .nav-link {
   color: #495057;
   background-color: #fff;
-  border-color: #dee2e6 #dee2e6 #fff;
+  border-color: #9e9d9d #9e9d9d #fff;
 }
 .nav-tabs .dropdown-menu {
   margin-top: -1px;
@@ -6095,7 +6094,7 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #f8f9fa !important;
+  background-color: #d6d6d6 ;
 }
 
 a.bg-light:hover, a.bg-light:focus,
@@ -10055,7 +10054,7 @@ header.masthead {
   position: relative;
   display: block;
 }
-#portfolio .container-fluid .portfolio-box .portfolio-box-caption, #portfolio .container-sm .portfolio-box .portfolio-box-caption, #portfolio .container-md .portfolio-box .portfolio-box-caption, #portfolio .container-lg .portfolio-box .portfolio-box-caption, #portfolio .container-xl .portfolio-box .portfolio-box-caption {
+#portfolio .container-fluid .portfolio-box .portfolio-box-caption {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10067,10 +10066,18 @@ header.masthead {
   text-align: center;
   opacity: 0  ;
   color: #fff;
-  background: rgba(0, 170, 144, 0.95);
   transition: opacity 0.75s ease;
   text-align: center;
 }
+
+.box-eeweb{
+  background: rgba(0, 170, 144, 0.95);
+}
+.box-bootstrap{
+  background: rgba(130, 100, 175, 0.95);
+  /* background: rgba(121, 82, 179, 0.95); */
+}
+
 #portfolio .container-fluid .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-sm .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-md .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-lg .portfolio-box .portfolio-box-caption .project-category, #portfolio .container-xl .portfolio-box .portfolio-box-caption .project-category {
   text-transform: uppercase;
 }

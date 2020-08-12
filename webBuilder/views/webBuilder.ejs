@@ -9,6 +9,7 @@
 
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -21,7 +22,9 @@
 	<link href="/stylesheets/css/editor.css" rel="stylesheet">
 	<link rel="stylesheet"
 		href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
-	<!-- <link href="/stylesheets/css/line-awesome.css" rel="stylesheet"> -->
+	<script>
+
+	</script>
 </head>
 
 
@@ -32,91 +35,41 @@
 		<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
 			<a class="nav-item nav-link col-lg-4 active" id="nav-home-tab" data-toggle="tab" href="#home" role="tab"
 				aria-controls="nav-home" aria-selected="true">插入</a>
-			<a style="color: black" class="nav-item nav-link col-lg-4" id="nav-profile-tab" data-toggle="tab"
-				href="#profile" role="tab" aria-controls="nav-profile" aria-selected="false">頁面</a>
-			<a class="nav-item nav-link col-lg-4" id="nav-contact-tabF" data-toggle="tab" href="#conte" role="tab"
-				aria-controls="nav-contact" aria-selected="false">編輯</a>
+			<a class="nav-item nav-link col-lg-4" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab"
+				aria-controls="nav-profile" aria-selected="false">頁面</a>
+			<a class="nav-item nav-link col-lg-4" id="nav-contact-tab" data-toggle="tab" href="#conte" role="tab"
+				aria-controls="nav-contact" aria-selected="false">樣式</a>
 		</div>
 		<div class="tab-content" id="myTabContent">
 			<!-- 側邊攔tabHome -->
 			<div class="tab-pane fade show active" id="home" style="height: 90vh;" role="tabpanel"
 				aria-labelledby="home-tab">
-				<ul class="row list-unstyled components" id="dragitemslistcontainer">
-					<li class="col-lg-6" draggable="true"
-						data-insert-html='<nav class="navbar navbar-expand-sm bg-dark navbar-dark"> <a class=navbar-brand href=#>Logo</a><ul class="navbar-nav mr-auto"><li class=nav-item><a class=nav-link href=#>Link 1</a><li class=nav-item><a class=nav-link href=#>Link 2</a><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=navbardrop data-toggle=dropdown> Dropdown link </a><div class=dropdown-menu><a class=dropdown-item href=#>Link 1</a> <a class=dropdown-item href=#>Link 2</a> <a class=dropdown-item href=#>Link 3</a></div></ul><form class=form-inline action=/action_page.php><input class="form-control mr-sm-2" type=text placeholder=Search> <button class="btn btn-success" type=submit>Search</button></form></nav>'>
-						<i class="las la-bars"></i>
-						<p>navbar</p>
-					</li>
-					<li class="col-lg-6" draggable="true"
-						data-insert-html='<div class="well login-box"> <form action=""> <legend>Login</legend> <div class="form-group"> <label for="username-email">E-mail or Username</label> <input value="" id="username-email" placeholder="E-mail or Username" type="text" class="form-control"/> </div><div class="form-group"> <label for="password">Password</label> <input id="password" value="" placeholder="Password" type="text" class="form-control"/> </div><div class="form-group text-center"> <button class="btn btn-danger btn-cancel-action">Cancel</button> <input type="submit" class="btn btn-success btn-login-submit" value="Login"/> </div></form> </div>'>
-						<i class="las la-address-card"></i>
-						<p>Login Form</p>
-					</li>
-					<li class="col-lg-6" draggable="true"
-						data-insert-html='<button type="button" class="btn btn-info">Info</button>'>
-						<i class="las la-hockey-puck"></i>
-						<p>button</p>
-					</li>
-					<li class="col-lg-6" draggable="true"
-						data-insert-html='<div class=form-check-inline><label class=form-check-label> <input type=checkbox class=form-check-input>Option 1 </label></div><div class=form-check-inline><label class=form-check-label> <input type=checkbox class=form-check-input>Option 2 </label></div><div class=form-check-inline><label class=form-check-label> <input type=checkbox class=form-check-input>Option 3 </label></div>'>
-						<i class="las la-check-circle"></i>
-						<p>CheckBox</p>
-					</li>
-					<li class="col-lg-6" draggable="true" data-insert-html='<hr/>'>
-						<i class="las la-slash"></i>
-						<p>hr</p>
-					</li>
-					<li class="col-lg-6" draggable="true"
-						data-insert-html='<div class=list-group><a href=# class="list-group-item list-group-item-action">First item</a> <a href=# class="list-group-item list-group-item-action">Second item</a> <a href=# class="list-group-item list-group-item-action">Third item</a></div>'>
-						<i class="las la-list"></i>
-						<p>List Group</p>
-					</li>
-					<li class="col-lg-6" draggable="true"
-						data-insert-html='<div class=container><table class="table table-hover"><thead><tr><th>Firstname<th>Lastname<th>Email<tbody><tr><td>John<td>Doe<td>john@example.com<tr><td>Mary<td>Moe<td>mary@example.com<tr><td>July<td>Dooley<td>july@example.com</table></div>'>
-						<i class="las la-table"></i>
-						<p>table</p>
-					</li>
-					<!-- <li class="col-lg-6" draggable="true"
-						data-insert-html='<div id=demo class="carousel slide" data-ride=carousel><ul class=carousel-indicators><li data-target=#demo data-slide-to=0 class=active><li data-target=#demo data-slide-to=1><li data-target=#demo data-slide-to=2></ul><div class=carousel-inner><div class="carousel-item active"><img src="/public/images/Xiang se/xiang_01_2.jpg" alt="Los Angeles"></div><div class=carousel-item><img src="public/images/Xiang se/xiangse_bg.jpg" alt=Chicago></div><div class=carousel-item><img src=ny.jpg alt="New York"></div></div><a class=carousel-control-prev href=#demo data-slide=prev> <span class=carousel-control-prev-icon></span> </a> <a class=carousel-control-next href=#demo data-slide=next> <span class=carousel-control-next-icon></span> </a></div>'>
-						<i class="las la-images"></i>
-						<p>Carousel</p>
-					</li> -->
-					<li class="col-lg-6" draggable="true" data-insert-html="<h1>HEADER GOES HERE</h1>">
-						<i class="las la-heading"></i>
-						<p>Header</p>
-					</li>
-					<!-- <li class="col-lg-6" draggable="true"
-						data-insert-html="">
-						<i class=" fa fa-list-ul"></i>
-						<p>ul</p>
-					</li> -->
-				</ul>
+				<% if(type == 1) { %>
+				<%- include('dragItem_b') %>
+				<% } else { %>
+				<%- include('dragItem_e')%>
+				<% } %>
 			</div>
 			<!-- 側邊攔tabProfile -->
 			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 				<ul class="list-unstyled components">
+					<% for(let i = 0; i < rows.length; i++) {%>
 					<li>
-						<a class="las la-file" href="#">home</a>
+						<a class="las la-file" href="javascript:void(0);"
+							onclick="changePage(`<%= rows[i].tpName %>`, `<%= i %>`)">&ensp;<%= rows[i].tpName %></a>
 					</li>
-					<li>
-						<a class="las la-file" href="#">product</a>
-					</li>
+					<% } %>
 				</ul>
 
 			</div>
 			<!-- 側邊攔tabConte -->
-			<div class="tab-pane fade" id="conte" role="tabpanel" aria-labelledby="profile-tab">
-				<div>
-					<li>
-						<p> Contact</p>
-					</li>
-				</div>
+			<div class="tab-pane fade show" id="conte" data-section="style" role="tabpanel" aria-labelledby="style-tab">
 			</div>
 
 		</div>
 	</nav>
 
-	<nav class="navbar navbar-expand navbar-light bg-light p-1">
+	<nav class="navbar navbar-expand navbar-light  p-1">
 		<div class="container-fluid ">
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<a class="navbar-brand p-0 " href="/">
@@ -257,6 +210,7 @@
 	</div>
 
 
+
 	<div id="under_canvas"></div>
 
 
@@ -269,39 +223,77 @@
 		src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
 	<script>
+
 		$(document).ready(function () {
-			edit.Builder.init('/templated/Stylish Portfolio/index.html', function () {});
-		});
-		$("#okButton").click(function () {
-			let pBody = ['d','<sss>'];
-			let pName = ['home', 'car'];
-			let p = pBody.map((item, index) => {
-				return { body: item, name: pName[index] };
-			})
-			let account = [
-				{ name: $("#name").val() },
-				{ explanation: $("#explanation").val() },
-				p
-			];
-
-			$.ajax({
-				type: "post",
-				url: "/edit/demo",
-				data: JSON.stringify(account),
-				contentType: "application/json; charset=utf-8"
-			})
-			window.location.href = window.location.origin + '/edit/demo';
+			edit.Builder.init('/templated/<%= template %>/index.html', function () { });
 		});
 
+		let CurrentPosition = 0;
+		let pBody = [];
+		let pName = [];
+		<% rows.forEach(row => { %>
+			pBody.push(`<%- row.body %>`);
+			pName.push(`<%- row.tpName %>`);
+		<% }); %>
+
+			$("#okButton").click(function () {
+				pBody[CurrentPosition] = CopyDom();
+				let p = pBody.map((item, index) => {
+					return { body: item, name: pName[index] };
+				});
+				let account = [
+					{ name: $("#name").val() },
+					{ explanation: $("#explanation").val() },
+					p,
+				];
+				$.ajax({
+					type: "post",
+					url: "/edit/demo",
+					data: JSON.stringify(account),
+					contentType: "application/json; charset=utf-8",
+					complete() {
+						window.location.href = window.location.origin + '/edit/demo';
+					}
+				});
+			});
 
 
-		// html2canvas(document.body, {
-		// 	onrendered: function (canvas) {//得到了canvas物件
-		// 		var imgUrl = canvas.toDataURL("image/png");//這裡通過canvas的toDataURL方法把它轉換成base64編碼。
-		// 		document.getElementById('under_canvas').innerHTML = imgUrl;
-		// 		// document.getElementById('under_canvas').innerHTML = '<img src="'+imgUrl+'"/>';
-		// 	}
-		// });
+
+		function CopyDom() {
+			let clientFrameWindow = $('#clientframe').get(0).contentWindow;
+			let editcode = $(clientFrameWindow.document).find('body').prop('outerHTML');
+			// 刪除註解
+			if (editcode) {
+				let comment = editcode.match(/<!--?((.(?!(-->)))*.)-->/g);
+				if (comment) {
+					for (let a = 0; a < comment.length; a++) {
+						editcode = editcode.replace(comment[a], "");
+					}
+				}
+
+				// 刪除script
+				let js = editcode.match(/<script(.|\n)*?<\/script>/g);
+				if (js) {
+					for (let a = 0; a < js.length; a++) {
+						editcode = editcode.replace(js[a], "");
+					}
+				}
+			} else {
+				editcode = '<body></body>';
+			}
+			return editcode;
+		}
+		function changePage(page, index) {
+			if (page == 'home') {
+				pBody[CurrentPosition] = CopyDom();
+				CurrentPosition = index;
+				edit.Builder.init(`/templated/<%= template %>/index.html`, function () { });
+			} else {
+				pBody[CurrentPosition] = CopyDom();
+				CurrentPosition = index;
+				edit.Builder.init(`/templated/<%= template %>/${page}.html`, function () { });
+			}
+		}
 	</script>
 </body>
 

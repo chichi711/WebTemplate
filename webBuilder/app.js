@@ -4,57 +4,41 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require("express-session");
+var conn = require('./db');
 
-var indexRouter = require('./routes/index');
-var userRouter = require('./routes/user');
-var editRouter = require('./routes/edit');
+var indexRouter = require('./routers/index');
+var userRouter = require('./routers/user');
+var editRouter = require('./routers/edit');
 
 var app = express();
-var mysql = require("mysql");
 
-// 登入sql
-var conn = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	password: '',
-	database: 'eeweb'
+app.use(session({
+  secret: 'i9wcou8ls64klewsfds',
+  resave: true,
+  saveUninitialized: true
+}));
+
+app.use(function (req, res, next) {
+  // console.log(res.locals.uName);
+  if (!res.locals.uName) {
+    res.locals.uName = 'Guest';
+  }
+  // console.log(res.locals.uName);
+
+  next();
 });
-
-conn.connect(function (err,rows) {
-	if (err) {
-		console.log(JSON.stringify(err));
-		return;
-	}
-console.log("isFine")
-});
-
-// 添加路由並以JSON格式顯示
-app.get("/EEweb/member", function (req, res) {
-  conn.query('select * from member','',function (err, rows) {
-          if (err) {
-              console.log(JSON.stringify(err));
-              return;
-          }
-          res.send(JSON.stringify(rows));
-      }
-  );
-})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
+process.on('uncaughtException', function (err) {
+  console.log(err);
+});
 app.use(logger('dev'));
-app.use(express.json());
+app.use(express.json({limit: '10mb'}));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
-app.use(session({
-  secret: '237498732943284sdfds',
-  resave: true,
-  saveUninitialized: true
-}));
 
 // db state
 app.use(function(req, res, next) {
