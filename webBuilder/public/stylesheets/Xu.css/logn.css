@@ -209,6 +209,14 @@ button{
     margin-top: -1.1rem;
 }
 
+.tips{
+    color: red;
+    position: fixed;
+    width: 20rem;
+    text-align: center;
+    margin-top: -2.2rem;
+}
+
 @media (max-width: 1200px){
 
     .login-form {

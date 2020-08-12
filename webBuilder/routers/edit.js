@@ -2,15 +2,15 @@ var express = require('express');
 var router = express.Router();
 var conn = require('../db');
 
-router.get('/:type/:template', function (req, res, next) {
+router.get('/:type/:template', function (request, response, next) {
     conn.query('select tpID,begin,end,pages,tpName,body from template t join tpages tp on t.tId = tp.tID where tName = ?',
-        [req.params.template],
+        [request.params.template],
         function (err, rows) {
             if (err) throw err;
-            req.session.begin = rows[0].begin;
-            req.session.end = rows[0].end;
+            request.session.begin = rows[0].begin;
+            request.session.end = rows[0].end;
             //   console.log(rows);
-            res.render('webBuilder', { type: req.params.type, template: req.params.template, rows: rows });
+            response.render('webBuilder', { type: request.params.type, template: request.params.template, rows: rows });
         });
 });
 

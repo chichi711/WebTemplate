@@ -11,11 +11,11 @@ CREATE TABLE `member` (
   `uName` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `Email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `uPwd` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `img` varchar(300) COLLATE utf8_unicode_ci DEFAULT 'user.jpg'
+  `img` varchar(300) COLLATE utf8_unicode_ci DEFAULT 'junior.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `member` (`uName`, `Email`, `uPwd`, `img`) VALUES
-('chichi', 'chi@gmail.com', 'aaa', 'user.jpg');
+('chichi', 'chi@gmail.com', 'aaa', 'junior.jpg');
 
 
 

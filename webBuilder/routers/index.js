@@ -2,16 +2,27 @@ var express = require('express');
 var router = express.Router();
 var conn = require('../db');
 
-router.get('/', function (req, res, next) {
-  console.log("hello", res.locals.uName);
-  if (res.locals.uName != undefined && res.locals.uName != "Guest") {
-    console.log("user : ", res.locals.uName);
-    res.render("index", { uName: res.locals.uName });
-  } else {
-    console.log("Guest : ", res.locals.uName);
-    res.locals.uName = "Guest";
-    res.render("index");
-  }
+// router.get('/', function (request, response, next) {
+//   // console.log("hello", response.locals.uName);
+//   if (response.locals.uName != undefined && response.locals.uName != "Guest") {
+//     console.log("getuser : ", response.locals.uName);
+//     response.render("index", { uName: response.locals.uName });
+//   } else {
+//     console.log("getGuest : ", response.locals.uName);
+//     response.locals.uName = "Guest";
+//     response.render("index");
+//   }
+// });
+router.get('/', function (request, response, next) {
+  // console.log("hello", response.locals.uName);
+  // if (request.session.uName != undefined && request.session.uName != "Guest") {
+  //   console.log("user : ", request.session.uName);
+  //   response.render("index", { uName: request.session.uName });
+  // } else {
+    console.log("Guest : ", request.session.uName);
+    // response.locals.uName = "Guest";
+    response.render("index");
+  // }
 });
 
 router.post("/", function (request, response) {
@@ -30,25 +41,25 @@ router.post("/", function (request, response) {
   response.sendStatus(200);
 })
 
-router.get('/', function (req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', function (request, response) {
+  response.render('index', { title: 'Express' });
 });
-router.get('/features', function (req, res, next) {
-  res.render('featuresPage');
+router.get('/features', function (request, response) {
+  response.render('featuresPage');
 });
-router.get('/officalTemplat', function (req, res, next) {
+router.get('/officalTemplat', function (request, response) {
   conn.query('select * from template',
   function (err, rows) {
     if (err) throw err;
-    res.render('templatePage', { template: rows });
+    response.render('templatePage', { template: rows });
   });
 });
-router.get('/officalTemplat/:type/:name', function (req, res, next) {
-  console.log(req.params.type);
-  res.render('preview', { type: req.params.type, name: req.params.name });
+router.get('/officalTemplat/:type/:name', function (request, response) {
+  console.log(request.params.type);
+  response.render('preview', { type: request.params.type, name: request.params.name });
 });
-router.get('/reveal', function (req, res, next) {
-  res.render('revealPage');
+router.get('/reveal', function (request, response, next) {
+  response.render('revealPage');
 });
 
 
