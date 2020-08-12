@@ -3,7 +3,7 @@ var router = express.Router();
 var conn = require('../db');
 
 router.get("/", function (request, response) {
-  if (request.session.uName == 'guest') {
+  if (request.session.uName == 'Guest') {
     response.redirect('/user/login');
   } else {
     conn.query('select m.mID,uName,Email,uPwd,img,a.aID,aName,explanation,pic,pName,body from (member m join account a on m.mId=a.mID ) join pages p on a.aID = p.aID WHERE m.mid = ?',
@@ -88,7 +88,6 @@ router.get('/signup', function (request, response, next) {
 });
 // 註冊
 router.post("/signup", function (request, response) {
-  console.log('qq');
   conn.query(
     "insert into member set uName = ?,Email = ?, uPwd = ?",
     [

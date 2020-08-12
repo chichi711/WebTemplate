@@ -25,8 +25,9 @@ router.post('/pic', function (request, response) {
 router.post("/demo", function (request, response) {
     request.session.body = request.body[2];
     let num;
-    conn.query("insert into account set mID = 1, tID = 1,aName = ?, explanation = ?",
+    conn.query("insert into account set mID = ?, tID = 1,aName = ?, explanation = ?",
         [
+            request.session.mID,
             request.body[0].name,
             request.body[1].explanation
         ]);

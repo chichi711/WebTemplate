@@ -15,9 +15,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>
 
-    </script>
 </head>
 
 
@@ -35,14 +33,13 @@
         <!-- 個人資料 -->
         <div class="row">
             <div class=" col-lg-3 ">
-                <div class="card-radius card left-profile-card">
+                <div class="card-radius card left-profile-card overflow-auto" id="home">
                     <div class="card-body">
                         <div class="personal-info ">
                             <ul class=" personal-list">
                                 <li class="user_img">
-                                    <img item-wrap
-                                        src="/images/member/<%= member[0].img %>"
-                                        al t="" class="user-profile">
+                                    <img item-wrap src="/images/member/<%= member[0].img %>" alt=""
+                                        class="user-profile">
                                     <h3><%= member[0].uName %></h3>
                                 </li>
                                 <div class=" pro nav flex-column nav-pills" id="v-pills-tab" role="tablist"
@@ -245,7 +242,8 @@
                                         <form id="form1" name="form1" method="post" action="">
                                             <label>大頭貼:</label>
                                             <form role="form" id="picList" class="form-group" style="column-count: 4;">
-                                                <label><input type="radio" name="picture" value="junior.jpg" checked>菜鳥工程師
+                                                <label><input type="radio" name="picture" value="junior.jpg"
+                                                        checked>菜鳥工程師
                                                 </label>
                                                 <label><input type="radio" name="picture" value="senior.jpeg">資深工程師
                                                 </label>
@@ -279,28 +277,20 @@
     <script src="/javascripts/Xu.js/jquery-3.3.1.min.js"></script>
     <script src="/javascripts/Xu.js/popper.min.js"></script>
     <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
     <script>
+        $(document).ready(function () {
+            $("#home").mCustomScrollbar({
+                theme: "minimal-dark"
+            });
+        });
         function move(position) {
             // event.preventDefault();
             // $(this).tab('show');
             $('html,body').animate({ scrollTop: $(`#${position}`).offset().top }, 500);
         }
-        // function updateData() {
-        //     let update = [
-        //         { name: $("#uName").val() },
-        //         { email: $("#eMail").val() },
-        //         { pwd: $("#uPwd").val() },
-        //     ];
-        //     $.ajax({
-        //         type: "post",
-        //         url: "/user",
-        //         data: JSON.stringify(update),
-        //         contentType: "application/json; charset=utf-8",
-        //         // complete() {
-        //         //     window.location.href = window.location.origin + '/user';
-        //         // }
-        //     });
-        // }
     </script>
 </body>
 

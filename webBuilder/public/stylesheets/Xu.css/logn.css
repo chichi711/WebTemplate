@@ -60,7 +60,7 @@ button{
     width: 100%;
 } */
 #login-form1{
-    height: 448px;
+    height: 468px;
     padding: 5px 40px;
 
 }
@@ -68,7 +68,7 @@ button{
     text-align: center;
     font-size: 30px;
     font-weight: 800;
-    margin: 14px 0 -22px 0;
+    margin: 15px 0 0px 0;
 }
 
 .logo{
@@ -207,6 +207,13 @@ button{
     width: 20rem;
     margin-left: 4rem;
     margin-top: -1.1rem;
+}
+
+.nulltip{
+    color: red;
+    position: fixed;
+    width: 20rem;
+    text-align: center;
 }
 
 .tips{
