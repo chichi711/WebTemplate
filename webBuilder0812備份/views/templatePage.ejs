@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="images/icon.png">
+    <title>EEweb</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+        rel="stylesheet" />
+    <!-- 導入CSS -->
+    <link href="/stylesheets/css/styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/stylesheets/Xu.css/aos.css">
+
+
+</head>
+
+<body class="m-0">
+    <!-- Nav-->
+    <%- include('navbar') %>
+
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container ">
+            <div class="row  align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-uppercase text-white font-weight-bold" data-aos="flip-up" data-aos-easing="linear"
+                        data-aos-duration="8000">
+                        讓您的網站脫穎而出的設計
+                    </h1>
+                </div>
+                <div class="col-lg-6 align-self-baseline">
+                    <h5 class="text-white-75 font-weight-light mb-5">
+                        從多個我們精心準備且易於客製化的模板中<br>選擇一個喜歡的設計吧！
+
+                    </h5>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- templateTab -->
+    <nav class="p-4">
+        <h3 class="text-center text-primary font-weight-bold" id="notoSans" data-aos="fade-down"
+            data-aos-easing="linear" data-aos-duration="800">
+            主題樣板
+        </h3>
+        <h5 class="text-center text-secondary mb-4" id="notoSans" data-aos="fade-down" data-aos-easing="linear"
+            data-aos-duration="800">
+            不知道從何開始嗎?從我們精選的主題中開始建構!
+        </h5>
+
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#home" role="tab"
+                aria-controls="nav-home" aria-selected="true">精選</a>
+            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab"
+                aria-controls="nav-profile" aria-selected="false">電商</a>
+            <a class="nav-item nav-link" id="nav-contact-tabF" data-toggle="tab" href="#contact" role="tab"
+                aria-controls="nav-contact" aria-selected="false">主題</a>
+            <a class="nav-item nav-link" id="nav-about-tab" data-toggle="tab" href="#navAbout" role="tab"
+                aria-controls="nav-about" aria-selected="false">部落格</a>
+        </div>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                <div id="portfolio">
+                    <div class="container-fluid p-4">
+                        <div class="row no-gutters">
+                            <% for( i = 0 ; i < 8 ; i++) { %>
+                            <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
+                                <a class="portfolio-box"
+                                    href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
+                                    <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.png" alt="" />
+                                    <div
+                                        class="portfolio-box-caption <%= template[i].type == 1? 'box-bootstrap':'box-eeweb' %>">
+                                        <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div id="portfolio">
+                    <div class="container-fluid p-4">
+                        <div class="row no-gutters">
+                            <% for( i = 4 ; i < 12 ; i++) { %>
+                            <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
+                                <a class="portfolio-box"
+                                    href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
+                                    <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.png" alt="" />
+                                    <div
+                                        class="portfolio-box-caption <%= template[i].type == 1? 'box-bootstrap':'box-eeweb' %>">
+                                        <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                <div id="portfolio">
+                    <div class="container-fluid p-4">
+                        <div class="row no-gutters">
+                            <% for( i = 10 ; i < 18 ; i++) { %>
+                            <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
+                                <a class="portfolio-box"
+                                    href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
+                                    <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.png" alt="" />
+                                    <div
+                                        class="portfolio-box-caption <%= template[i].type == 1? 'box-bootstrap':'box-eeweb' %>">
+                                        <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tab-pane fade" id="navAbout" role="tabpanel" aria-labelledby="contact-tab">
+                <div id="portfolio">
+                    <div class="container-fluid p-4">
+                        <div class="row no-gutters">
+                            <% for( i = 14 ; i < template.length ; i++) { %>
+                            <div class="col-lg-3 col-sm-6 " style="margin-bottom: 15px;">
+                                <a class="portfolio-box"
+                                    href="/officalTemplat/<%= template[i].type %>/<%= template[i].tName %>">
+                                    <img class="img-fluid" src="/images/preview/<%= template[i].tName %>.png" alt="" />
+                                    <div
+                                        class="portfolio-box-caption <%= template[i].type == 1? 'box-bootstrap':'box-eeweb' %>">
+                                        <div class="project-name"><%= template[i].type == 1? 'bootstrap':'EEweb' %>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </nav>
+
+    <section class="page-section " id="about">
+        <div class="container">
+            <div class="row justify-content-center" data-aos="zoom-in">
+                <div class="col-lg-12 text-center">
+                    <h3 class="text-dark mt-0">免費建立客製化的網站!</h3>
+                    <hr class="divider dark my-4" />
+                    <h5 class="text-dark-50 mb-4">只要簡單幾分鐘，就可以使用 EEweb 打造出一個漂亮的網站!
+                    </h5>
+
+
+                    <div class="hideme3"><a href="/edit" class="a1"><button class="btn1" tabindex="0"
+                                style="--buttonColor: #00AA90">START<span></span><span></span><span></span><span></span><b
+                                    aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b><b
+                                    aria-hidden="true">GO!</b><b aria-hidden="true">GO!</b></button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><br><br>
+
+    <%- include('footer') %>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+    <script src="/javascripts/js/scripts.js"></script>
+    <script src="/javascripts/Xu.js/popper.min.js"></script>
+    <script src="/javascripts/Xu.js/owl.carousel.min.js"></script>
+    <script src="/javascripts/Xu.js/aos.js"></script>
+    <script src="/javascripts/Xu.js/features.js"></script>
+
+
+</body>
+
+</html>

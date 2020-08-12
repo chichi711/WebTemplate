@@ -36,13 +36,13 @@
         <!-- 個人資料 -->
         <div class="row">
             <div class=" col-lg-3 ">
-                <div class="card-radius card left-profile-card overflow-auto" id="home">
+                <div class="card-radius card left-profile-card">
                     <div class="card-body">
                         <div class="personal-info ">
                             <ul class=" personal-list">
                                 <li class="user_img">
                                     <img item-wrap
-                                        src="https://crawl.nosdn.127.net/nbotreplaceimg/807fb39cdf0a2cc26bd7c0ec0855255d/08a456acf9a8fb29d8981e2fdd8ef63f.png"
+                                        src="/images/profile_imgs/senior.jpeg"
                                         al t="" class="user-profile">
                                     <h3><%= member[0].uName %></h3>
                                 </li>
@@ -259,8 +259,8 @@
                                             <input type="text" id="uPwd" name="uPwd"><br><br>
 
                                             <div>
-                                                <button type="submit" onclick="updateData()"
-                                                    class="btn effect01"><span></span>儲存</span></button>
+                                                <button type="submit" onclick="updateData()" class="btn effect01"
+                                                   ><span></span>儲存</span></button>
                                             </div>
                                         </form>
                                     </div>
@@ -276,22 +276,12 @@
     <script src="/javascripts/Xu.js/jquery-3.3.1.min.js"></script>
     <script src="/javascripts/Xu.js/popper.min.js"></script>
     <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-
     <script>
         function move(position) {
             // event.preventDefault();
             // $(this).tab('show');
             $('html,body').animate({ scrollTop: $(`#${position}`).offset().top }, 500);
         }
-
-        $(document).ready(function () {
-
-            $("#home").mCustomScrollbar({
-                theme: "minimal-dark"
-            });
-        });
         // function updateData() {
         //     let update = [
         //         { name: $("#uName").val() },

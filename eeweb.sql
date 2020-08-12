@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主機： 127.0.0.1
--- 產生時間： 2020-08-09 17:38:10
+-- 產生時間： 2020-08-12 03:10:19
 -- 伺服器版本： 10.4.13-MariaDB
 -- PHP 版本： 7.4.8
 
@@ -48,7 +48,7 @@ CREATE TABLE `member` (
   `uName` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `Email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `uPwd` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `img` varchar(300) COLLATE utf8_unicode_ci DEFAULT 'user.jpg'
+  `img` varchar(300) COLLATE utf8_unicode_ci DEFAULT 'junior.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -56,7 +56,7 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`mID`, `uName`, `Email`, `uPwd`, `img`) VALUES
-(01, 'chichi', 'chi@gmail.com', 'aaa', 'user.jpg');
+(01, 'chichi', 'chi@gmail.com', 'aaa', 'junior.jpg');
 
 -- --------------------------------------------------------
 

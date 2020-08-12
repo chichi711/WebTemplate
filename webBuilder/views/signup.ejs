@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="icon" href="/images/icon.png">
+	<link rel="icon" href="/images/icon.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>註冊</title>
     <link rel="stylesheet" href="/stylesheets/Xu.css/bootstrap.min.css">
@@ -51,26 +51,20 @@
 
     <form action="" accept-charset="utf-8" method="POST" class="login-form  " id="login-form1">
         <h1 class="signup" onclick="autoinput('sign up')">會員註冊</h1>
-        <div class="txtb">
-            <span class="tip3">請輸入帳號</span>
 
-            <input id="uNameTextBox" onblur="checkpas3();" type="text" required>
+        <div class="txtb">
+            <input id="uNameTextBox" type="text">
             <span data-placeholder="姓名"></span>
         </div>
 
-
-
         <div class="txtb">
-            <span class="tip2">請輸入電子郵件</span>
-
-            <input id="EmailTextBox" onblur="checkpas2();" type="email" required>
+            <input id="EmailTextBox" type="email">
             <span data-placeholder="電子郵件"></span>
         </div>
+        <span class="tip">密碼不一致</span>
 
         <div class="txtb">
-            <span class="tip">密碼不一致</span>
-
-            <input id="uPwdTextBox" onchange="checkpas1()" type="password" required />
+            <input id="uPwdTextBox" onchange="checkpas()" type="password"  required />
             <span data-placeholder="密碼">
         </div>
         <div class="txtb">
