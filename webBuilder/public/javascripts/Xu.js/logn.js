@@ -14,7 +14,7 @@ function autoinput(type) {
     $(".nulltip").hide();
     if (type == 'sign up') {
         let num = 0;
-        let value = ['yoru', 'yoru123@gmail.com', 'qqq', 'qqq'];
+        let value = ['chichi', 'chi123@gmail.com', 'qqq', 'qqq'];
         $('form input:not(:last-child)').each(function () {
             $(this).addClass("focus");
             $(this).val(value[num]);
@@ -23,7 +23,7 @@ function autoinput(type) {
     }
     if (type == 'sign in') {
         let num = 0;
-        let value = ['yoru123@gmail.com', 'qqq'];
+        let value = ['chi123@gmail.com', 'qqq'];
         $('form input:not(:last-child)').each(function () {
             $(this).addClass("focus");
             $(this).val(value[num]);

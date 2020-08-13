@@ -15,7 +15,7 @@ CREATE TABLE `member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 INSERT INTO `member` (`uName`, `Email`, `uPwd`, `img`) VALUES
-('chichi', 'chi@gmail.com', 'aaa', 'junior.jpg');
+('yoru', 'yoru123@gmail.com', 'aaa', 'junior.jpg');
 
 
 
