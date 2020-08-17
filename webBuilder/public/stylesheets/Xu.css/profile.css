@@ -68,8 +68,6 @@ border-radius: 11px; */
   border-radius: 11px;
   height: 80vh;
   width: 15rem;
-  border: 3px solid rgba(0, 0, 0, 0.6);
-
 }
 
 .left-profile-card .user-profile {
@@ -144,11 +142,9 @@ label {
 /* 樣板庫 */
 
 .card-body2 {
-  box-shadow: 0px 0px 20px 6px rgba(130, 130, 130, 0.5);
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
   border-radius: 15px;
   margin-bottom: 20px;
-  border: 0px solid rgba(0, 0, 0, 0.5);
-
 }
 
 .card-body2 img {
@@ -418,6 +414,7 @@ label {
   width: 200px;
   height: 50px;
   /* position: absolute; */
+  border: solid rgba(255, 255, 255, 0.3) 1px;
   background: transparent;
   cursor: pointer;
   transition: all 1s;

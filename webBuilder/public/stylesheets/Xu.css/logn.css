@@ -9,9 +9,6 @@ body{
     background-color: 	#FAFAFA;
     font-family: "Legacy", "Noto Sans TC", "Helvetica Neue", "Helvetica", "Nimbus Sans L", "Arial", "Liberation Sans", "Source Han Sans CN Normal", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", "STHeiti", "SimHei", "WenQuanYi Zen Hei Sharp", "sans-serif", "Apple LiGothic", "微軟正黑體"
 }
-.bg-light {
-    background-color: #d6d6d6;
-}
 
 /* 導覽列 */
 /* .logo{
@@ -63,7 +60,7 @@ button{
     width: 100%;
 } */
 #login-form1{
-    height: 448px;
+    height: 468px;
     padding: 5px 40px;
 
 }
@@ -71,7 +68,7 @@ button{
     text-align: center;
     font-size: 30px;
     font-weight: 800;
-    margin: 14px 0 -22px 0;
+    margin: 15px 0 0px 0;
 }
 
 .logo{
@@ -91,8 +88,7 @@ button{
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    box-shadow: 0px 0px 20px 6px rgba(130, 130, 130, 0.5);
-    border: 0px solid rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -211,6 +207,21 @@ button{
     width: 20rem;
     margin-left: 4rem;
     margin-top: -1.1rem;
+}
+
+.nulltip{
+    color: red;
+    position: fixed;
+    width: 20.5  rem;
+    text-align: center;
+}
+
+.tips{
+    color: red;
+    position: fixed;
+    width: 20rem;
+    text-align: center;
+    margin-top: -2.2rem;
 }
 
 @media (max-width: 1200px){

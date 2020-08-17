@@ -1,4 +1,5 @@
-<nav style="background-color: #d6d6d6;" class="navbar navbar-expand-md navbar-light p-1 fixed-top shadow-sm" id="notoSans">
+<nav style="background-color: #f8f9fa;" class="navbar navbar-expand-md navbar p-1 fixed-top shadow-sm"
+    id="notoSans">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,13 +42,13 @@
                 <div class='line'></div>
                 <div class='line'></div>
                 <div class='line'></div>
-                <%  if (locals.uName != undefined && locals.uName != "Guest") { %>
-                <span>
-                    <a style="color: rgba(0, 0, 0, 0.5);" href="/user/logout">登出</a>
-                </span>
+                <%  if ( locals.userName != undefined && locals.userName != "Guest") { %>
+                    <span>
+                        <a style="color: #A5A299;" href="/user/logout"><%= locals.userName %>&ensp;登出</a>
+                    </span>
                 <% } else { %>
                 <span>
-                    <a style="color: rgba(0, 0, 0, 0.5);" href="/user/login">登入/註冊</a>
+                    <a style="color: #A5A299;" href="/user/login">登入/註冊</a>
                 </span>
                 <% } %>
                 <div>

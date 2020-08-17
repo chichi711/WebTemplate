@@ -15,9 +15,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>
 
-    </script>
 </head>
 
 
@@ -29,21 +27,19 @@
 
         <!-- 導覽列 -->
         <%- include('navbar') %>
-
         <!-- 導覽列 END -->
 
 
         <!-- 個人資料 -->
         <div class="row">
             <div class=" col-lg-3 ">
-                <div class="card-radius card left-profile-card">
+                <div class="card-radius card left-profile-card overflow-auto" id="home">
                     <div class="card-body">
                         <div class="personal-info ">
                             <ul class=" personal-list">
                                 <li class="user_img">
-                                    <img item-wrap
-                                        src="/images/profile_imgs/senior.jpeg"
-                                        al t="" class="user-profile">
+                                    <img item-wrap src="/images/member/<%= member[0].img %>" alt=""
+                                        class="user-profile">
                                     <h3><%= member[0].uName %></h3>
                                 </li>
                                 <div class=" pro nav flex-column nav-pills" id="v-pills-tab" role="tablist"
@@ -52,7 +48,7 @@
                                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill"
                                         href="#v-pills-profile" role="tab" aria-controls="v-pills-profile"
                                         aria-selected="false">
-                                        <i class="las la-user-circle" style="font-size: larger;"></i><span>編輯會員</span>
+                                        <i class="las la-user-circle" style="font-size: larger;"></i><span>會員資料</span>
                                     </a>
                                     <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home"
                                         role="tab" aria-controls="v-pills-home" aria-selected="true" onclick="move(0)"
@@ -245,24 +241,29 @@
                                     <div class="cot1">
                                         <form id="form1" name="form1" method="post" action="">
                                             <label>大頭貼:</label>
-                                            <label class="btn btn-info">
-                                                <input id="upload_img" style="display:none;" type="file">
-                                                <i class="fa fa-photo"></i> 上傳圖片
-                                            </label><br><br>
-                                            <label>姓名:</label>
-                                            <input type="text" id="uName" name="uName"
-                                                value="<%= member[0].uName%>"><br><br>
-                                            <label>信箱:</label>
-                                            <input type="text" id="eMail" name="eMail"
-                                                value="<%= member[0].Email %>"><br><br>
-                                            <label>密碼:</label>
-                                            <input type="text" id="uPwd" name="uPwd"><br><br>
+                                            <form role="form" id="picList" class="form-group" style="column-count: 4;">
+                                                <label><input type="radio" name="picture" value="junior.jpg"
+                                                        checked>菜鳥工程師
+                                                </label>
+                                                <label><input type="radio" name="picture" value="senior.jpeg">資深工程師
+                                                </label>
+                                                <label>
+                                                    <input type="radio" name="picture" value="tired.jpg">爆肝工程師
+                                                </label><br><br>
+                                                <label>姓名:</label>
+                                                <input type="text" id="uName" name="uName"
+                                                    value="<%= member[0].uName%>"><br><br>
+                                                <label>信箱:</label>
+                                                <input type="text" id="eMail" name="eMail"
+                                                    value="<%= member[0].Email %>"><br><br>
+                                                <label>密碼:</label>
+                                                <input type="password" id="uPwd" name="uPwd"><br><br>
 
-                                            <div>
-                                                <button type="submit" onclick="updateData()" class="btn effect01"
-                                                   ><span></span>儲存</span></button>
-                                            </div>
-                                        </form>
+                                                <div>
+                                                    <button type="submit" onclick="updateData()"
+                                                        class="btn effect01"><span></span>儲存</span></button>
+                                                </div>
+                                            </form>
                                     </div>
                                 </div>
                             </div>
@@ -276,28 +277,20 @@
     <script src="/javascripts/Xu.js/jquery-3.3.1.min.js"></script>
     <script src="/javascripts/Xu.js/popper.min.js"></script>
     <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+
     <script>
+        $(document).ready(function () {
+            $("#home").mCustomScrollbar({
+                theme: "minimal-dark"
+            });
+        });
         function move(position) {
             // event.preventDefault();
             // $(this).tab('show');
             $('html,body').animate({ scrollTop: $(`#${position}`).offset().top }, 500);
         }
-        // function updateData() {
-        //     let update = [
-        //         { name: $("#uName").val() },
-        //         { email: $("#eMail").val() },
-        //         { pwd: $("#uPwd").val() },
-        //     ];
-        //     $.ajax({
-        //         type: "post",
-        //         url: "/user",
-        //         data: JSON.stringify(update),
-        //         contentType: "application/json; charset=utf-8",
-        //         // complete() {
-        //         //     window.location.href = window.location.origin + '/user';
-        //         // }
-        //     });
-        // }
     </script>
 </body>
 

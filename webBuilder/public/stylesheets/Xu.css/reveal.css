@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    position: relative;
 }
 
 body{
@@ -38,7 +39,7 @@ body{
     font-size: 18px;
 }
 .btn{
-    background:#d6d6d6;
+    background:#e9ecef;
 }
 pre{
     width: 100%;

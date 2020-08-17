@@ -2699,7 +2699,7 @@ button.bg-danger:focus {
 }
 
 .bg-light {
-  background-color: #f8f9fa ;
+  background-color: #f8f9fa !important;
 }
 
 a.bg-light:hover,
@@ -6352,7 +6352,6 @@ input:valid::-webkit-input-placeholder {
   padding: 6px;
   width: 200px;
   color: white;
-  margin-left: 25px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 

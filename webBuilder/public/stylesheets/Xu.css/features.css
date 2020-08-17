@@ -110,7 +110,8 @@ body{
 
 /* 文字介紹 */
 .caption{
-  width: 100%;
+  /* width: 1256px; */
+  width: 99.4%;
   max-width: 100%;
   position: absolute;
   top: 35%;

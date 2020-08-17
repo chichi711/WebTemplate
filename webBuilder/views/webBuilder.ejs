@@ -33,12 +33,12 @@
 	<nav id="sidebar">
 		<!-- 側邊攔tab -->
 		<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-			<a class="nav-item nav-link col-lg-4 active" id="nav-home-tab" data-toggle="tab" href="#home" role="tab"
-				aria-controls="nav-home" aria-selected="true">插入</a>
-			<a class="nav-item nav-link col-lg-4" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab"
+			<a class="nav-item nav-link col-lg-6 active" id="nav-home-tab" data-toggle="tab" href="#home" role="tab"
+				aria-controls="nav-home" aria-selected="true">元件</a>
+			<a class="nav-item nav-link col-lg-6" id="nav-profile-tab" data-toggle="tab" href="#profile" role="tab"
 				aria-controls="nav-profile" aria-selected="false">頁面</a>
-			<a class="nav-item nav-link col-lg-4" id="nav-contact-tab" data-toggle="tab" href="#conte" role="tab"
-				aria-controls="nav-contact" aria-selected="false">樣式</a>
+			<!-- <a class="nav-item nav-link col-lg-4" id="nav-contact-tab" data-toggle="tab" href="#conte" role="tab"
+				aria-controls="nav-contact" aria-selected="false">樣式</a> -->
 		</div>
 		<div class="tab-content" id="myTabContent">
 			<!-- 側邊攔tabHome -->
@@ -69,7 +69,7 @@
 		</div>
 	</nav>
 
-	<nav class="navbar navbar-expand navbar-light  p-1">
+	<nav class="navbar navbar-expand navbar-light p-1">
 		<div class="container-fluid ">
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<a class="navbar-brand p-0 " href="/">
@@ -185,6 +185,7 @@
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
 				</div>
 				<!-- Modal body -->
+				<!-- #e2e2e2 -->
 				<div class="modal-body" style="padding: 0; ">
 					<div class="container-contact100">
 						<div class="wrap-contact100">
@@ -252,7 +253,8 @@
 					data: JSON.stringify(account),
 					contentType: "application/json; charset=utf-8",
 					complete() {
-						window.location.href = window.location.origin + '/edit/demo';
+						// window.location.href = window.location.origin + '/edit/demo';
+						window.open('/edit/demo');
 					}
 				});
 			});

@@ -76,14 +76,13 @@ $(document).ready(function() {
         });
     });
 });
-
-
+console.log("AAAA")
 
 
 //大圖頁變動
 $(document).ready(function() {
-
     $('.hideme1').addClass("change2");
     $('.hideme3').addClass("change2-1");
+    console.log("ABC")
 });
 
