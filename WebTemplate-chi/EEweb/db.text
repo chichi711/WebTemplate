@@ -1,0 +1,73 @@
+會員 : 會員編號 名稱 信箱 密碼 照片 Primary key foreign key
+樣板 : 樣板編號 樣板名稱 類型(bootstrap or heart) 頁數 開頭 結尾
+作品 : 作品編號 會員編號 樣板編號 名稱 描述 照片 時間
+詳細 : 頁面排序 作品編號 頁面名稱 code
+
+create database eeweb;
+use eeweb;
+
+CREATE TABLE `member` (
+  `mID` tinyint(2) UNSIGNED ZEROFILL NOT NULL auto_increment Primary key,
+  `uName` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `Email` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `uPwd` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `img` varchar(300) COLLATE utf8_unicode_ci DEFAULT 'user.jpg'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `member` (`uName`, `Email`, `uPwd`, `img`) VALUES
+('chichi', 'chi@gmail.com', 'aaa', 'user.jpg');
+
+
+
+CREATE TABLE `template` (
+  `tID` tinyint(2) UNSIGNED ZEROFILL NOT NULL Primary key auto_increment,
+  `tName` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `type` tinyint(2) NOT NULL,
+  `pages` tinyint(2) default '1',
+  `begin` varchar(2000) COLLATE utf8_unicode_ci NOT NULL,
+  `end` varchar(500) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `template` (`tName`, `type`, `pages`, `begin`, `end`) VALUES
+('antique', '1', '6',
+'<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>',
+ '</html>');
+
+
+
+CREATE TABLE `account` (
+  `aID` tinyint(2) UNSIGNED ZEROFILL NOT NULL Primary key auto_increment,
+  `mID` tinyint(2) UNSIGNED ZEROFILL NOT NULL ,
+  `tID` tinyint(2) UNSIGNED ZEROFILL NOT NULL ,
+  `aName` varchar(20) COLLATE utf8_unicode_ci default 'eeWeb template',
+  `explain` varchar(200) COLLATE utf8_unicode_ci,
+  `pic` varchar(1000) COLLATE utf8_unicode_ci default 'default.jpg',
+  `date` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  FOREIGN KEY (mID) REFERENCES member(mID),
+  FOREIGN KEY (tID) REFERENCES template(tID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `account` (`mID`, `tID`, `explain`, `pic`, `date`) VALUES
+('1', '1', 'yayayayayaya', 'user.jpg', '07/31');
+
+
+
+CREATE TABLE `pages` (
+  `pID` tinyint(2) UNSIGNED ZEROFILL NOT NULL Primary key auto_increment,
+  `pName` varchar(20) COLLATE utf8_unicode_ci default 'eeWeb template',
+  `aID` tinyint(2) UNSIGNED ZEROFILL NOT NULL,
+  `body` varchar(10000) COLLATE utf8_unicode_ci NOT NULL,
+  FOREIGN KEY (aID) REFERENCES account(aID)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+INSERT INTO `pages` (`pName`, `aID`, `body`) VALUES
+('index', '1', '<body><h1>index</h1></body>'),
+('member', '1', '<body><h1>member</h1></body>'),
+('car', '1', '<body><h1>car</h1></body>');
+
