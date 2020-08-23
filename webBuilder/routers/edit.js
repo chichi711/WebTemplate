@@ -9,7 +9,6 @@ router.get('/:type/:template', function (request, response, next) {
             if (err) throw err;
             request.session.begin = rows[0].begin;
             request.session.end = rows[0].end;
-            //   console.log(rows);
             response.render('webBuilder', { type: request.params.type, template: request.params.template, rows: rows });
         });
 });
@@ -49,7 +48,10 @@ router.post("/demo", function (request, response) {
                         num,
                         element.name,
                         element.body,
-                    ]);
+                    ],
+                    function () {
+                        response.redirect('/user');
+                    });
             });
         }
     );

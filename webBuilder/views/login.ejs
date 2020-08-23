@@ -52,6 +52,7 @@
     <form name="addfrom" action="" accept-charset="utf-8" method="POST" class="login-form">
         <h1 class="member_logn" onclick="autoinput('sign in')">會員登入</h1>
         <% if(err != 1 ) { %>
+            <!-- err == 1 是正常進入畫面，非1為輸入錯誤 -->
         <span class="tips"><%= err %></span>
         <% } %>
         <div class="txtb">
@@ -65,7 +66,6 @@
         </div>
         <div class="logbtn2">
             <input type="submit" class="logbtn btn" value="確認送出">
-            <!-- <input type="button" class="logbtn btn" onclick="checkuser()" value="確認送出"> -->
         </div>
 
         <div class="bottom-text">
@@ -81,20 +81,6 @@
     <script src="/javascripts/Xu.js/popper.min.js"></script>
     <script src="/javascripts/Xu.js/bootstrap.min.js"></script>
     <script src="/javascripts/Xu.js/logn.js"></script>
-    <script>
-        // function checkuser() {
-        //     var newItem = {
-        //         Email: $("#email").val(),
-        //         uPwd: $("#pwd").val()
-        //     };
-        //     $.ajax({
-        //         type: "post",
-        //         url: "/",
-        //         data: JSON.stringify(newItem)
-        //     });
-        // }
-    </script>
-
 </body>
 
 </html>

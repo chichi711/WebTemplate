@@ -19,10 +19,12 @@ app.use(session({
 }));
 
 app.use(function (req, res, next) {
+  // 如果req.session.uName未定義，req.session.uName = 'Guest';
   if (!req.session.uName) {
     req.session.uName = 'Guest';
   }
-  app.locals.userName = req.session.uName;
+  // 將session值存至locals.userName
+  res.locals.userName = req.session.uName;
   next();
 });
 

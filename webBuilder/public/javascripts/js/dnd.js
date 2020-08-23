@@ -8,12 +8,12 @@ $(function () {
     // clientFrameWindow = interface的client端內容( w、 r)
     let clientFrameWindow = $('#clientframe').get(0).contentWindow;
 
-    // console.log(qq);
-
     $("#home").mCustomScrollbar({
         theme: "minimal"
     });
 
+
+    // 複製程式碼內容
     $("#copyBtn").click(function () {
         let name = $(this).attr('name');
         let el = document.getElementById(name);
@@ -26,14 +26,14 @@ $(function () {
         return false;
     });
 
+    // 開啟程式碼按鈕
     $("#navCopy").click(function () {
         editcode = DragDropFunctions.CopyDom();
-
         // cleanNotes(editcode);
         $("#newCode").text(editcode);
     });
 
-
+    // 點擊切換樣板大小
     $("#mobile-view").click(function () {
         $("#canvas").attr("class", "mobile");
     });

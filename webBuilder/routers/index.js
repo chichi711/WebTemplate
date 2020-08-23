@@ -2,31 +2,11 @@ var express = require('express');
 var router = express.Router();
 var conn = require('../db');
 
-// router.get('/', function (request, response, next) {
-//   // console.log("hello", response.locals.uName);
-//   if (response.locals.uName != undefined && response.locals.uName != "Guest") {
-//     console.log("getuser : ", response.locals.uName);
-//     response.render("index", { uName: response.locals.uName });
-//   } else {
-//     console.log("getGuest : ", response.locals.uName);
-//     response.locals.uName = "Guest";
-//     response.render("index");
-//   }
-// });
 router.get('/', function (request, response, next) {
-  // console.log("hello", response.locals.uName);
-  // if (request.session.uName != undefined && request.session.uName != "Guest") {
-  //   console.log("user : ", request.session.uName);
-  //   response.render("index", { uName: request.session.uName });
-  // } else {
-    console.log("Guest : ", request.session.uName);
-    // response.locals.uName = "Guest";
     response.render("index");
-  // }
 });
 
 router.post("/", function (request, response) {
-  console.log('sssssssssssssssssss');
   conn.query(
     'SELECT * FROM member where email = ?',
     [request.body.Email],
@@ -54,8 +34,10 @@ router.get('/officalTemplat', function (request, response) {
     response.render('templatePage', { template: rows });
   });
 });
+// 從網址取得樣板類型及名稱，並將值傳入preview
 router.get('/officalTemplat/:type/:name', function (request, response) {
   console.log(request.params.type);
+                                                  //  ↓網址的變數
   response.render('preview', { type: request.params.type, name: request.params.name });
 });
 router.get('/reveal', function (request, response, next) {

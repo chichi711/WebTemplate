@@ -53,6 +53,7 @@
 			<!-- 側邊攔tabProfile -->
 			<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 				<ul class="list-unstyled components">
+					<!-- 輸出頁面名稱 -->
 					<% for(let i = 0; i < rows.length; i++) {%>
 					<li>
 						<a class="las la-file" href="javascript:void(0);"
@@ -227,10 +228,11 @@
 		$(document).ready(function () {
 			edit.Builder.init('/templated/<%= template %>/index.html', function () { });
 		});
-
+		// 先儲存當前位置為0
 		let CurrentPosition = 0;
 		let pBody = [];
 		let pName = [];
+		// 將資料庫的body及頁面名稱存入array
 		<% rows.forEach(row => { %>
 			pBody.push(`<%- row.body %>`);
 			pName.push(`<%- row.tpName %>`);
@@ -252,12 +254,11 @@
 					data: JSON.stringify(account),
 					contentType: "application/json; charset=utf-8",
 					complete() {
-						window.location.href = window.location.origin + '/edit/demo';
+						window.open(window.location.origin + '/edit/demo');
+						window.location.href = '/user';
 					}
 				});
 			});
-
-
 
 		function CopyDom() {
 			let clientFrameWindow = $('#clientframe').get(0).contentWindow;
@@ -285,8 +286,11 @@
 		}
 		function changePage(page, index) {
 			if (page == 'home') {
+				// 切換頁面時，將當前修改內容更新至pBody陣列內
 				pBody[CurrentPosition] = CopyDom();
+				// 將CurrentPosition更改為點擊切換的頁面
 				CurrentPosition = index;
+				// 輸出html頁面
 				edit.Builder.init(`/templated/<%= template %>/index.html`, function () { });
 			} else {
 				pBody[CurrentPosition] = CopyDom();

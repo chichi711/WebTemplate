@@ -29,6 +29,7 @@ router.get("/", function (request, response) {
 
 
 router.post("/", function (request, response) {
+  // 更新會員資料，將會員名稱及信箱儲存至session
   request.session.uName = request.body.uName;
   request.session.eMail = request.body.eMail;
   conn.query(
@@ -44,6 +45,7 @@ router.post("/", function (request, response) {
 });
 
 router.get('/login', function (request, response, next) {
+  // 判斷request.session.loginerr 是否為異常數字。
   if(request.session.loginerr == 1) {
     request.session.loginerr = 0;
     response.render('login', { err: '帳密輸入錯誤' });
@@ -56,23 +58,27 @@ router.get('/login', function (request, response, next) {
 });
 
 router.post("/login", function (request, response) {
+  // 信箱不為空則判斷是否正確
   if (request.body.email != '') {
     conn.query(
       'SELECT * FROM member where email = ?',
       [request.body.email],
       function (err, rows) {
+        // 如果err或帳密錯誤，request.session.loginerr = 1;
         if (err || rows[0] === undefined || request.body.pwd != rows[0].uPwd ) {
           console.log(JSON.stringify(err));
           request.session.loginerr = 1;
           response.redirect('/user/login');
           return;
         } else {
+          // 帳密正確跳轉至首頁
           request.session.mID = rows[0].mID;
           request.session.uName = rows[0].uName;
           response.redirect('/');
         }
       });
   } else {
+    // 信箱為空值，request.session.loginerr = 2;
     request.session.loginerr = 2;
     response.redirect('/user/login');
   }
